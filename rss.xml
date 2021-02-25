@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>CN1nja&#39;s Blog</title>
-        <link>https://cn1nja.github.io/</link>
+        <link>http://cn1nja.github.io/</link>
         <description></description>
         <generator>Hugo 0.81.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 25 Feb 2021 22:30:21 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 25 Feb 2021 22:34:45 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://cn1nja.github.io/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="http://cn1nja.github.io/rss.xml" />
         
         
             <item>
                 <title>Hello World</title>
-                <link>https://cn1nja.github.io/posts/hello-world/</link>
-                <guid isPermaLink="true">https://cn1nja.github.io/posts/hello-world/</guid>
+                <link>http://cn1nja.github.io/posts/hello-world/</link>
+                <guid isPermaLink="true">http://cn1nja.github.io/posts/hello-world/</guid>
                 <pubDate>Wed, 24 Feb 2021 14:16:27 &#43;0800</pubDate>
                 
                     <author>mikecninja@gmail.com (CN1nja)</author>

@@ -9,7 +9,7 @@
     <channel>
         <title>CN1nja&#39;s Blog</title>
         <link>https://cn1nja.github.io/</link>
-        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <description></description>
         <generator>Hugo 0.81.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 24 Feb 2021 20:12:53 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 25 Feb 2021 22:30:21 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://cn1nja.github.io/rss.xml" />
         

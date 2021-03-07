@@ -23,10 +23,1139 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sun, 07 Mar 2021 20:05:56 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 07 Mar 2021 23:02:52 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://cn1nja.github.io/rss.xml" />
         
+        
+            <item>
+                <title>RSA常见攻击</title>
+                <link>https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/</link>
+                <guid isPermaLink="true">https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/</guid>
+                <pubDate>Sun, 07 Mar 2021 20:47:21 &#43;0800</pubDate>
+                
+                    <author>mikecninja@gmail.com (CN1nja)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E5%B7%A5%E5%85%B7%E5%87%86%E5%A4%87font&#34;&gt;&lt;font color=#0288D1&gt;工具准备：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c001%E5%85%AC%E9%92%A5%E8%A7%A3%E6%9E%90%E7%AD%BE%E5%90%8D%E5%8A%A0%E5%AF%86font&#34;&gt;&lt;font color=#EF6C00&gt;1.公钥解析,签名加密&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%981font&#34;&gt;&lt;font color=#0288D1&gt;例题：1&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%982020%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91brokensystemsfont&#34;&gt;&lt;font color=#0288D1&gt;例题：2020西湖论剑BrokenSystems&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E9%A2%98%E7%9B%AEfont&#34;&gt;&lt;font color=#6A1B9A&gt;题目&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AFfont&#34;&gt;&lt;font color=#6A1B9A&gt;解题思路&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c002-%E5%88%A9%E7%94%A8%E5%85%AC%E7%BA%A6%E6%95%B0%E6%B1%82%E8%A7%A3font&#34;&gt;&lt;font color=#EF6C00&gt;2. 利用公约数求解&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c003-%E5%88%86%E8%A7%A3-n-%E5%BE%97%E5%88%B0%E5%A4%9A%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84-pfont&#34;&gt;&lt;font color=#EF6C00&gt;3. 分解 N 得到多个相同的 P&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E7%9F%A5%E8%AF%86%E7%82%B9font&#34;&gt;&lt;font color=#0288D1&gt;知识点：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a1%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#6A1B9A&gt;1.欧拉函数的性质：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a2rsa%E5%8A%A0%E5%AF%86%E5%85%AC%E5%BC%8Ffont&#34;&gt;&lt;font color=#6A1B9A&gt;2.RSA加密公式：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AFfont&#34;&gt;&lt;font color=#0288D1&gt;解题思路：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c004-dpdq-%E6%B3%84%E9%9C%B2font&#34;&gt;&lt;font color=#EF6C00&gt;4. dp、dq 泄露&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font-1&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E4%BB%A3%E7%A0%81font&#34;&gt;&lt;font color=#0288D1&gt;解题代码:&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c005-dp-%E6%B3%84%E9%9C%B2font&#34;&gt;&lt;font color=#EF6C00&gt;5. dp 泄露&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font-2&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E8%84%9A%E6%9C%ACfont&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c006-roll-%E6%8C%89%E8%A1%8C%E5%8A%A0%E5%AF%86font&#34;&gt;&lt;font color=#EF6C00&gt;6. Roll 按行加密&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font-3&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AFfont-1&#34;&gt;&lt;font color=#0288D1&gt;解题思路：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c007-%E5%85%B1%E6%A8%A1%E6%94%BB%E5%87%BBfont&#34;&gt;&lt;font color=#EF6C00&gt;7. 共模攻击&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%83%8C%E6%99%AFfont&#34;&gt;&lt;font color=#0288D1&gt;背景：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E6%94%BB%E5%87%BB%E6%9D%A1%E4%BB%B6font&#34;&gt;&lt;font color=#6A1B9A&gt;攻击条件：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E8%A7%A3%E5%AF%86%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86font&#34;&gt;&lt;font color=#6A1B9A&gt;解密数学原理：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font-4&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E8%84%9A%E6%9C%ACfont-1&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c008-%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E6%94%BB%E5%87%BBfont&#34;&gt;&lt;font color=#EF6C00&gt;8. 低加密指数攻击&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1e3%E6%97%B6%E7%9A%84%E5%B0%8F%E6%98%8E%E6%96%87%E6%94%BB%E5%87%BBfont&#34;&gt;&lt;font color=#0288D1&gt;e=3时的小明文攻击：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81font&#34;&gt;&lt;font color=#6A1B9A&gt;关键代码&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font-5&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AFfont-2&#34;&gt;&lt;font color=#0288D1&gt;解题思路：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E8%84%9A%E6%9C%ACfont-2&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1e2%E6%97%B6%E7%9A%84%E5%B0%8F%E6%98%8E%E6%96%87%E6%94%BB%E5%87%BBfont&#34;&gt;&lt;font color=#0288D1&gt;e=2时的小明文攻击：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1e1%E6%97%B6%E7%9A%84%E5%B0%8F%E6%98%8E%E6%96%87%E6%94%BB%E5%87%BBfont&#34;&gt;&lt;font color=#0288D1&gt;e=1时的小明文攻击：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c009-%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E5%B9%BF%E6%92%AD%E6%94%BB%E5%87%BBfont&#34;&gt;&lt;font color=#EF6C00&gt;9. 低加密指数广播攻击&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%83%8C%E6%99%AFfont-1&#34;&gt;&lt;font color=#0288D1&gt;背景：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E9%80%82%E7%94%A8%E6%9D%A1%E4%BB%B6font&#34;&gt;&lt;font color=#0288D1&gt;适用条件：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E6%94%BB%E5%87%BB%E4%BB%A3%E7%A0%81font&#34;&gt;&lt;font color=#0288D1&gt;攻击代码&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font-6&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E8%84%9A%E6%9C%ACfont-3&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-coloref6c0010-%E4%BD%8E%E8%A7%A3%E5%AF%86%E6%8C%87%E6%95%B0%E6%94%BB%E5%87%BBfont&#34;&gt;&lt;font color=#EF6C00&gt;10. 低解密指数攻击&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%83%8C%E6%99%AFfont-2&#34;&gt;&lt;font color=#0288D1&gt;背景：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7rsa-wiener-attackfont&#34;&gt;&lt;font color=#6A1B9A&gt;下载工具：rsa-wiener-attack&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E4%BD%8E%E8%A7%A3%E5%AF%86%E6%8C%87%E6%95%B0%E6%94%BB%E5%87%BB%E7%9A%84%E7%89%B9%E7%82%B9font&#34;&gt;&lt;font color=#6A1B9A&gt;低解密指数攻击的特点：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E4%BE%8B%E9%A2%98font-7&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color0288d1%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4font&#34;&gt;&lt;font color=#0288D1&gt;解题步骤：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/#font-color6a1b9a%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%ACfont&#34;&gt;&lt;font color=#6A1B9A&gt;攻击脚本：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;font-color0288d1工具准备font&#34;&gt;&lt;font color=#0288D1&gt;工具准备：&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;font color=#EF6C00&gt;工具和第三方库的安装教程请自行百度&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;python3.8环境： &lt;a href=&#34;https://www.python.org/downloads/windows/&#34;&gt;https://www.python.org/downloads/windows/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大素数分解工具:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;factordb在线分解：http://factordb.com/&lt;/li&gt;
+&lt;li&gt;win10 yafu-x64：https://sourceforge.net/projects/yafu/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;python第三方库：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gmpy2&lt;/li&gt;
+&lt;li&gt;pycryptodome&lt;/li&gt;
+&lt;li&gt;libnum&lt;/li&gt;
+&lt;li&gt;sympy&lt;/li&gt;
+&lt;li&gt;rsa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;font-coloref6c001公钥解析签名加密font&#34;&gt;&lt;font color=#EF6C00&gt;1.公钥解析,签名加密&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;如果题目给了pem或者key后缀结尾的文件，用工具解析出n和e。或者可以用kali自带的Openssl从公钥文件中提取出n和e。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;命令：openssl rsa -pubin -text -modulus -in key.pem&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-color0288d1例题1font&#34;&gt;&lt;font color=#0288D1&gt;例题：1&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;BUURSA：&lt;/font&gt;     &lt;a href=&#34;https://buuoj.cn/challenges#RSA&#34;&gt;https://buuoj.cn/challenges#RSA&lt;/a&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;公钥文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-----BEGIN PUBLIC KEY-----
+MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAMAzLFxkrkcYL2wch21CM2kQVFpY9+7+
+/AvKr1rzQczdAgMBAAE=
+-----END PUBLIC KEY-----
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;在线网站解析公钥：&lt;/font&gt;
+&lt;a href=&#34;http://ctf.ssleye.com/&#34;&gt;http://ctf.ssleye.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;得到n和e之后，&lt;font color=#0288D1&gt;用factordb：&lt;/font&gt;
+&lt;a href=&#34;http://factordb.com/&#34;&gt;http://factordb.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;分解模n，得到p,q的值。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;rsa&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;#rsa模块&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;#gmpy2模块&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;65537&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;86934482296048119190666062003494800588905656017203025617216654058378322103517&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;285960468890451637935629440372639283459&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;304008741604601924494328155975272418463&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#求私钥d&lt;/span&gt;
+&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;phi = (p-1)*(q-1)
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;d = invert(e,phi)     #gmpy2.invert(),用来求模逆的方法
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;print(d)
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;81176168860169991027846870170527607562179635470395365333547868786951080991441&lt;/span&gt;
+
+
+&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rsa&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PrivateKey&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;#在pkcs标准中,pkcs#1规定,私钥包含(n,e,d,p,q)&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;C:&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;MIKEWYW&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Desktop&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;flag.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;rb&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#以二进制读模式，读取密文  &lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rsa&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;decrypt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;# f:公钥加密结果  key:私钥&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;h3 id=&#34;font-color0288d1例题2020西湖论剑brokensystemsfont&#34;&gt;&lt;font color=#0288D1&gt;例题：2020西湖论剑BrokenSystems&lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;font-color6a1b9a题目font&#34;&gt;&lt;font color=#6A1B9A&gt;题目&lt;/font&gt;&lt;/h4&gt;
+&lt;p&gt;BrokenSystems.py&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+from secret import flag
+import os
+rsa = RSA.generate(2048)
+public_key = rsa.publickey().exportKey()
+f=open(&amp;quot;public.key&amp;quot;,&amp;quot;w&amp;quot;)
+f.write(public_key.decode())
+f.close()
+
+rsakey=RSA.importKey(open(&amp;quot;public.key&amp;quot;,&amp;quot;r&amp;quot;).read())
+rsa = PKCS1_OAEP.new(rsakey)
+msg=rsa.encrypt(flag.encode())
+f=open(&amp;quot;message&amp;quot;,&amp;quot;wb&amp;quot;)
+f.write(msg)
+f.close()
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;public.txt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-----BEGIN PUBLIC KEY-----
+MIICITANBgkqhkiG9w0BAQEFAAOCAg4AMIICCQKCAQEAwgdFIj/1uUss2EEhZvco
+iiHyGH4aQhRTkYyrA8gCU0USM+sb3CNjdEIoqoaUqMLLyDP4Dd9AgxpokBsjC4Pz
+8P7Uty0LlCteld7ayNzABHoq+5DIHtctOtSbcvyL0NMWfd2qarUWfAWN82rxkLIW
+CFu9nWIfm9I6CT5OPZzDh7YnTywznIjhstkIrLM/TiDmR6vuBxSjzORkbolilLeB
+A9zJpNt+1oEWTG5sx/0zR24XSmxwcDeyUEkTZfnw63auq6B9svZi2IBIr5jIjHbG
+cQ25ZY1J/KDK8fXNmdwH8YhDK0j4VXEWitEPyCS3toK61sql0S/28EySeGtzirGb
+twKCAQAdLS8fFz+BzzaP7AbUDUf9kvhhXBLuwUFo8ohCeVK4z1pTj3C6M0G2oXOu
+gDdalrDThNlyKxkUn3iUc3Xgoz315pPtq9Xk1Ez/qeUl6gFPP6SZtfeymyGdkLiN
+pVquOghjczjXvtBW467Fdb5Wu95TSzVaLndX23rsqW541n8hUwt8PsJKxh+bR0qy
+gyIN2VRRNdBlpyTOL49E4y5GDu9fmVgAnFivWVGT135ywl8MsBUFuZPBNTKLEbUA
+3KvJVckXf4Od0ENYbiWjEzXn1UN9yebNbU6+yyk34WAmwnkuF0X0Tu1UEb6qtV7Q
+kF25GYy9QxERvodGL0Y2njHRpGE/
+-----END PUBLIC KEY-----
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;message.txt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Ω?奟?ypG睉晜&amp;lt; U,.
+W?盔敲m銖?.嗘7?s来薶 
+只Z???&#39;D?夞%莰}?~a,妄姷槢谏v}玊??#ad??$ 爝湆鄃 
+0遀; 
+#缮刜2?顪娪k+需?捨HD篹枒筡婌 辆 赅?跌婊	CD瓦?3?h¬?V?p琙|
+黡UU沯?酟讵分b澾硲€}?~QJ?绫摪	偑鳕塖
+?I骟?费JB_?O0&amp;amp;?髀
+SxN岑y?
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;font-color6a1b9a解题思路font&#34;&gt;&lt;font color=#6A1B9A&gt;解题思路&lt;/font&gt;&lt;/h4&gt;
+&lt;p&gt;首先进行公钥解析得到 n，e的值：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;n = 24493816160588971749455534346389861269947121809901305744877671102517333076424951483888863597563544011725032585417200878377314372325231470164799594965293350352923195632229495874587039720317200655351788887974047948082357232348155828924230567816817425104960545706688263839042183224681231800805037117758927837949941052360649778743187012198508745207332696876463490071925421229447425456903529626946628855874075846839745388326224970202749994059533831664092151570836853681204646481502222112116971464211748086292930029540995987019610460396057955900244074999111267618452967579699626655472948383601391620012180211885979095636919
+e = 3683191938452247871641914583009119792552938079110383367782698429399084083048335018186915282465581498846777124014232879019914546010406868697694661244001972931366227108140590201194336470785929194895915077935083045957890179080332615291089360169761324533970721460473221959270664692795701362942487885620152952927112838769014944652059440137350285198702402612151501564899791870051001152984815689187374906618917967106000628810361686645504356294175173529719443860140795170776862320812544438211122891112138748710073230404456268507750721647637959502454394140328030018450883598342764577147457231373121223878829298942493059211583
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们可以看出，e的值特别大。尝试&lt;strong&gt;winner攻击&lt;/strong&gt;，解得 d。(winner攻击在后面低解密指数攻击会详细介绍)&lt;/p&gt;
+&lt;p&gt;这时发现我们已知了n, e , d；但N不能直接分解，这里涉及到一个解密算法
+&lt;br&gt;
+&lt;font color=#0288D1&gt;已知n, e , d，求P,Q&lt;/font&gt;
+&lt;br&gt;
+&lt;a href=&#34;https://www.di-mgt.com.au/rsa_factorize_n.html&#34;&gt;https://www.di-mgt.com.au/rsa_factorize_n.html&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;得到n，e，d，p，q的值后，通过分析加密代码我们可以知道这里
+涉及&lt;font color=#6A1B9A&gt;Crypto.Cipher.PKCS1_OAEP&lt;/font&gt; 和 &lt;font color=#6A1B9A&gt;Crypto.PublicKey.RSA&lt;/font&gt; 的加密协议&lt;/p&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;Crypto的官方学习源文件&lt;/font&gt;
+&lt;a href=&#34;https://pythonhosted.org/pycrypto/Crypto-module.html&#34;&gt;https://pythonhosted.org/pycrypto/Crypto-module.html&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Python3解密脚本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Crypto.Cipher&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PKCS1_OAEP&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Crypto.PublicKey&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RSA&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;24493816160588971749455534346389861269947121809901305744877671102517333076424951483888863597563544011725032585417200878377314372325231470164799594965293350352923195632229495874587039720317200655351788887974047948082357232348155828924230567816817425104960545706688263839042183224681231800805037117758927837949941052360649778743187012198508745207332696876463490071925421229447425456903529626946628855874075846839745388326224970202749994059533831664092151570836853681204646481502222112116971464211748086292930029540995987019610460396057955900244074999111267618452967579699626655472948383601391620012180211885979095636919&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3683191938452247871641914583009119792552938079110383367782698429399084083048335018186915282465581498846777124014232879019914546010406868697694661244001972931366227108140590201194336470785929194895915077935083045957890179080332615291089360169761324533970721460473221959270664692795701362942487885620152952927112838769014944652059440137350285198702402612151501564899791870051001152984815689187374906618917967106000628810361686645504356294175173529719443860140795170776862320812544438211122891112138748710073230404456268507750721647637959502454394140328030018450883598342764577147457231373121223878829298942493059211583&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1779217788383673416690068487595062922771414230914791138743960472798057054853883175313487137767631446949382388070798609545617543049566741624609996040273727&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;149604112324264915811376746906108325951188179904814259006959765070266946659481820938211689946210254302179197289522748397160602946376246768419310765669852537378426700376878745285639531531077237124655345323906476180103106894642043615024716862503414785057646920410083538192951872861366496901158348770066798098371&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;163724217068973025857079545677048587508164102644298632911494474022224582218067057349189211462632427829087720476013052665037199232658015194718500750961261016558605363103092187533086949903145449057015220561698195502163792192055762108803714387175594231859738263839090338762578040513451585421537323416472060788989&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;RSA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;construct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cipher&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PKCS1_OAEP&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;C:&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;MIKEWYW&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Desktop&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;message.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;rb&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#以二进制读模式，读取密文  &lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cipher&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;decrypt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;代码中有看不懂的地方，如果是关于第三方库模块的，请认真学习一下上面的Crypto的官方学习源文件&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;font-coloref6c002-利用公约数求解font&#34;&gt;&lt;font color=#EF6C00&gt;2. 利用公约数求解&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;如果两次公钥的加密过程中使用的 n1 和 n2 具有相同的素因子，则可以利用欧几里得算法直接将 n1 和 n2 分解&lt;/font&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;p = gmpy2.gcd(n1,n2)   #gmpy2库函数gcd(),用于求最大公约数。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自定义函数gcd()欧几里得算法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def gcd(a,b):
+    if a&amp;lt;b:
+        a,b = b,a
+    while(b!=0):
+        temp = a%b
+        a = b
+        b = temp
+    return a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;对于欧几里得算法的时间复杂度，即便是4096bit级别的也是秒破级别。&lt;/p&gt;
+&lt;h1 id=&#34;font-coloref6c003-分解-n-得到多个相同的-pfont&#34;&gt;&lt;font color=#EF6C00&gt;3. 分解 N 得到多个相同的 P&lt;/font&gt;&lt;/h1&gt;
+&lt;h3 id=&#34;font-color0288d1知识点font&#34;&gt;&lt;font color=#0288D1&gt;知识点：&lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;font-color6a1b9a1欧拉函数的性质font&#34;&gt;&lt;font color=#6A1B9A&gt;1.欧拉函数的性质：&lt;/font&gt;&lt;/h4&gt;
+&lt;p&gt;p为素数，$n = p ^ a$
+所以 $φ(n) = (p-1) * p ^ {a-1} = p ^ a - p ^ {a-1}$&lt;/p&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;font-color6a1b9a2rsa加密公式font&#34;&gt;&lt;font color=#6A1B9A&gt;2.RSA加密公式：&lt;/font&gt;&lt;/h4&gt;
+&lt;p&gt;$n = p*q$，$φ(n) = (p-1) * (q-1)$
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;$e*d ≡ 1$ mod $φ(n)$，$C ≡ m^e$ mod $n$
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;$m ≡ C^d$ mod $n$
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-color0288d1例题font&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;由于暂时未找到这个考点的题目，下面的这个例题用的是一个博主发的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt;  
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;random&lt;/span&gt;  
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Crypto.Util.number&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;  
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;  
+  
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;generate_key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1024&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;  
+    &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getPrime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1024&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  
+    &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;randint&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  
+    &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;randint&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1024&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  
+	    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  
+	        &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;randint&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;  
+	        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gmpy2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gcd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  
+	            &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;  
+	    &lt;span class=&#34;n&#34;&gt;pubkey&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#返回e  和p^r  &lt;/span&gt;
+	    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pubkey&lt;/span&gt;  
+	  
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;crypt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pubkey&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;  
+    &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pubkey&lt;/span&gt;                            &lt;span class=&#34;c1&#34;&gt;#e  n=p^r  &lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bytes_to_long&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;      
+    &lt;span class=&#34;k&#34;&gt;assert&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;  
+    &lt;span class=&#34;n&#34;&gt;enc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;         
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;long_to_bytes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;enc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  
+  
+&lt;span class=&#34;n&#34;&gt;nbit&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1024&lt;/span&gt;  
+&lt;span class=&#34;n&#34;&gt;pubkey&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;generate_key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1024&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;pubkey =&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pubkey&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;#输出e  和p^r  &lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag值&lt;/span&gt;     
+&lt;span class=&#34;n&#34;&gt;enc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crypt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pubkey&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;    
+  
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;enc =&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;enc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;encode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;base64&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;h3 id=&#34;font-color0288d1解题思路font&#34;&gt;&lt;font color=#0288D1&gt;解题思路：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;通过分析加密脚本，我们可以知道：&lt;/p&gt;
+&lt;p&gt;已知e, $n=p^r$ , enc的值了。&lt;/p&gt;
+&lt;p&gt;由欧拉函数的性质可以得到：phi=$φ(n)=(p-1)*p^{r-1}=p^r-p^{r-1}$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;要求得 $m=c^d$ mod $n$ ,则先求d。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由于 $e*d=1$ mod $φ(n)$，求得d，则先求φ(n)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;题目给的是 $n=p^r$ ,所以先要分解n以获得p和r的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/images/N1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/images/N2.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;font-coloref6c004-dpdq-泄露font&#34;&gt;&lt;font color=#EF6C00&gt;4. dp、dq 泄露&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;攻击条件：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;已知p，q，dp，dq，c
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;关系公式：&lt;/font&gt;&lt;/p&gt;
+&lt;div&gt;
+$$\begin{cases}
+\ dp≡d mod (p-1)  \\
+\                \\
+\ dq≡d mod (q-1)  \\
+\end{cases}$$
+&lt;/div&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;解密公式：&lt;/font&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$m_1=c^{dp}$ mod $p$
+&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;$m_2=c^{dq}$ mod $q$
+&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;$m=(((m_1-m_2)*I)$$mod$ $p)*q+m_2$
+&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;I:乘法逆元，I=invert(q,p)
+&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;解密数学原理：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;利用中国剩余定理可得： $m_1≡c^d$ mod $p$，$m_2≡c^d$ mod $q$&lt;/p&gt;
+&lt;p&gt;&lt;font color=#EF6C00&gt;证明：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;由 $m≡c^d$ mod $n$,得 $m=c^d+k*n$&lt;/p&gt;
+&lt;p&gt;因为 $n = p * q$ ,所以 $m = c ^ d + k * p * q$&lt;/p&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;上述公式中，同时取余p和q，可分别得到：&lt;/font&gt;
+$m_1≡c^d$ mod $p$，$m_2≡c^d$ mod $q$&lt;/p&gt;
+&lt;p&gt;所以 $c ^ d = m_1 + k * p$ ，代入 $m_2 ≡ c ^ d$ mod $q$ 可得：$m_2 ≡ (m_1 + k * p)$ mod $q$&lt;/p&gt;
+&lt;p&gt;等式两边同时减去 $m_1$，可以得到：$(m_2-m_1)≡(k*p)$ mod $q$&lt;/p&gt;
+&lt;p&gt;这里因为gcd(p,q)=1 ,所以可以得到p的逆元，得：$(m_2-m_1)*p^{-1}≡k$ mod $q$    &lt;font color=#0288D1&gt;($p^{-1}$ 表示p的逆元，可用gmpy2.invert(q,p)函数求得)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;即：$k≡(m_2-m_1)*p^{-1}$ mod $q$&lt;/p&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;由$k ≡ (m_2 - m_1) * p ^ {-1}$ mod $q$ 和 $c ^ d = k * p + m_1$ &lt;/font&gt;&lt;/p&gt;
+&lt;div&gt;
+$\begin{cases}
+k≡(m_2-m_1)*p^{-1} mod q\\  
+c^d=k*p+m_1\\
+\end{cases}$
+&lt;/div&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;可得到：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;$c^d=((m_2-m_1)*p^{-1}$ mod $q)*p+m_1$&lt;/p&gt;
+&lt;br&gt;
+&lt;font color=#0288D1&gt;代入$m≡c^d$ mod $n$&lt;/font&gt;得：
+&lt;br&gt;
+$m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
+&lt;br&gt;
+&lt;h3 id=&#34;font-color0288d1例题font-1&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;BUURSA1
+&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8637633767257008567099653486541091171320491509433615447539162437911244175885667806398411790524083553445158113502227745206205327690939504032994699902053229&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12640674973996472769176047937170883420927050821480010581593137135372473880595613737337630629752577346147039284030082593490776630572584959954205336880228469&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6500795702216834621109042351193261530650043841056252930930949663358625016881832840728066026150264693076109354874099841380454881716097778307268116910582929&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;dq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;783472263673553449019532580386470672380574033551303889137911760438881683674556098098256795673512201963002175438762767516968043599582527539160811120550041&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;24722305403887382073567316467649080662631552905960229399079107995602154418176056335800638887527614164073530437657085079676157350205351945222989351316076486573599576041978339872265925062764318536089007310270278526159678937431903862892400747915525118983959970607934142974736675784325993445942031372107342103852&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;font-color0288d1解题代码font&#34;&gt;&lt;font color=#0288D1&gt;解题代码:&lt;/font&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8637633767257008567099653486541091171320491509433615447539162437911244175885667806398411790524083553445158113502227745206205327690939504032994699902053229&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12640674973996472769176047937170883420927050821480010581593137135372473880595613737337630629752577346147039284030082593490776630572584959954205336880228469&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6500795702216834621109042351193261530650043841056252930930949663358625016881832840728066026150264693076109354874099841380454881716097778307268116910582929&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;dq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;783472263673553449019532580386470672380574033551303889137911760438881683674556098098256795673512201963002175438762767516968043599582527539160811120550041&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;24722305403887382073567316467649080662631552905960229399079107995602154418176056335800638887527614164073530437657085079676157350205351945222989351316076486573599576041978339872265925062764318536089007310270278526159678937431903862892400747915525118983959970607934142974736675784325993445942031372107342103852&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#n=p*q&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;invert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;#求p的逆元&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;mp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;#求幂取模运算&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;mq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;#求幂取模运算&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mq&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#求明文公式&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#m = m%n(可以加上，不加也没事，这里数值不大)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;              &lt;span class=&#34;c1&#34;&gt;#n2s()函数，用于数值转字符串&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;font-coloref6c005-dp-泄露font&#34;&gt;&lt;font color=#EF6C00&gt;5. dp 泄露&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;攻击条件：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;已知e，n，dp，c&lt;/p&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;关系公式：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;dp≡d mod (p-1)&lt;/p&gt;
+&lt;p&gt;$φ(n) = (p-1) * (q-1)$&lt;/p&gt;
+&lt;p&gt;$d*e≡1$ mod $φ(n)$&lt;/p&gt;
+&lt;p&gt;$m≡c^d$ mod $n$&lt;/p&gt;
+&lt;p&gt;&lt;font color=#6A1B9A&gt;解密数学原理：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#EF6C00&gt;思路：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;1.破解m的关键在于获取到d&lt;/font&gt;
+&lt;br&gt;
+利用gmpy2库，d=gmpy2.invert(e,φ(n))
+&lt;br&gt;
+&lt;font color=#0288D1&gt;2.由$φ(n)=(p-1)*(q-1)$ ，dp≡d mod (p-1)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;可得到(p-1),进而得到p,q因为n已知,n=p*q&lt;/font&gt;
+&lt;br&gt;
+&lt;font color=#EF6C00&gt;证明：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;$dp * e ≡ d * e$ mod $(p-1)$
+&lt;br&gt;
+推导：$ed=k_2(p-1)+dp*e$  &lt;font color=#0288D1&gt;$(k_2为整数)$&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;由$e*d≡1$ mod $(p-1)(q-1)$ 得 $ed=k_1(q-1)(p-1)+1$&lt;/p&gt;
+&lt;p&gt;所以：$k_1(q-1)(p-1) + 1 = k_2(p-1) + dp * e$
+&lt;br&gt;
+推导得：$(p - 1)(k_1(q - 1) - k_2)+1 = dp * e$
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;令:$x=(k_1(q-1)-k_2)$，即$(p-1)x+1=dp*e$&lt;/p&gt;
+&lt;p&gt;因为 $dp&amp;lt;(p-1)$&lt;/p&gt;
+&lt;p&gt;所以 $e&amp;gt;x$&lt;/p&gt;
+&lt;p&gt;所以 $x∈(1,e)$&lt;/p&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;3.求出p后即可求出q，进而求得φ(n)，得到d&lt;/font&gt;
+&lt;br&gt;
+&lt;font color=#EF6C00&gt;通过遍历x，可求出存在p，使得n % p=0&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;关键代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;                   &lt;span class=&#34;c1&#34;&gt;#在范围(1,e)之间进行遍历&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#存在p，使得n能被p整除&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;phi&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;#欧拉定理&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gmpy2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;invert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;#求模逆&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;#快速求幂取模运算&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;font-color0288d1例题font-2&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;BUURSA2&lt;/p&gt;
+&lt;p&gt;题目&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;65537&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;248254007851526241177721526698901802985832766176221609612258877371620580060433101538328030305219918697643619814200930679612109885533801335348445023751670478437073055544724280684733298051599167660303645183146161497485358633681492129668802402065797789905550489547645118787266601929429724133167768465309665906113&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;905074498052346904643025132879518330691925174573054004621877253318682675055421970943552016695528560364834446303196939207056642927148093290374440210503657&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;140423670976252696807533673586209400575664282100684119784203527124521188996403826597436883766041879067494280957410201958935737360380801845453829293997433414188838725751796261702622028587211560353362847191060306578510511380965162133472698713063592621028959167072781482562673683090590521214218071160287665180751&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;font-color0288d1解题脚本font&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;65537&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;248254007851526241177721526698901802985832766176221609612258877371620580060433101538328030305219918697643619814200930679612109885533801335348445023751670478437073055544724280684733298051599167660303645183146161497485358633681492129668802402065797789905550489547645118787266601929429724133167768465309665906113&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;905074498052346904643025132879518330691925174573054004621877253318682675055421970943552016695528560364834446303196939207056642927148093290374440210503657&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;140423670976252696807533673586209400575664282100684119784203527124521188996403826597436883766041879067494280957410201958935737360380801845453829293997433414188838725751796261702622028587211560353362847191060306578510511380965162133472698713063592621028959167072781482562673683090590521214218071160287665180751&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;                   &lt;span class=&#34;c1&#34;&gt;#在范围(1,e)之间进行遍历&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#存在p，使得n能被p整除&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;phi&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;#欧拉定理&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;invert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;#求模逆&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;#快速求幂取模运算&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;#16进制转文本&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;font-coloref6c006-roll-按行加密font&#34;&gt;&lt;font color=#EF6C00&gt;6. Roll 按行加密&lt;/font&gt;&lt;/h1&gt;
+&lt;h3 id=&#34;font-color0288d1例题font-3&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;BUU RSAROLL
+&lt;a href=&#34;https://buuoj.cn/challenges#RSAROLL&#34;&gt;https://buuoj.cn/challenges#RSAROLL&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-color0288d1解题思路font-1&#34;&gt;&lt;font color=#0288D1&gt;解题思路：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;由图二可知 N 和 e 的值。
+把图二中的每行数据进行解密：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;920139713&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;18443&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;49891&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;19&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;phi&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;invert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;C:&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;MIKEWYW&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Desktop&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;BUURSA题目&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;ROLL&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Data.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;readlines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;                &lt;span class=&#34;c1&#34;&gt;#读取每一行&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;            
+
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;注意读取的密文数据要新建一个文本：只保留卷轴数据&lt;/p&gt;
+&lt;h1 id=&#34;font-coloref6c007-共模攻击font&#34;&gt;&lt;font color=#EF6C00&gt;7. 共模攻击&lt;/font&gt;&lt;/h1&gt;
+&lt;h3 id=&#34;font-color0288d1背景font&#34;&gt;&lt;font color=#0288D1&gt;背景：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;共模攻击，Common Modulus Attack,也称为同模攻击。同模攻击利用的大前提就是，RSA体系在生成密钥的过程中使用了相同的模数n。&lt;/p&gt;
+&lt;p&gt;对于同一条明文m，新手小白A和B对其进行加密：
+&lt;br&gt;
+A: $C_1≡M^{e_1}$ mod $n$
+&lt;br&gt;
+B: $C_2≡M^{e_2}$ mod $n$&lt;/p&gt;
+&lt;p&gt;如果，此时有一个攻击者，同时监听了A和B接收到的密文$C_1,C_1$。因为模数不变，以及所有的公钥都是公开的，那么利用同模攻击，就可以在不知道$d_1,d_2$的条件下破解明文M
+&lt;br&gt;&lt;/p&gt;
+&lt;h5 id=&#34;font-color6a1b9a攻击条件font&#34;&gt;&lt;font color=#6A1B9A&gt;攻击条件：&lt;/font&gt;&lt;/h5&gt;
+&lt;p&gt;已知 $n,e_1,e_2,c_1,c_2$&lt;/p&gt;
+&lt;h5 id=&#34;font-color6a1b9a解密数学原理font&#34;&gt;&lt;font color=#6A1B9A&gt;解密数学原理：&lt;/font&gt;&lt;/h5&gt;
+&lt;p&gt;当n一定时，已知 $e_1,e_2,c_1,c_2$&lt;/p&gt;
+&lt;p&gt;假设 $e_1,e_2$ 互质，即 $gcd(e_1,e_2)=1$
+&lt;br&gt;
+此时有：$e_1s_1+e_2s_2=1$
+&lt;font color=#0288D1&gt;(其中$s_1,s_2$为整数，且一正一负)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;通过扩展欧几里得算法，我们可以得到上式的一组解($s_1,s_2$)&lt;/p&gt;
+&lt;p&gt;假设$s_1$为正数，$s_2$为负数&lt;/p&gt;
+&lt;p&gt;因为$c_1≡m^{e_1}$ mod $n$，$c_2≡m^{e_2}$ mod $n$
+&lt;br&gt;
+所以:&lt;/p&gt;
+&lt;p&gt;$(c_1^{s_1}c_2^{s_2})$ mod $n$
+&lt;br&gt;
+=(($m^{e_1}$ mod $n$)$^{s_1}$ *($m^{e_2}$ mod $n$)$^{s_2}$) mod $n$
+&lt;br&gt;
+$=((m^{e_1s_1+e_2s_2}) mod n) mod n$
+&lt;br&gt;
+&lt;font color=#0288D1&gt;(由$e_1s_1+e_2s_2=1$)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;可得到：
+&lt;br&gt;
+$c_1^{s_1}c_2^{s_2} = m$ mod $n$&lt;/p&gt;
+&lt;p&gt;即：
+&lt;br&gt;
+$m = c_1^{s_1}c_2^{s_2}$ mod $n$&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;font-color0288d1例题font-4&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;BUU RSA3&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;c1=22322035275663237041646893770451933509324701913484303338076210603542612758956262869640822486470121149424485571361007421293675516338822195280313794991136048140918842471219840263536338886250492682739436410013436651161720725855484866690084788721349555662019879081501113222996123305533009325964377798892703161521852805956811219563883312896330156298621674684353919547558127920925706842808914762199011054955816534977675267395009575347820387073483928425066536361482774892370969520740304287456555508933372782327506569010772537497541764311429052216291198932092617792645253901478910801592878203564861118912045464959832566051361
+n=22708078815885011462462049064339185898712439277226831073457888403129378547350292420267016551819052430779004755846649044001024141485283286483130702616057274698473611149508798869706347501931583117632710700787228016480127677393649929530416598686027354216422565934459015161927613607902831542857977859612596282353679327773303727004407262197231586324599181983572622404590354084541788062262164510140605868122410388090174420147752408554129789760902300898046273909007852818474030770699647647363015102118956737673941354217692696044969695308506436573142565573487583507037356944848039864382339216266670673567488871508925311154801
+e1=11187289
+c2=18702010045187015556548691642394982835669262147230212731309938675226458555210425972429418449273410535387985931036711854265623905066805665751803269106880746769003478900791099590239513925449748814075904017471585572848473556490565450062664706449128415834787961947266259789785962922238701134079720414228414066193071495304612341052987455615930023536823801499269773357186087452747500840640419365011554421183037505653461286732740983702740822671148045619497667184586123657285604061875653909567822328914065337797733444640351518775487649819978262363617265797982843179630888729407238496650987720428708217115257989007867331698397
+e2=9647291
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;font-color0288d1解题脚本font-1&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;from libnum import*   #python第三方库
+from gmpy2 import*    #python第三方库
+
+n = 22708078815885011462462049064339185898712439277226831073457888403129378547350292420267016551819052430779004755846649044001024141485283286483130702616057274698473611149508798869706347501931583117632710700787228016480127677393649929530416598686027354216422565934459015161927613607902831542857977859612596282353679327773303727004407262197231586324599181983572622404590354084541788062262164510140605868122410388090174420147752408554129789760902300898046273909007852818474030770699647647363015102118956737673941354217692696044969695308506436573142565573487583507037356944848039864382339216266670673567488871508925311154801
+c1 = 22322035275663237041646893770451933509324701913484303338076210603542612758956262869640822486470121149424485571361007421293675516338822195280313794991136048140918842471219840263536338886250492682739436410013436651161720725855484866690084788721349555662019879081501113222996123305533009325964377798892703161521852805956811219563883312896330156298621674684353919547558127920925706842808914762199011054955816534977675267395009575347820387073483928425066536361482774892370969520740304287456555508933372782327506569010772537497541764311429052216291198932092617792645253901478910801592878203564861118912045464959832566051361
+c2 = 18702010045187015556548691642394982835669262147230212731309938675226458555210425972429418449273410535387985931036711854265623905066805665751803269106880746769003478900791099590239513925449748814075904017471585572848473556490565450062664706449128415834787961947266259789785962922238701134079720414228414066193071495304612341052987455615930023536823801499269773357186087452747500840640419365011554421183037505653461286732740983702740822671148045619497667184586123657285604061875653909567822328914065337797733444640351518775487649819978262363617265797982843179630888729407238496650987720428708217115257989007867331698397
+e1 = 11187289
+e2 = 9647291
+
+s = gcdext(e1,e2)    #gmpy2.gcdext(),扩展欧几里得算法，返回tuple元组，满足s[1]*e1+s[2]*e2=1
+
+m = pow(c1,s[1],n)*pow(c2,s[2],n)%n   #获取明文m
+
+print(n2s(m))
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;font-coloref6c008-低加密指数攻击font&#34;&gt;&lt;font color=#EF6C00&gt;8. 低加密指数攻击&lt;/font&gt;&lt;/h1&gt;
+&lt;h3 id=&#34;font-color0288d1e3时的小明文攻击font&#34;&gt;&lt;font color=#0288D1&gt;e=3时的小明文攻击：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;font color=#EF6C00&gt;特点：&lt;/font&gt;e=3，m很小，n很大&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当 e=3 时，如果明文过小，导致明文的三次方仍然小于n，那么通过直接对密文开三次方即可得到明文。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;即：$C ≡ m^e$ mod $n$,如果e=3，且 $m^e &amp;lt; n$，则：$C = m^e$，$m = \sqrt[3]{C}$&lt;/p&gt;
+&lt;p&gt;2.如果明文的三次方比n大，但不是足够大，那么设k有：
+$C=m^e+k*n$&lt;/p&gt;
+&lt;p&gt;爆破$k$，如果 $C - k * n$ 或者 $C + k * n$ 能开三次根式，那么就可以直接得到明文。&lt;/p&gt;
+&lt;h5 id=&#34;font-color6a1b9a关键代码font&#34;&gt;&lt;font color=#6A1B9A&gt;关键代码&lt;/font&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;iroot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;#或者 iroot(c-i*n,3)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;iroot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;font-color0288d1例题font-5&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h5&gt;
+&lt;p&gt;BUU Dangerous RSA&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://buuoj.cn/challenges#Dangerous%20RSA&#34;&gt;https://buuoj.cn/challenges#Dangerous%20RSA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;题目：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#n:  0x52d483c27cd806550fbe0e37a61af2e7cf5e0efb723dfc81174c918a27627779b21fa3c851e9e94188eaee3d5cd6f752406a43fbecb53e80836ff1e185d3ccd7782ea846c2e91a7b0808986666e0bdadbfb7bdd65670a589a4d2478e9adcafe97c6ee23614bcb2ecc23580f4d2e3cc1ecfec25c50da4bc754dde6c8bfd8d1fc16956c74d8e9196046a01dc9f3024e11461c294f29d7421140732fedacac97b8fe50999117d27943c953f18c4ff4f8c258d839764078d4b6ef6e8591e0ff5563b31a39e6374d0d41c8c46921c25e5904a817ef8e39e5c9b71225a83269693e0b7e3218fc5e5a1e8412ba16e588b3d6ac536dce39fcdfce81eec79979ea6872793L
+#e:  0x3
+#c:0x10652cdfaa6b63f6d7bd1109da08181e500e5643f5b240a9024bfa84d5f2cac9310562978347bb232d63e7289283871efab83d84ff5a7b64a94a79d34cfbd4ef121723ba1f663e514f83f6f01492b4e13e1bb4296d96ea5a353d3bf2edd2f449c03c4a3e995237985a596908adc741f32365
+so,how to get the message?
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;font-color0288d1解题思路font-2&#34;&gt;&lt;font color=#0288D1&gt;解题思路：&lt;/font&gt;&lt;/h5&gt;
+&lt;p&gt;假设我们 $Ｍ ^ e$ / n 商 k 余数为c，&lt;/p&gt;
+&lt;p&gt;所以$Ｍ ^ e$ = $k * n$ + C，对K进行爆破，只要k满足 k*n + C能够开方就可以&lt;/p&gt;
+&lt;h5 id=&#34;font-color0288d1解题脚本font-2&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#python第三方库&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;#python第三方库&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x52d483c27cd806550fbe0e37a61af2e7cf5e0efb723dfc81174c918a27627779b21fa3c851e9e94188eaee3d5cd6f752406a43fbecb53e80836ff1e185d3ccd7782ea846c2e91a7b0808986666e0bdadbfb7bdd65670a589a4d2478e9adcafe97c6ee23614bcb2ecc23580f4d2e3cc1ecfec25c50da4bc754dde6c8bfd8d1fc16956c74d8e9196046a01dc9f3024e11461c294f29d7421140732fedacac97b8fe50999117d27943c953f18c4ff4f8c258d839764078d4b6ef6e8591e0ff5563b31a39e6374d0d41c8c46921c25e5904a817ef8e39e5c9b71225a83269693e0b7e3218fc5e5a1e8412ba16e588b3d6ac536dce39fcdfce81eec79979ea6872793&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x10652cdfaa6b63f6d7bd1109da08181e500e5643f5b240a9024bfa84d5f2cac9310562978347bb232d63e7289283871efab83d84ff5a7b64a94a79d34cfbd4ef121723ba1f663e514f83f6f01492b4e13e1bb4296d96ea5a353d3bf2edd2f449c03c4a3e995237985a596908adc741f32365&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;iroot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;#或者 iroot(c-i*n,3)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;iroot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;font-color0288d1e2时的小明文攻击font&#34;&gt;&lt;font color=#0288D1&gt;e=2时的小明文攻击：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;e=2时，直接将密文C开平方获得解&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于e只有2，相当于把明文m平方而已，得到的C也比n小很多。尝试直接将C开根号看能否得到明文。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#python第三方库&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;#python第三方库&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=......&lt;/span&gt;              &lt;span class=&#34;c1&#34;&gt;#C的值&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;isqrt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;#开平方根&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#m=iroot(c,2)[0]      #开C的二次方根&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;font-color0288d1e1时的小明文攻击font&#34;&gt;&lt;font color=#0288D1&gt;e=1时的小明文攻击：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;加密过程：&lt;/p&gt;
+&lt;p&gt;C≡m mod n   ,明文与密文同模&lt;/p&gt;
+&lt;p&gt;所以有：m=C+n*k,爆破k&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=....&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=....&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;max_num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#设置遍历上限&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;max_num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;    
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;font-coloref6c009-低加密指数广播攻击font&#34;&gt;&lt;font color=#EF6C00&gt;9. 低加密指数广播攻击&lt;/font&gt;&lt;/h1&gt;
+&lt;h3 id=&#34;font-color0288d1背景font-1&#34;&gt;&lt;font color=#0288D1&gt;背景：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;如果选取的加密指数较低，并且使用相同的加密指数给一个接受者的群发送相同的信息，那么可以进行广播攻击得到明文&lt;/p&gt;
+&lt;h3 id=&#34;font-color0288d1适用条件font&#34;&gt;&lt;font color=#0288D1&gt;适用条件：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;模数n，密文C不同，明文m，加密指数e相同。（一般的话e=k，k是题目给出的n和c的组数）&lt;/p&gt;
+&lt;p&gt;例如：e=k=3&lt;/p&gt;
+&lt;p&gt;同余式组：&lt;/p&gt;
+&lt;div&gt;
+$\begin{cases}
+C_1≡m^e mod n_1\\
+C_2≡m^e mod n_2\\        
+C_3≡m^e mod n_3\\
+\end{cases}$
+&lt;/div&gt;
+&lt;p&gt;由中国剩余定理：&lt;/p&gt;
+&lt;p&gt;设$n_1,n_2,n_3$ 是两两互素的正整数，$M = n_1 * n_2 * n_3$
+&lt;br&gt;
+$M_i = \frac{M}{n_i}(i=1,2,3)$
+&lt;br&gt;
+则同余式组：
+$m^e≡C_i mod n_i(i=1,2,3)$&lt;/p&gt;
+&lt;p&gt;有唯一解：
+$m^e=X≡C_1M_1y_1+C_2M_2y_2+C_3M_3y_3$ $(mod$ $M)$
+&lt;br&gt;
+&lt;font color=#EF6C00&gt;其中$(M_iy_i≡1$ mod $n_i，i=1,2,3)$&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-color0288d1攻击代码font&#34;&gt;&lt;font color=#0288D1&gt;攻击代码&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;#python3，在$n_i$两两互质的情况下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;n1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=...&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=...&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;n3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=...&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=...&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=...&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=...&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;CRT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;reduce&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;lambda&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# ni 的乘积,N=n1*n2*n3&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a_i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;zip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# zip()将对象打包成元组&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;N_i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_i&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;#Mi=M/ni&lt;/span&gt;
+        &lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a_i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;invert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#sum=C1M1y1+C2M2y2+C3M3y3&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt; 
+
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CRT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;iroot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;font-color0288d1例题font-6&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;BUURSA4
+&lt;br&gt;
+&lt;a href=&#34;https://buuoj.cn/challenges#RSA4&#34;&gt;https://buuoj.cn/challenges#RSA4&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;N = 331310324212000030020214312244232222400142410423413104441140203003243002104333214202031202212403400220031202142322434104143104244241214204444443323000244130122022422310201104411044030113302323014101331214303223312402430402404413033243132101010422240133122211400434023222214231402403403200012221023341333340042343122302113410210110221233241303024431330001303404020104442443120130000334110042432010203401440404010003442001223042211442001413004 
+c = 310020004234033304244200421414413320341301002123030311202340222410301423440312412440240244110200112141140201224032402232131204213012303204422003300004011434102141321223311243242010014140422411342304322201241112402132203101131221223004022003120002110230023341143201404311340311134230140231412201333333142402423134333211302102413111111424430032440123340034044314223400401224111323000242234420441240411021023100222003123214343030122032301042243
+
+N = 302240000040421410144422133334143140011011044322223144412002220243001141141114123223331331304421113021231204322233120121444434210041232214144413244434424302311222143224402302432102242132244032010020113224011121043232143221203424243134044314022212024343100042342002432331144300214212414033414120004344211330224020301223033334324244031204240122301242232011303211220044222411134403012132420311110302442344021122101224411230002203344140143044114 
+c = 112200203404013430330214124004404423210041321043000303233141423344144222343401042200334033203124030011440014210112103234440312134032123400444344144233020130110134042102220302002413321102022414130443041144240310121020100310104334204234412411424420321211112232031121330310333414423433343322024400121200333330432223421433344122023012440013041401423202210124024431040013414313121123433424113113414422043330422002314144111134142044333404112240344
+
+N = 332200324410041111434222123043121331442103233332422341041340412034230003314420311333101344231212130200312041044324431141033004333110021013020140020011222012300020041342040004002220210223122111314112124333211132230332124022423141214031303144444134403024420111423244424030030003340213032121303213343020401304243330001314023030121034113334404440421242240113103203013341231330004332040302440011324004130324034323430143102401440130242321424020323 
+c = 10013444120141130322433204124002242224332334011124210012440241402342100410331131441303242011002101323040403311120421304422222200324402244243322422444414043342130111111330022213203030324422101133032212042042243101434342203204121042113212104212423330331134311311114143200011240002111312122234340003403312040401043021433112031334324322123304112340014030132021432101130211241134422413442312013042141212003102211300321404043012124332013240431242
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;font-color0288d1解题脚本font-3&#34;&gt;&lt;font color=#0288D1&gt;解题脚本：&lt;/font&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Crypto.Util.number&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 将5进制数转换为10进制数  int(&amp;#39;&amp;#39;,5)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;N1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;331310324212000030020214312244232222400142410423413104441140203003243002104333214202031202212403400220031202142322434104143104244241214204444443323000244130122022422310201104411044030113302323014101331214303223312402430402404413033243132101010422240133122211400434023222214231402403403200012221023341333340042343122302113410210110221233241303024431330001303404020104442443120130000334110042432010203401440404010003442001223042211442001413004&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;310020004234033304244200421414413320341301002123030311202340222410301423440312412440240244110200112141140201224032402232131204213012303204422003300004011434102141321223311243242010014140422411342304322201241112402132203101131221223004022003120002110230023341143201404311340311134230140231412201333333142402423134333211302102413111111424430032440123340034044314223400401224111323000242234420441240411021023100222003123214343030122032301042243&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;N2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;302240000040421410144422133334143140011011044322223144412002220243001141141114123223331331304421113021231204322233120121444434210041232214144413244434424302311222143224402302432102242132244032010020113224011121043232143221203424243134044314022212024343100042342002432331144300214212414033414120004344211330224020301223033334324244031204240122301242232011303211220044222411134403012132420311110302442344021122101224411230002203344140143044114&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;112200203404013430330214124004404423210041321043000303233141423344144222343401042200334033203124030011440014210112103234440312134032123400444344144233020130110134042102220302002413321102022414130443041144240310121020100310104334204234412411424420321211112232031121330310333414423433343322024400121200333330432223421433344122023012440013041401423202210124024431040013414313121123433424113113414422043330422002314144111134142044333404112240344&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;N3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;332200324410041111434222123043121331442103233332422341041340412034230003314420311333101344231212130200312041044324431141033004333110021013020140020011222012300020041342040004002220210223122111314112124333211132230332124022423141214031303144444134403024420111423244424030030003340213032121303213343020401304243330001314023030121034113334404440421242240113103203013341231330004332040302440011324004130324034323430143102401440130242321424020323&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;10013444120141130322433204124002242224332334011124210012440241402342100410331131441303242011002101323040403311120421304422222200324402244243322422444414043342130111111330022213203030324422101133032212042042243101434342203204121042113212104212423330331134311311114143200011240002111312122234340003403312040401043021433112031334324322123304112340014030132021432101130211241134422413442312013042141212003102211300321404043012124332013240431242&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;CRT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;reduce&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;lambda&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# ni 的乘积,N=n1*n2*n3&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a_i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;zip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# zip()将对象打包成元组&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;N_i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_i&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;#Mi=M/ni&lt;/span&gt;
+        &lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a_i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;invert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;#sum=C1M1y1+C2M2y2+C3M3y3&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt; 
+
+&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CRT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;iroot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;#开e次方根&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;#数值转字符串&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;font-coloref6c0010-低解密指数攻击font&#34;&gt;&lt;font color=#EF6C00&gt;10. 低解密指数攻击&lt;/font&gt;&lt;/h1&gt;
+&lt;h3 id=&#34;font-color0288d1背景font-2&#34;&gt;&lt;font color=#0288D1&gt;背景：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;font color=#EF6C00&gt;与低加密指数相同，低解密指数可以加快解密的过程，但同时也带来了安全问题。Wiener表示如果满足：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;$$d &amp;lt; \frac{1}{3}n^{\frac{1}{4}}$$&lt;/p&gt;
+&lt;p&gt;那么一种基于连分数（数论中的问题）的特殊攻击类型，就可以危害RSA的安全，此时需要满足：
+$$q &amp;lt; p &amp;lt; 2q$$&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;font color=#EF6C00&gt;如果满足上述条件，通过Wiener Attack 可以在多项式时间中分解n。&lt;/font&gt;&lt;/p&gt;
+&lt;h5 id=&#34;font-color6a1b9a下载工具rsa-wiener-attackfont&#34;&gt;&lt;font color=#6A1B9A&gt;下载工具：rsa-wiener-attack&lt;/font&gt;&lt;/h5&gt;
+&lt;p&gt;github上有公开的攻击代码。&lt;/p&gt;
+&lt;p&gt;将解密的代码放入wiener-attack的目录下即可。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;下载网址:
+&lt;a href=&#34;https://github.com/pablocelayes/rsa-wiener-attack&#34;&gt;https://github.com/pablocelayes/rsa-wiener-attack&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;font-color6a1b9a低解密指数攻击的特点font&#34;&gt;&lt;font color=#6A1B9A&gt;低解密指数攻击的特点：&lt;/font&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;font color=#EF6C00&gt;e看起来特别大就行，且n分解无望&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-color0288d1例题font-7&#34;&gt;&lt;font color=#0288D1&gt;例题：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;BUU rsa2
+&lt;br&gt;
+&lt;a href=&#34;https://buuoj.cn/challenges#rsa2&#34;&gt;https://buuoj.cn/challenges#rsa2&lt;/a&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;题目：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;N = 101991809777553253470276751399264740131157682329252673501792154507006158434432009141995367241962525705950046253400188884658262496534706438791515071885860897552736656899566915731297225817250639873643376310103992170646906557242832893914902053581087502512787303322747780420210884852166586717636559058152544979471
+e = 46731919563265721307105180410302518676676135509737992912625092976849075262192092549323082367518264378630543338219025744820916471913696072050291990620486581719410354385121760761374229374847695148230596005409978383369740305816082770283909611956355972181848077519920922059268376958811713365106925235218265173085
+
+import hashlib
+flag = &amp;quot;flag{&amp;quot; + hashlib.md5(hex(d)).hexdigest() + &amp;quot;}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;font-color0288d1解题步骤font&#34;&gt;&lt;font color=#0288D1&gt;解题步骤：&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;wiener攻击脚本用于求出d的值
+&lt;br&gt;
+（注意，这里要将攻击脚本和rsa-wiener-attack的py文件放在同一个目录下）&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/images/N3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;font-color6a1b9a攻击脚本font&#34;&gt;&lt;font color=#6A1B9A&gt;攻击脚本：&lt;/font&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;  &lt;span class=&#34;nn&#34;&gt;RSAwienerHacker&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;101991809777553253470276751399264740131157682329252673501792154507006158434432009141995367241962525705950046253400188884658262496534706438791515071885860897552736656899566915731297225817250639873643376310103992170646906557242832893914902053581087502512787303322747780420210884852166586717636559058152544979471&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;46731919563265721307105180410302518676676135509737992912625092976849075262192092549323082367518264378630543338219025744820916471913696072050291990620486581719410354385121760761374229374847695148230596005409978383369740305816082770283909611956355972181848077519920922059268376958811713365106925235218265173085&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;RSAwienerHacker&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hack_RSA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;得到d后在python2的环境下对其进行MD5哈希即可得到flag&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://cn1nja.github.io/categories/crypto-study/">Crypto Study</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://cn1nja.github.io/tags/rsa/">RSA</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>近世代数</title>

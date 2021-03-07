@@ -4,13 +4,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">CN1nja&#39;s Blog</title>
     <subtitle type="html"></subtitle>
-    <updated>2021-03-07T19:48:33&#43;08:00</updated>
-    <id>http://cn1nja.github.io/</id>
-    <link rel="alternate" type="text/html" href="http://cn1nja.github.io/" />
-    <link rel="self" type="application/atom&#43;xml" href="http://cn1nja.github.io/atom.xml" />
+    <updated>2021-03-07T20:05:56&#43;08:00</updated>
+    <id>https://cn1nja.github.io/</id>
+    <link rel="alternate" type="text/html" href="https://cn1nja.github.io/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://cn1nja.github.io/atom.xml" />
     <author>
             <name>CN1nja</name>
-            <uri>http://cn1nja.github.io/</uri>
+            <uri>https://cn1nja.github.io/</uri>
             
                 <email>mikecninja@gmail.com</email>
             </author>
@@ -18,50 +18,50 @@
     <generator uri="https://gohugo.io/" version="0.81.0">Hugo</generator>
         <entry>
             <title type="text">近世代数</title>
-            <link rel="alternate" type="text/html" href="http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/" />
-            <id>http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/</id>
+            <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/" />
+            <id>https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/</id>
             <updated>2021-03-07T19:09:23&#43;08:00</updated>
             <published>2021-03-07T15:09:30&#43;08:00</published>
             <author>
                     <name>CN1nja</name>
-                    <uri>http://cn1nja.github.io/</uri>
+                    <uri>https://cn1nja.github.io/</uri>
                     <email>mikecninja@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">代数基本知识: 群： 循环群： 加法循环群： 有限循环群的生成元还具有以下性质： 环： 域： 有限……</summary>
             
                 <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86font&#34;&gt;&lt;font color=#EF6C00&gt;代数基本知识:&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E7%BE%A4font&#34;&gt;&lt;font color=#EF6C00&gt;群：&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86font&#34;&gt;&lt;font color=#EF6C00&gt;代数基本知识:&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E7%BE%A4font&#34;&gt;&lt;font color=#EF6C00&gt;群：&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E5%BE%AA%E7%8E%AF%E7%BE%A4font&#34;&gt;&lt;font color=#6A1B9A&gt;循环群：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E5%8A%A0%E6%B3%95%E5%BE%AA%E7%8E%AF%E7%BE%A4font&#34;&gt;&lt;font color=#6A1B9A&gt;加法循环群：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E6%9C%89%E9%99%90%E5%BE%AA%E7%8E%AF%E7%BE%A4%E7%9A%84%E7%94%9F%E6%88%90%E5%85%83%E8%BF%98%E5%85%B7%E6%9C%89%E4%BB%A5%E4%B8%8B%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#6A1B9A&gt;有限循环群的生成元还具有以下性质：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E5%BE%AA%E7%8E%AF%E7%BE%A4font&#34;&gt;&lt;font color=#6A1B9A&gt;循环群：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E5%8A%A0%E6%B3%95%E5%BE%AA%E7%8E%AF%E7%BE%A4font&#34;&gt;&lt;font color=#6A1B9A&gt;加法循环群：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E6%9C%89%E9%99%90%E5%BE%AA%E7%8E%AF%E7%BE%A4%E7%9A%84%E7%94%9F%E6%88%90%E5%85%83%E8%BF%98%E5%85%B7%E6%9C%89%E4%BB%A5%E4%B8%8B%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#6A1B9A&gt;有限循环群的生成元还具有以下性质：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E7%8E%AFfont&#34;&gt;&lt;font color=#EF6C00&gt;环：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E5%9F%9Ffont&#34;&gt;&lt;font color=#EF6C00&gt;域：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E6%9C%89%E9%99%90%E5%9F%9Ffont&#34;&gt;&lt;font color=#EF6C00&gt;有限域：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%8E%AFfont&#34;&gt;&lt;font color=#EF6C00&gt;多项式环：&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E7%8E%AFfont&#34;&gt;&lt;font color=#EF6C00&gt;环：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E5%9F%9Ffont&#34;&gt;&lt;font color=#EF6C00&gt;域：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E6%9C%89%E9%99%90%E5%9F%9Ffont&#34;&gt;&lt;font color=#EF6C00&gt;有限域：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%8E%AFfont&#34;&gt;&lt;font color=#EF6C00&gt;多项式环：&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E4%B8%8D%E5%8F%AF%E7%BA%A6%E5%A4%9A%E9%A1%B9%E5%BC%8Ffont&#34;&gt;&lt;font color=#6A1B9A&gt;不可约多项式：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E4%B8%8D%E5%8F%AF%E7%BA%A6%E5%A4%9A%E9%A1%B9%E5%BC%8Ffont&#34;&gt;&lt;font color=#6A1B9A&gt;不可约多项式：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt;加密算法：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00z_p%E4%B8%8A%E7%9A%84%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98font&#34;&gt;&lt;font color=#EF6C00&gt;$Z_p$上的离散对数问题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00-elgamal%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt; ElGamal算法：&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt;加密算法：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00z_p%E4%B8%8A%E7%9A%84%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98font&#34;&gt;&lt;font color=#EF6C00&gt;$Z_p$上的离散对数问题：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00-elgamal%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt; ElGamal算法：&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E8%AE%A1%E7%AE%97%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E7%9A%84%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#6A1B9A&gt;计算离散对数的算法：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E8%AE%A1%E7%AE%97%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E7%9A%84%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#6A1B9A&gt;计算离散对数的算法：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00menezes-vanstone%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6font&#34;&gt;&lt;font color=#EF6C00&gt;Menezes-Vanstone椭圆曲线密码体制&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00diffie-hellman%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt;Diffie-Hellman算法:&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E4%B8%8A%E7%9A%84diffie-hellman%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt;椭圆曲线上的Diffie-Hellman算法:&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6font&#34;&gt;&lt;font color=#EF6C00&gt;椭圆曲线密码体制&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00menezes-vanstone%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6font&#34;&gt;&lt;font color=#EF6C00&gt;Menezes-Vanstone椭圆曲线密码体制&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00diffie-hellman%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt;Diffie-Hellman算法:&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E4%B8%8A%E7%9A%84diffie-hellman%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#EF6C00&gt;椭圆曲线上的Diffie-Hellman算法:&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-coloref6c00%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6font&#34;&gt;&lt;font color=#EF6C00&gt;椭圆曲线密码体制&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a1%E6%9C%89%E9%99%90%E5%9F%9F-f_p-%E4%B8%8A-ecc-%E7%9A%84%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99font&#34;&gt;&lt;font color=#6A1B9A&gt;1.有限域 $F_p$ 上 $ECC$ 的加法运算规则：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E6%9C%89%E9%99%90%E5%9F%9F%E6%A8%A1pfont&#34;&gt;&lt;font color=#6A1B9A&gt;有限域模p&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E7%9A%84%E9%98%B6font&#34;&gt;&lt;font color=#6A1B9A&gt;椭圆曲线的阶&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a2ecc%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0font&#34;&gt;&lt;font color=#6A1B9A&gt;2.ECC加密算法描述：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a1%E6%9C%89%E9%99%90%E5%9F%9F-f_p-%E4%B8%8A-ecc-%E7%9A%84%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99font&#34;&gt;&lt;font color=#6A1B9A&gt;1.有限域 $F_p$ 上 $ECC$ 的加法运算规则：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E6%9C%89%E9%99%90%E5%9F%9F%E6%A8%A1pfont&#34;&gt;&lt;font color=#6A1B9A&gt;有限域模p&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E7%9A%84%E9%98%B6font&#34;&gt;&lt;font color=#6A1B9A&gt;椭圆曲线的阶&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/#font-color6a1b9a2ecc%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0font&#34;&gt;&lt;font color=#6A1B9A&gt;2.ECC加密算法描述：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -344,7 +344,7 @@ $$4a^3+27b^2 \neq 0 mod  p$$
                             
                             
                             
-                                <category scheme="http://cn1nja.github.io/categories/crypto-study/" term="Crypto Study" label="Crypto Study" />
+                                <category scheme="https://cn1nja.github.io/categories/crypto-study/" term="Crypto Study" label="Crypto Study" />
                             
                         
                     
@@ -354,7 +354,7 @@ $$4a^3+27b^2 \neq 0 mod  p$$
                             
                             
                             
-                                <category scheme="http://cn1nja.github.io/tags/math%E5%9F%BA%E7%A1%80/" term="Math基础" label="Math基础" />
+                                <category scheme="https://cn1nja.github.io/tags/math%E5%9F%BA%E7%A1%80/" term="Math基础" label="Math基础" />
                             
                         
                     
@@ -364,75 +364,75 @@ $$4a^3+27b^2 \neq 0 mod  p$$
     
         <entry>
             <title type="text">《数论》</title>
-            <link rel="alternate" type="text/html" href="http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/" />
-            <id>http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</id>
+            <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/" />
+            <id>https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</id>
             <updated>2021-03-07T15:04:04&#43;08:00</updated>
             <published>2021-02-25T14:45:02&#43;08:00</published>
             <author>
                     <name>CN1nja</name>
-                    <uri>http://cn1nja.github.io/</uri>
+                    <uri>https://cn1nja.github.io/</uri>
                     <email>mikecninja@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">1.素数： 定义： 关于素数有以下事实： 2.最大公约数与最小公倍数 定义 1： 定义 2： 3.欧……</summary>
             
                 <content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d2-1%E7%B4%A0%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt; 1.素数：&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d2-1%E7%B4%A0%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt; 1.素数：&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315-%E5%AE%9A%E4%B9%89font&#34;&gt;&lt;font color=#D84315&gt; 定义：&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315-%E5%AE%9A%E4%B9%89font&#34;&gt;&lt;font color=#D84315&gt; 定义：&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorffb300%E5%85%B3%E4%BA%8E%E7%B4%A0%E6%95%B0%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%BA%8B%E5%AE%9Efont&#34;&gt;&lt;font color=#FFB300&gt;关于素数有以下事实：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorffb300%E5%85%B3%E4%BA%8E%E7%B4%A0%E6%95%B0%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%BA%8B%E5%AE%9Efont&#34;&gt;&lt;font color=#FFB300&gt;关于素数有以下事实：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d22%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt;2.最大公约数与最小公倍数&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d22%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt;2.最大公约数与最小公倍数&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89-1font&#34;&gt;&lt;font color=#D84315&gt;定义 1：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89-2font&#34;&gt;&lt;font color=#D84315&gt;定义 2：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89-1font&#34;&gt;&lt;font color=#D84315&gt;定义 1：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89-2font&#34;&gt;&lt;font color=#D84315&gt;定义 2：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d23%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt;3.欧拉函数&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d23%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt;3.欧拉函数&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#FF8F00&gt;性质：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d24%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97euclid%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#1976D2&gt;4.欧几里得(Euclid)算法&lt;/font&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-1&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d25%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#1976D2&gt;5.扩展欧几里得算法&lt;/font&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-2&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d26%E5%90%8C%E4%BD%99font&#34;&gt;&lt;font color=#1976D2&gt;6.同余&lt;/font&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-3&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d2%E5%90%8C%E4%BD%99%E7%9A%84%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#1976D2&gt;同余的性质&lt;/font&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8-1font&#34;&gt;&lt;font color=#FF8F00&gt;性质 1：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8-2font&#34;&gt;&lt;font color=#FF8F00&gt;性质 2：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#FF8F00&gt;性质：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d27%E6%A8%A1%E8%BF%90%E7%AE%97font&#34;&gt;&lt;font color=#1976D2&gt;7.模运算&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d24%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97euclid%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#1976D2&gt;4.欧几里得(Euclid)算法&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-4&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-1&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d28%E9%80%86font&#34;&gt;&lt;font color=#1976D2&gt;8.逆&lt;/font&gt;&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d25%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#1976D2&gt;5.扩展欧几里得算法&lt;/font&gt;&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-5&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-2&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d29%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86font&#34;&gt;&lt;font color=#1976D2&gt;9.中国剩余定理&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d210%E9%80%86%E5%85%83%E4%B8%8E%E5%90%8C%E4%BD%99%E5%BC%8F%E5%AE%9A%E7%90%86font&#34;&gt;&lt;font color=#1976D2&gt;10.逆元与同余式定理&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d26%E5%90%8C%E4%BD%99font&#34;&gt;&lt;font color=#1976D2&gt;6.同余&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-3&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d2%E5%90%8C%E4%BD%99%E7%9A%84%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#1976D2&gt;同余的性质&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8-1font&#34;&gt;&lt;font color=#FF8F00&gt;性质 1：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8-2font&#34;&gt;&lt;font color=#FF8F00&gt;性质 2：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d27%E6%A8%A1%E8%BF%90%E7%AE%97font&#34;&gt;&lt;font color=#1976D2&gt;7.模运算&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-4&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d28%E9%80%86font&#34;&gt;&lt;font color=#1976D2&gt;8.逆&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-5&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d29%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86font&#34;&gt;&lt;font color=#1976D2&gt;9.中国剩余定理&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d210%E9%80%86%E5%85%83%E4%B8%8E%E5%90%8C%E4%BD%99%E5%BC%8F%E5%AE%9A%E7%90%86font&#34;&gt;&lt;font color=#1976D2&gt;10.逆元与同余式定理&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;font-color1976d2-1素数font&#34;&gt;&lt;font color=#1976D2&gt; 1.素数：&lt;/font&gt;&lt;/h2&gt;
 &lt;h4 id=&#34;font-colord84315-定义font&#34;&gt;&lt;font color=#D84315&gt; 定义：&lt;/font&gt;&lt;/h4&gt;
@@ -655,7 +655,7 @@ $$n = P_1^{e_1} P_2^{e_2}…P_k^{e_k}$$
                             
                             
                             
-                                <category scheme="http://cn1nja.github.io/categories/crypto-study/" term="Crypto Study" label="Crypto Study" />
+                                <category scheme="https://cn1nja.github.io/categories/crypto-study/" term="Crypto Study" label="Crypto Study" />
                             
                         
                     
@@ -665,7 +665,7 @@ $$n = P_1^{e_1} P_2^{e_2}…P_k^{e_k}$$
                             
                             
                             
-                                <category scheme="http://cn1nja.github.io/tags/math%E5%9F%BA%E7%A1%80/" term="Math基础" label="Math基础" />
+                                <category scheme="https://cn1nja.github.io/tags/math%E5%9F%BA%E7%A1%80/" term="Math基础" label="Math基础" />
                             
                         
                     

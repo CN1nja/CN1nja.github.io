@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>CN1nja&#39;s Blog</title>
-        <link>https://cn1nja.github.io/</link>
+        <link>http://cn1nja.github.io/</link>
         <description></description>
         <generator>Hugo 0.81.0 https://gohugo.io/</generator>
         
@@ -23,27 +23,82 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 25 Feb 2021 22:42:01 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 07 Mar 2021 19:04:26 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://cn1nja.github.io/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="http://cn1nja.github.io/rss.xml" />
         
         
             <item>
                 <title>《数论》</title>
-                <link>https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</link>
-                <guid isPermaLink="true">https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</guid>
+                <link>http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</link>
+                <guid isPermaLink="true">http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</guid>
                 <pubDate>Thu, 25 Feb 2021 14:45:02 &#43;0800</pubDate>
                 
                     <author>mikecninja@gmail.com (CN1nja)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;h2 id=&#34;font-coloref6c00目录font&#34;&gt;&lt;font color=#EF6C00&gt;目录：&lt;/font&gt;&lt;/h2&gt;
-&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h2 id=&#34;font-color1976d21素数font&#34;&gt;&lt;font color=#1976D2&gt;1.素数：&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
+                    <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d2-1%E7%B4%A0%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt; 1.素数：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315-%E5%AE%9A%E4%B9%89font&#34;&gt;&lt;font color=#D84315&gt; 定义：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorffb300%E5%85%B3%E4%BA%8E%E7%B4%A0%E6%95%B0%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%BA%8B%E5%AE%9Efont&#34;&gt;&lt;font color=#FFB300&gt;关于素数有以下事实：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d22%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt;2.最大公约数与最小公倍数&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89-1font&#34;&gt;&lt;font color=#D84315&gt;定义 1：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89-2font&#34;&gt;&lt;font color=#D84315&gt;定义 2：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d23%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0font&#34;&gt;&lt;font color=#1976D2&gt;3.欧拉函数&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#FF8F00&gt;性质：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d24%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97euclid%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#1976D2&gt;4.欧几里得(Euclid)算法&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-1&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d25%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95font&#34;&gt;&lt;font color=#1976D2&gt;5.扩展欧几里得算法&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-2&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d26%E5%90%8C%E4%BD%99font&#34;&gt;&lt;font color=#1976D2&gt;6.同余&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-3&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d2%E5%90%8C%E4%BD%99%E7%9A%84%E6%80%A7%E8%B4%A8font&#34;&gt;&lt;font color=#1976D2&gt;同余的性质&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8-1font&#34;&gt;&lt;font color=#FF8F00&gt;性质 1：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colorff8f00%E6%80%A7%E8%B4%A8-2font&#34;&gt;&lt;font color=#FF8F00&gt;性质 2：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d27%E6%A8%A1%E8%BF%90%E7%AE%97font&#34;&gt;&lt;font color=#1976D2&gt;7.模运算&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-4&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d28%E9%80%86font&#34;&gt;&lt;font color=#1976D2&gt;8.逆&lt;/font&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-colord84315%E5%AE%9A%E4%B9%89font-5&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d29%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86font&#34;&gt;&lt;font color=#1976D2&gt;9.中国剩余定理&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/#font-color1976d210%E9%80%86%E5%85%83%E4%B8%8E%E5%90%8C%E4%BD%99%E5%BC%8F%E5%AE%9A%E7%90%86font&#34;&gt;&lt;font color=#1976D2&gt;10.逆元与同余式定理&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;font-color1976d2-1素数font&#34;&gt;&lt;font color=#1976D2&gt; 1.素数：&lt;/font&gt;&lt;/h2&gt;
 &lt;h4 id=&#34;font-colord84315-定义font&#34;&gt;&lt;font color=#D84315&gt; 定义：&lt;/font&gt;&lt;/h4&gt;
-&lt;br&gt;
 &lt;pre&gt;&lt;code&gt;一个大于1的自然数，除了1和它本身外，
 
 不能被其他自然数整除（除0以外）的数称之为素数（质数）；
@@ -56,7 +111,7 @@
 11除了等于11×1以外，不能表示为其它任何两个整数的乘积，
 
 所以11是一个素数。
-&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&#34;font-colorffb300关于素数有以下事实font&#34;&gt;&lt;font color=#FFB300&gt;关于素数有以下事实：&lt;/font&gt;&lt;/h6&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;font-colorffb300关于素数有以下事实font&#34;&gt;&lt;font color=#FFB300&gt;关于素数有以下事实：&lt;/font&gt;&lt;/h5&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -67,23 +122,19 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;pre&gt;&lt;code&gt;(2)(算术基本定理) 每个整数n ≥ 2，均可分解成素数幂之积：
 &lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-&lt;p&gt;$$n = P_1^{e_1} P_2^{e_2}…P_k^{e_k}$$&lt;/p&gt;
+$$n = P_1^{e_1} P_2^{e_2}…P_k^{e_k}$$
 &lt;br&gt;
-&lt;p&gt;若不计因数的顺序，这个分解式是唯一的。其中 k ≥ 1，$p_i$ $(1 ≤ i ≤ k)$ 是两两互不相同的素数，$e_i$ $(1 ≤ i ≤ k)$ 是正整数。
-&lt;br&gt;&lt;/p&gt;
+若不计因数的顺序，这个分解式是唯一的。其中 k ≥ 1，$p_i$ $(1 ≤ i ≤ k)$ 是两两互不相同的素数，$e_i$ $(1 ≤ i ≤ k)$ 是正整数。
+&lt;br&gt;
 &lt;pre&gt;&lt;code&gt;(3) 素数有无穷多个。
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-&lt;h2 id=&#34;font-color1976d22最大公约数与最小公倍数font&#34;&gt;&lt;font color=#1976D2&gt;2.最大公约数与最小公倍数&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colord84315定义-1font&#34;&gt;&lt;font color=#D84315&gt;定义 1：&lt;/font&gt;&lt;/h5&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;font-color1976d22最大公约数与最小公倍数font&#34;&gt;&lt;font color=#1976D2&gt;2.最大公约数与最小公倍数&lt;/font&gt;&lt;/h2&gt;
+&lt;h4 id=&#34;font-colord84315定义-1font&#34;&gt;&lt;font color=#D84315&gt;定义 1：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;设 $a_1，a_2$ 是两个整数。如果 $d | a_1$ 且 $d | a_2$，那么 d 就称为是 $a_1$ 和 $a_2$ 的公约数（或公因数）我们把 $a_1$ 和 $a_2$ 的公约数中最大的称为 $a_1$ 和 $a_2$ 的最大公约数，记作 $gcd(a_1,a_2).$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;当 $gcd(a_1,a_2) = 1$ 时，我们称 $a_1$ 和 $a_2$ 是互素的。&lt;/strong&gt;&lt;/p&gt;
-&lt;h5 id=&#34;font-colord84315定义-2font&#34;&gt;&lt;font color=#D84315&gt;定义 2：&lt;/font&gt;&lt;/h5&gt;
+&lt;h4 id=&#34;font-colord84315定义-2font&#34;&gt;&lt;font color=#D84315&gt;定义 2：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;设 $a_1，a_2$ 是两个整数。如果 $a_1 | l 且a_2 | l$ ，那么 $l$ 就称为是 $a_1$ 和 $a_2$ 的公倍数。我们把 $a_1$ 和 $a_2$ 的正的公倍数中的最小的称为 $a_1$ 和 $a_2$ 的最小公倍数，记作 $lcm(a_1,a_2)。$&lt;/p&gt;
-&lt;br&gt;
 &lt;h2 id=&#34;font-color1976d23欧拉函数font&#34;&gt;&lt;font color=#1976D2&gt;3.欧拉函数&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colord84315定义font&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h5&gt;
+&lt;h4 id=&#34;font-colord84315定义font&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;对正整数 $n$，欧拉函数是小于或等于 $n$ 的数中与 $n$ 互质的数的个数，&lt;/p&gt;
 &lt;p&gt;记作：$φ(n)$&lt;/p&gt;
 &lt;p&gt;例如：$φ(8) = 4$ ,因为 $1，3，5，7$ 均与 $8$ 互质。&lt;/p&gt;
@@ -94,36 +145,94 @@
 &lt;p&gt;(3) 若 n 为任意两个互质的 数 $a,b$ 的积，则：φ(a*b) = φ(a) × φ(b)&lt;/p&gt;
 &lt;p&gt;例：求 φ(40)，由于 40 = 5×8，所以 φ(40) = φ(5) × φ(8) = 4×4 = 16&lt;/p&gt;
 &lt;p&gt;(4)对于整数 $n≥2$，根据算术基本定理，$n$ 可以分解成唯一的形如 $n=p_1^{e_1}$$p_2^{e_2}$ ⋯$p_k^{e_k}$ 的分解式，则：$φ(n)=n(1-\frac{1}{p_1})(1-\frac{1}{p_2})⋯(1-\frac{1}{p_k})$&lt;/p&gt;
-&lt;br&gt;
 &lt;h2 id=&#34;font-color1976d24欧几里得euclid算法font&#34;&gt;&lt;font color=#1976D2&gt;4.欧几里得(Euclid)算法&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colord84315定义font-1&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h5&gt;
+&lt;h4 id=&#34;font-colord84315定义font-1&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;  欧几里得算法又称为辗转相除法，用于求两个数的最大公约数。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;原理：&lt;/strong&gt;$GCD(x,y)$ = $GCD$($y$，$x$ $mod$ $y$) ，$x&amp;gt;y$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1.python 代码实现&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://imgkr2.cn-bj.ufileos.com/470e68e6-8072-4086-bbe8-a9bf7bca60da.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;amp;Signature=QEWGGjkEaugvj7dwqkWP3vjhmnw%253D&amp;amp;Expires=1604108161&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2.python 第三方库：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2.python 第三方库：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;gmpy2.gcd(a,b)&lt;/strong&gt;     #求 a,b 的最大公约数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://imgkr2.cn-bj.ufileos.com/8f73b1e9-b28b-4f80-82a2-60d8b2970bac.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;amp;Signature=RVTRX%252BtPg4rAQodcMs5jZiC1AVw%253D&amp;amp;Expires=1604108206&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Crypto.Util.number&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://imgkr2.cn-bj.ufileos.com/e9df5c61-737c-4f8f-9b67-2940a85bf3d7.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;amp;Signature=4DloPFU1qmEuUNyiu%252F3LDHj5iaA%253D&amp;amp;Expires=1604108240&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&#34;font-color1976d25扩展欧几里得算法font&#34;&gt;&lt;font color=#1976D2&gt;5.扩展欧几里得算法&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colord84315定义font-2&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gcd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#求a,b的最大公约数&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Crypto.Util.number&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;Crypto.Util.number&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;#求a,b的最大公约数&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color1976d25扩展欧几里得算法font&#34;&gt;&lt;font color=#1976D2&gt;5.扩展欧几里得算法&lt;/font&gt;&lt;/h2&gt;
+&lt;h4 id=&#34;font-colord84315定义font-2&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;  在已知 $x，y$ 时，求解一组解 $a,b$，使得 $ax+by = GCD(x，y)$&lt;/p&gt;
 &lt;p&gt;算法输入：两个正整数 $x$ 和 $y$&lt;/p&gt;
 &lt;p&gt;算法输出：$x$ 和 $y$ 的最大公因数 $gcd(x,y)$ 及满足等式 $ax+by=gcd(x,y)$ 的整数 $a$ 和 $b$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;python 代码实现:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;gmpy2 库函数 gcdext()&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://imgkr2.cn-bj.ufileos.com/a2226658-f5c2-4a43-944d-90084bbab10c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;amp;Signature=xwcJAb3kNg%252FQ14ZjU7uIkHFGKNQ%253D&amp;amp;Expires=1604108300&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&#34;font-color1976d26同余font&#34;&gt;&lt;font color=#1976D2&gt;6.同余&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colord84315定义font-3&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;gmpy2&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;17&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;65537&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#扩展欧几里得算法&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gcdext&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 返回元祖tuple ，满足s[1]*x+s[2]*y = 1&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#输出：(mpz(1),mpz(30841),mpz(-8))&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 输出:1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color1976d26同余font&#34;&gt;&lt;font color=#1976D2&gt;6.同余&lt;/font&gt;&lt;/h2&gt;
+&lt;h4 id=&#34;font-colord84315定义font-3&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;  设 a,b 是整数，$n≠0$，如果 $n|(a-b)$，则称 $a$ 和 $b$ 模 $n$ &lt;strong&gt;同余&lt;/strong&gt;，记为 $a≡b$($mod$ $n$)，整数 $n$ 称为&lt;strong&gt;模数&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;  由于 $n|(a-b)$ 等价于 $-n|(a-b)$，所以 $a≡b$($mod$ $n$) 与 $a≡b$ $($ $mod$ $(-n)$ $)$ 等价。因此，一般我们总假定模数 $n≥1$。&lt;/p&gt;
-&lt;h5 id=&#34;font-color1976d2同余的性质font&#34;&gt;&lt;font color=#1976D2&gt;同余的性质&lt;/font&gt;&lt;/h5&gt;
+&lt;h4 id=&#34;font-color1976d2同余的性质font&#34;&gt;&lt;font color=#1976D2&gt;同余的性质&lt;/font&gt;&lt;/h4&gt;
 &lt;h5 id=&#34;font-colorff8f00性质-1font&#34;&gt;&lt;font color=#FF8F00&gt;性质 1：&lt;/font&gt;&lt;/h5&gt;
 &lt;p&gt;(1)自反性：a ≡ a (mod m)&lt;/p&gt;
 &lt;p&gt;(2)对称性：a ≡ b (mod m)， b ≡ c (mod m) ，则 a ≡ c (mod m)&lt;/p&gt;
@@ -131,16 +240,14 @@
 &lt;p&gt;&lt;strong&gt;(1)&lt;/strong&gt; 若 $a ≡ b$ ($mod$ $m$)，$c ≡ d$ ($mod$ $m$)&lt;/p&gt;
 &lt;p&gt;则：$a±c ≡ b±d$ ($mod$ $m$)，$ac ≡ bd$ ($mod$ $m$)&lt;/p&gt;
 &lt;p&gt;特别的，对于一个整数 e,都有 $a±e ≡ b±e$ ($mod$ $m$)，$ae ≡ be$ ($mod$ $m$)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;(2)&lt;/strong&gt; 若 $a ≡ b$ ($mod$ $m$)，k&amp;gt;0，则 ak ≡ bk (mod mk)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(2)&lt;/strong&gt; 若 $a ≡ b$ ($mod$ $m$)，k&amp;gt;0，则 $ak ≡ bk$ $(mod$ $mk)$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(3)&lt;/strong&gt;  若 $a ≡ b$ ($mod$ $m$)，d 是 a，b 的公因数，则 $\frac{a}{d} ≡ \frac{b}{d}$ (mod $\frac{m}{d}$)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(4)&lt;/strong&gt; 若 $a ≡ b$ ($mod$ $m$)，d|m，d&amp;gt;0，则: a ≡ b (mod d)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(5)&lt;/strong&gt; 若 $a ≡ b$ ($mod$ $m$)，则: $a^n$≡$b^n$ (mod m)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(6)&lt;/strong&gt; $(a×b)$ $mod$ $m$ = ($a$ $mod$ $m × b$ $mod$ $m$ ) $mod$ $m$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(7)&lt;/strong&gt; $a^b$ $mod$ $m$ = ($a$ $mod$ $m$)$^b$ $mod$ $m$&lt;/p&gt;
-&lt;br&gt;
 &lt;h2 id=&#34;font-color1976d27模运算font&#34;&gt;&lt;font color=#1976D2&gt;7.模运算&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colord84315定义font-4&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h5&gt;
+&lt;h4 id=&#34;font-colord84315定义font-4&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;  $a$ 模 $n$ 的运算给出了 $a$ 对模 $n$ 的余数，这种运算称为&lt;strong&gt;模运算&lt;/strong&gt;。注意：模运算的结果是从 0 到 $n-1$ 的一个整数。&lt;/p&gt;
 &lt;p&gt;  模运算就像普通的运算一样，它是可交换、可结合、可分配的。而且，对每一个中间结果进行模 $m$ 运算后再进行模 $m$ 运算，其作用与先进行全部运算，然后再进行模 $m$ 运算所得到的结果是一样的。例如：&lt;/p&gt;
 &lt;p&gt;$$(a+b) mod m=((a mod m)+(b mod m)) mod m$$&lt;/p&gt;
@@ -157,33 +264,26 @@
 &lt;p&gt;相反，应该进行三次比较小的乘法和三次比较小的模化简：&lt;/p&gt;
 &lt;p&gt;(($a^2$ mod n)$^2$ mod n)$^2$ mod n&lt;/p&gt;
 &lt;p&gt;这样就可以避免巨大的中间结果出现。&lt;/p&gt;
-&lt;br&gt;
 &lt;h2 id=&#34;font-color1976d28逆font&#34;&gt;&lt;font color=#1976D2&gt;8.逆&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colord84315定义font-5&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h5&gt;
+&lt;h4 id=&#34;font-colord84315定义font-5&#34;&gt;&lt;font color=#D84315&gt;定义：&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;若 m≥1，$gcd(a,m)=1$,则存在 c 使得：&lt;/p&gt;
 &lt;p&gt;$$ca≡1(mod m)$$&lt;/p&gt;
 &lt;p&gt;我们把 c 称为 a 对模 n 的逆，记作 $a^{-1}$ (mod m)，在模数已经指明的情况下，有时也记作 $a^{-1}$。&lt;/p&gt;
 &lt;p&gt;&lt;font color=#1976D2&gt;在(a,m)=1 时，我们可以使用扩展欧几里得算法来求 a 的逆元：$a^{-1}$，这是因为：扩展欧几里得算法可以找到整数 $x$,$y$ 使得 $ax+my=1$，这样 $a^{-1}=x$ ($mod$ $n$)&lt;/font&gt;&lt;/p&gt;
-&lt;br&gt;
 &lt;h2 id=&#34;font-color1976d29中国剩余定理font&#34;&gt;&lt;font color=#1976D2&gt;9.中国剩余定理&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;font-colorfbc02d中国剩余定理chinese-remainder-theoremcrt又称孙子定理最早可见于中国南北朝时期公元-5-世纪的数学著作孙子算经中为一次同余方程组的起源font&#34;&gt;&lt;font color=#FBC02D&gt;中国剩余定理（Chinese remainder theorem，CRT），又称孙子定理，最早可见于中国南北朝时期（公元 5 世纪）的数学著作《孙子算经》中，为一次同余方程组的起源。&lt;/font&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;font color=#FBC02D&gt;中国剩余定理（Chinese remainder theorem，CRT），又称孙子定理，最早可见于中国南北朝时期（公元 5 世纪）的数学著作《孙子算经》中，为一次同余方程组的起源。&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定理(CRT):&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;  设 $m_1,m_2,⋯, m_k$ 是两两互素的正整数，$M=m_1 m_2⋯m_k,$&lt;/p&gt;
 &lt;p&gt;$M_i=\frac{M}{m_i} (i=1,2,⋯,k)$,则同余方程组：&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;img src=&#34;https://imgkr2.cn-bj.ufileos.com/97f4bcf1-f3e0-4b12-a112-1f87e8bbf4ed.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;amp;Signature=yyom%252FO5rs9SOo2JX%252FHgNH9bQR8I%253D&amp;amp;Expires=1604107547&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;CRT.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;p&gt;有唯一解: $x=b_1 M_1 y_1+b_2 M_2 y_2+⋯+b_k M_k y_k$ ($mod$ $M$)&lt;/p&gt;
 &lt;p&gt;其中 $M_i y_i≡1$ ($mod$ $m_i$)，i=1,2,⋯,k&lt;/p&gt;
 &lt;br&gt;
 &lt;p&gt;代码实现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://imgkr2.cn-bj.ufileos.com/acfcd991-2d76-4024-94c3-dbd44425a36c.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;amp;Signature=wwwwAJbP9qDnGuWL5KzJJTHPT88%253D&amp;amp;Expires=1604108350&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;CRT1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color1976d210逆元与同余式定理font&#34;&gt;&lt;font color=#1976D2&gt;10.逆元与同余式定理&lt;/font&gt;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;br&gt;
 &lt;table&gt;&lt;tr&gt;&lt;td bgcolor=yellow&gt;&lt;font color=#26A69A&gt;1.模运算重要公式：&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;(a+b) % m = (a % m + b % m) % m&lt;/p&gt;
 &lt;p&gt;(a-b) % m = (a % m - b % m) % m&lt;/p&gt;
@@ -218,7 +318,7 @@
                                 
                                 
                                 
-                                    <category domain="https://cn1nja.github.io/categories/crypto-study/">Crypto Study</category>
+                                    <category domain="http://cn1nja.github.io/categories/crypto-study/">Crypto Study</category>
                                 
                             
                         
@@ -228,33 +328,9 @@
                                 
                                 
                                 
-                                    <category domain="https://cn1nja.github.io/tags/math%E5%9F%BA%E7%A1%80/">Math基础</category>
+                                    <category domain="http://cn1nja.github.io/tags/math%E5%9F%BA%E7%A1%80/">Math基础</category>
                                 
                             
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>Hello World</title>
-                <link>https://cn1nja.github.io/posts/hello-world/</link>
-                <guid isPermaLink="true">https://cn1nja.github.io/posts/hello-world/</guid>
-                <pubDate>Wed, 24 Feb 2021 14:16:27 &#43;0800</pubDate>
-                
-                    <author>mikecninja@gmail.com (CN1nja)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description></description>
-                
-                
-                
-                
-                
-                    
-                        
-                    
                         
                     
                 

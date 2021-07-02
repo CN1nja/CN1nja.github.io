@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 02 Jul 2021 14:16:23 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 02 Jul 2021 14:29:34 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://cn1nja.github.io/rss.xml" />
         
@@ -897,6 +897,50 @@ cExlX1BsY=
                                 
                                 
                                     <category domain="https://cn1nja.github.io/tags/buumisc%E5%88%B7%E9%A2%98/">BUUMisc刷题</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>2021CISCN线下半决赛</title>
+                <link>https://cn1nja.github.io/posts/2021ciscn%E7%BA%BF%E4%B8%8B%E5%8D%8A%E5%86%B3%E8%B5%9B/</link>
+                <guid isPermaLink="true">https://cn1nja.github.io/posts/2021ciscn%E7%BA%BF%E4%B8%8B%E5%8D%8A%E5%86%B3%E8%B5%9B/</guid>
+                <pubDate>Sun, 27 Jun 2021 12:25:42 &#43;0800</pubDate>
+                
+                    <author>mikecninja@gmail.com (CN1nja)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;&lt;font color=#A020F0&gt;第一天CTF,第二天AWD，&lt;del&gt;人没了&lt;/del&gt;。第一次打线下赛，还算顺利吧。AK了misc，Crypto 有一道没做。其他的都不会，两个cyt，一个re别想了。第二天的AWD全局挨打。参加线下后收获很多，明白了一件事，学习渗透&lt;del&gt;和PWN&lt;/del&gt;该安排上日程了。下半年准备打好湖湘杯。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#A020F0&gt;另一件开心的就是面基了 USher和Dem0师傅还有狠狠，开心!!!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#A020F0&gt;题目就不写了，太简单了hhhhhhhhhhh&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#A020F0&gt;华中科技大学网安学院是真的豪华（USher说建了100Y），建议报华中科大网安学院读书，教室都是人体工学椅。本科两人寝，本科以上一人寝。反正我是慕了慕了。唯一 的缺点就是太远了，累死QAQ&lt;/font&gt;&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://cn1nja.github.io/categories/ctf%E6%AF%94%E8%B5%9B/">CTF比赛</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://cn1nja.github.io/tags/ctfer/">ctfer</category>
                                 
                             
                         

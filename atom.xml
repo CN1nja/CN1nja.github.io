@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">CN1nja&#39;s Blog</title>
     <subtitle type="html"></subtitle>
-    <updated>2021-07-02T14:16:23&#43;08:00</updated>
+    <updated>2021-07-02T14:29:34&#43;08:00</updated>
     <id>https://cn1nja.github.io/</id>
     <link rel="alternate" type="text/html" href="https://cn1nja.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://cn1nja.github.io/atom.xml" />
@@ -891,6 +891,53 @@ cExlX1BsY=
                             
                             
                                 <category scheme="https://cn1nja.github.io/tags/buumisc%E5%88%B7%E9%A2%98/" term="BUUMisc刷题" label="BUUMisc刷题" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">2021CISCN线下半决赛</title>
+            <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/2021ciscn%E7%BA%BF%E4%B8%8B%E5%8D%8A%E5%86%B3%E8%B5%9B/" />
+            <id>https://cn1nja.github.io/posts/2021ciscn%E7%BA%BF%E4%B8%8B%E5%8D%8A%E5%86%B3%E8%B5%9B/</id>
+            <updated>2021-07-02T14:29:16&#43;08:00</updated>
+            <published>2021-06-27T12:25:42&#43;08:00</published>
+            <author>
+                    <name>CN1nja</name>
+                    <uri>https://cn1nja.github.io/</uri>
+                    <email>mikecninja@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">第一天CTF,第二天AWD，人没了。第一次打线下赛，还算顺利吧。AK了misc，Cr……</summary>
+            
+                <content type="html">&lt;p&gt;&lt;font color=#A020F0&gt;第一天CTF,第二天AWD，&lt;del&gt;人没了&lt;/del&gt;。第一次打线下赛，还算顺利吧。AK了misc，Crypto 有一道没做。其他的都不会，两个cyt，一个re别想了。第二天的AWD全局挨打。参加线下后收获很多，明白了一件事，学习渗透&lt;del&gt;和PWN&lt;/del&gt;该安排上日程了。下半年准备打好湖湘杯。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#A020F0&gt;另一件开心的就是面基了 USher和Dem0师傅还有狠狠，开心!!!&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#A020F0&gt;题目就不写了，太简单了hhhhhhhhhhh&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#A020F0&gt;华中科技大学网安学院是真的豪华（USher说建了100Y），建议报华中科大网安学院读书，教室都是人体工学椅。本科两人寝，本科以上一人寝。反正我是慕了慕了。唯一 的缺点就是太远了，累死QAQ&lt;/font&gt;&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/categories/ctf%E6%AF%94%E8%B5%9B/" term="CTF比赛" label="CTF比赛" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/tags/ctfer/" term="ctfer" label="ctfer" />
                             
                         
                     

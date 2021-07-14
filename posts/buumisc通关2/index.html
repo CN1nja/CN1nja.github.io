@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>BUUMisc通关2 | N1nja&#39;s Blog</title>
+
+    <link rel="stylesheet" href="/css/meme.min.c88088b7b0ca1272992f1fe5f9a13b2f72dcf7e54c4c31e08d3b37029a113308.css"/>
+
+    
+    
+        <script src="/js/meme.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="N1nja" /><meta name="description" content="真的很杂 知识点：APK反编译 参考这篇文章学习关于APK的知识 Android逆向基础-……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="N1nja&#39;s Blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="N1nja&#39;s Blog" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B32/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-07-03T12:52:13+08:00",
+        "dateModified": "2021-07-14T15:27:33+08:00",
+        "url": "https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B32/",
+        "headline": "BUUMisc通关2",
+        "description": "真的很杂 知识点：APK反编译 参考这篇文章学习关于APK的知识 Android逆向基础-……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  4446 ,
+        "image": ["https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210703133351874.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210703133506747.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/Snipaste_2021-07-05_20-35-30.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210406506.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210641030.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210713501.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705225118880.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705231253440.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705232918922.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705233249807.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210711160647984.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210711170007051.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210711170823355.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210711202406897.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/huyao.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/stillhuyao.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210712150649228.png"],
+        "author": {
+            "@type": "Person",
+            "description": "crypto player",
+            "email": "mikecninja@gmail.com",
+            "image": "https://cn1nja.github.io/icons/apple-touch-icon.png",
+            "url": "https://cn1nja.github.io/",
+            "name": "N1nja"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "N1nja's Blog",
+            "url": "https://cn1nja.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://cn1nja.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+    
+
+
+
+<meta property="og:title" content="BUUMisc通关2" />
+<meta property="og:description" content="真的很杂 知识点：APK反编译 参考这篇文章学习关于APK的知识 Android逆向基础-……" />
+<meta property="og:url" content="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B32/" />
+<meta property="og:site_name" content="N1nja&#39;s Blog" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210703133351874.png" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-07-03T12:52:13&#43;08:00" />
+    <meta property="article:modified_time" content="2021-07-14T15:27:33&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">N1nja&#39;s Blog</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">归档</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/links/"><span class="menu-item-name">友链</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">BUUMisc通关2</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2021-07-03T12:52:13&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.7.3</time>
+    
+    
+        
+        <time datetime="2021-07-14T15:27:33&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.7.14</time>
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/ctf%E8%AE%AD%E7%BB%83/" class="category-link p-category">CTF训练</a></span>
+            
+        
+    
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;9&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:font-color0288d1真的很杂font" href="#font-color0288d1真的很杂font"><font color=#0288D1>真的很杂</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点apk反编译font" href="#font-colora020f0知识点apk反编译font"><font color=#A020F0>知识点：APK反编译</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font" href="#font-colora020f0题目分析font"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1qctf2018x-man-a-facefont" href="#font-color0288d1qctf2018x-man-a-facefont"><font color=#0288D1>【QCTF2018】X-man-A face</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点二维码定位点缺失font" href="#font-colora020f0知识点二维码定位点缺失font"><font color=#A020F0>知识点：二维码定位点缺失</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-1" href="#font-colora020f0题目分析font-1"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1mrctf2020pyflagfont" href="#font-color0288d1mrctf2020pyflagfont"><font color=#0288D1>【MRCTF2020】pyFlag</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点zip文件python解码base编码font" href="#font-colora020f0知识点zip文件python解码base编码font"><font color=#A020F0>知识点：zip文件，python解码base编码</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-2" href="#font-colora020f0题目分析font-2"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1voipfont" href="#font-color0288d1voipfont"><font color=#0288D1>voip</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点voip-wikiwireshark分析voipfont" href="#font-colora020f0知识点voip-wikiwireshark分析voipfont"><font color=#A020F0>知识点：Voip-wiki，wireshark分析voip</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-3" href="#font-colora020f0题目分析font-3"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1business-planning-groupfont" href="#font-color0288d1business-planning-groupfont"><font color=#0288D1>Business Planning Group</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点bpg图像格式font" href="#font-colora020f0知识点bpg图像格式font"><font color=#A020F0>知识点：BPG图像格式</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-4" href="#font-colora020f0题目分析font-4"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1actf新生赛2020剑龙font" href="#font-color0288d1actf新生赛2020剑龙font"><font color=#0288D1>【ACTF新生赛2020】剑龙</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font" href="#font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font"><font color=#A020F0>知识点：AAencode、图片属性、stegosaurus隐写、steghide提取jpg隐写文件</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-5" href="#font-colora020f0题目分析font-5"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1watevrctf-2019evil-cutenessfont" href="#font-color0288d1watevrctf-2019evil-cutenessfont"><font color=#0288D1>【watevrCTF 2019】Evil Cuteness</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点jpg中隐写了zip文件font" href="#font-colora020f0知识点jpg中隐写了zip文件font"><font color=#A020F0>知识点：jpg中隐写了zip文件</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-6" href="#font-colora020f0题目分析font-6"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1utctf2020file-carvingfont" href="#font-color0288d1utctf2020file-carvingfont"><font color=#0288D1>【UTCTF2020】File Carving</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点linux下执行elf文件font" href="#font-colora020f0知识点linux下执行elf文件font"><font color=#A020F0>知识点：Linux下执行ELF文件</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-7" href="#font-colora020f0题目分析font-7"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1guet-ctf2019soul-sipsefont" href="#font-color0288d1guet-ctf2019soul-sipsefont"><font color=#0288D1>【GUET-CTF2019】soul sipse</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点steghide提取音频隐写文件unicode编码font" href="#font-colora020f0知识点steghide提取音频隐写文件unicode编码font"><font color=#A020F0>知识点：steghide提取音频隐写文件、Unicode编码</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-8" href="#font-colora020f0题目分析font-8"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1gwctf2019huyaofont" href="#font-color0288d1gwctf2019huyaofont"><font color=#0288D1>【GWCTF2019】huyao</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点频域盲水印font" href="#font-colora020f0知识点频域盲水印font"><font color=#A020F0>知识点：频域盲水印</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-9" href="#font-colora020f0题目分析font-9"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+  </ol>
+</nav><div class="post-body e-content">
+              <h2 id="font-color0288d1真的很杂font"><a href="#font-color0288d1真的很杂font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1真的很杂font" class="headings"><font color=#0288D1>真的很杂</font></a></h2>
+<h3 id="font-colora020f0知识点apk反编译font"><a href="#font-colora020f0知识点apk反编译font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点apk反编译font" class="headings"><font color=#A020F0>知识点：APK反编译</font></a></h3>
+<blockquote>
+<p>参考这篇文章学习关于APK的知识</p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/zhaijiahui/p/6916556.html" target="_blank" rel="noopener"><font color=#FFA500>Android逆向基础----APK文件结构</font></a></p>
+<blockquote>
+<p>APK文件结构：</p>
+<p>apk文件实际是一个zip压缩包，可以通过解压缩工具解开。</p>
+</blockquote>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th style="text-align:left">META-INF目录</th>
+<th style="text-align:left">存放的是签名信息，用来保证apk包的完整性和系统的安全。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">res目录</td>
+<td style="text-align:left">res是resource的缩写，这个目录存放资源文件</td>
+</tr>
+<tr>
+<td style="text-align:left">AndroidManifest.xml</td>
+<td style="text-align:left">是Android应用程序的配置文件，是一个用来描述Android应用“整体资讯”的设定文件， Android系统可以根据这个“自我介绍”完整地了解APK应用程序的资讯，每个Android应用程序都必须包含一个AndroidManifest.xml文件，且它的名字是固定的，不能修改。</td>
+</tr>
+<tr>
+<td style="text-align:left">classes.dex</td>
+<td style="text-align:left">传统的Java程序，首先先把Java文件编译成class文件，字节码都保存在了class文件中，Java虚拟机可以通过解释执行这些class文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">resources.arsc</td>
+<td style="text-align:left">用来记录资源文件和资源ID之间的映射关系，用来根据资源ID寻找资源。</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>APK反编译工具</p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/cnxkey/articles/11105308.html" target="_blank" rel="noopener"><font color=#FFA500>APK改之理（ApkIDE）v3.5.0 少月增强版</font></a></p>
+<h3 id="font-colora020f0题目分析font"><a href="#font-colora020f0题目分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>题目给了一张 <code>真的很杂.jpg</code></p>
+<blockquote>
+<p>使用 binwalk -e 真的很杂.jpg ，解析文件得到一份文件包，得到了下面这些文件：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># resources.arsc</span>
+<span class="c1"># classes.dex</span>
+<span class="c1"># AndroidManifest.xml</span>
+<span class="c1"># res目录</span>
+<span class="c1"># META-INF目录</span>
+<span class="c1"># 1438.zip</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>这里的 1438.zip 文件可以解压缩打开，和当前目录的文件是一样的。由apk文件实际是一个zip压缩包，可以通过解压缩工具解开。我们可以知道 1438.zip 应该为apk文件，改后缀为 .apk 用 APK IDE打开进行反编译。</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210703133351874.png" alt="image-20210703133351874"></p>
+<blockquote>
+<p>找到 flag{25f991b27fcdc2f7a82a2b34386e81c4}</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210703133506747.png" alt="image-20210703133506747"></p>
+<h2 id="font-color0288d1qctf2018x-man-a-facefont"><a href="#font-color0288d1qctf2018x-man-a-facefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1qctf2018x-man-a-facefont" class="headings"><font color=#0288D1>【QCTF2018】X-man-A face</font></a></h2>
+<h3 id="font-colora020f0知识点二维码定位点缺失font"><a href="#font-colora020f0知识点二维码定位点缺失font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点二维码定位点缺失font" class="headings"><font color=#A020F0>知识点：二维码定位点缺失</font></a></h3>
+<p>二维码有三个定位点，通常出题人会让二维码定位点缺失或者反色。</p>
+<p>定位点：左上，左下，右上</p>
+<h3 id="font-colora020f0题目分析font-1"><a href="#font-colora020f0题目分析font-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-1" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>直接用截屏软件截取定位点，然后补全空缺的，用微信扫二维码拿到 base32 编码，解码得到 flag:</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/Snipaste_2021-07-05_20-35-30.png" alt="Snipaste_2021-07-05_20-35-30"></p>
+<pre><code>QCTF{Pretty_Sister_Who_Buys_Me_Lobster}
+</code></pre><h2 id="font-color0288d1mrctf2020pyflagfont"><a href="#font-color0288d1mrctf2020pyflagfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1mrctf2020pyflagfont" class="headings"><font color=#0288D1>【MRCTF2020】pyFlag</font></a></h2>
+<h3 id="font-colora020f0知识点zip文件python解码base编码font"><a href="#font-colora020f0知识点zip文件python解码base编码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点zip文件python解码base编码font" class="headings"><font color=#A020F0>知识点：zip文件，python解码base编码</font></a></h3>
+<h3 id="font-colora020f0题目分析font-2"><a href="#font-colora020f0题目分析font-2" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-2" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>将三张图片用010editor打开，发现每张 jpg 的后面都有隐藏的 ZIP 信息：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Furan</span><span class="o">.</span><span class="n">jpg</span> 
+<span class="p">[</span><span class="n">Secret</span> <span class="n">File</span> <span class="n">Part</span> <span class="mi">2</span><span class="p">:]</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210406506.png" alt="image-20210705210406506"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Setsuna</span><span class="o">.</span><span class="n">jpg</span> 
+<span class="p">[</span><span class="n">Secret</span> <span class="n">File</span> <span class="n">Part</span> <span class="mi">1</span><span class="p">:]</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210641030.png" alt="image-20210705210641030"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Furan</span><span class="o">.</span><span class="n">jpg</span> 
+<span class="p">[</span><span class="n">Secret</span> <span class="n">File</span> <span class="n">Part</span> <span class="mi">2</span><span class="p">:]</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210713501.png" alt="image-20210705210713501"></p>
+<blockquote>
+<p>将三张图的 zip 信息提取出来，按顺序排好，保存为 zip文件。</p>
+</blockquote>
+<blockquote>
+<p>打开后发现是加密的 ，用 Ziperello 爆破密码，弱密码：1234</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># .hint.txt</span>
+<span class="err">我用各种</span><span class="n">baseXX编码把flag套娃加密了</span><span class="err">，你应该也有看出来。</span>
+<span class="err">但我只用了一些常用的</span><span class="n">base编码哦</span><span class="err">，毕竟我的智力水平你也知道</span><span class="o">...</span><span class="err">像什么</span><span class="n">base36base58听都没听过</span>
+<span class="err">提示：</span><span class="mh">0x10</span><span class="p">,</span><span class="mh">0x20</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x55</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># flag.txt</span>
+<span class="n">G</span><span class="o">&amp;</span><span class="n">eOhGcq</span><span class="p">(</span><span class="n">ZG</span><span class="p">(</span><span class="n">t2</span><span class="o">*</span><span class="n">H8M3dG</span><span class="o">&amp;</span><span class="n">wXiGcq</span><span class="p">(</span><span class="n">ZG</span><span class="o">&amp;</span><span class="n">wXyG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">tG</span><span class="o">&amp;</span><span class="n">eOdGcq</span><span class="o">+</span><span class="n">aG</span><span class="p">(</span><span class="n">t5oG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">qG</span><span class="o">&amp;</span><span class="n">eIeGcq</span><span class="o">+</span><span class="n">aG</span><span class="p">)</span><span class="mi">6</span><span class="n">Q</span><span class="o">&lt;</span><span class="n">G</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">rG</span><span class="o">&amp;</span><span class="n">eOdH9</span><span class="o">&lt;</span><span class="mi">5</span><span class="n">qG</span><span class="o">&amp;</span><span class="n">eLvG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">nRdH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rG</span><span class="o">%++</span><span class="n">qG</span><span class="o">%</span><span class="n">__eG</span><span class="o">&amp;</span><span class="n">eIeGc</span><span class="o">+|</span><span class="n">cG</span><span class="p">(</span><span class="n">t5oG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">eOlH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rH8C_qH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">oG</span><span class="o">&amp;</span><span class="n">eOhGc</span><span class="o">+</span><span class="n">_bG</span><span class="o">&amp;</span><span class="n">eLvH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">eLgGcz</span><span class="err">?</span><span class="n">cG</span><span class="o">&amp;</span><span class="mi">3</span><span class="o">|</span><span class="n">sH8M3cG</span><span class="o">&amp;</span><span class="n">eOtG</span><span class="o">%</span><span class="n">_</span><span class="err">?</span><span class="n">aG</span><span class="p">(</span><span class="n">t5oG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">tG</span><span class="o">&amp;</span><span class="n">wXxGcq</span><span class="o">+</span><span class="n">aH8V6sH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rG</span><span class="o">&amp;</span><span class="n">eOhH9</span><span class="o">&lt;</span><span class="mi">5</span><span class="n">qG</span><span class="p">(</span><span class="o">&lt;</span><span class="n">E</span><span class="o">-</span><span class="n">H8M3eG</span><span class="o">&amp;</span><span class="n">wXiGcq</span><span class="p">(</span><span class="n">ZG</span><span class="p">)</span><span class="mi">6</span><span class="n">Q</span><span class="o">&lt;</span><span class="n">G</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">tG</span><span class="o">&amp;</span><span class="n">eOtG</span><span class="o">%+&lt;</span><span class="n">aG</span><span class="o">&amp;</span><span class="n">wagG</span><span class="o">%</span><span class="n">__cG</span><span class="o">&amp;</span><span class="n">eIeGcq</span><span class="o">+</span><span class="n">aG</span><span class="o">&amp;</span><span class="n">M9uH8V6cG</span><span class="o">&amp;</span><span class="n">eOlH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rG</span><span class="p">(</span><span class="o">&lt;</span><span class="n">HrG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">qG</span><span class="o">&amp;</span><span class="n">eLcH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">wUwGek2</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>根据提示，解码应该是 base85,base16,base32,base48，但感觉base48应该出题人写错了。最后用代码解的时候，发现应该是base64解码</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">base64</span>
+<span class="n">s85</span> <span class="o">=</span> <span class="s1">&#39;G&amp;eOhGcq(ZG(t2*H8M3dG&amp;wXiGcq(ZG&amp;wXyG(j~tG&amp;eOdGcq+aG(t5oG(j~qG&amp;eIeGcq+aG)6Q&lt;G(j~rG&amp;eOdH9&lt;5qG&amp;eLvG(j~sG&amp;nRdH9&lt;8rG%++qG%__eG&amp;eIeGc+|cG(t5oG(j~sG&amp;eOlH9&lt;8rH8C_qH9&lt;8oG&amp;eOhGc+_bG&amp;eLvH9&lt;8sG&amp;eLgGcz?cG&amp;3|sH8M3cG&amp;eOtG%_?aG(t5oG(j~tG&amp;wXxGcq+aH8V6sH9&lt;8rG&amp;eOhH9&lt;5qG(&lt;E-H8M3eG&amp;wXiGcq(ZG)6Q&lt;G(j~tG&amp;eOtG%+&lt;aG&amp;wagG%__cG&amp;eIeGcq+aG&amp;M9uH8V6cG&amp;eOlH9&lt;8rG(&lt;HrG(j~qG&amp;eLcH9&lt;8sG&amp;wUwGek2)&#39;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b85decode</span><span class="p">(</span><span class="n">s85</span><span class="p">)</span>
+<span class="c1"># print(m)</span>
+<span class="c1"># 475532444B4E525549453244494E4A57475132544B514A54473432544F4E4A5547515A44474D4A5648415A54414E4257473434544B514A5647595A54514D5A5147553444474D5A5547453355434E5254475A42444B514A57494D3254534D5A5447555A444D4E5256494532444F4E4A57475A41544952425547343254454E534447595A544D524A5447415A55493D3D3D&#39;</span>
+
+<span class="n">s16</span> <span class="o">=</span> <span class="s1">&#39;475532444B4E525549453244494E4A57475132544B514A54473432544F4E4A5547515A44474D4A5648415A54414E4257473434544B514A5647595A54514D5A5147553444474D5A5547453355434E5254475A42444B514A57494D3254534D5A5447555A444D4E5256494532444F4E4A57475A41544952425547343254454E534447595A544D524A5447415A55493D3D3D&#39;</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b16decode</span><span class="p">(</span><span class="n">s16</span><span class="p">)</span>
+<span class="c1"># print(k)</span>
+
+<span class="n">s32</span> <span class="o">=</span> <span class="s1">&#39;GU2DKNRUIE2DINJWGQ2TKQJTG42TONJUGQZDGMJVHAZTANBWG44TKQJVGYZTQMZQGU4DGMZUGE3UCNRTGZBDKQJWIM2TSMZTGUZDMNRVIE2DONJWGZATIRBUG42TENSDGYZTMRJTGAZUI===&#39;</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b32decode</span><span class="p">(</span><span class="n">s32</span><span class="p">)</span>
+<span class="c1"># print(w)</span>
+
+<span class="n">s16</span> <span class="o">=</span> <span class="s1">&#39;54564A4456455A3757544231583046795A5638305833417A636B5A6C593352665A47566A4D47526C636E303D&#39;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b16decode</span><span class="p">(</span><span class="n">s16</span><span class="p">)</span>
+<span class="c1">#print(x)</span>
+
+<span class="n">s64</span> <span class="o">=</span> <span class="s1">&#39;TVJDVEZ7WTB1X0FyZV80X3AzckZlY3RfZGVjMGRlcn0=&#39;</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">s64</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+
+<span class="c1"># b&#39;MRCTF{Y0u_Are_4_p3rFect_dec0der}&#39;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>放一手出题人给的脚本和出题代码：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#解题脚本</span>
+
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">baseDec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b16decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b32decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b85decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">detect</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[0-9A-F=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Z2-7=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Za-z0-9+/=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="mi">4</span>
+
+<span class="k">def</span> <span class="nf">autoDec</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="sa">b</span><span class="s2">&#34;MRCTF{&#34;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+            <span class="k">break</span>
+
+        <span class="n">code</span> <span class="o">=</span> <span class="n">detect</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">baseDec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">code</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;flag.txt&#34;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">autoDec</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span><span class="lnt">97
+</span><span class="lnt">98
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># 出题脚本</span>
+
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;31214&#34;</span>
+<span class="c1"># key本来非常长。。似乎太难了改的简单了点</span>
+<span class="c1"># key = &#34;14332234124133132214311231&#34;</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;MRCTF{Y0u_Are_4_p3rFect_dec0der}&#34;</span>
+
+<span class="k">def</span> <span class="nf">baseEnc</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b16encode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b32encode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b85encode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">baseDec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b16decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b32decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b85decode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">finalEnc</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+    <span class="n">nf</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+        <span class="n">nf</span> <span class="o">=</span> <span class="n">baseEnc</span><span class="p">(</span><span class="n">nf</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+        <span class="c1">#print(&#34;第&#34;+str(count)+&#34;次加密: &#34;,nf)</span>
+        <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">nf</span>
+
+<span class="k">def</span> <span class="nf">finalDec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+    <span class="n">nf</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+        <span class="n">nf</span> <span class="o">=</span> <span class="n">baseDec</span><span class="p">(</span><span class="n">nf</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+        <span class="c1">#print(&#34;第&#34;+str(count)+&#34;次解密: &#34;,nf)</span>
+        <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">nf</span>
+
+<span class="k">def</span> <span class="nf">detect</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[0-9A-F=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Z2-7=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Za-z0-9+/=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="mi">4</span>
+
+<span class="k">def</span> <span class="nf">autoDec</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;dec key:&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="sa">b</span><span class="s2">&#34;MRCTF{&#34;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+            <span class="k">break</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">detect</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">baseDec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">code</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">code</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+
+
+<span class="n">fe</span> <span class="o">=</span> <span class="n">finalEnc</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;flag.txt&#34;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fe</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+<span class="s1">&#39;&#39;&#39;
+</span><span class="s1">ff = finalDec(fe,key)
+</span><span class="s1">print(ff)
+</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="n">ff</span> <span class="o">=</span> <span class="n">autoDec</span><span class="p">(</span><span class="n">fe</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1voipfont"><a href="#font-color0288d1voipfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1voipfont" class="headings"><font color=#0288D1>voip</font></a></h2>
+<h3 id="font-colora020f0知识点voip-wikiwireshark分析voipfont"><a href="#font-colora020f0知识点voip-wikiwireshark分析voipfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点voip-wikiwireshark分析voipfont" class="headings"><font color=#A020F0>知识点：Voip-wiki，wireshark分析voip</font></a></h3>
+<p><strong>voip:基于IP的语音传输---------------------------------from wiki</strong></p>
+<p>（英语：<strong>V</strong>oice <strong>o</strong>ver <strong>I</strong>nternet <strong>P</strong>rotocol，缩写：<strong>VoIP</strong>）是一种语音通话技术，经由<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">网际协议</a>（IP）来达成语音通话与<a href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E5%AA%92%E4%BD%93" target="_blank" rel="noopener">多媒体</a>会议，也就是经由<a href="https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91" target="_blank" rel="noopener">互联网</a>来进行通信。其他非正式的名称有IP电话（IP telephony）、互联网电话（Internet telephony）、宽带电话（broadband telephony）以及宽带电话服务（broadband phone service）。</p>
+<p>VoIP可用于包括<a href="https://zh.wikipedia.org/w/index.php?title=VoIP%E7%94%B5%E8%AF%9D&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">VoIP电话</a>、<a href="https://zh.wikipedia.org/wiki/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA" target="_blank" rel="noopener">智能手机</a>、个人计算机在内的诸多互联网接入设备，通过<a href="https://zh.wikipedia.org/wiki/%E8%9C%82%E7%AA%9D%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener">蜂窝网络</a>、<a href="https://zh.wikipedia.org/wiki/Wi-Fi" target="_blank" rel="noopener">Wi-Fi</a>进行通话及发送<a href="https://zh.wikipedia.org/wiki/%E7%B0%A1%E8%A8%8A" target="_blank" rel="noopener">短信</a>[<a href="https://zh.wikipedia.org/wiki/VoIP#cite_note-EBSCOhost-1" target="_blank" rel="noopener">1]</a>。</p>
+<h3 id="font-colora020f0题目分析font-3"><a href="#font-colora020f0题目分析font-3" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-3" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>用 wireshark 打开问文件后，可以直接主菜单点击 电话——&gt;VoIP电话 ——&gt; 播放流 就可以听到声音</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705225118880.png" alt="image-20210705225118880"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">听到</span> <span class="n">flag</span> <span class="err">为：</span><span class="n">seccon</span><span class="p">{</span><span class="mi">9001</span><span class="n">IVR</span><span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>用 Wireshark 可以知道，改文件使用的是RIP协议，工具栏中点击电话 ==&gt; RIP ==&gt; RIP流 ==&gt;播放流 就可以听到声音</p>
+<h2 id="font-color0288d1business-planning-groupfont"><a href="#font-color0288d1business-planning-groupfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1business-planning-groupfont" class="headings"><font color=#0288D1>Business Planning Group</font></a></h2>
+<h3 id="font-colora020f0知识点bpg图像格式font"><a href="#font-colora020f0知识点bpg图像格式font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点bpg图像格式font" class="headings"><font color=#A020F0>知识点：BPG图像格式</font></a></h3>
+<p>放一个大师傅的总结笔记：<a href="http://www.ga1axy.top/index.php/archives/4/#bpg%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">Ga1axy</a></p>
+<p><strong>BPG-------------------wiki</strong></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705231253440.png" alt="image-20210705231253440"></p>
+<h3 id="font-colora020f0题目分析font-4"><a href="#font-colora020f0题目分析font-4" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-4" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>打开图片后，在 PNG 的末尾可以发现 有 BPG 的标志，将后面的内容提取出来打包为 .bpg文件</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705232918922.png" alt="image-20210705232918922"></p>
+<blockquote>
+<p><strong>这里 bpg 文件用软件 Honeyview 可以正常打开</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705233249807.png" alt="image-20210705233249807"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># YnNpZGVzX2RlbGhpe0JQR19pNV9iM3R0M3JfN2g0bl9KUEd9Cg=</span>
+
+<span class="n">base64解码</span>
+
+<span class="c1"># bsides_delhi{BPG_i5_b3tt3r_7h4n_JPG}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1actf新生赛2020剑龙font"><a href="#font-color0288d1actf新生赛2020剑龙font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1actf新生赛2020剑龙font" class="headings"><font color=#0288D1>【ACTF新生赛2020】剑龙</font></a></h2>
+<h3 id="font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font"><a href="#font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font" class="headings"><font color=#A020F0>知识点：AAencode、图片属性、stegosaurus隐写、steghide提取jpg隐写文件</font></a></h3>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># AAencode：颜文字解密</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># stegosaurus隐写</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><strong>stegosaurus(剑龙)：用于在 Python 字节码中嵌入 Payload（有效载荷）的隐写术工具。</strong></p>
+<ul>
+<li>
+<p><a href="https://github.com/AngelKitty/stegosaurus" target="_blank" rel="noopener"><font color=#0288D1>工具下载网站</font></a></p>
+</li>
+<li>
+<p>用法：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">./</span><span class="n">stegosaurus</span> <span class="o">-</span><span class="n">x</span> <span class="n">x</span><span class="o">.</span><span class="n">pyc</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>Stegosaurus 是一种<a href="https://en.wikipedia.org/wiki/Steganography" target="_blank" rel="noopener">隐写术工具</a> ，允许在 Python 字节码（pyc 或 pyo）文件中嵌入任意有效负载。嵌入过程不会改变载体文件的运行时行为或文件大小，通常会导致低编码密度。有效载荷分散在整个字节码中，因此类似的工具 <code>strings</code> 不会显示实际的有效载荷。Python 的<code>dis</code>模块将在使用 Stegosaurus 嵌入有效载荷之前和之后返回相同的字节码结果。目前，对于这种类型的有效载荷传递，尚无已知的工作或检测方法。</p>
+<p>剑龙需要 Python 3.6 或更高版本。</p>
+</blockquote>
+<p>Stegosaurus 的基本用法如下：</p>
+<pre><code>$ python3 -m stegosaurus -h
+usage: stegosaurus.py [-h] [-p PAYLOAD] [-r] [-s] [-v] [-x] carrier
+  
+positional arguments:
+  carrier               Carrier py, pyc or pyo file
+  
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PAYLOAD, --payload PAYLOAD
+                        Embed payload in carrier file
+  -r, --report          Report max available payload size carrier supports
+  -s, --side-by-side    Do not overwrite carrier file, install side by side
+                        instead.
+  -v, --verbose         Increase verbosity once per use
+  -x, --extract         Extract payload from carrier file
+</code></pre></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># steghide提取jpg隐写文件</span>
+
+<span class="err">针对</span><span class="n">jpg格式图片的隐写</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><strong>安装：</strong></p>
+<p>kali： apt-get install steghide</p>
+<p><strong>用法</strong>：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏文件</span>
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="p">[</span><span class="err">图片或</span><span class="n">wav文件载体</span><span class="p">]</span> <span class="o">-</span><span class="n">ef</span> <span class="p">[</span><span class="err">待隐藏文件</span><span class="p">]</span>
+
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="mf">1.j</span><span class="n">pg</span> <span class="o">-</span><span class="n">ef</span> <span class="mf">1.</span><span class="n">txt</span>
+
+<span class="c1">#查看图片中嵌入的文件信息</span>
+<span class="n">steghide</span> <span class="n">info</span> <span class="mf">1.j</span><span class="n">pg</span>
+
+<span class="c1">#提取图片中隐藏的文件</span>
+<span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="mf">1.j</span><span class="n">pg</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h3 id="font-colora020f0题目分析font-5"><a href="#font-colora020f0题目分析font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-5" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>将所有文件解压后得到：</strong></p>
+<p><strong>hh.jpg  ， O_O ，  pwd.txt 这三个文件</strong></p>
+</blockquote>
+<p>非预期解：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">用</span><span class="n">linux</span> <span class="err">命令</span> <span class="nb">file</span> <span class="err">查看</span> <span class="n">O_O</span> <span class="err">文件，得到：</span>
+<span class="n">O_O</span><span class="p">:</span> <span class="n">python</span> <span class="mf">3.6</span> <span class="n">byte</span><span class="o">-</span><span class="n">compiled</span>
+<span class="n">google可以知道是</span> <span class="n">pyc文件</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>题目有提示过剑龙，说明题目进行了 stegosaurus 隐写</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># kali调用stegosaurus -x 命令从载体中提取payload：</span>
+
+<span class="o">./</span><span class="n">stegosaurus</span> <span class="o">-</span><span class="n">x</span> <span class="n">O_O</span><span class="o">.</span><span class="n">pyc</span>
+
+<span class="o">==&gt;</span> <span class="n">flag</span><span class="p">{</span><span class="mi">3</span><span class="n">teg0Sauru3_</span><span class="err">!</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>预期解：</p>
+<blockquote>
+<p>1、查看 pwd.txt</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># pwd.txt 打开后知道是颜文字加密，用在线网站解密得到：</span>
+<span class="n">welcom3</span><span class="err">!</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>2、 查看 hh.jpg 图片</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 在图片的属性中提示有密钥</span>
+<span class="err">@</span><span class="c1">#$%^&amp;%%$)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>3、用 steghide 提取 jpg 图片中隐写的文件</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="n">hh</span><span class="o">.</span><span class="n">jpg</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>得到 secret.txt 文件：</p>
+<p>想要flag吗？解出我的密文吧~</p>
+<p>U2FsdGVkX1/7KeHVl5984OsGUVSanPfPednHpK9lKvp0kdrxO4Tj/Q==</p>
+</blockquote>
+<p>经过尝试，是 DES加密，这里找一个好点的 解密网站</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210711160647984.png" alt="image-20210711160647984"></p>
+<p>剩下的操作就是用 stegosaurus 隐写</p>
+<h2 id="font-color0288d1watevrctf-2019evil-cutenessfont"><a href="#font-color0288d1watevrctf-2019evil-cutenessfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1watevrctf-2019evil-cutenessfont" class="headings"><font color=#0288D1>【watevrCTF 2019】Evil Cuteness</font></a></h2>
+<h3 id="font-colora020f0知识点jpg中隐写了zip文件font"><a href="#font-colora020f0知识点jpg中隐写了zip文件font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点jpg中隐写了zip文件font" class="headings"><font color=#A020F0>知识点：jpg中隐写了zip文件</font></a></h3>
+<p>就普通的在jpg中隐写了zip文件，用binwalk 分离 或者手动分离</p>
+<h3 id="font-colora020f0题目分析font-6"><a href="#font-colora020f0题目分析font-6" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-6" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>用 010 editor 打开，在jpg文件尾可以看到明显的 zip 文件头 50 4B 03 04，然后手动分离出 zip文件</p>
+<p>解压缩拿到 flag{7h475_4c7u4lly_r34lly_cu73_7h0u6h}</p>
+<h2 id="font-color0288d1utctf2020file-carvingfont"><a href="#font-color0288d1utctf2020file-carvingfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1utctf2020file-carvingfont" class="headings"><font color=#0288D1>【UTCTF2020】File Carving</font></a></h2>
+<h3 id="font-colora020f0知识点linux下执行elf文件font"><a href="#font-colora020f0知识点linux下执行elf文件font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点linux下执行elf文件font" class="headings"><font color=#A020F0>知识点：Linux下执行ELF文件</font></a></h3>
+<p><strong>在Linux中，可执行文件的格式是ELF格式。</strong></p>
+<p>1、<strong>file</strong> 命令查看文件的类型</p>
+<p>2、<strong>./</strong> 命令在当前目录下直接执行程序</p>
+<p>3、<strong>strings命令</strong>在对象文件或二进制文件中查找可打印的字符串。</p>
+<h3 id="font-colora020f0题目分析font-7"><a href="#font-colora020f0题目分析font-7" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-7" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>将图片用binwalk -e 命令提取隐藏文件，发现有 hidden_binary 文件，</p>
+<p>用 file hidden_binary 命令查看文件类型，可知为 ELF 文件，直接 ./hidden_binary 运行拿到</p>
+<p>flag{2fbe9adc2ad89c71da48cabe90a121c0}</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210711170007051.png" alt="image-20210711170007051"></p>
+<p>还可以使用 strings 命令，来查看文件中的所有ASCLL可打印字符</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210711170823355.png" alt="image-20210711170823355"></p>
+<h2 id="font-color0288d1guet-ctf2019soul-sipsefont"><a href="#font-color0288d1guet-ctf2019soul-sipsefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1guet-ctf2019soul-sipsefont" class="headings"><font color=#0288D1>【GUET-CTF2019】soul sipse</font></a></h2>
+<h3 id="font-colora020f0知识点steghide提取音频隐写文件unicode编码font"><a href="#font-colora020f0知识点steghide提取音频隐写文件unicode编码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点steghide提取音频隐写文件unicode编码font" class="headings"><font color=#A020F0>知识点：steghide提取音频隐写文件、Unicode编码</font></a></h3>
+<p><strong>Unicode编码有以下四种编码方式：</strong></p>
+<pre><code>源文本： The
+
+&amp;#x [Hex]： &amp;#x0054;&amp;#x0068;&amp;#x0065;
+
+&amp;# [Decimal]： &amp;#00084;&amp;#00104;&amp;#00101;
+
+\U [Hex]： \U0054\U0068\U0065
+
+\U+ [Hex]： \U+0054\U+0068\U+0065
+</code></pre><p><a href="http://www.mxcz.net/tools/Unicode.aspx" target="_blank" rel="noopener"><font color=#0288D1>unicode在线解码</font></a></p>
+<p><a href="https://tool.chinaz.com/tools/unicode.aspx" target="_blank" rel="noopener"><font color=#0288D1>站长工具</font></a></p>
+<p><strong>Steghide文件隐写：</strong></p>
+<p><strong>用法</strong>：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏文件</span>
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="p">[</span><span class="err">图片或</span><span class="n">wav文件载体</span><span class="p">]</span> <span class="o">-</span><span class="n">ef</span> <span class="p">[</span><span class="err">待隐藏文件</span><span class="p">]</span>
+
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="mf">1.j</span><span class="n">pg</span> <span class="o">-</span><span class="n">ef</span> <span class="mf">1.</span><span class="n">txt</span>
+
+<span class="c1">#查看图片中嵌入的文件信息</span>
+<span class="n">steghide</span> <span class="n">info</span> <span class="mf">1.j</span><span class="n">pg</span>
+
+<span class="c1">#提取图片中隐藏的文件</span>
+<span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="mf">1.j</span><span class="n">pg</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h3 id="font-colora020f0题目分析font-8"><a href="#font-colora020f0题目分析font-8" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-8" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>打开 out.wav 音频文件，从音频分析未果。用 steghide 命令查看是否有隐写的文件</p>
+<p>用<font color=#A020F0><code>steghide extract -sf out.wav</code></font>  命令分离出 download.txt 文件</p>
+<p><img src="/BUUCTF/2021/BUUMisc通关2/image-20210711202406897.png" alt="image-20210711202406897" /></p>
+<p>下载图片后，打不开。用010editor查看图片信息，发现文件头错误 应该为 89 50 4E 47。</p>
+<p>打开后得到下面：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">\<span class="n">u0034</span>\<span class="n">u0030</span>\<span class="n">u0037</span>\<span class="n">u0030</span>\<span class="n">u000d</span>\<span class="n">u000a</span>\<span class="n">u0031</span>\<span class="n">u0032</span>\<span class="n">u0033</span>\<span class="n">u0034</span>\<span class="n">u000d</span>\<span class="n">u000a</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>用在线工具解码<a href="http://www.mxcz.net/tools/Unicode.aspx" target="_blank" rel="noopener"><font color=#0288D1>unicode在线解码</font></a></p>
+<p>得到：flag{5304}</p>
+<h2 id="font-color0288d1gwctf2019huyaofont"><a href="#font-color0288d1gwctf2019huyaofont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1gwctf2019huyaofont" class="headings"><font color=#0288D1>【GWCTF2019】huyao</font></a></h2>
+<h3 id="font-colora020f0知识点频域盲水印font"><a href="#font-colora020f0知识点频域盲水印font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点频域盲水印font" class="headings"><font color=#A020F0>知识点：频域盲水印</font></a></h3>
+<p>相比传统水印添加的方法，频域盲水印的隐匿性与鲁棒性（抗攻击性）都更高，能抵挡大部分常见的攻击。</p>
+<p><strong>学习文章：</strong></p>
+<p><a href="https://hsnico.github.io/2020/07/14/Misc-%E9%A2%91%E5%9F%9F%E7%9B%B2%E6%B0%B4%E5%8D%B0%E6%8A%97%E6%94%BB%E5%87%BB%E6%80%A7%E6%B5%8B%E8%AF%95/" target="_blank" rel="noopener"><font color=#0288D1>频域盲水印攻击性测试</font></a></p>
+<p><a href="https://ulyc.github.io/2019/03/15/%E7%9B%B2%E6%B0%B4%E5%8D%B0%E5%92%8C%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E6%9C%AF/" target="_blank" rel="noopener"><font color=#0288D1>盲水印和图片隐写术</font></a></p>
+<p><a href="https://john-doe.fun/misc-tools/#NTFS%20Streams%20Editor" target="_blank" rel="noopener"><font color=#0288D1>Misc常用工具</font></a></p>
+<p><strong>Blind WaterMark盲水印：</strong></p>
+<ul>
+<li>
+<p>普通的盲水印</p>
+<p>GitHub 页面见 <a href="https://github.com/chishaxie/BlindWaterMark" target="_blank" rel="noopener"><font color=#0288D1>chishaxie/BlindWaterMark</font></a></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python3</span> <span class="n">bwm</span><span class="p">.</span><span class="n">py</span> <span class="n">encode</span> <span class="p">[</span><span class="n">原图</span><span class="p">]</span> <span class="p">[</span><span class="n">水印图片</span><span class="p">]</span> <span class="p">[</span><span class="n">加了水印的图片</span><span class="p">]</span>  <span class="c">#给图片加上水印</span>
+<span class="n">python3</span> <span class="n">bwm</span><span class="p">.</span><span class="n">py</span> <span class="n">decode</span> <span class="p">[</span><span class="n">原图</span><span class="p">]</span> <span class="p">[</span><span class="n">加了水印的图片</span><span class="p">]</span> <span class="p">[</span><span class="n">水印图片</span><span class="p">]</span>  <span class="c">#分离出图片的水印</span>
+</code></pre></td></tr></table></div>
+</div>
+</div></li>
+<li>
+<p>频域盲水印</p>
+<p>GitHub 页面见 <a href="https://github.com/linyacool/blind-watermark" target="_blank" rel="noopener"><font color=#0288D1>linyacool/blind-watermark</font></a></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">encode</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">image</span> <span class="p">[</span><span class="err">原图</span><span class="p">]</span> <span class="o">--</span><span class="n">watermark</span> <span class="p">[</span><span class="err">水印图片</span><span class="p">]</span> <span class="o">--</span><span class="n">result</span> <span class="p">[</span><span class="err">加了水印的图片</span><span class="p">]</span>  <span class="c1">#给图片加上水印</span>
+<span class="n">python2</span> <span class="n">decode</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">original</span> <span class="p">[</span><span class="err">原图</span><span class="p">]</span> <span class="o">--</span><span class="n">image</span> <span class="p">[</span><span class="err">加了水印的图片</span><span class="p">]</span> <span class="o">--</span><span class="n">result</span> <span class="p">[</span><span class="err">水印图片</span><span class="p">]</span>  <span class="c1">#分离出图片的水印</span>
+</code></pre></td></tr></table></div>
+</div>
+</div></li>
+</ul>
+<h3 id="font-colora020f0题目分析font-9"><a href="#font-colora020f0题目分析font-9" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-9" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>得到两张图片 <strong>huyao.png 、stillhuyao.png</strong>，看别人写的题解说是频域盲水印，没接触过...</p>
+<div style='display: flex;'>
+    <img src="/BUUCTF/2021/BUUMisc通关2/huyao.png" alt="huyao" width="200" />
+    <img src="/BUUCTF/2021/BUUMisc通关2/stillhuyao.png" alt="stillhuyao" width="200" />
+</div>
+<p>直接用下面的python脚本跑：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+
+<span class="n">ALPHA</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">def</span> <span class="nf">build_parser</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--original&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;ori&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--image&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--result&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;res&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--alpha&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">build_parser</span><span class="p">()</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">ori</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">ori</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">img</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">res</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">alpha</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">ori</span><span class="p">):</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&#34;original image </span><span class="si">%s</span><span class="s2"> does not exist.&#34;</span> <span class="o">%</span> <span class="n">ori</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&#34;image </span><span class="si">%s</span><span class="s2"> does not exist.&#34;</span> <span class="o">%</span> <span class="n">img</span><span class="p">)</span>
+    <span class="n">decode</span><span class="p">(</span><span class="n">ori</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">ori_path</span><span class="p">,</span> <span class="n">img_path</span><span class="p">,</span> <span class="n">res_path</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="n">ori</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">ori_path</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+    <span class="n">ori_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">ori</span><span class="p">)</span>
+    <span class="n">img_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">ori</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ori</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">watermark</span> <span class="o">=</span> <span class="p">(</span><span class="n">ori_f</span> <span class="o">-</span> <span class="n">img_f</span><span class="p">)</span> <span class="o">/</span> <span class="n">alpha</span>
+    <span class="n">watermark</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">watermark</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">watermark</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">height</span> <span class="o">+</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]][</span><span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">watermark</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">res_path</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">IMWRITE_JPEG_QUALITY</span><span class="p">),</span> <span class="mi">100</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>使用方法：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">blidwatermark</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">original</span> <span class="n">huyao</span><span class="o">.</span><span class="n">png</span> <span class="o">--</span><span class="n">image</span> <span class="n">stillhuyao</span><span class="o">.</span><span class="n">png</span> <span class="o">--</span><span class="n">result</span> <span class="n">out</span><span class="o">.</span><span class="n">png</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210712150649228.png" alt="image-20210712150649228"></p>
+<p>得到：flag{BWM_1s_c00l}</p>
+<p><strong>注意：</strong> 上面的脚本中缺失 cv2 库的话，使用下列命令安装</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pip2</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span><span class="o">==</span><span class="mf">4.2</span><span class="o">.</span><span class="mf">0.32</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>原因： Opencv 最新版不再支持 Python 2.7，而 pip install opencv-python 命令会下载最新版本Opencv。</p>
+</blockquote>
+<blockquote>
+<p>因此需要安装时指定opencv的老版本，最后一个支持 Python 2.7 的 Opencv 版本是 4.2.0.32。</p>
+</blockquote>
+
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://cn1nja.github.io/" class="p-author h-card" target="_blank" rel="noopener">N1nja</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/posts/buumisc%E9%80%9A%E5%85%B32/" target="_blank" rel="noopener">https://cn1nja.github.io/posts/buumisc通关2/</a></li>
+            
+            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-07-14 15:27:33 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-07-14</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-07-14</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B33/" class="related-link">BUUMisc通关3</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B31/" class="related-link">BUUMisc通关1</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buuweb%E9%80%9A%E5%85%B32/" class="related-link">BUUWeb通关2</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buuweb%E9%80%9A%E5%85%B31/" class="related-link">BUUWeb通关1</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/buumisc%E5%88%B7%E9%A2%98/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>BUUMisc刷题</a>
+                
+            
+        </div>
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/base%E7%BC%96%E7%A0%81%E9%9B%86%E5%90%88/" rel="prev">&lt; Base编码集合</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/misc%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E5%A4%B4/" rel="next">Misc常见文件头 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2021&nbsp;N1nja</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>

@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">N1nja&#39;s Blog</title>
     <subtitle type="html"></subtitle>
-    <updated>2021-07-14T21:17:51&#43;08:00</updated>
+    <updated>2021-07-15T17:53:04&#43;08:00</updated>
     <id>https://cn1nja.github.io/</id>
     <link rel="alternate" type="text/html" href="https://cn1nja.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://cn1nja.github.io/atom.xml" />
@@ -16,6 +16,294 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.81.0">Hugo</generator>
+        <entry>
+            <title type="text">BUUMisc通关4</title>
+            <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B34/" />
+            <id>https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B34/</id>
+            <updated>2021-07-15T17:52:42&#43;08:00</updated>
+            <published>2021-07-14T21:37:56&#43;08:00</published>
+            <author>
+                    <name>N1nja</name>
+                    <uri>https://cn1nja.github.io/</uri>
+                    <email>mikecninja@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">【INSHack2017】insanity-1 知识点：签到题 题目分析 INSA{Youre_crazy_I_like_it} 【BSides……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;font-color0288d1inshack2017insanity-1font&#34;&gt;&lt;font color=#0288D1&gt;【INSHack2017】insanity-1&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点签到题font&#34;&gt;&lt;font color=#A020F0&gt;知识点：签到题&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;INSA{Youre_crazy_I_like_it}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1bsidessf2019table-tennisfont&#34;&gt;&lt;font color=#0288D1&gt;【BSidesSF2019】table-tennis&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点流量包分析icmpfont&#34;&gt;&lt;font color=#A020F0&gt;知识点：流量包分析（ICMP）&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;解题脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;scapy.all&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;base64&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;packets&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rdpcap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;out.pcapng&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# rdpcap()读取pcapng文件&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packets&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 遍历每一个数据包&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;haslayer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ICMP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# haslayer()判断数据包的类型，此处为ICMP&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ICMP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 每一个ICMP的type值为0的包&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ICMP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:]),&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 打印每个&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# print(base64.b64decode(&amp;#34;Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&amp;#34;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;font-colora020f0题目分析font-1&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打开流量包，发现里面有 TLS通信协议，追踪 TCP流 看是不是和 TLS加密信息相关。查看后无果&lt;/p&gt;
+&lt;p&gt;分析流量包，发现有 ICMP 协议，打开发现里面有 HTML 文本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715114910804.png&#34; alt=&#34;image-20210715114910804&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;利用脚本将 HTML信息全部提取出来&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;scapy.all&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;base64&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;packets&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rdpcap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;out.pcapng&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# rdpcap()读取pcapng文件&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packets&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 遍历每一个数据包&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;haslayer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ICMP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# haslayer()判断数据包的类型，此处为ICMP&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ICMP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 每一个ICMP的type值为0的包&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;packet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ICMP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:]),&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 打印每个&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# print(base64.b64decode(&amp;#34;Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&amp;#34;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715123002951.png&#34; alt=&#34;image-20210715123002951&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;得到：Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;kali解码： echo Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9 | base64 -d&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715123610075.png&#34; alt=&#34;image-20210715123610075&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CTF{JustAS0ngAb0utP1ngP0ng}&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1mrctf2020小o的考研复试font&#34;&gt;&lt;font color=#0288D1&gt;【MRCTF2020】小O的考研复试&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点数学题font&#34;&gt;&lt;font color=#A020F0&gt;知识点：数学题&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-2&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;19260816&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000000007&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;flag{577302567}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1很好的色彩呃font&#34;&gt;&lt;font color=#0288D1&gt;很好的色彩呃？&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点图片的颜色16进制号font&#34;&gt;&lt;font color=#A020F0&gt;知识点：图片的颜色16进制号&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;图片的颜色的16进制编号作为 flag的16进制编码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;获取图片颜色16进制编码的工具，截图软件：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.snipaste.com/&#34;&gt;&lt;font color=#A020F0&gt;Snipaste&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-3&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目提示颜色，这里考点是 颜色的16进制编码信息&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用Snipaste进行截图，按 C复制颜色值，按 shift切换 RGB/Hex&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 得到&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#8b8b61&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#8b8b61&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#8b8b70&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#8b8b6a&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#8b8b65&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#8b8b73&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;发现只有后两位的值不同，将后两位值转换成字符&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;6161706&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a6573&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;pre&gt;&lt;code&gt;#cmd
+from libnum import*
+print(n2s(0x6161706a6573))
+#aapjes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;flag{aapjes}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1inshack2018self-congratulationfont&#34;&gt;&lt;font color=#0288D1&gt;【INSHack2018】Self Congratulation&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点脑洞题二进制转汉字网站font&#34;&gt;&lt;font color=#A020F0&gt;知识点：脑洞题、二进制转汉字网站&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.qqxiuzi.cn/bianma/erjinzhi.php&#34;&gt;&lt;font color=#0288D1&gt;二进制转字符网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-4&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;打开图片在左上角看到有类似二维码的图片&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715142808211.png&#34; alt=&#34;image-20210715142808211&#34;&gt;&lt;/p&gt;
+&lt;p&gt;将黑作为1，白作为0&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;00110001001
+10010001100
+11001101000
+01101010011
+01100011011
+10011100000
+
+001100010011001000110011001101000011010100110110001101110011100000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://www.qqxiuzi.cn/bianma/erjinzhi.php&#34;&gt;&lt;font color=#0288D1&gt;二进制转字符网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;flag{12345678}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1key不在这里font&#34;&gt;&lt;font color=#0288D1&gt;key不在这里&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点ascii编码font&#34;&gt;&lt;font color=#A020F0&gt;知识点：ASCII编码&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-5&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;扫码后打开一个url&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bing.com/search?q=key%E4%B8%8D%E5%9C%A8%E8%BF%99%E9%87%8C&amp;amp;m=10210897103375566531005253102975053545155505050521025256555254995410298561015151985150375568&amp;amp;qs=n&amp;amp;form=QBRE&amp;amp;sp=-1&amp;amp;sc=0-38&amp;amp;sk=&amp;amp;cvid=2CE15329C18147CBA4C1CA97C8E1BB8C&amp;amp;mkt=zh-CN&#34;&gt;https://www.bing.com/search?q=key%E4%B8%8D%E5%9C%A8%E8%BF%99%E9%87%8C&amp;amp;m=10210897103375566531005253102975053545155505050521025256555254995410298561015151985150375568&amp;amp;qs=n&amp;amp;form=QBRE&amp;amp;sp=-1&amp;amp;sc=0-38&amp;amp;sk=&amp;amp;cvid=2CE15329C18147CBA4C1CA97C8E1BB8C&amp;amp;mkt=zh-CN&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们把 m = 10210897103375566531005253102975053545155505050521025256555254995410298561015151985150375568&lt;/p&gt;
+&lt;p&gt;取出来观察发现 102,108,97,103对应的ASCII为 flag&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将&lt;/p&gt;
+&lt;p&gt;102,108,97,103,37,55,66,53,100,52,53,102,97,50,53,54,51,55,50,50,50,52,102,52,56,55,52,54,99,54,102,98,56,101,51,51,98,51,50,37,55,68&lt;/p&gt;
+&lt;p&gt;转换成字符得到：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#python3&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;102&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;108&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;97&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;103&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;37&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;66&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;53&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;52&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;53&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;102&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;97&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;53&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;54&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;51&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;52&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;102&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;52&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;56&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;52&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;54&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;54&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;102&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;98&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;56&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;101&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;51&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;51&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;98&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;51&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;37&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;68&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;chr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#flag%7B5d45fa256372224f48746c6fb8e33b32%7D&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;得到：&lt;strong&gt;flag{5d45fa256372224f48746c6fb8e33b32}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1inshack2018insanityfont&#34;&gt;&lt;font color=#0288D1&gt;【INSHack2018】INSanity&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点签到题font-1&#34;&gt;&lt;font color=#A020F0&gt;知识点：签到题&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-6&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;INSA{let_the_game_begin!}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1guet-ctf2019520的暗示font&#34;&gt;&lt;font color=#0288D1&gt;【GUET-CTF2019】520的暗示&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点dat文件font&#34;&gt;&lt;font color=#A020F0&gt;知识点：dat文件&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://baike.baidu.com/item/DAT%E6%96%87%E4%BB%B6/10895442&#34;&gt;&lt;font color=#0288D1&gt;dat文件百度百科&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DAT文件解密恢复工具：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lindi.cc/archives/301&#34;&gt;&lt;font color=#0288D1&gt;微信PC版DAT文件解密工具V0.4&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-7&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;打开题目是一份 dat 文件，用工具打开&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715162247047.png&#34; alt=&#34;image-20210715162247047&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;得到一张图片&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715162315117.png&#34; alt=&#34;image-20210715162315117&#34;&gt;&lt;/p&gt;
+&lt;p&gt;定位基站地址&lt;/p&gt;
+&lt;p&gt;这个可以基站定位：&lt;a href=&#34;http://api.cellocation.com:82/cell.html&#34;&gt;http://api.cellocation.com:82/cell.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这些查询网站经常会崩的，百度搜一下“基站定位查询” 就可以找到相关网站&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715163049087.png&#34; alt=&#34;image-20210715163049087&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;flag{桂林电子科技大学花江校区}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1actf新生赛2020frequencyfont&#34;&gt;&lt;font color=#0288D1&gt;【ACTF新生赛2020】frequency&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点word隐藏文字词频统计font&#34;&gt;&lt;font color=#A020F0&gt;知识点：word隐藏文字、词频统计&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-8&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打开word隐藏文字&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;得到前半段base64：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;a2draGxmY290bnRpdWZwZ2hodGN3dWprY2ttb3ducGNrbXdseWd0bHBtZmtneWFhaWh1Y2RsYXRveXVjb2lnZ3JwbGt2a2Ftcmt0cXp4ZW1taXdrbGh1YWVrY2VvbHBvY2ZtdGFobWdmbWF2YWpuYmNwbWx0anRwdWZqY2FwY3RvanBqYmZmYmpid2h1YWxnZ3lqbmFtY2JmeWFjamJheGtpeGxtbXFpa3NtcHRxeW9qZXJ0ZmVrdGR4ZHh4YnRyeGNhbmd5bXNpbWh2dXdrdGV4c2dscnRwZ2FrdGJtZnVjZ3ZubXRqdWZvZWt5bXRsaW14ZGlqanB4eWl0YWJwbWt1Y2NubGtwb2V0Z2NkY3Bvc2tpenZ5eHJ0enhyYXh0bm9paHFjeGZvYWFhbHBhanlja2VrYnljZnZqb21sbGthamd5bWdmZGNycGVxa2xmc2NtZWppY3BqaWtjcHBhY3h5ZXZma3ljcHBia2R6Y2ZsbGlrcW5pdGNrYmhqb3JuZGhzb21mdHlwYWhwcW94cnlpbWhmbGNoY21rb3JldG1yb3RrYXJjanRobWZ0aWxpam55a3V0aWhienR0dW1zbmdmdGxtcmJmZmx0ZndjbmptZmF0bGZiemxva3RscHBsbWZpY29rcHBucGFjbWZ1Z21wdW5kdnRvbXdldmNqc2dhamdmZXF1dXBhaWV0eW5mamJicGpzbHZ5bmFmdG1scHBka3R0b2Z1emppanhpdGJmaXJtb3ZwemVraXJic2Zqc2d6bHVrb2x5dm9obXZnY3BrdGhzeGZ6bW1ibm1sZHp5dWljZHZrbXpiYXlidG9yY2ZvdHRkYW1jY25iYXBucmd4bGN5cGh5Zm5jZXhidmRubG9rZ295aWxwcmxvbnNodGNranR4bmFiamhsbWJwZGNtaGtqbmxnbXRnam5qYWtyaXpsbHBtbWFscHhhbXVuaW51cGtwZGlhcHNzbXZrZGp2Z2l5b2R1bXBuYXBsamtqYmNmaHRoc2tpb2twZ3R0eWhubmRzeGtxanp2dmRvc2VwcG9pZ3l0bW5uYXZjdG9wZHlpeHZiZG9zb2JtY3ViaXVhanhoeWZrdnJremdjdXlpbHB2YXdheW5xYWFwbGJrd2lpeHJjdGN0bGt4ZmpscGVhbW1qbmF1amNvdWlmbXZpa2ZpbXJvYXF0Y3RjZm1hdWJnYWdva2FyZnFmaGVtb3NydHlmb3B1a3VkY2FhaW1oZGZvZ25oa3JjZWxwY2F0Y3RweWpsYXZva2xnY2xhdGx0bXR6eWdwZWhma3poY3R6bmdtb2ZjaXpsdm54dG5sdWFqbHRvdmNqYWp1YnphdHBlaGhma25uZ2dwbHlsaXZmZWFpZHJteWp0YWNhbXhjbmtmeXN0d2ZuZmx5bmJta2NrYXJ4YWlzcGpsa3ZjdHZrbHh1bmNmcGJ4dmlyaXFleXBtdXZ1bHZsamNrY3lwcHRwdmV0b3hobWlwYmlsbmplb3drd3VjdG9rbmFmcHdvYXBmdGNsemhwaHhjY2F0dGh1bXZ3aHpvbWFmd3Fxbmxzb3lhYnV0bHpwaWF0Zm1tYWprcmR2bGN6d2pwc3Nwb2FiaWZpcGhrb2NocHRrYXRrYWZlb255YmZpdmVjbGR6b2ZhdGV0Z2FsaGFmYW1vYXlvc291bm5hZmlhdGNqdGl3b29sYWNya2N1YWRwdXRreWxweXBiZ2ZlcHdwc25jd2tjd2xsYXJ5anNjYW5id3BkcHpicHR1dG5sbm9wd3BpdGJsb3RsbHppZmtsYWF1cmpwaWFqZnB0a2ZteHBic3VjdmpzZ21jYWxhbnRyc2NrYmt1eWZnYWFrZmFjbmxkdXZxZXR5amdqbW5hZWFjbmdheGNuYW1qbWlna2tpdW1sbmR3Y2ttdWFuYW52cnJiZnp4enl1dWVob25lbWxjanp1dm9hanVmZGdqampjZ21ucHRmdXVjdWJjdGpoYW1sb2xmaG9pZnZia2themNwb3pjeXVjYnJnb2picG5haGNneXV0dGR2bXR0dndqbWhic2ptYmJhdmNkbHlob3Fqb21wY3B2aHRrb2FpcnZ0bWtmZnlhdGttcHR1dW9vb2xncG5udWVsaGZodnZpc3Vrd3lubWlhY25sbHVtaHRqZWt1YXV1cGxyeGtpZXB1anhsaWNma2NiY2htbmdsZ3BsaWhteWNybnNvbWF3dWZ1b29tdXVuaGRvb2FydWRhbW9hbW9ocW9vY2Z1cGp1aWFieHh1dnl2bm9zb3Vvb3Zha2xjZmt0eXJmYWdmYXl2cHVmdnBiZ3RhZmVraXBpY292dGZ0bnV4c2phdmpkcWt2ZnVpa2x0bWRrYmJua3BhZnhycXBmZ2N0dmFzY3VqamN1Y2h1YXpjaXVtdHRkbmF3aWhtbW9qZmJoeHZvbXRmcGJmaHR2aXdsYXVlb2dwcG1qc3BjYWxmaGNhcmtsYmlzcGh0anBhbmhsaXNwbnRza2tjbGpnZ2tjenRmaG5lY25wdGlmZnRyZG10amZla2ZpdGthc2RnbmVscHVoYmZpbXB1Y2JrcGtjbXhsZmtwaWlqdmh0amtzeWx6cm9vZmFjeGNscGpuaGJpcmN5ZGp0Y2xqZG9ibHlyeW1hdGdoaWZvam1qanNla29vbW9mY2FjdGF2ZmN5Zm11Znhoc3Rqd3VwYmpreW9nbnlyeXBseXBxbGF5eW1veHRhbnFkcHVyYnd6cGxsb2traGhtYW5kam5hdGNibGtjb3Rna2x1dHR3YmRhdHFybWF6cHJ2YXd6anhlZmhqdGRraWt1cmxsY2xjam9naG1sd3RhbWRkY2NucXVyb3Jha2N5b2JsYXJ6YWNtbnFjbWV0dHVheWF1eWl2c21ma25uYW5sdGNtaWdmcmdhYmlwdG50aG1tdXRwaWJ5bHJhdGhqY2doY2ZtbG92cGNudHFwZW96bG90ZGtlaW9jZmtjaXZ1eWx6Ympvb3hjc2FjbmdkdXZ4dG50aGphZXBhdX1rbGFocGNtdnppY2twYWFwaG9jZ2lvZ2p0dnB0Z2poZG9udW5scGFvbG5kcWJxZmRtYnBqam94Ym9tbGlreXVpcG54cXh6Y2lmb3JhaGhldXl5dHpoanV0Z2Z3dHVscmpjZnhvaWFneWpmYnBqaWFrZ3l0eGJmbnBsZnBxd3RkaXFuaXR2dmF1amRqbGlmamlvcnltdmZ4bXhnb3JpY3ljZGZob2ZiYnlnZmxhdGlyamRpZGFkcXZpa2pvY2l5ZmR6aHJvZ255eWlia2dubnZobWpsb2xhdndmaWpjZ2dma3B0a3BnY3FmYWZheXNpdHltYWN2a3FweWxoaGJ1Ymh4c2x1emN5dmxvcmlwdGxwZmxjdWljcG5mc2hpeXh2a2tiY2p5dWtvdGFsZmNpcGhjZGd4aWZ0a2xkZ29wanNtdXJ0eWp5cGhia2JmbmJ3YnNvZmlheHRsdWhwbXJmZGFrdWx1cGVhcHZyeXhtYWVwaGF5bmV4emZsbmV2am1pYndvcml0aGh4YmJ5cG1tYWJvYmZuZmNvanR0Y3Jram1naXJ2bWlzdW5mbHVodGVudHJodGVvamtjaGtwZnBhZXNnd2dscWRrdnZudWx1bnF7bG1sdGFscGhvdWZqcGlhbGNmbGZ5ZHZmd3lkb2ZraGFpeWF3bGx3Y2pvYXJxdnpqbGZmZ2xjdGNsYmxwa2JzZmxocnRqZGFvd3ByZGJjdWJmbHlveWJodmh3ZndvZWl0Z254YnpuaWZwbGx4bXN0a251aWhvYmZlZWZra2FreW5uYWNra2NkdWFtZ3N2bnBoY3RmZ3NybnJvZWh2ZW5kYmZpb21xZm14Ym1paWl1bGF2b2dma2dhY2lrYWFtcHBybGpmbXBqY3VhYXNja2l1cWlmY2liamx1dGNtcGF0b2pyanZmeGdsenBvcGpkZ2NoanVqbGtuZnd0cG5qZnBhY3JrcHRmaGNzamdyaXBjcmZjZGFsem5ob25mZGNvaG9zZmhvaGVha250aXRtamZsbmJvcGNsY3hjdWlnb3hja3JiYWxyYWVidGFhcml
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;在文件属性栏找到后半段base64&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;0ZWZtemNxaWRvZmd0ZnFnYmFkaWNubWhvdGlvbm9iZnlubGdvenRkYXZ2aW14b2JvdGlra2Z4d2lyb3JwZmNjdXpob3BoZmRjaWVrY2p5b21lamtjZ2Zmam51bmhvcGFkdGZndG1sdA==
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;得到混乱的字符串:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;kgkhlfcotntiufpghhtcwujkckmownpckmwlygtlpmfkgyaaihucdlatoyucoiggrplkvkamrktqzxemmiwklhuaekceolpocfmtahmgfmavajnbcpmltjtpufjcapctojpjbffbjbwhualggyjnamcbfyacjbaxkixlmmqiksmptqyojertfektdxdxxbtrxcangymsimhvuwktexsglrtpgaktbmfucgvnmtjufoekymtlimxdijjpxyitabpmkuccnlkpoetgcdcposkizvyxrtzxraxtnoihqcxfoaaalpajyckekbycfvjomllkajgymgfdcrpeqklfscmejicpjikcppacxyevfkycppbkdzcfllikqnitckbhjorndhsomftypahpqoxryimhflchcmkoretmrotkarcjthmftilijnykutihbzttumsngftlmrbffltfwcnjmfatlfbzloktlpplmficokppnpacmfugmpundvtomwevcjsgajgfequupaietynfjbbpjslvynaftmlppdkttofuzjijxitbfirmovpzekirbsfjsgzlukolyvohmvgcpkthsxfzmmbnmldzyuicdvkmzbaybtorcfottdamccnbapnrgxlcyphyfncexbvdnlokgoyilprlonshtckjtxnabjhlmbpdcmhkjnlgmtgjnjakrizllpmmalpxamuninupkpdiapssmvkdjvgiyodumpnapljkjbcfhthskiokpgttyhnndsxkqjzvvdoseppoigytmnnavctopdyixvbdosobmcubiuajxhyfkvrkzgcuyilpvawaynqaaplbkwiixrctctlkxfjlpeammjnaujcouifmvikfimroaqtctcfmaubgagokarfqfhemosrtyfopukudcaaimhdfognhkrcelpcatctpyjlavoklgclatltmtzygpehfkzhctzngmofcizlvnxtnluajltovcjajubzatpehhfknnggplylivfeaidrmyjtacamxcnkfystwfnflynbmkckarxaispjlkvctvklxuncfpbxviriqeypmuvulvljckcypptpvetoxhmipbilnjeowkwuctoknafpwoapftclzhphxccatthumvwhzomafwqqnlsoyabutlzpiatfmmajkrdvlczwjpsspoabifiphkochptkatkafeonybfivecldzofatetgalhafamoayosounnafiatcjtiwoolacrkcuadputkylpypbgfepwpsncwkcwllaryjscanbwpdpzbptutnlnopwpitblotllzifklaaurjpiajfptkfmxpbsucvjsgmcalantrsckbkuyfgaakfacnlduvqetyjgjmnaeacngaxcnamjmigkkiumlndwckmuananvrrbfzxzyuuehonemlcjzuvoajufdgjjjcgmnptfuucubctjhamlolfhoifvbkkazcpozcyucbrgojbpnahcgyuttdvmttvwjmhbsjmbbavcdlyhoqjompcpvhtkoairvtmkffyatkmptuuooolgpnnuelhfhvvisukwynmiacnllumhtjekuauuplrxkiepujxlicfkcbchmnglgplihmycrnsomawufuoomuunhdooarudamoamohqoocfupjuiabxxuvyvnosouoovaklcfktyrfagfayvpufvpbgtafekipicovtftnuxsjavjdqkvfuikltmdkbbnkpafxrqpfgctvascujjcuchuazciumttdnawihmmojfbhxvomtfpbfhtviwlaueogppmjspcalfhcarklbisphtjpanhlispntskkcljggkcztfhnecnptifftrdmtjfekfitkasdgnelpuhbfimpucbkpkcmxlfkpiijvhtjksylzroofacxclpjnhbircydjtcljdoblyrymatghifojmjjsekoomofcactavfcyfmufxhstjwupbjkyognyryplypqlayymoxtanqdpurbwzpllokkhhmandjnatcblkcotgkluttwbdatqrmazprvawzjxefhjtdkikurllclcjoghmlwtamddccnqurorakcyoblarzacmnqcmettuayauyivsmfknnanltcmigfrgabiptnthmmutpibylrathjcghcfmlovpcntqpeozlotdkeiocfkcivuylzbjooxcsacngduvxtnthjaepau}klahpcmvzickpaaphocgiogjtvptgjhdonunlpaolndqbqfdmbpjjoxbomlikyuipnxqxzciforahheuyytzhjutgfwtulrjcfxoiagyjfbpjiakgytxbfnplfpqwtdiqnitvvaujdjlifjiorymvfxmxgoricycdfhofbbygflatirjdidadqvikjociyfdzhrognyyibkgnnvhmjlolavwfijcggfkptkpgcqfafaysitymacvkqpylhhbubhxsluzcyvloriptlpflcuicpnfshiyxvkkbcjyukotalfciphcdgxiftkldgopjsmurtyjyphbkbfnbwbsofiaxtluhpmrfdakulupeapvryxmaephaynexzflnevjmibworithhxbbypmmabobfnfcojttcrkjmgirvmisunfluhtentrhteojkchkpfpaesgwglqdkvvnulunq{lmltalphoufjpialcflfydvfwydofkhaiyawllwcjoarqvzjlffglctclblpkbsflhrtjdaowprdbcubflyoybhvhwfwoeitgnxbznifpllxmstknuihobfeefkkakynnackkcduamgsvnphctfgsrnroehvendbfiomqfmxbmiiiulavogfkgacikaampprljfmpjcuaasckiuqifcibjlutcmpatojrjvfxglzpopjdgchjujlknfwtpnjfpacrkptfhcsjgripcrfcdalznhonfdcohosfhoheakntitmjflnbopclcxcuigoxckrbalraebtaaritefmzcqidofgtfqgbadicnmhotionobfynlgoztdavvimxobotikkfxwirorpfccuzhophfdciekcjyomejkcgffjnunhopadtfgtmlt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;http://www.aihanyu.org/cncorpus/CpsTongji.aspx&#34;&gt;&lt;font color=#0288D1&gt;在线字词频统计&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc通关4/image-20210715172901020.png&#34; alt=&#34;image-20210715172901020&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;actf{plokmijnuhbygvrdxeszwq}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1inshack2019gflagfont&#34;&gt;&lt;font color=#0288D1&gt;【INSHack2019】gflag&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点g语言数控编程font&#34;&gt;&lt;font color=#A020F0&gt;知识点：G语言、数控编程&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/G%E4%BB%A3%E7%A0%81&#34;&gt;&lt;font color=#0288D1&gt;维基百科&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ncviewer.com/&#34;&gt;&lt;font color=#0288D1&gt;G代码在线运行网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-9&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将G code 输入，调整角度,得到flag&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715174757587.png&#34; alt=&#34;image-20210715174757587&#34;&gt;&lt;/p&gt;
+&lt;p&gt;flag{3d_pr1nt3d_f149}&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/categories/ctf%E8%AE%AD%E7%BB%83/" term="CTF训练" label="CTF训练" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/tags/buumisc%E5%88%B7%E9%A2%98/" term="BUUMisc刷题" label="BUUMisc刷题" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">BUUMisc通关3</title>
             <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B33/" />

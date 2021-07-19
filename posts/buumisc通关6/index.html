@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>BUUMisc通关6 | N1nja&#39;s Blog</title>
+
+    <link rel="stylesheet" href="/css/meme.min.c88088b7b0ca1272992f1fe5f9a13b2f72dcf7e54c4c31e08d3b37029a113308.css"/>
+
+    
+    
+        <script src="/js/meme.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="N1nja" /><meta name="description" content="【INSHack2018】42.tar.xz 知识点：压缩包套娃、bash命令 对于压缩……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="N1nja&#39;s Blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="N1nja&#39;s Blog" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B36/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-07-17T12:43:28+08:00",
+        "dateModified": "2021-07-19T17:33:16+08:00",
+        "url": "https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B36/",
+        "headline": "BUUMisc通关6",
+        "description": "【INSHack2018】42.tar.xz 知识点：压缩包套娃、bash命令 对于压缩……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  5584 ,
+        "image": ["https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717152425232.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717160502903.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717160647467.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717161528063.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717163002757.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717163143326.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717164743884.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717210905622.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717171119221.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717172652953.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717204231147.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717210004820.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717205948586.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717211213139.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717211418408.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717212505185.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717213006483.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717213303887.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717213611405.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717214626626.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717220012692.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717221031231.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718201409630.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718202147196.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718203758816.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718210558218.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718175428478.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718211404081.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718150638711.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718150534137.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718160116484.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718160630977.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718164544575.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719123319098.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719123920917.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719124032484.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719133953526.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719134103395.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719133730548.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719134655264.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719135107831.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719135934070.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719161002687.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719143117037.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719151255756.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719151655008.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719155106381.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719170416946.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719170723065.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719171548391.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719172120636.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719172728004.png"],
+        "author": {
+            "@type": "Person",
+            "description": "crypto player",
+            "email": "mikecninja@gmail.com",
+            "image": "https://cn1nja.github.io/icons/apple-touch-icon.png",
+            "url": "https://cn1nja.github.io/",
+            "name": "N1nja"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "N1nja's Blog",
+            "url": "https://cn1nja.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://cn1nja.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+    
+
+
+
+<meta property="og:title" content="BUUMisc通关6" />
+<meta property="og:description" content="【INSHack2018】42.tar.xz 知识点：压缩包套娃、bash命令 对于压缩……" />
+<meta property="og:url" content="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B36/" />
+<meta property="og:site_name" content="N1nja&#39;s Blog" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717152425232.png" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-07-17T12:43:28&#43;08:00" />
+    <meta property="article:modified_time" content="2021-07-19T17:33:16&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">N1nja&#39;s Blog</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">归档</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/links/"><span class="menu-item-name">友链</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">BUUMisc通关6</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2021-07-17T12:43:28&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.7.17</time>
+    
+    
+        
+        <time datetime="2021-07-19T17:33:16&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.7.19</time>
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/ctf%E8%AE%AD%E7%BB%83/" class="category-link p-category">CTF训练</a></span>
+            
+        
+    
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;12&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:font-color0288d1inshack201842tarxzfont" href="#font-color0288d1inshack201842tarxzfont"><font color=#0288D1>【INSHack2018】42.tar.xz</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点压缩包套娃bash命令font" href="#font-colora020f0知识点压缩包套娃bash命令font"><font color=#A020F0>知识点：压缩包套娃、bash命令</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font" href="#font-colora020f0题目分析font"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1大流量分析二font" href="#font-color0288d1大流量分析二font"><font color=#0288D1>大流量分析（二）</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点流量分析smtpfont" href="#font-colora020f0知识点流量分析smtpfont"><font color=#A020F0>知识点：流量分析（SMTP）</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-1" href="#font-colora020f0题目分析font-1"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1mrctf2020寻找xxxfont" href="#font-color0288d1mrctf2020寻找xxxfont"><font color=#0288D1>【MRCTF2020】寻找xxx</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点拨号音隐写dtmffont" href="#font-colora020f0知识点拨号音隐写dtmffont"><font color=#A020F0>知识点：拨号音隐写(dtmf)</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-2" href="#font-colora020f0题目分析font-2"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1npuctf2020碰上彩虹吃定彩虹font" href="#font-color0288d1npuctf2020碰上彩虹吃定彩虹font"><font color=#0288D1>【NPUCTF2020】碰上彩虹，吃定彩虹！</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点font" href="#font-colora020f0知识点font"><font color=#A020F0>知识点： </font></a>
+          <ol>
+            <li><a id="contents:font-colora020f0autokey爆破font" href="#font-colora020f0autokey爆破font"><font color=#A020F0>Autokey爆破</font></a></li>
+            <li><a id="contents:font-colora020f0零宽字符隐写font" href="#font-colora020f0零宽字符隐写font"><font color=#A020F0>零宽字符隐写</font></a></li>
+            <li><a id="contents:font-colora020f0词频统计font" href="#font-colora020f0词频统计font"><font color=#A020F0>词频统计</font></a></li>
+            <li><a id="contents:font-colora020f0ntfs文件隐写font" href="#font-colora020f0ntfs文件隐写font"><font color=#A020F0>NTFS文件隐写</font></a></li>
+            <li><a id="contents:font-colora020f0encrypto数据加密软件font" href="#font-colora020f0encrypto数据加密软件font"><font color=#A020F0>Encrypto数据加密软件</font></a></li>
+            <li><a id="contents:font-colora020f0图片rgb颜色分析font" href="#font-colora020f0图片rgb颜色分析font"><font color=#A020F0>图片RGB颜色分析</font></a></li>
+            <li><a id="contents:font-colora020f0alphuck加密font" href="#font-colora020f0alphuck加密font"><font color=#A020F0>ALPHUCK加密</font></a></li>
+          </ol>
+        </li>
+        <li><a id="contents:font-colora020f0题目分析font-3" href="#font-colora020f0题目分析font-3"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1网鼎杯-2020-青龙组虚幻2font" href="#font-color0288d1网鼎杯-2020-青龙组虚幻2font"><font color=#0288D1>【网鼎杯 2020 青龙组】虚幻2</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点汉信码rgb信息识别脚本font" href="#font-colora020f0知识点汉信码rgb信息识别脚本font"><font color=#A020F0>知识点：汉信码、RGB信息识别脚本 </font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-4" href="#font-colora020f0题目分析font-4"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1gkctf-2021签到font" href="#font-color0288d1gkctf-2021签到font"><font color=#0288D1>【GKCTF 2021】签到</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点流量分析http流量字符反转base64解码cyberchef工具font" href="#font-colora020f0知识点流量分析http流量字符反转base64解码cyberchef工具font"><font color=#A020F0>知识点：流量分析(HTTP流量)、字符反转+base64解码、CyberChef工具</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-5" href="#font-colora020f0题目分析font-5"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1de1ctf2019mine-sweepingfont" href="#font-color0288d1de1ctf2019mine-sweepingfont"><font color=#0288D1>【De1CTF2019】Mine Sweeping</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点unitycdnspy反编译工具font" href="#font-colora020f0知识点unitycdnspy反编译工具font"><font color=#A020F0>知识点：unity&amp;C#、dnSpy反编译工具</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-6" href="#font-colora020f0题目分析font-6"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1inshack201710-cl0v3rf13ld-lane-signalfont" href="#font-color0288d1inshack201710-cl0v3rf13ld-lane-signalfont"><font color=#0288D1>【INSHack2017】10-cl0v3rf13ld-lane-signal</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点jpg图片隐写foremost提取ogg音频文件morse电码font" href="#font-colora020f0知识点jpg图片隐写foremost提取ogg音频文件morse电码font"><font color=#A020F0>知识点：jpg图片隐写、foremost提取、OGG音频文件、Morse电码</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-7" href="#font-colora020f0题目分析font-7"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1inshack2018not-so-deepfont" href="#font-color0288d1inshack2018not-so-deepfont"><font color=#0288D1>【INSHack2018】（not） so deep</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点频谱图deepsoundfont" href="#font-colora020f0知识点频谱图deepsoundfont"><font color=#A020F0>知识点：频谱图、DeepSound</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-8" href="#font-colora020f0题目分析font-8"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1bsidessf2019diskimagefont" href="#font-color0288d1bsidessf2019diskimagefont"><font color=#0288D1>【BSidesSF2019】diskimage</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点磁盘取证testdisk恢复文件zsteg提取数据font" href="#font-colora020f0知识点磁盘取证testdisk恢复文件zsteg提取数据font"><font color=#A020F0>知识点：磁盘取证+testdisk恢复文件、zsteg提取数据、</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-9" href="#font-colora020f0题目分析font-9"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+  </ol>
+</nav><div class="post-body e-content">
+              <h2 id="font-color0288d1inshack201842tarxzfont"><a href="#font-color0288d1inshack201842tarxzfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1inshack201842tarxzfont" class="headings"><font color=#0288D1>【INSHack2018】42.tar.xz</font></a></h2>
+<h3 id="font-colora020f0知识点压缩包套娃bash命令font"><a href="#font-colora020f0知识点压缩包套娃bash命令font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点压缩包套娃bash命令font" class="headings"><font color=#A020F0>知识点：压缩包套娃、bash命令</font></a></h3>
+<blockquote>
+<p>对于压缩包套娃的题目，用 bash 命令循环解压即可</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;find . -type f -name &#39;*.tar.xz&#39; | wc -l&#34;</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span> find -type f -name <span class="s2">&#34;*.tar.xz&#34;</span> -exec tar xf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> -exec rm -- <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>while [ &quot;<code>find . -type f -name '*.tar.xz' | wc -l</code>&quot; -gt 0 ]; do find -type f -name &quot;*.tar.xz&quot; -exec tar xf '{}' ; -exec rm -- '{}' ;; done;</p>
+<h3 id="font-colora020f0题目分析font"><a href="#font-colora020f0题目分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>压缩包套娃，解压没有密码，可以直接解压。那么用 bash 命令直接循环解压即可</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;find . -type f -name &#39;*.tar.xz&#39; | wc -l&#34;</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span> find -type f -name <span class="s2">&#34;*.tar.xz&#34;</span> -exec tar xf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> -exec rm -- <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p><strong>将包含 42.tar.xz 压缩文件的 tmp 文件夹直接拖入 kali 中，然后再 tmp目录下执行上面的bash命令</strong>，如果是直接把 压缩文件拖入kali 执行上面的命令会发生错误，暂时没找到原因。</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210717152425232.png" alt="image-20210717152425232" width="500" /></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># strings flag 查找flag字符</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>INSA{04ebb0d6a87f9771f2eea4dce5b91a85e7623c13301a8007914085a91b3ca6d9}</p>
+</blockquote>
+<h2 id="font-color0288d1大流量分析二font"><a href="#font-color0288d1大流量分析二font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1大流量分析二font" class="headings"><font color=#0288D1>大流量分析（二）</font></a></h2>
+<h3 id="font-colora020f0知识点流量分析smtpfont"><a href="#font-colora020f0知识点流量分析smtpfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点流量分析smtpfont" class="headings"><font color=#A020F0>知识点：流量分析（SMTP）</font></a></h3>
+<p><a href="https://baike.baidu.com/item/SMTP/175887" target="_blank" rel="noopener"><font color=#0288D1>SMTP百度百科</font></a></p>
+<p>SMTP：简单邮件传输协议</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717160502903.png" alt="image-20210717160502903"></p>
+<h3 id="font-colora020f0题目分析font-1"><a href="#font-colora020f0题目分析font-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-1" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>打开题目给的文件下载链接，因为文件很大，看了一下 164535.pcap 这个流量包稍微特别些，就先下载看了一下</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717160647467.png" alt="image-20210717160647467"></p>
+<blockquote>
+<p>题目说 flag是黑客使用的邮箱，既然有邮件的传输，那么就要用到邮件传输协议 SMTP.</p>
+<p>筛选 SMTP 流量包</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717161528063.png" alt="image-20210717161528063"></p>
+<p><strong><a href="mailto:flag%7Bxsser@live.cn">flag{xsser@live.cn</a>}</strong></p>
+<h2 id="font-color0288d1mrctf2020寻找xxxfont"><a href="#font-color0288d1mrctf2020寻找xxxfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1mrctf2020寻找xxxfont" class="headings"><font color=#0288D1>【MRCTF2020】寻找xxx</font></a></h2>
+<h3 id="font-colora020f0知识点拨号音隐写dtmffont"><a href="#font-colora020f0知识点拨号音隐写dtmffont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点拨号音隐写dtmffont" class="headings"><font color=#A020F0>知识点：拨号音隐写(dtmf)</font></a></h3>
+<p><a href="http://dialabc.com/sound/detect/" target="_blank" rel="noopener"><font color=#0288D1>在线拨号音识别网站 Detect DTMF Tones</font></a></p>
+<blockquote>
+<p>本地拨号音识别工具 dtmf2num</p>
+</blockquote>
+<p><a href="http://aluigi.altervista.org/mytoolz/dtmf2num.zip" target="_blank" rel="noopener"><font color=#0288D1>dtmf2num下载网址</font></a></p>
+<p><strong>使用方法：</strong></p>
+<blockquote>
+<p>powershell 执行：</p>
+<p>PS E:\CTF_tool\4.Misc_tool\10.拨号音隐写\dtmf2num&gt; .\dtmf2num.exe 密码.wav</p>
+</blockquote>
+<h3 id="font-colora020f0题目分析font-2"><a href="#font-colora020f0题目分析font-2" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-2" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>用 <a href="http://dialabc.com/sound/detect/" target="_blank" rel="noopener"><font color=#0288D1>在线拨号音识别网站</font></a> 轻松得到电话号码： 18684221609</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717163002757.png" alt="image-20210717163002757"></p>
+<blockquote>
+<p><strong>发送号码到 天璇merak的公众号，得到 flag</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717163143326.png" alt="image-20210717163143326"></p>
+<blockquote>
+<p><strong>flag{Oh!!!!!_Y0u_f1nd_my_secret}</strong></p>
+</blockquote>
+<p><strong>方法二：用本地工具dtmf2num</strong></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717164743884.png" alt="image-20210717164743884"></p>
+<h2 id="font-color0288d1npuctf2020碰上彩虹吃定彩虹font"><a href="#font-color0288d1npuctf2020碰上彩虹吃定彩虹font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1npuctf2020碰上彩虹吃定彩虹font" class="headings"><font color=#0288D1>【NPUCTF2020】碰上彩虹，吃定彩虹！</font></a></h2>
+<h3 id="font-colora020f0知识点font"><a href="#font-colora020f0知识点font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点font" class="headings"><font color=#A020F0>知识点： </font></a></h3>
+<h4 id="font-colora020f0autokey爆破font"><a href="#font-colora020f0autokey爆破font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0autokey爆破font" class="headings"><font color=#A020F0>Autokey爆破</font></a></h4>
+<p>参考<a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B35/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9usb%E6%B5%81%E9%87%8F%E6%8F%90%E5%8F%96%E9%94%AE%E7%9B%98%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90auto%E7%88%86%E7%A0%B4font" target="_blank" rel="noopener"><font color=#0288D1>【XMAN2018排位赛】AutoKey</font></a></p>
+<h4 id="font-colora020f0零宽字符隐写font"><a href="#font-colora020f0零宽字符隐写font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0零宽字符隐写font" class="headings"><font color=#A020F0>零宽字符隐写</font></a></h4>
+<p>参考：<a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B31/#font-color0288d1utctf2020zerofont" target="_blank" rel="noopener"><font color=#0288D1>【UTCTF2020】zero</font></a></p>
+<h4 id="font-colora020f0词频统计font"><a href="#font-colora020f0词频统计font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0词频统计font" class="headings"><font color=#A020F0>词频统计</font></a></h4>
+<p>词频统计脚本</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python3</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;1.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">f_read</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">out</span><span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">f_read</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+<span class="n">sorted_x</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1">#对可迭代的对象进行排序</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sorted_x</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+
+<span class="c1">#item()方法把字典中每对key和value组成一个元组，并把这些元组放在列表中返回。</span>
+<span class="c1">#sorted() 可以对所有可迭代的对象进行排序操作。</span>
+<span class="s1">&#39;&#39;&#39;
+</span><span class="s1">sorted 语法： sorted(iterable, cmp=None, key=None, reverse=False)
+</span><span class="s1">参数说明：
+</span><span class="s1">
+</span><span class="s1">iterable -- 可迭代对象。
+</span><span class="s1">cmp -- 比较的函数，这个具有两个参数，参数的值都是从可迭代对象中取出，此函数必须遵守的规则为，大于则返回1，小于则返回-1，等于则返回0。
+</span><span class="s1">key -- 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。
+</span><span class="s1">reverse -- 排序规则，reverse = True 降序 ， reverse = False 升序（默认）。
+</span><span class="s1">&#39;&#39;&#39;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><a href="http://www.aihanyu.org/cncorpus/CpsTongji.aspx" target="_blank" rel="noopener"><font color=#0288D1>在线词频统计网站</font></a></p>
+<h4 id="font-colora020f0ntfs文件隐写font"><a href="#font-colora020f0ntfs文件隐写font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0ntfs文件隐写font" class="headings"><font color=#A020F0>NTFS文件隐写</font></a></h4>
+<p><strong>工具：ntfsstreamseditor</strong></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717210905622.png" alt="image-20210717210905622"></p>
+<h4 id="font-colora020f0encrypto数据加密软件font"><a href="#font-colora020f0encrypto数据加密软件font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0encrypto数据加密软件font" class="headings"><font color=#A020F0>Encrypto数据加密软件</font></a></h4>
+<p><a href="https://macpaw.com/encrypto" target="_blank" rel="noopener"><font color=#0288D1>下载链接</font></a>，encrypt加密文件的后缀为 .crypto</p>
+<h4 id="font-colora020f0图片rgb颜色分析font"><a href="#font-colora020f0图片rgb颜色分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0图片rgb颜色分析font" class="headings"><font color=#A020F0>图片RGB颜色分析</font></a></h4>
+<blockquote>
+<p>参考文章</p>
+</blockquote>
+<p><a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B34/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B216%E8%BF%9B%E5%88%B6%E5%8F%B7font" target="_blank" rel="noopener"><font color=#0288D1>很好的色彩呃？</font></a></p>
+<h4 id="font-colora020f0alphuck加密font"><a href="#font-colora020f0alphuck加密font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0alphuck加密font" class="headings"><font color=#A020F0>ALPHUCK加密</font></a></h4>
+<p><a href="https://www.dcode.fr/alphuck-language" target="_blank" rel="noopener">ALPHUCK加解密网站</a> 网站，查阅可知 Alphuck 的加密方法仅包含 8 个小写字母 a c e i j o p s</p>
+<h3 id="font-colora020f0题目分析font-3"><a href="#font-colora020f0题目分析font-3" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-3" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>题目给了三份文件  lookatme.txt 、maybehint.txt、secret</p>
+</blockquote>
+<p>用 Sublime Text 打开 lookatme.txt 文件，发现摩斯电码</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717171119221.png" alt="image-20210717171119221"></p>
+<blockquote>
+<p>.- ..- - --- -.- . -.--</p>
+<p>解码后得到：autokey</p>
+<p>将密文 achnrvxzzuglarucalznwcygfggrufryvbzqjoxjymxvchhhdmliddcwmhghclpebtzwlojvew 放入 break_atuokey.py中</p>
+<p>进行 autokey 爆破</p>
+</blockquote>
+<p>参考<a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B35/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9usb%E6%B5%81%E9%87%8F%E6%8F%90%E5%8F%96%E9%94%AE%E7%9B%98%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90auto%E7%88%86%E7%A0%B4font" target="_blank" rel="noopener"><font color=#0288D1>【XMAN2018排位赛】AutoKey</font></a></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717172652953.png" alt="image-20210717172652953"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># &#34;YOUHAVEFOUNDME&#34;, CONGRATULATIONSONFINDINGMYSECRETNOWIWILLGIVEYOUTHEPASSWORDITISIAMTHEPASSWD</span>
+<span class="c1"># CONGRATULATION SON FINDING MY SECRET NOW I WILL GIVE YOU THE PASSWORD IT IS IAMTHEPASSWD</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>查看maybehint.txt文件内容</p>
+<p>emmmmm...
+something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌‍‌‍‍‍‌‌‍‌‌‌‌‌‌‍‌‌‍‍‍‍‌‌‍‌‍‌‌‍‍‌, but I can't find it!</p>
+</blockquote>
+<p>提示有隐写的信息：查看文件大小，发现有 656字节。显然有隐写的内容，在kali 中用 vim 查看</p>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210717204231147.png" alt="image-20210717204231147" width="500" /></p>
+<p>可以知道这里是零宽字符隐写，参考：<a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B31/#font-color0288d1utctf2020zerofont" target="_blank" rel="noopener"><font color=#0288D1>【UTCTF2020】zero</font></a></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 文本中的零宽字符有</span>
+<span class="o">&lt;</span><span class="mi">200</span><span class="n">c</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="mi">200</span><span class="n">b</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="mi">200</span><span class="n">d</span><span class="o">&gt;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>将 maybehint.txt 文件隐写内容 用在线网站解密：</p>
+<p><a href="http://330k.github.io/misc_tools/unicode_steganography.html" target="_blank" rel="noopener"><font color=#0288D1>http://330k.github.io/misc_tools/unicode_steganography.html</font></a></p>
+<img src="/BUUCTF/2021/BUUMisc通关6/image-20210717210004820.png" alt="image-20210717210004820" width="500"/>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717205948586.png" alt="image-20210717205948586"></p>
+<blockquote>
+<p>得到新提示 NTFS，ntfsstreamseditor 文件隐写</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717210905622.png" alt="image-20210717210905622"></p>
+<blockquote>
+<p>导出文本 out.txt 得到：</p>
+</blockquote>
+<pre><code>=wwZlZ=8W=cndwljcdcG8wdj8W8Z8dZllGjZc=8lWjnlWd8WwZ5j=l8ccWZcZGjd5ZwZ5WZ8d=Zcwjwl5Gnn=WdwcwlnWd5lGnZWlnnwdnjnw8ndnc58d5cndl=njZl=WddjwWWwZllj5c5jGwZnZ5W=cZljdwd8c=85ndGGljcl5ccwd=W=l8w=5lwWn8WnwnWlGZwdcnGGl5G=8W==cnnWZnWjZ=wWcGwZcWc8ncWW=5jnWwcZl8W=8cdwWldlnwW5ddwlnlwncWlcwGZddj5djZWc5jcWdn5jdjwnj85GWGjnjwGd=jZGj5j==jwjlw8dlwWj5Wjn5n8dwwdjZlc5lZwdWldZlnGwl85cWnjd=WcWlwj8WGdlGncnZWGGd5ZncW5d55nW5wl=Wj8jGWnWj8jwZ=ZwWZ88nWG5nn5WlWnGdWw5Zn8jdl=nGcnll8WncZjnGn=dlwn5W8wlWjlnl5ccnGWGnnnc58WnjlGnG55Zwdn5cZdjdZZ5WljG5G5wcldd=Wlc8Z=8nGj=jWd8w8Wd=w8nccc8wZdjcnGdljZnnj5ww8885=lcWW8W8j5dG8jZZwG55GjnwZ=W5Z8G5ZlGc5ZZncZ5cd8j85GW5nj=WWncn55Gj5nj5nwnW58jG8GcnjZdWcl8wj8n=cj=8l8cn5jjcjn8lldn=Gjw8=cjcdWWjGddZljdjdZnG8djnZccZldlWllw5ZZ8wj5Gn==5w8Z=j55n=ZZ5wdww8lndwd8Wlj8WGjnl=nncZ=W8ZZWZnjjlwWGZZlZc5c==d8Zl855wZn=W=w8wWjZ85cGc==5Z8ccjdw5GnZWnGjcdGGnZ5wwwWGG5d=W5ldjwGZZdZwdG5cGGnZGlGc=W5ccWZ8=cGljdGcdld=8cj8jwn=lj88ZZ5jn5lcZ=Gdw=Zl58WZZl5ccwccwG5d5w8Z5wllj5ddnn=5=w8588WwGj=l5G55dWG8cl=GcjWwlwG=lWWnZ=dZG85Gcjc5=wnw=j==Gndnddjwn5c=c5W5wwdWlG5nWZwnGw8=lcWldcwnG5Wcjj=cWlGZc8Gn58ZWjZ85ljlncZj5cc=dZWGjd=d8ncZ8www55=cw=GWZn5ZZlnWld=cWcnclWlZG5djGW=cl8=ZG8cZwwc8wl=88W5ZwZ=jwZGGlcWcWnZZ5Zj5w5ZdZclZZWnccGw==cG8W8ZWlc8wcZ555Z85ljWG5jZ=8=wllWjWjlZc5lG8cwWlnjlGlW=l5=n=lGwnjGGjGdwj85ddW5ZwZ=ddjWldj=cjljjGwndZjWWZGcdWcZW5cdldj8WZjGljlWncZ5=8jnZWjl8wjZG5Zwlcl5dd
+</code></pre><blockquote>
+<p>词频统计</p>
+</blockquote>
+<p><a href="http://www.aihanyu.org/cncorpus/CpsTongji.aspx" target="_blank" rel="noopener"><font color=#0288D1>在线词频统计</font></a></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717211213139.png" alt="image-20210717211213139"></p>
+<blockquote>
+<p>得到： ZW5jcnlwdG8=</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717211418408.png" alt="image-20210717211418408"></p>
+<pre><code>base64解码得到 ：encrypto
+</code></pre><p>google一下 encrypto ，知道了这是个加密软件，<a href="https://macpaw.com/encrypto" target="_blank" rel="noopener"><font color=#0288D1>下载链接</font></a>，encrypt加密文件的后缀为 crypto，将  secret  文件后缀名改为 <code>secret.crypto</code> 即可打开文件</p>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210717212505185.png" alt="image-20210717212505185" width="200" /></p>
+<blockquote>
+<p>文件解密需要密码，前面 autokey 爆破得到了一份密码的</p>
+<p>IAMTHEPASSWD</p>
+<p>iamthepasswd</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210717213006483.png" alt="image-20210717213006483" width=200 /></p>
+<blockquote>
+<p>然后卡在这里解不开，根据官方的提示，<strong>需要把加粗的括号删掉</strong></p>
+</blockquote>
+<blockquote>
+<p>在kali 中用 strings 命令查看 secret.crypto 文本</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717213303887.png" alt="image-20210717213303887"></p>
+<blockquote>
+<p>用 notepad++ 打开文本，删掉 (Oh! You caught me! But...)</p>
+<p>重新解密得到下面的png图片</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210717213611405.png" alt="image-20210717213611405" width="300" /></p>
+<blockquote>
+<p>用 foremost 进行隐写文件的提取，得到一个 zip 文件，解压需要密码</p>
+</blockquote>
+<p>参考文章：<a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B34/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B216%E8%BF%9B%E5%88%B6%E5%8F%B7font" target="_blank" rel="noopener"><font color=#0288D1>很好的色彩呃？</font></a></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 通过观察图片的 RGB 16进制编码信息，发现黄色部分的16进制编码是不同的。</span>
+<span class="c1">#ffff70</span>
+<span class="c1">#ffff40 </span>
+<span class="c1">#ffff73</span>
+<span class="c1">#ffff73</span>
+<span class="c1">#ffff57</span>
+<span class="c1">#ffff64</span>
+<span class="mi">704073735764</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717214626626.png" alt="image-20210717214626626"></p>
+<blockquote>
+<p>解压密码 p@ssWd，解压得到 <strong>弗拉格.docx</strong>，很明显这就是 flag 了</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717220012692.png" alt="image-20210717220012692"></p>
+<blockquote>
+<p>将大写连起来就是 ALPHUCK，google查一下</p>
+</blockquote>
+<p>得到这个 <a href="https://www.dcode.fr/alphuck-language" target="_blank" rel="noopener"><font color=#0288D1>Alphuck</font></a> 网站，查阅可知Alphuck 的加密方法仅包含 8 个小写字母 a c e i j o p s</p>
+<pre><code>eeeeeeeeeepaeaeeeaeeeeeeeaeeeeeeeeeeccccisaaaaeejeeeeeejiiiiiiiiiiijeeeeeejeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeePeeeeeeeejaaiiiiiiijcciiiiiiiiiijaaijiiiiiiiiiiiiiiiiiiiijeeeeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeeejaaiiiijeeeeeeejceeeeeeeeeeeeeeeeeeeeeeeeejceeeeeeeeeeeeeeeeejaeeeeeejciiiiiiiiiiiiiiiiiiijaeeeejceeeeeeeeeeeeeeeeeejajciiiiiiiiiiiiiiiiiiijaaiiiijiijeeeeeeeeeeejcciiiiiiiiiiiiiiijaaij
+</code></pre><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717221031231.png" alt="image-20210717221031231"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># flag{1t&#39;s_v3ry_De1iCi0us~!}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1网鼎杯-2020-青龙组虚幻2font"><a href="#font-color0288d1网鼎杯-2020-青龙组虚幻2font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1网鼎杯-2020-青龙组虚幻2font" class="headings"><font color=#0288D1>【网鼎杯 2020 青龙组】虚幻2</font></a></h2>
+<h3 id="font-colora020f0知识点汉信码rgb信息识别脚本font"><a href="#font-colora020f0知识点汉信码rgb信息识别脚本font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点汉信码rgb信息识别脚本font" class="headings"><font color=#A020F0>知识点：汉信码、RGB信息识别脚本 </font></a></h3>
+<p><strong><a href="https://zh.wikipedia.org/wiki/%E6%B1%89%E4%BF%A1%E7%A0%81" target="_blank" rel="noopener"><font color=#0288D1>汉信码--wiki</font></a></strong> 是一种矩阵式<a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E7%BB%B4%E6%9D%A1%E7%A0%81" target="_blank" rel="noopener">二维条码</a>。从形状上，它呈正方向、有深色和浅色数据模块分布其间。</p>
+<p><strong>历史：</strong></p>
+<p>汉信码的研发始于2003年，并于2005年年末完成。汉信码研是中国物品编码中心依据中国国家“<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E4%BA%94" target="_blank" rel="noopener">十五</a>”重大科技专项——《二维条码新码制开发与关键技术标准研究》研发成功。</p>
+<p><strong>汉信码结构特质：</strong></p>
+<blockquote>
+<p>注意 ：<strong>寻像图形的特征</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210718201409630.png" alt="image-20210718201409630" width="500" /></p>
+<h3 id="font-colora020f0题目分析font-4"><a href="#font-colora020f0题目分析font-4" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-4" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p><strong>1、题目描述</strong></p>
+<p>1、汉信码</p>
+<p>2、 图片要转转</p>
+<p>3、 暴力修补</p>
+<blockquote>
+<p>下载题目得到一份 file 文件， 010editor打开发现是 png 文件。添加 .png后缀名后打开，得到下图有点像二维码</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718202147196.png" alt="image-20210718202147196"></p>
+<blockquote>
+<p>看了其他师傅的 blog 后，才知道这是汉信码</p>
+</blockquote>
+<blockquote>
+<p>用 stegsolve.jar 查看图片的 RGB通道，得到下面图片：（用PPT旋转的图片）</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210718203758816.png" alt="image-20210718203758816" width="500" /></p>
+<blockquote>
+<p>这里的第一种做法是用excle，自己绘制出汉信码，按列读取。</p>
+<p>参考:</p>
+</blockquote>
+<p><a href="https://www.bilibili.com/video/BV1AK4y1t7T1?t=997" target="_blank" rel="noopener"><font color=#0288D1>2020网鼎杯-青龙组-虚幻2赛题讲解</font></a></p>
+<blockquote>
+<p>第二种做法是写python脚本读取， file.png 图片的RGB值，再进行汉信码还原。脚本不会写，这里是用的</p>
+<p>root师傅的脚本</p>
+</blockquote>
+<p><a href="https://www.shawroot.cc/879.html#xu_huan2" target="_blank" rel="noopener"><font color=#0288D1>ShawRoot</font></a></p>
+<blockquote>
+<p>该图宽36像素，高度12像素。写脚本读取图片的RGB值（竖着读），每一个像素点的每一个RGB值都要逐个分析，“255”视为1，“0”视为0：</p>
+</blockquote>
+<blockquote>
+<p>读取 file.png ，获取RGB值</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#python3 </span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">36</span>	  <span class="c1">#x坐标	</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">12</span>	  <span class="c1">#y坐标	</span>
+
+<span class="nb">file</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;file.png&#39;</span><span class="p">)</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;out&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="n">z</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="n">rgb</span><span class="o">=</span><span class="nb">file</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">255</span><span class="p">):</span>
+            <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;1&#39;</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;0&#39;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">255</span><span class="p">):</span>
+            <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;1&#39;</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;0&#39;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">255</span><span class="p">):</span>
+            <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;1&#39;</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;0&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>将 RGB信息重新合成 图片</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">36</span>	  <span class="c1">#x坐标	</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">36</span>	  <span class="c1">#y坐标	</span>
+
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&#34;RGB&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>	
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;out&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>	
+
+<span class="n">a</span><span class="o">=</span><span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">z</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">])</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;1&#39;</span><span class="p">):</span>
+			<span class="n">im</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+		<span class="k">elif</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;0&#39;</span><span class="p">):</span>
+			<span class="n">im</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+		<span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">im</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">im</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;1.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>执行上面的脚本得到，恢复的汉信码：</p>
+<p><strong>打开图片可以用 VScode打开，就不会很模糊了</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210718210558218.png" alt="image-20210718210558218" width="200" /></p>
+<blockquote>
+<p><strong>对比正确的汉信码，发现左下角的寻像图形不正确，PS调整后，得到的汉信码通过扫描依旧无法识别</strong></p>
+<p><strong>这里涉及汉信码的纠错识别，将右边空白部分随便写两笔，强行误码让他自修复。得到flag</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210718175428478.png" alt="image-20210718175428478" width="200" /></p>
+<blockquote>
+<p><strong>汉信码自动识别的网站已经挂掉了，识别软件在手机下载 中国编码。然后扫码识别</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210718211404081.png" alt="image-20210718211404081" width="200" /></p>
+<h2 id="font-color0288d1gkctf-2021签到font"><a href="#font-color0288d1gkctf-2021签到font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1gkctf-2021签到font" class="headings"><font color=#0288D1>【GKCTF 2021】签到</font></a></h2>
+<h3 id="font-colora020f0知识点流量分析http流量字符反转base64解码cyberchef工具font"><a href="#font-colora020f0知识点流量分析http流量字符反转base64解码cyberchef工具font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点流量分析http流量字符反转base64解码cyberchef工具font" class="headings"><font color=#A020F0>知识点：流量分析(HTTP流量)、字符反转+base64解码、CyberChef工具</font></a></h3>
+<blockquote>
+<p>CyberChef 在线网站：</p>
+</blockquote>
+<p><a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener"><font color=#0288D1>CyberChef</font></a></p>
+<blockquote>
+<p>CyberChef下载本地工具：</p>
+</blockquote>
+<p><a href="https://github.com/gchq/CyberChef/releases" target="_blank" rel="noopener"><font color=#0288D1>Releases · gchq/CyberChef · GitHub</font></a></p>
+<blockquote>
+<p>Github 文件加速网站</p>
+</blockquote>
+<p><a href="https://shrill-pond-3e81.hunsh.workers.dev/" target="_blank" rel="noopener"><font color=#0288D1>Github 文件加速网站</font></a></p>
+<h3 id="font-colora020f0题目分析font-5"><a href="#font-colora020f0题目分析font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-5" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>下载得到 tmpshell.pcapng 文件，wireshark 打开发现 HTTP传输过 tmpshell.php 文件</p>
+<p>导出 HTTP 对象，新建文件夹保存</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718150638711.png" alt="image-20210718150638711"></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718150534137.png" alt="image-20210718150534137"></p>
+<blockquote>
+<p>打开导出的 tmpshell.php 文件，得到: 634768774c6d78735a57687a6347313043673d3d</p>
+</blockquote>
+<p>用 <a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener">CyberChef在线网站</a> 解密： Hex ==&gt; base64</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718160116484.png" alt="image-20210718160116484"></p>
+<blockquote>
+<p><strong>解密后发现，得到的字符是反转的，说明出题人将字符先进行反转再base64加密 ，再编码为 16 进制数。</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>在 tmpshell(18).php  文件中得到：QER1=cat /f14g | base64</strong></p>
+<p><strong>将 tmpshell(19).php 中的内容解码</strong></p>
+<p><strong>from hex、from base64</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718160630977.png" alt="image-20210718160630977"></p>
+<blockquote>
+<p><strong>将 base64 字符串逆序输出 reverse line、reverse character、from base64</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718164544575.png" alt="image-20210718164544575"></p>
+<pre><code>ffllaagg{{}}WWeellcc))[删除] [删除] 00mmee__GGkkCC44FF__mm11ssiiCCCCCCCCCCCC!!
+
+flag{Welc0me_GkC4F_m1siCCCCCC!}
+</code></pre><h2 id="font-color0288d1de1ctf2019mine-sweepingfont"><a href="#font-color0288d1de1ctf2019mine-sweepingfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1de1ctf2019mine-sweepingfont" class="headings"><font color=#0288D1>【De1CTF2019】Mine Sweeping</font></a></h2>
+<h3 id="font-colora020f0知识点unitycdnspy反编译工具font"><a href="#font-colora020f0知识点unitycdnspy反编译工具font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点unitycdnspy反编译工具font" class="headings"><font color=#A020F0>知识点：unity&amp;C#、dnSpy反编译工具</font></a></h3>
+<p><strong>unity&amp;C#</strong></p>
+<blockquote>
+<p>Unity是游戏开发平台，C#是一门游戏开发语言</p>
+</blockquote>
+<p><strong>dnSpy</strong></p>
+<p>dnSpy 是一款针对 .NET 程序的逆向工程工具。该项目包含了反编译器，调试器和汇编编辑器等功能组件，而且可以通过自己编写扩展插件的形式轻松实现扩展。该项目使用 <a href="https://github.com/0xd4d/dnlib" target="_blank" rel="noopener">dnlib</a>读取和写入程序集，以便处理有混淆代码的程序（比如恶意程序）而不会崩溃。</p>
+<p><a href="https://github.com/dnSpy/dnSpy" target="_blank" rel="noopener"><font color=#0288D1>Github库</font></a></p>
+<p><a href="https://github.com/dnSpy/dnSpy/releases" target="_blank" rel="noopener"><font color=#0288D1>dnSpy二进制文件下载</font></a></p>
+<p><a href="https://blog.csdn.net/wcc27857285/article/details/87251724" target="_blank" rel="noopener"><font color=#0288D1>使用教程参考文章</font></a></p>
+<h3 id="font-colora020f0题目分析font-6"><a href="#font-colora020f0题目分析font-6" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-6" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p><a href="https://aidaip.github.io/ctf/2019/08/06/De1CTF2019-Writeup.html" target="_blank" rel="noopener"><font color=#0288D1>参考AiDai狮虎的blog，AiDai爷 太强了</font></a></p>
+<blockquote>
+<p>题目给了一个用Unity C#编写的扫雷游戏，应该是扫雷成功就能得到 flag 了 。直接用反编译神器 dnSpy 进行游戏代码的修改。</p>
+</blockquote>
+<blockquote>
+<p>将 \attachment\Mine Sweeping\Mine Sweeping_Data\Managed\Assembly-CSharp.dll 文件拖入 dnSpy 反编译工具中</p>
+</blockquote>
+<blockquote>
+<p>根据类名的翻译 可知 MineAt() 应该是生成地雷的逻辑程序，将返回值修改为 return false 、编译、保存代码、执行程序。</p>
+<p>打开游戏随便点一下，直接就能得到一张二维码图片</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719123319098.png" alt="image-20210719123319098"></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719123920917.png" alt="image-20210719123920917"></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719124032484.png" alt="image-20210719124032484"></p>
+<blockquote>
+<p>扫描二维码得到 flag</p>
+</blockquote>
+<p><strong>de1ctf{G3t_F1@g_AFt3R_Sw3ep1ng_M1n3s}</strong></p>
+<h2 id="font-color0288d1inshack201710-cl0v3rf13ld-lane-signalfont"><a href="#font-color0288d1inshack201710-cl0v3rf13ld-lane-signalfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1inshack201710-cl0v3rf13ld-lane-signalfont" class="headings"><font color=#0288D1>【INSHack2017】10-cl0v3rf13ld-lane-signal</font></a></h2>
+<h3 id="font-colora020f0知识点jpg图片隐写foremost提取ogg音频文件morse电码font"><a href="#font-colora020f0知识点jpg图片隐写foremost提取ogg音频文件morse电码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点jpg图片隐写foremost提取ogg音频文件morse电码font" class="headings"><font color=#A020F0>知识点：jpg图片隐写、foremost提取、OGG音频文件、Morse电码</font></a></h3>
+<p><strong>OGG音频文件：</strong></p>
+<p><a href="https://baike.baidu.com/item/OGG/1790364" target="_blank" rel="noopener">百度百科</a></p>
+<p><strong>文件头：4F 67 67 53</strong></p>
+<p><a href="https://morsecode.world/international/decoder/audio-decoder-adaptive.html" target="_blank" rel="noopener"><font color=#0288D1>在线Morse音频解码网站</font></a></p>
+<h3 id="font-colora020f0题目分析font-7"><a href="#font-colora020f0题目分析font-7" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-7" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>题目给了一份 markdown 描述文件和一份 find_me 文件，用 010editor打开，发现是 jpg 图片，将文件后缀名修改为 find_me.jpg 。打开得到</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719133953526.png" alt="image-20210719133953526" width="500" /></p>
+<blockquote>
+<p><strong>用 foremost 分离得到 png图片</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719134103395.png" alt="image-20210719134103395" width="500" /></p>
+<blockquote>
+<p><strong>摩尔斯电码，左下角发现有东西，用 VScode放大查看</strong></p>
+</blockquote>
+<img src="/BUUCTF/2021/BUUMisc通关6/image-20210719133730548.png" alt="image-20210719133730548" width="500"/>
+<blockquote>
+<p>.... . .-.. .--. -- .</p>
+<p><strong>摩尔斯电码解密得到：  helpme</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>继续分析最初的 find_me.jpg 图片，在 png 文件尾发现还有文件</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719134655264.png" alt="image-20210719134655264" width="500" /></p>
+<blockquote>
+<p>百度 OggS，可知：</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719135107831.png" alt="image-20210719135107831"></p>
+<blockquote>
+<p>将 OGG文件提取出来，保存为 1.ogg ，用Audacity 打开，还是Morse电码，用在线网站解密即可：</p>
+</blockquote>
+<p><a href="https://morsecode.world/international/decoder/audio-decoder-adaptive.html" target="_blank" rel="noopener"><font color=#0288D1>在线Morse解码网站</font></a></p>
+<img src="/BUUCTF/2021/BUUMisc通关6/image-20210719135934070.png" alt="image-20210719135934070" width="500"/>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># EENSA(M0R53W2HLN3V3SE4G3!)</span>
+<span class="c1"># flag{M0R53_W2HLN3V3SE4G3!}</span>
+<span class="c1"># flag是错的，测试发现这在线网站解码有误，还是手动解更稳</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><pre><code>.. -. ... .- -.--. -- ----- .-. ..... ...-- ..--.- .-- .---- .-.. .-.. .--.- -. ...-- ...- ...-- .-. ..--.- ....- --. ...-- -.-.-- -.--.-
+# 解码得到
+# insa m0r53 w1ll n3v3r 4g3 (
+flag{m0r53_w1ll_n3v3r_4g3 (}
+insa(m0r53_w1ll%udn3v3r_4g3!)
+
+多试几个解码网站，啥结果都有
+最后flag是flag{m0r53_w1ll_n3v3r_4g3!} 大写
+flag{M0R53_W1LL_N3V3R_4G3!}
+</code></pre><h2 id="font-color0288d1inshack2018not-so-deepfont"><a href="#font-color0288d1inshack2018not-so-deepfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1inshack2018not-so-deepfont" class="headings"><font color=#0288D1>【INSHack2018】（not） so deep</font></a></h2>
+<h3 id="font-colora020f0知识点频谱图deepsoundfont"><a href="#font-colora020f0知识点频谱图deepsoundfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点频谱图deepsoundfont" class="headings"><font color=#A020F0>知识点：频谱图、DeepSound</font></a></h3>
+<p><strong>DeepSound：</strong></p>
+<blockquote>
+<p>DeepSound 是一种隐写术工具和音频转换器，可将秘密数据隐藏到音频文件中。该应用程序还使您能够直接从音频文件或音频 CD 曲目中提取秘密文件。
+DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件。DeepSound 还支持使用 AES-256（高级加密标准）加密机密文件以提高数据保护。
+该应用程序还包含一个易于使用的音频转换器模块，可以将多种音频格式（FLAC、MP3、WMA、WAV、APE）编码为其他格式（FLAC、MP3、WAV、APE）。</p>
+</blockquote>
+<p><a href="https://deepsound.soft112.com/" target="_blank" rel="noopener"><font color=#0288D1>DeepSound下载</font></a></p>
+<p><strong>deepsound2john.py</strong></p>
+<blockquote>
+<p>用于破解有密码的 deepsound 加密文件</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#执行命令</span>
+<span class="n">python3</span> <span class="n">deepsound2john</span><span class="o">.</span><span class="n">py</span> <span class="n">finl_flag</span><span class="o">.</span><span class="n">wav</span> <span class="o">&gt;</span> <span class="nb">hash</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">john</span> <span class="nb">hash</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">john</span> <span class="nb">hash</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">show</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python3</span>
+<span class="c1">#!/usr/bin/env python3</span>
+<span class="s1">&#39;&#39;&#39;
+</span><span class="s1">deepsound2john extracts password hashes from audio files containing encrypted
+</span><span class="s1">data steganographically embedded by DeepSound (http://jpinsoft.net/deepsound/).
+</span><span class="s1">This method is known to work with files created by DeepSound 2.0.
+</span><span class="s1">Input files should be in .wav format. Hashes can be recovered from audio files
+</span><span class="s1">even after conversion from other formats, e.g.,
+</span><span class="s1">    ffmpeg -i input output.wav
+</span><span class="s1">Usage:
+</span><span class="s1">    python3 deepsound2john.py carrier.wav &gt; hashes.txt
+</span><span class="s1">    john hashes.txt
+</span><span class="s1">This software is copyright (c) 2018 Ryan Govostes &lt;rgovostes@gmail.com&gt;, and
+</span><span class="s1">it is hereby released to the general public under the following terms:
+</span><span class="s1">Redistribution and use in source and binary forms, with or without
+</span><span class="s1">modification, are permitted.
+</span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">textwrap</span>
+
+
+<span class="k">def</span> <span class="nf">decode_data_low</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">buf</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">decode_data_normal</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span> <span class="o">|</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">out</span>
+
+<span class="k">def</span> <span class="nf">decode_data_high</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span>     <span class="o">|</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span> \
+             <span class="o">|</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="o">|</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">6</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">3</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">is_magic</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+  <span class="c1"># This is a more efficient way of testing for the `DSCF` magic header without</span>
+  <span class="c1"># decoding the whole buffer</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span>  <span class="o">==</span> <span class="p">(</span><span class="mi">68</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">68</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> \
+     <span class="ow">and</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span>  <span class="o">==</span> <span class="p">(</span><span class="mi">83</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>  <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">83</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> \
+     <span class="ow">and</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span>  <span class="o">==</span> <span class="p">(</span><span class="mi">67</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">67</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> \
+     <span class="ow">and</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">70</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">70</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">is_wave</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;RIFF&#39;</span> <span class="ow">and</span> <span class="n">buf</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;WAVE&#39;</span>
+
+
+<span class="k">def</span> <span class="nf">process_deepsound_file</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+  <span class="n">bname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+  <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">bname</span><span class="p">)</span>
+
+  <span class="c1"># Check if it&#39;s a .wav file</span>
+  <span class="n">buf</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">is_wave</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">convert_warn</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;file not in .wav format&#39;</span><span class="p">)</span>
+    <span class="n">convert_warn</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">return</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">SEEK_SET</span><span class="p">)</span>
+
+  <span class="c1"># Scan for the marker...</span>
+  <span class="n">hdrsz</span> <span class="o">=</span> <span class="mi">104</span>
+  <span class="n">hdr</span> <span class="o">=</span> <span class="bp">None</span>
+
+  <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">off</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">hdrsz</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">hdrsz</span><span class="p">:</span> <span class="k">break</span>
+
+    <span class="k">if</span> <span class="n">is_magic</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
+          <span class="n">hdr</span> <span class="o">=</span> <span class="n">decode_data_normal</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+          <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;found DeepSound header at offset </span><span class="si">%i</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">off</span><span class="p">)</span>
+          <span class="k">break</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="o">-</span><span class="n">hdrsz</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">SEEK_CUR</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">hdr</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;does not appear to be a DeepSound file&#39;</span><span class="p">)</span>
+    <span class="k">return</span>
+
+  <span class="c1"># Check some header fields</span>
+  <span class="n">mode</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+  <span class="n">encrypted</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+  <span class="n">modes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;low&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;high&#39;</span><span class="p">}</span>
+  <span class="k">if</span> <span class="n">mode</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;data is encoded in </span><span class="si">%s</span><span class="s1">-quality mode&#39;</span><span class="p">,</span> <span class="n">modes</span><span class="p">[</span><span class="n">mode</span><span class="p">])</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;unexpected data encoding mode </span><span class="si">%i</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">modes</span><span class="p">[</span><span class="n">mode</span><span class="p">])</span>
+    <span class="k">return</span>
+
+  <span class="k">if</span> <span class="n">encrypted</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;file is not encrypted&#39;</span><span class="p">)</span>
+    <span class="k">return</span>
+  <span class="k">elif</span> <span class="n">encrypted</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;unexpected encryption flag </span><span class="si">%i</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">encrypted</span><span class="p">)</span>
+    <span class="k">return</span>
+
+  <span class="n">sha1</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">6</span><span class="o">+</span><span class="mi">20</span><span class="p">]</span>
+  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">:$dynamic_1529$</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bname</span><span class="p">,</span> <span class="n">sha1</span><span class="o">.</span><span class="n">hex</span><span class="p">()))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">argparse</span>
+
+  <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+  <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">)</span>
+  <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;files&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;rb&#39;</span><span class="p">,</span> <span class="n">bufsize</span><span class="o">=</span><span class="mi">4096</span><span class="p">))</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+  <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">)</span>
+
+  <span class="n">convert_warn</span> <span class="o">=</span> <span class="bp">False</span>
+
+  <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
+    <span class="n">process_deepsound_file</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">convert_warn</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+</span><span class="s1">    ---------------------------------------------------------------
+</span><span class="s1">    Some files were not in .wav format. Try converting them to .wav
+</span><span class="s1">    and try again. You can use: ffmpeg -i input output.wav
+</span><span class="s1">    ---------------------------------------------------------------
+</span><span class="s1">    &#39;&#39;&#39;</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()),</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><strong>John是用于破解hash值的工具，kali自带：</strong></p>
+<blockquote>
+<p><strong>john工具对于同一个 hash.txt 文件只会进行一次爆破，如果第二次执行john hash.txt 是不会得到结果的，只会得到如下输出。</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># john hash.txt                                                                                         </span>
+<span class="n">Using</span> <span class="n">default</span> <span class="nb">input</span> <span class="n">encoding</span><span class="p">:</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">Loaded</span> <span class="mi">1</span> <span class="n">password</span> <span class="nb">hash</span> <span class="p">(</span><span class="n">dynamic_1529</span> <span class="p">[</span><span class="n">sha1</span><span class="p">(</span><span class="err">$</span><span class="n">p</span> <span class="n">null_padded_to_len_32</span><span class="p">)</span> <span class="p">(</span><span class="n">DeepSound</span><span class="p">)</span> <span class="mi">128</span><span class="o">/</span><span class="mi">128</span> <span class="n">AVX</span> <span class="mi">4</span><span class="n">x1</span><span class="p">])</span>
+<span class="n">No</span> <span class="n">password</span> <span class="n">hashes</span> <span class="n">left</span> <span class="n">to</span> <span class="n">crack</span> <span class="p">(</span><span class="n">see</span> <span class="n">FAQ</span><span class="p">)</span>                                
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p><strong>如果想查看上一次爆破的结果，可以使用以下命令</strong></p>
+</blockquote>
+<pre><code># john hash.txt --show
+</code></pre><p><strong>如果想重新破解hash值，则需要删除 john.pot 文件中的历史值</strong></p>
+<blockquote>
+<p><strong>破解过的密码会存储在home目录下的隐藏文件.john/john.pot中</strong></p>
+<p><strong>Linux中使用 ls -a 命令可以显示该目录下的所有文件(包括隐藏文件夹)</strong></p>
+<p><strong>使用快捷键Ctrl+H可以显示和隐藏（隐藏文件）。</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719161002687.png" alt="image-20210719161002687"></p>
+<h3 id="font-colora020f0题目分析font-8"><a href="#font-colora020f0题目分析font-8" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-8" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>音频文件直接用 Audacity 打开分析，查看频谱图查看就拿到 flag 了。但只有前一半</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719143117037.png" alt="image-20210719143117037"></p>
+<p><a href="https://shawroot.hatenablog.com/entry/2020/03/10/INSHack2018/BUUCTF-MISC%3A%28not%29_so_deep" target="_blank" rel="noopener"><font color=#0288D1>参考Root师傅的Wp</font></a></p>
+<p>接下来需要用到音频分析软件 <a href="https://deepsound.soft112.com/" target="_blank" rel="noopener">DeepSound</a></p>
+<blockquote>
+<p>加载 final_flag.wav 文件提示需要密码</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719151255756.png" alt="image-20210719151255756" width="500" /></p>
+<p>用Root师傅的 <a href="https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/run/deepsound2john.py" target="_blank" rel="noopener">破解脚本<strong>deepsound2john.py</strong> </a></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719151655008.png" alt="image-20210719151655008"></p>
+<blockquote>
+<p>得到密码：azerty</p>
+<p>导出得到另一半</p>
+<p>0_1s_4lwayS_Th3_S4me}</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719155106381.png" alt="image-20210719155106381"></p>
+<p><strong>flag{Aud1o_st3G4n0_1s_4lwayS_Th3_S4me}</strong></p>
+<h2 id="font-color0288d1bsidessf2019diskimagefont"><a href="#font-color0288d1bsidessf2019diskimagefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1bsidessf2019diskimagefont" class="headings"><font color=#0288D1>【BSidesSF2019】diskimage</font></a></h2>
+<h3 id="font-colora020f0知识点磁盘取证testdisk恢复文件zsteg提取数据font"><a href="#font-colora020f0知识点磁盘取证testdisk恢复文件zsteg提取数据font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点磁盘取证testdisk恢复文件zsteg提取数据font" class="headings"><font color=#A020F0>知识点：磁盘取证+testdisk恢复文件、zsteg提取数据、</font></a></h3>
+<p><strong>磁盘取证+testdisk恢复文件：</strong></p>
+<blockquote>
+<p><strong>用zsteg -a 命令可以 分析出 png 图片中隐写的磁盘数据，zsteg -e 命令导出</strong></p>
+</blockquote>
+<p><strong>用kali 预装的 testdisk工具对损坏的磁盘进行数据恢复</strong></p>
+<h3 id="font-colora020f0题目分析font-9"><a href="#font-colora020f0题目分析font-9" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-9" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>拿到一张 png 图片，一张损坏的磁盘，貌似有 LSB 隐写</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719170416946.png" alt="image-20210719170416946" width="500" /></p>
+<blockquote>
+<p><strong>kali三件套走一波</strong></p>
+<p><strong>file 1.png、binwalk 1.png 、zsteg -a 1.png</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719170723065.png" alt="image-20210719170723065"></p>
+<blockquote>
+<p>有一份 FAT 磁盘数据，DOS扇区数据，用-e命令提取</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">zsteg</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&#34;b8,rgb,lsb,xy&#34;</span> <span class="mf">1.</span><span class="n">png</span> <span class="o">&gt;</span> <span class="n">diskimage</span><span class="o">.</span><span class="n">dat</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><strong>testdisk恢复文件：</strong></p>
+<blockquote>
+<p><strong>提取完数据后用testdisk进行分析diskimage.dat</strong>，<strong>（kali 预装 testdisk）</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># testdisk diskimage.dat</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p><strong>执行命令后一路回车，在出现文件时，找到一个已删除的文件 _LAG.ICO 文件</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719171548391.png" alt="image-20210719171548391" width="400" /></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 按C 复制图片，得到 flag</span>
+<span class="n">use</span> <span class="n">Right</span> <span class="n">to</span> <span class="n">change</span> <span class="n">directory</span><span class="p">,</span> <span class="n">h</span> <span class="n">to</span> <span class="n">hide</span> <span class="n">deleted</span> <span class="n">files</span>                                                   
+    <span class="n">q</span> <span class="n">to</span> <span class="n">quit</span><span class="p">,</span> <span class="p">:</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">file</span><span class="p">,</span> <span class="n">a</span> <span class="n">to</span> <span class="n">select</span> <span class="nb">all</span> <span class="n">files</span>                                       
+    <span class="n">C</span> <span class="n">to</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">files</span><span class="p">,</span> <span class="n">c</span> <span class="n">to</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">file</span>  
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719172120636.png" alt="image-20210719172120636"></p>
+<p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719172728004.png" alt="image-20210719172728004" width="200" /></p>
+<p><strong>flag{FAT12_FTW}</strong></p>
+
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://cn1nja.github.io/" class="p-author h-card" target="_blank" rel="noopener">N1nja</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/posts/buumisc%E9%80%9A%E5%85%B36/" target="_blank" rel="noopener">https://cn1nja.github.io/posts/buumisc通关6/</a></li>
+            
+            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-07-19 17:33:16 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-07-19</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-07-19</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B34/" class="related-link">BUUMisc通关4</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B33/" class="related-link">BUUMisc通关3</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B32/" class="related-link">BUUMisc通关2</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B31/" class="related-link">BUUMisc通关1</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/buumisc%E5%88%B7%E9%A2%98/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>BUUMisc刷题</a>
+                
+            
+        </div>
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" rel="next">BUUMisc通关5 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2021&nbsp;N1nja</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>

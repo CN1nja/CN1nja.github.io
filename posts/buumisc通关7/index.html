@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>BUUMisc通关7 | N1nja&#39;s Blog</title>
+
+    <link rel="stylesheet" href="/css/meme.min.c88088b7b0ca1272992f1fe5f9a13b2f72dcf7e54c4c31e08d3b37029a113308.css"/>
+
+    
+    
+        <script src="/js/meme.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="N1nja" /><meta name="description" content="静静听这么好听的歌 知识点：matlab脚本逆向 题目分析 flag{dce97bd455ae1a00faaebd31c57e7d47} 【GKCTF 2021】你知道……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="N1nja&#39;s Blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="N1nja&#39;s Blog" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B37/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-07-19T20:31:17+08:00",
+        "dateModified": "2021-07-21T16:01:51+08:00",
+        "url": "https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B37/",
+        "headline": "BUUMisc通关7",
+        "description": "静静听这么好听的歌 知识点：matlab脚本逆向 题目分析 flag{dce97bd455ae1a00faaebd31c57e7d47} 【GKCTF 2021】你知道……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  2424 ,
+        "image": ["https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719220203614.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222536190.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222601754.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719224841618.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719223329993.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222949191.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222915187.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720141417241.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720141633780.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720144333949.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720144143955.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720150728891.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720150920417.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720151038425.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720151133974.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720151315500.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720150529754.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720162028564.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720220946356.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720221331376.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720222129746.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720222320361.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720225328694.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720230633329.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721115948735.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721120829314.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721122552991.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721151712981.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721151928109.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721152318519.png"],
+        "author": {
+            "@type": "Person",
+            "description": "crypto player",
+            "email": "mikecninja@gmail.com",
+            "image": "https://cn1nja.github.io/icons/apple-touch-icon.png",
+            "url": "https://cn1nja.github.io/",
+            "name": "N1nja"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "N1nja's Blog",
+            "url": "https://cn1nja.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://cn1nja.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+    
+
+
+
+<meta property="og:title" content="BUUMisc通关7" />
+<meta property="og:description" content="静静听这么好听的歌 知识点：matlab脚本逆向 题目分析 flag{dce97bd455ae1a00faaebd31c57e7d47} 【GKCTF 2021】你知道……" />
+<meta property="og:url" content="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B37/" />
+<meta property="og:site_name" content="N1nja&#39;s Blog" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719220203614.png" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-07-19T20:31:17&#43;08:00" />
+    <meta property="article:modified_time" content="2021-07-21T16:01:51&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">N1nja&#39;s Blog</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">归档</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/links/"><span class="menu-item-name">友链</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">BUUMisc通关7</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2021-07-19T20:31:17&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.7.19</time>
+    
+    
+        
+        <time datetime="2021-07-21T16:01:51&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.7.21</time>
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/ctf%E8%AE%AD%E7%BB%83/" class="category-link p-category">CTF训练</a></span>
+            
+        
+    
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;5&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:font-color0288d1静静听这么好听的歌font" href="#font-color0288d1静静听这么好听的歌font"><font color=#0288D1>静静听这么好听的歌</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点matlab脚本逆向font" href="#font-colora020f0知识点matlab脚本逆向font"><font color=#A020F0>知识点：matlab脚本逆向</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font" href="#font-colora020f0题目分析font"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1gkctf-2021你知道apng吗font" href="#font-color0288d1gkctf-2021你知道apng吗font"><font color=#0288D1>【GKCTF 2021】你知道apng吗</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点apng3d画图font" href="#font-colora020f0知识点apng3d画图font"><font color=#A020F0>知识点：APNG、3D画图</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-1" href="#font-colora020f0题目分析font-1"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1ddctf2018流量分析font" href="#font-color0288d1ddctf2018流量分析font"><font color=#0288D1>【DDCTF2018】流量分析</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点流量分析tls加密base64转图片font" href="#font-colora020f0知识点流量分析tls加密base64转图片font"><font color=#A020F0>知识点：流量分析(TLS加密)、base64转图片</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-2" href="#font-colora020f0题目分析font-2"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1gkctf-2021excel-骚操作font" href="#font-color0288d1gkctf-2021excel-骚操作font"><font color=#0288D1>【GKCTF 2021】excel 骚操作</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点汉信码excel操作font" href="#font-colora020f0知识点汉信码excel操作font"><font color=#A020F0>知识点：汉信码、Excel操作</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-3" href="#font-colora020f0题目分析font-3"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1大流量分析三font" href="#font-color0288d1大流量分析三font"><font color=#0288D1>大流量分析（三）</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点wireshark基本用法及过滤规则font" href="#font-colora020f0知识点wireshark基本用法及过滤规则font"><font color=#A020F0>知识点：Wireshark基本用法及过滤规则</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-4" href="#font-colora020f0题目分析font-4"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1suctf2019protocolfont" href="#font-color0288d1suctf2019protocolfont"><font color=#0288D1>【SUCTF2019】protocol</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点usb流量包中隐写pngfont" href="#font-colora020f0知识点usb流量包中隐写pngfont"><font color=#A020F0>知识点：usb流量包中隐写png</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-5" href="#font-colora020f0题目分析font-5"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1ctf2019shefont" href="#font-color0288d1ctf2019shefont"><font color=#0288D1>【*CTF2019】She</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点rpg-makr-xp游戏制作工具font" href="#font-colora020f0知识点rpg-makr-xp游戏制作工具font"><font color=#A020F0>知识点：RPG Makr XP（游戏制作工具）</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-6" href="#font-colora020f0题目分析font-6"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1inshack2017remote-multimedia-controllerfont" href="#font-color0288d1inshack2017remote-multimedia-controllerfont"><font color=#0288D1>【INSHack2017】remote-multimedia-controller</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点流量分析tcp签到题font" href="#font-colora020f0知识点流量分析tcp签到题font"><font color=#A020F0>知识点：流量分析(TCP)、签到题</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-7" href="#font-colora020f0题目分析font-7"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1watevrctf-2019unspaellabllefont" href="#font-color0288d1watevrctf-2019unspaellabllefont"><font color=#0288D1>【watevrCTF 2019】Unspaellablle</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点google-hacking文件对比工具beyond-comparefont" href="#font-colora020f0知识点google-hacking文件对比工具beyond-comparefont"><font color=#A020F0>知识点：google hacking、文件对比工具Beyond Compare</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-8" href="#font-colora020f0题目分析font-8"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1bsidessf2019thekeyfont" href="#font-color0288d1bsidessf2019thekeyfont"><font color=#0288D1>【BSidesSF2019】thekey</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点usb流量分析font" href="#font-colora020f0知识点usb流量分析font"><font color=#A020F0>知识点：USB流量分析</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-9" href="#font-colora020f0题目分析font-9"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+  </ol>
+</nav><div class="post-body e-content">
+              <h2 id="font-color0288d1静静听这么好听的歌font"><a href="#font-color0288d1静静听这么好听的歌font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1静静听这么好听的歌font" class="headings"><font color=#0288D1>静静听这么好听的歌</font></a></h2>
+<h3 id="font-colora020f0知识点matlab脚本逆向font"><a href="#font-colora020f0知识点matlab脚本逆向font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点matlab脚本逆向font" class="headings"><font color=#A020F0>知识点：matlab脚本逆向</font></a></h3>
+<h3 id="font-colora020f0题目分析font"><a href="#font-colora020f0题目分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p><strong>flag{dce97bd455ae1a00faaebd31c57e7d47}</strong></p>
+<h2 id="font-color0288d1gkctf-2021你知道apng吗font"><a href="#font-color0288d1gkctf-2021你知道apng吗font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1gkctf-2021你知道apng吗font" class="headings"><font color=#0288D1>【GKCTF 2021】你知道apng吗</font></a></h2>
+<h3 id="font-colora020f0知识点apng3d画图font"><a href="#font-colora020f0知识点apng3d画图font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点apng3d画图font" class="headings"><font color=#A020F0>知识点：APNG、3D画图</font></a></h3>
+<p><a href="https://zh.wikipedia.org/wiki/APNG" target="_blank" rel="noopener"><font color=#0288D1>APNG维基百科</font></a></p>
+<p><a href="https://ezgif.com/split" target="_blank" rel="noopener"><font color=#0288D1>APNG在线分解网站</font></a></p>
+<p><a href="https://www.jianshu.com/p/ad27bad19610" target="_blank" rel="noopener"><font color=#0288D1>APNG学习文章</font></a></p>
+<p><a href="https://osdn.net/projects/sfnet_apngdis/releases/" target="_blank" rel="noopener"><font color=#0288D1>本地工具下载APNG Disassembler</font></a></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719220203614.png" alt="image-20210719220203614"></p>
+<h3 id="font-colora020f0题目分析font-1"><a href="#font-colora020f0题目分析font-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-1" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>题目给了一份 girl.apng 文件，打开发现和 GIF动画 一样，010editor查看发现图片却都是 png</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Google查了才知道 APNG是一种动态网络图行，和GIF类似，但体积比 gif 下</strong></p>
+</blockquote>
+<p>用 <a href="https://ezgif.com/split" target="_blank" rel="noopener"><font color=#0288D1>APNG在线分解网站</font></a> 进行图片的分解</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222536190.png" alt="image-20210719222536190"></p>
+<blockquote>
+<p><strong>分离的图片整理后得到四张二维码，接下来的事情就是扫描二维码了</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222601754.png" alt="image-20210719222601754"></p>
+<blockquote>
+<p><strong>用 QR research 识别二维码</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>第一张图也是有点难扫，我用微软官方的 3D画图 软件调整了下图片角度，用微信一扫就出 flag了</strong></p>
+<p><strong>flag{a3c7e4e5</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719224841618.png" alt="image-20210719224841618"></p>
+<blockquote>
+<p><strong>第二张图片用 stegsolve 查看颜色通道，就能得到清晰的二维码图片</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719223329993.png" alt="image-20210719223329993"></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222949191.png" alt="image-20210719222949191"></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210719222915187.png" alt="image-20210719222915187"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">flag</span><span class="p">{</span><span class="n">a3c7e4e5</span><span class="o">-</span><span class="mi">9</span><span class="n">b9d</span><span class="o">-</span><span class="n">ad20</span><span class="o">-</span><span class="mo">0327</span><span class="o">-</span><span class="mi">288</span><span class="n">a235370ea</span><span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1ddctf2018流量分析font"><a href="#font-color0288d1ddctf2018流量分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1ddctf2018流量分析font" class="headings"><font color=#0288D1>【DDCTF2018】流量分析</font></a></h2>
+<h3 id="font-colora020f0知识点流量分析tls加密base64转图片font"><a href="#font-colora020f0知识点流量分析tls加密base64转图片font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点流量分析tls加密base64转图片font" class="headings"><font color=#A020F0>知识点：流量分析(TLS加密)、base64转图片</font></a></h3>
+<p><strong>流量分析(TLS加密)</strong></p>
+<p><a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9tls%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90font" target="_blank" rel="noopener"><font color=#0288D1>参考文章</font></a></p>
+<p><strong>base64转图片</strong></p>
+<p><a href="https://www.vgot.net/test/image2base64.php?" target="_blank" rel="noopener"><font color=#0288D1>在线base64转图片</font></a></p>
+<p><a href="https://the-x.cn/base64" target="_blank" rel="noopener"><font color=#0288D1>base64在线编码解码</font></a></p>
+<h3 id="font-colora020f0题目分析font-2"><a href="#font-colora020f0题目分析font-2" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-2" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>提示一：若感觉在中间某个容易出错的步骤，若有需要检验是否正确时，可以比较MD5: 90c490781f9c320cd1ba671fcb112d1c</strong></p>
+<p><strong>提示二：注意补齐私钥格式</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+<span class="n">XXXXXXX</span>
+<span class="o">-----</span><span class="n">END</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p><strong>用 Wireshark 打开 流量包，根据提示可以知道这题应该和 TLS加密通信相关，接下来需要找到 base64编码的RSA签名私钥</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>wireshark 中 Ctrl+F搜索 关键字 key，发现能找到 base64 编码</strong></p>
+</blockquote>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720141417241.png" alt="image-20210720141417241" width="500"/>
+<p>在通信数据中可以知道，传输了一张名为 image001.png 的图片，编码方式为 base64 ,将 base64 编码用 在线 <a href="https://www.vgot.net/test/image2base64.php?" target="_blank" rel="noopener"><font color=#0288D1>在线base64转图片</font></a> 解码为图片</p>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720141633780.png" alt="image-20210720141633780" width="500"/>
+<blockquote>
+<p><strong>用QQ 的 OCR识别出 RSA签名私钥，加上私钥格式，如下：</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+<span class="n">MIICXAIBAAKBgQDCm6vZmclJrVH1AAyGuCuSSZ8O</span><span class="o">+</span><span class="n">mIQiOUQCvN0HYbj8153JfSQ</span>
+<span class="n">LsJIhbRYS7</span><span class="o">+</span><span class="n">zZ1oXvPemWQDv</span><span class="o">/</span><span class="n">u</span><span class="o">/</span><span class="n">tzegt58q4ciNmcVnq1uKiygc6QOtvT7oiSTyO</span>
+<span class="n">vMX</span><span class="o">/</span><span class="n">q5iE2iClYUIHZEKX3BjjNDxrYvLQzPyGD1EY2DZIO6T45FNKYC2VDwIDAQAB</span>
+<span class="n">AoGAbtWUKUkx37lLfRq7B5sqjZVKdpBZe4tL0jg6cX5Djd3Uhk1inR9UXVNw4</span><span class="o">/</span><span class="n">y4</span>
+<span class="n">QGfzYqOn8</span><span class="o">+</span><span class="n">Cq7QSoBysHOeXSiPztW2cL09ktPgSlfTQyN6ELNGuiUOYnaTWYZpp</span><span class="o">/</span>
+<span class="n">QbRcZ</span><span class="o">/</span><span class="n">eHBulVQLlk5M6RVs9BLI9X08RAl7EcwumiRfWas6kCQQDvqc0dxl2wIjwN</span>
+<span class="n">czILcoWLig2c2u71Nev9DrWjWHU8eHDuzCJWvOUAHIrkexddWEK2VHd</span><span class="o">+</span><span class="n">F13GBCOQ</span>
+<span class="n">ZCM4prBjAkEAz</span><span class="o">+</span><span class="n">ENahsEjBE4</span><span class="o">+</span><span class="mi">7</span><span class="n">H1HdIaw0</span><span class="o">+</span><span class="n">goe</span><span class="o">/</span><span class="mi">45</span><span class="n">d6A2ewO</span><span class="o">/</span><span class="n">lYH6dDZTAzTW9z9</span>
+<span class="n">kzV8uz</span><span class="o">+</span><span class="n">Mmo5163</span><span class="o">/</span><span class="n">JtvwYQcKF39DJGGtqZQJBAKa18XR16fQ9TFL64EQwTQ</span><span class="o">+</span><span class="n">tYBzN</span>
+<span class="o">+</span><span class="mo">04</span><span class="n">eTWQCmH3haeQ</span><span class="o">/</span><span class="mi">0</span><span class="n">Cd9XyHBUveJ42Be8</span><span class="o">/</span><span class="n">jeDcIx7dGLxZKajHbEAfBFnAsCQGq1</span>
+<span class="n">AnbJ4Z6opJCGu</span><span class="o">+</span><span class="n">UP2c8SC8m0bhZJDelPRC8IKE28eB6SotgP61ZqaVmQ</span><span class="o">+</span><span class="n">HLJ1</span><span class="o">/</span><span class="n">wH</span>
+<span class="o">/</span><span class="mi">5</span><span class="n">pfc3AmEyRdfyx6zwUCQCAH4SLJv</span><span class="o">/</span><span class="n">kprRz1a1gx8FR5tj4NeHEFFNEgq1gmiwmH</span>
+<span class="mi">2</span><span class="n">STT5qZWzQFz8NRe</span><span class="o">+/</span><span class="n">otNOHBR2Xk4e8IS</span><span class="o">+</span><span class="n">ehIJ3TvyE</span><span class="o">=</span>
+<span class="o">-----</span><span class="n">END</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><strong>添加TLS私钥，</strong><a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9tls%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90font" target="_blank" rel="noopener"><font color=#0288D1>参考文章</font></a></p>
+<blockquote>
+<p><strong>编辑 =&gt; 首选项 =&gt; Protocols =&gt; TLS</strong></p>
+</blockquote>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720144333949.png" alt="image-20210720144333949" width="500"/>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720144143955.png" alt="image-20210720144143955" width="500"/>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">flag</span><span class="p">{</span><span class="mi">0</span><span class="n">ca2d8642f90e10efd9092cd6a2831c0</span><span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1gkctf-2021excel-骚操作font"><a href="#font-color0288d1gkctf-2021excel-骚操作font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1gkctf-2021excel-骚操作font" class="headings"><font color=#0288D1>【GKCTF 2021】excel 骚操作</font></a></h2>
+<h3 id="font-colora020f0知识点汉信码excel操作font"><a href="#font-colora020f0知识点汉信码excel操作font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点汉信码excel操作font" class="headings"><font color=#A020F0>知识点：汉信码、Excel操作</font></a></h3>
+<h3 id="font-colora020f0题目分析font-3"><a href="#font-colora020f0题目分析font-3" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-3" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>打开 Excel 文件，题目说有 flag，选择部分表格，鼠标右键，选择快速分析 =&gt;  格式化数据条</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210720150728891.png" alt="image-20210720150728891" width="500" /></p>
+<blockquote>
+<p><strong>发现有类似二维码的图</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210720150920417.png" alt="image-20210720150920417" width="500" /></p>
+<blockquote>
+<p>又发现有颜色的部分有字符 1 ，无颜色的部分 无字符</p>
+</blockquote>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720151038425.png" alt="image-20210720151038425" width="500"/>
+<blockquote>
+<p>选中部分表格，点击条件格式 =&gt; 等于</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210720151133974.png" alt="image-20210720151133974" width="500" /></p>
+<blockquote>
+<p><strong>将等于 1 的单元格填充为黑色，点击格式，调整列宽、行高。最后得到下面的图片。</strong></p>
+</blockquote>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720151315500.png" alt="image-20210720151315500" width="500"/>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720150529754.png" alt="image-20210720150529754" width="500"/>
+<blockquote>
+<p><strong>这图片很熟悉，汉明码，之前做过。用手机软件 中国编码就能扫描得到 flag.</strong></p>
+</blockquote>
+<p><a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B36/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%89%E4%BF%A1%E7%A0%81rgb%E4%BF%A1%E6%81%AF%E8%AF%86%E5%88%AB%E8%84%9A%E6%9C%ACfont" target="_blank" rel="noopener"><font color=#0288D1>之前做过的汉明码题目</font></a></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># flag{9ee0cb62-f443-4a72-e9a3-43c0b910757e}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1大流量分析三font"><a href="#font-color0288d1大流量分析三font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1大流量分析三font" class="headings"><font color=#0288D1>大流量分析（三）</font></a></h2>
+<h3 id="font-colora020f0知识点wireshark基本用法及过滤规则font"><a href="#font-colora020f0知识点wireshark基本用法及过滤规则font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点wireshark基本用法及过滤规则font" class="headings"><font color=#A020F0>知识点：Wireshark基本用法及过滤规则</font></a></h3>
+<p><a href="https://www.jianshu.com/p/a97a23abd577" target="_blank" rel="noopener"><font color=#0288D1>WireShark基本用法及过滤规则</font></a></p>
+<h3 id="font-colora020f0题目分析font-4"><a href="#font-colora020f0题目分析font-4" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-4" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<pre><code>某黑客对A公司发动了攻击，以下是一段时间内我们获取到的流量包，那黑客预留的后门的文件名是什么？（答案加上flag{}）
+</code></pre><blockquote>
+<p>根据题目可以知道，flag 就是黑客留的后门文件的文件名</p>
+<p>既然上传了木马文件的，那么就用 TCP、HTTP 流分析。一般上传 php木马文件成功后，会测试 phpinfo() 能不能返回 站点的php信息</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 过滤包含字符 phpinfo() 的TCP流</span>
+<span class="n">tcp</span> <span class="n">contains</span> <span class="s2">&#34;phpinfo()&#34;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p><strong>在下载的第一个流量文件中找到了，黑客上传的后门文件</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720162028564.png" alt="image-20210720162028564"></p>
+<pre><code>flag{admin.bak.php}
+</code></pre><h2 id="font-color0288d1suctf2019protocolfont"><a href="#font-color0288d1suctf2019protocolfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1suctf2019protocolfont" class="headings"><font color=#0288D1>【SUCTF2019】protocol</font></a></h2>
+<h3 id="font-colora020f0知识点usb流量包中隐写pngfont"><a href="#font-colora020f0知识点usb流量包中隐写pngfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点usb流量包中隐写pngfont" class="headings"><font color=#A020F0>知识点：usb流量包中隐写png</font></a></h3>
+<p><strong>官网给的wp:</strong></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720220946356.png" alt="image-20210720220946356"></p>
+<h3 id="font-colora020f0题目分析font-5"><a href="#font-colora020f0题目分析font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-5" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>说实话，没看懂这题考的啥意思，觉得考点没啥意义</p>
+</blockquote>
+<blockquote>
+<p>1、打开流量包，从标题就知道和 USB流量相关，foremost 分析一下 usbtraffic.pcapng 文件，得到了很多png 图片</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210720221331376.png" alt="image-20210720221331376" width="500" /></p>
+<blockquote>
+<p>2、重新分析 usbtraffic.pcapng 流量包，搜索 png 字符信息</p>
+<p>在长度为7845 的usb流量中发现有png 信息</p>
+</blockquote>
+<img src="/BUUCTF/2021/BUUMisc通关7/image-20210720222129746.png" alt="image-20210720222129746" width="500"/>
+<blockquote>
+<p>将usb流量按长度排序，对Length=7845 的 png文件 进行分析,</p>
+<p>发现传输每张图片的流量的数据部分第3个字节有一定的变化规律，</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210720222320361.png" alt="image-20210720222320361" width="500" /></p>
+<p><a href="https://blog.csdn.net/qq_49354488/article/details/115694025" target="_blank" rel="noopener">具体的参考这篇文章</a></p>
+<p>这道题这没啥好学习的点</p>
+<p>最后就是得到这样的数据：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#正常图片的字节数据顺序，15个</span>
+<span class="mi">4321098765</span><span class="n">edcba</span>
+
+<span class="c1">#黑色图片的字节数据顺序，10个</span>
+<span class="mf">67e41</span><span class="n">d02b9</span>
+<span class="mf">1e86</span><span class="n">dc059b</span>
+<span class="mi">293517</span><span class="n">dbe4</span>
+<span class="mi">6</span><span class="n">da894b3c2</span>
+
+<span class="c1">#得到 Flag</span>
+<span class="n">suctf</span><span class="p">{</span><span class="n">My_usb_pr0toco1_s0_w3ak</span><span class="p">}</span><span class="err">。</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1ctf2019shefont"><a href="#font-color0288d1ctf2019shefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1ctf2019shefont" class="headings"><font color=#0288D1>【*CTF2019】She</font></a></h2>
+<h3 id="font-colora020f0知识点rpg-makr-xp游戏制作工具font"><a href="#font-colora020f0知识点rpg-makr-xp游戏制作工具font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点rpg-makr-xp游戏制作工具font" class="headings"><font color=#A020F0>知识点：RPG Makr XP（游戏制作工具）</font></a></h3>
+<p><strong>RPG Maker XP</strong></p>
+<p><a href="https://zh.wikipedia.org/wiki/RPG%E8%A3%BD%E4%BD%9C%E5%A4%A7%E5%B8%AB" target="_blank" rel="noopener"><font color=#0288D1>维基百科</font></a></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210720225328694.png" alt="image-20210720225328694"></p>
+<p><a href="https://dl.3dmgame.com/patch/144142.html" target="_blank" rel="noopener"><font color=#0288D1>RPG Maker XP 汉化版下载</font></a></p>
+<h3 id="font-colora020f0题目分析font-6"><a href="#font-colora020f0题目分析font-6" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-6" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>拿到题目给的游戏，查了一番，发现是用 RPG Maker XP 制作的一款游戏，下载<a href="https://dl.3dmgame.com/patch/144142.html" target="_blank" rel="noopener"><font color=#0288D1>RPG Maker XP</font></a></p>
+<blockquote>
+<p>新建一个项目，将项目中的<code>Game.rxproj</code>文件放入She游戏文件夹中，再用工具打开这个文件，就可以对游戏进行编辑了</p>
+<p>点击 工具 =&gt; 数据库 ，把怪物的数值都修改到最小，角色的搞成最大</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210720230633329.png" alt="image-20210720230633329" width="500" /></p>
+<blockquote>
+<p>开挂后，怪鸟就被秒杀了，继续后面的游戏，进入一扇门后一直往右走，会有很多门，房间里面有箱子，但是门打不开，而且碰到里面的怪物就死了。</p>
+</blockquote>
+<blockquote>
+<p>继续开挂，修改游戏数据，选择场景，点击蓝色方块，编辑事件。把怪物删掉</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210721115948735.png" alt="image-20210721115948735" width="500" /></p>
+<blockquote>
+<p>继续调试游戏，到了有门的房间后，一个个尝试打开。发现打开的箱子给出的数字为 <code>213697</code>，打开门的顺序为 <code>382157</code></p>
+</blockquote>
+<blockquote>
+<p>当打开最后一扇门后，在中间会出现一扇隐藏的门，走进去和魔镜对话得知，提交的flag 应该进行 md5加密。</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721120829314.png" alt="image-20210721120829314"></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">将</span> <span class="mi">213697</span> <span class="err">、</span><span class="mi">382157</span> <span class="err">进行</span><span class="n">md5加密</span><span class="err">，提交</span><span class="n">flag</span>
+<span class="mi">213697</span><span class="err">：</span><span class="n">flag</span><span class="p">{</span><span class="n">d6f3fdffbcb462607878af65d059f274</span><span class="p">}</span> 
+<span class="mi">382157</span><span class="err">：</span><span class="n">flag</span><span class="p">{</span><span class="n">b406b652788122d3c88fb6915aa732b5</span><span class="p">}</span>
+
+<span class="c1"># 尝试提交正确的答案为 flag{d6f3fdffbcb462607878af65d059f274} </span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1inshack2017remote-multimedia-controllerfont"><a href="#font-color0288d1inshack2017remote-multimedia-controllerfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1inshack2017remote-multimedia-controllerfont" class="headings"><font color=#0288D1>【INSHack2017】remote-multimedia-controller</font></a></h2>
+<h3 id="font-colora020f0知识点流量分析tcp签到题font"><a href="#font-colora020f0知识点流量分析tcp签到题font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点流量分析tcp签到题font" class="headings"><font color=#A020F0>知识点：流量分析(TCP)、签到题</font></a></h3>
+<h3 id="font-colora020f0题目分析font-7"><a href="#font-colora020f0题目分析font-7" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-7" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>这题应该是个签到题，直接追踪 TCP流量分析，就能看到 flag.txt 文件 后面有 base64编码，连续解码就得到了 flag</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210721122552991.png" alt="image-20210721122552991" width="500" /></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#base64解码</span>
+<span class="n">Vmxkd1NrNVhVbk5qUlZKU1ltdGFjRlJYZEhOaWJFNVhWR3RPV0dKVmJEWldiR1JyV1ZkS1ZXRXphRnBpVkVaVFYycEtVMU5IUmtobFJYQlRUVmhDTmxZeFdtdGhhelZ5WWtWYWFWSlViRmRVVlZaYVRURmFjbFpyT1ZaV2JXUTJWa1pvYTFkck1YVlVhbHBoVWxack1GUlZaRXRqVmxaMVZHMTRXRkpVUlRCWFdIQkdUbGRHY2s1VmFFOVdNWEJoV1Zkek1XSldaSFJPVm1SclZsZDRXbFJWVm5wUVVUMDk</span><span class="o">=</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># INSA{TCP_s0ck3t_4n4lys1s_c4n_b3_fun!}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1watevrctf-2019unspaellabllefont"><a href="#font-color0288d1watevrctf-2019unspaellabllefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1watevrctf-2019unspaellabllefont" class="headings"><font color=#0288D1>【watevrCTF 2019】Unspaellablle</font></a></h2>
+<h3 id="font-colora020f0知识点google-hacking文件对比工具beyond-comparefont"><a href="#font-colora020f0知识点google-hacking文件对比工具beyond-comparefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点google-hacking文件对比工具beyond-comparefont" class="headings"><font color=#A020F0>知识点：google hacking、文件对比工具Beyond Compare</font></a></h3>
+<p><strong>文件对比工具Beyond Compare</strong></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721151712981.png" alt="image-20210721151712981"></p>
+<p><a href="https://www.beyondcomparepro.com/download" target="_blank" rel="noopener"><font color=#0288D1>下载 | Beyond Compare 中文官方网站 </font></a></p>
+<h3 id="font-colora020f0题目分析font-8"><a href="#font-colora020f0题目分析font-8" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-8" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>打开题目给的文本，个人感觉是一段对话，去google查了下。是一段电影对话</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B37/image-20210721151928109.png" alt="image-20210721151928109"></p>
+<p><a href="https://imsdb.com/transcripts/Stargate-SG1-Children-Of-The-Gods.html" target="_blank" rel="noopener"><font color=#0288D1>电影台词</font></a></p>
+<blockquote>
+<p><strong>将正版电影台词下载下来保存为文本，将两份文本用 Beyond Compare 进行文本数据的对比。</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc通关7/image-20210721152318519.png" alt="image-20210721152318519" width="500" /></p>
+<p>得到Flag:</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># watevr{icantspeel_tiny.cc/2qtdez}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1bsidessf2019thekeyfont"><a href="#font-color0288d1bsidessf2019thekeyfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1bsidessf2019thekeyfont" class="headings"><font color=#0288D1>【BSidesSF2019】thekey</font></a></h2>
+<h3 id="font-colora020f0知识点usb流量分析font"><a href="#font-colora020f0知识点usb流量分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点usb流量分析font" class="headings"><font color=#A020F0>知识点：USB流量分析</font></a></h3>
+<p><strong>王一航大佬的 USB流量攻击分析脚本:</strong></p>
+<p><a href="https://github.com/WangYihang/UsbKeyboardDataHacker" target="_blank" rel="noopener"><font color=#0288D1>UsbKeyboardDataHacker</font></a></p>
+<h3 id="font-colora020f0题目分析font-9"><a href="#font-colora020f0题目分析font-9" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-9" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>打开题目文件，发现是 USB 流量</strong></p>
+<p><strong>USB 流量分析流程走一套</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 用王一航大佬的脚本直接提取分析一波</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><a href="https://github.com/WangYihang/UsbKeyboardDataHacker" target="_blank" rel="noopener"><font color=#0288D1>UsbKeyboardDataHacker</font></a></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 命令</span>
+<span class="n">python2</span> <span class="n">UsbKeyboardDataHacker</span><span class="o">.</span><span class="n">py</span> <span class="n">attachment</span><span class="o">.</span><span class="n">pcapng</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># viim&lt;SPACE&gt;flaag.ttxt&lt;RET&gt;iTthe&lt;SPACE&gt;flaag&lt;SPACE&gt;is&lt;SPACE&gt;ctf&lt;ESC&gt;vbUuA{[my_favoritte_editor_is_vim}&lt;ESC&gt;hhhhhhhhhhhhhhhhhhhau&lt;ESC&gt;vi{U&lt;ESC&gt;&#34;;wq&lt;RET&gt;</span>
+                          
+<span class="c1"># flag{my_favoritte_editor_is_vim}</span>
+
+<span class="c1">#修改一下flag中的单词问题得到最后的正确结果：</span>
+<span class="c1">#flag{MY_FAVOURITE_EDITOR_IS_VIM}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div>
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://cn1nja.github.io/" class="p-author h-card" target="_blank" rel="noopener">N1nja</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/posts/buumisc%E9%80%9A%E5%85%B37/" target="_blank" rel="noopener">https://cn1nja.github.io/posts/buumisc通关7/</a></li>
+            
+            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-07-21 16:01:51 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-07-21</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-07-21</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B36/" class="related-link">BUUMisc通关6</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B34/" class="related-link">BUUMisc通关4</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B33/" class="related-link">BUUMisc通关3</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B32/" class="related-link">BUUMisc通关2</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/buumisc%E5%88%B7%E9%A2%98/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>BUUMisc刷题</a>
+                
+            
+        </div>
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/buumisc%E9%80%9A%E5%85%B36/" rel="next">BUUMisc通关6 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2021&nbsp;N1nja</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>

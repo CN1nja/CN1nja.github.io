@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>密码学笔记 之 浅析Pollard&#39;s rho algorithm及其应用 | N1nja&#39;s Blog</title>
+
+    <link rel="stylesheet" href="/css/meme.min.c88088b7b0ca1272992f1fe5f9a13b2f72dcf7e54c4c31e08d3b37029a113308.css"/>
+
+    
+    
+        <script src="/js/meme.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="N1nja" /><meta name="description" content="前言 已经小半年没学密码了，其实以后更想往渗透方向走，但密码没学好还是挺遗憾的。昨天刚……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="N1nja&#39;s Blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="N1nja&#39;s Blog" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://cn1nja.github.io/posts/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90pollards_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-08-17T16:13:12+08:00",
+        "dateModified": "2021-08-18T20:01:54+08:00",
+        "url": "https://cn1nja.github.io/posts/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90pollards_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/",
+        "headline": "密码学笔记 之 浅析Pollard's rho algorithm及其应用",
+        "description": "前言 已经小半年没学密码了，其实以后更想往渗透方向走，但密码没学好还是挺遗憾的。昨天刚……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  2892 ,
+        "image": ["https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817234127206.png","https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/Pollard_rho_cycle.jpg","https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210818133956657.png","https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817223740667.png","https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210818143725270.png","https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210818164139948.png","https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/zmodaOUq2NSv6IP.png"],
+        "author": {
+            "@type": "Person",
+            "description": "crypto player",
+            "email": "mikecninja@gmail.com",
+            "image": "https://cn1nja.github.io/icons/apple-touch-icon.png",
+            "url": "https://cn1nja.github.io/",
+            "name": "N1nja"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "N1nja's Blog",
+            "url": "https://cn1nja.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://cn1nja.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+    
+
+
+
+<meta property="og:title" content="密码学笔记 之 浅析Pollard&#39;s rho algorithm及其应用" />
+<meta property="og:description" content="前言 已经小半年没学密码了，其实以后更想往渗透方向走，但密码没学好还是挺遗憾的。昨天刚……" />
+<meta property="og:url" content="https://cn1nja.github.io/posts/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90pollards_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" />
+<meta property="og:site_name" content="N1nja&#39;s Blog" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard%27s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817234127206.png" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-08-17T16:13:12&#43;08:00" />
+    <meta property="article:modified_time" content="2021-08-18T20:01:54&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">N1nja&#39;s Blog</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">归档</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/links/"><span class="menu-item-name">友链</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">密码学笔记 之 浅析Pollard's rho algorithm及其应用</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2021-08-17T16:13:12&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.8.17</time>
+    
+    
+        
+        <time datetime="2021-08-18T20:01:54&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.8.18</time>
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-link p-category">密码学习笔记</a></span>
+            
+        
+    
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;6&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:前言" href="#前言">前言</a></li>
+    <li><a id="contents:pollards-rho-algorithm" href="#pollards-rho-algorithm">Pollard's rho algorithm</a>
+      <ol>
+        <li><a id="contents:利用条件" href="#利用条件">利用条件</a></li>
+        <li><a id="contents:pollards-ρ-algorithm" href="#pollards-ρ-algorithm">Pollard’s ρ algorithm</a></li>
+        <li><a id="contents:核心思想" href="#核心思想">核心思想</a></li>
+        <li><a id="contents:算法" href="#算法">算法</a></li>
+        <li><a id="contents:代码表示" href="#代码表示">代码表示</a></li>
+        <li><a id="contents:变体" href="#变体">变体</a></li>
+        <li><a id="contents:解题" href="#解题">解题</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:unctf-simple_rsa" href="#unctf-simple_rsa">UNCTF-simple_rsa</a>
+      <ol>
+        <li><a id="contents:解题-1" href="#解题-1">解题</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:总结" href="#总结">总结</a></li>
+  </ol>
+</nav><div class="post-body e-content">
+              <h2 id="前言"><a href="#前言" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:前言" class="headings">前言</a></h2>
+<p>已经小半年没学密码了，其实以后更想往渗透方向走，但密码没学好还是挺遗憾的。昨天刚好收到了山石安研院 暑期CTF crypto 训练营的录取邮件。既惊讶又欣喜，当时报名参加的时候是想着投着试一下，并没有报希望进去的。填CTF学习意向方向时，本想着去跟着大佬学习下web安全，但看了下都是 java，php安全的更多，感觉不太适合，又看到了密码。想了下还是继续干老本行，学习密码方向。投简历很随意，我投了一份渗透面试时的简历，写的挺烂的。事后和 V神聊天，聊到我投了的简历，他说因为是他审的，后话.................</p>
+<p>密码学习看的V神的blog，<a href="https://jayxv.github.io/2019/11/11/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard's%20rho%20algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" target="_blank" rel="noopener">密码学学习笔记之浅析Pollard's rho algorithm及其应用</a></p>
+<p>以下做的笔记也仅供学习，作为学习笔记，因为V神总结的太好了，所以很多我基本照搬过来了，有些代码和解释做了些改动。</p>
+<h2 id="pollards-rho-algorithm"><a href="#pollards-rho-algorithm" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:pollards-rho-algorithm" class="headings">Pollard's rho algorithm</a></h2>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">getPrime</span><span class="p">,</span> <span class="n">isPrime</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;BCNS{***************}&#39;</span>
+<span class="n">nbits</span> <span class="o">=</span> <span class="mi">2048</span>
+<span class="n">gbits</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">gbits</span><span class="p">))</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">nbits</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-</span> <span class="n">gbits</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="k">break</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">nbits</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-</span> <span class="n">gbits</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">q</span> <span class="ow">and</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+        <span class="k">break</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+
+<span class="k">def</span> <span class="nf">str2int</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pubkey.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plain</span> <span class="o">=</span> <span class="n">str2int</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">plain</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cipher.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>文献：<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.33.1333&amp;rep=rep1&amp;type=pdf" target="_blank" rel="noopener">Further Attacks on Server-Aided RSA Cryptosystems</a></p>
+<p>对服务器上的RSA加密系统的进一步攻击，Further Attacks on Server-Aided RSA Cryptosystems解决的是大数分解的一个问题</p>
+<h3 id="利用条件"><a href="#利用条件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:利用条件" class="headings">利用条件</a></h3>
+<p>$N=p*q(N&gt;512bit)$，其中$(p-1)$ 和 $(q-1)$有一个大的公因数 $β$ ，并且 $p(bit) = q(bit) = \frac{1}{2} N(bit)$</p>
+<p>即原文中提及的 $p$ and $q$ are both of order $N^\frac{1}{2}$</p>
+<p><strong>在 Further Attacks on Server-Aided RSA Cryptosystems 的第一个攻击阶段中提到：</strong> 利用 Pollard’s ρ methods ，其中用于取伪随机值的maps函数为 $g(x)=$ $x^{N−1}$ $+$ $3$ $(mod$ $N)$ , 这将在时间复杂度为 $O($ $\sqrt {p/β}$ $)$ 内分解 $N$ ，因为在 $x^{N-1}$ $(mod$ $p)$ 中，最多有 $(p-1)/β$ $+$ $1$个值。</p>
+<p>当 $β$ 超过 150bits 时，$\sqrt {p/β}$  ~ $2^{53}$ ，N 是易受到攻击的。</p>
+<p><img src="/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard's_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817234127206.png" alt="image-20210817234127206"></p>
+<h3 id="pollards-ρ-algorithm"><a href="#pollards-ρ-algorithm" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:pollards-ρ-algorithm" class="headings">Pollard’s ρ algorithm</a></h3>
+<p><a href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm" target="_blank" rel="noopener">Pollard's rho algorithm</a></p>
+<p><strong>波拉德的 ρ 算法是整数分解的一种算法。 它是约翰 · 波拉德在1975年发明的。 它只占用了很少的空间，并且它的预期运行时间与被分解的合数的最小质因数大小的平方根成正比</strong></p>
+<h3 id="核心思想"><a href="#核心思想" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:核心思想" class="headings">核心思想</a></h3>
+<p>假设我们需要分解$n$ ，$n=q∗p$ ，其中  $q$ 为 $n$ 的非平凡因子 $($即 $q$ 不等于 $1$ 或 $n)$。</p>
+<p>我们需要一个模 $n$ 的多项式，例如：$g(x)≡$ $x^2$ $+$ $1$ $(mod$ $n)$ ，用于生成“伪随机”数列。我们选择一个起始值</p>
+<p>例如，2，即 $x_1=g(2)，x_2=g(g(2))，x_3=g(g(g(2)))……$</p>
+<p>这里值得注意的是，这个数列是有限的，由于生日问题，序列 $x_k$ mod $(n)$ 最终会重复，一旦一个序列由重复的值，这个序列就会循环，因为每个值依赖于它之前的值， 这种最终循环的结构产生了“ ρ 算法”的名称</p>
+<p><img src="/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard's_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/Pollard_rho_cycle.jpg" alt="File:Pollard rho cycle.jpg"></p>
+<p><img src="/Crypto学习笔记/2021/密码学笔记之浅析Pollard's_rho_algorithm及其应用/image-20210818133956657.png" alt="image-20210818133956657" width="800" /></p>
+<h3 id="算法"><a href="#算法" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:算法" class="headings">算法</a></h3>
+<p>该算法将要因式分解的整数作为输入 N，和 $g(x)，x$ 计算模 N 的多项式。在原始算法中， $g(x) = (x^2$ $-$  $1)$ $mod$ $n$ ,但现在更为常见的是使 $g(x) = (x^2$ $+$  $1)$ $mod$ $n$  用 ，输出的要么是 n 的重要因子，要么失败。</p>
+<p>这里我们可以举一个简单的小例子，我们设 $n$ 为640，$g(x)=x^2$，$x$ 起始值为2，</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">b</span><span class="o">=</span><span class="mi">2</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">b</span> <span class="o">*=</span> <span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="o">%</span><span class="mi">640</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard's_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817223740667.png" alt="image-20210817223740667"></p>
+<p>我们可以看到，128为这个取模多项式的循环节点，</p>
+<p>回到话题，这里继续用 Floyd’s cycle-finding algorithm发现：设立两个节点，$i，j$，在每一步中，$i$ 每次移动一个节点，$j$ 每次移动两个节点，然后检查 $gcd(x_i−x_j,n)$ 是否 $≠1$，如果不等于，那么 $gcd$ 的结果便是 $p$ 。并且，这也意味着序列 $x_k$ $(mod$ $p)$ 也会重复。这是因为，如果 $x_i≡x_j(mod$ $p)$ ，那么 $x_i$ 与 $x_j$ 之间的差必然是 $p$ 的倍数。同时，这也说明，$gcd(x_i−x_j，n)$ 不等于 1 的结果无论如何最终都会到来，但是可能是 $n$ 自己，此时，代表 Pollard’s ρ algorithm 失败了，可以使用不同的起始值，再次运算。</p>
+<h3 id="代码表示"><a href="#代码表示" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:代码表示" class="headings">代码表示</a></h3>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">mapx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">n</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">pollard_rho</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">x1</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+        <span class="n">x2</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">mapx</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+        <span class="n">p</span><span class="o">=</span><span class="n">gcd</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s2">&#34;fail&#34;</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">p</span><span class="o">!=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;p: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;q: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">p</span><span class="p">))</span>
+            <span class="k">break</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h3 id="变体"><a href="#变体" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:变体" class="headings">变体</a></h3>
+<p>1980年，Richard Brent 发表了 rho 算法的一个更快的变体。 他使用了与 Pollard 相同的核心思想，但是使用了不同的循环检测方法，用相关的 Brent’s cycle finding method 取代了 Floyd’s cycle-finding algorithm</p>
+<p>他观察到，如果 $gcd(a,n) &gt; 1$，那么 $gcd(a∗b,n) &gt; 1$（b为任意正整数）。所以，取代 Floyd’s cycle-finding algorithm 的每一步都检查 $gcd(a,n)$ ，他定义了一个 $z$，$z=(x_2−x_3·(x_3−x_5……(x_{101}−x_{201}(mod$ $n)$ 即每一百步才检查一次 $gcd(x_i−x_j,n)$，这么作主要是为了加速结果。 但有时它可能会引入重复因子导致算法失败，例如当 $n$ 是一个正方形时。 但是这样使用常规算法就好了。</p>
+<h3 id="解题"><a href="#解题" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:解题" class="headings">解题</a></h3>
+<p>那么回过头来我们解最初出现的那一道题，题中，<strong>p−1</strong>和 <strong>q−1</strong> 有很明显的公因子 <strong>2*g</strong> ，于是根据 Further Attacks on Server-Aided RSA Cryptosystems 中 <strong>The first stage of the attack</strong> 所提到的，</p>
+<p>为了分解N ，我们只需要运用 Pollard’s ρ algorithm，其中用于生成“伪随机”数列的多项式为：$g(x)=(x^{n−1}+3)$ % $n$</p>
+<p><strong>python代码：</strong></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">mapx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">%</span><span class="n">n</span>    <span class="c1">#pow(x,n-1,n)是为了减小数值，加速运算，</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">pollard_rho</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">x1</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+        <span class="n">x2</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">mapx</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+        <span class="n">p</span><span class="o">=</span><span class="n">gcd</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s2">&#34;fail&#34;</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">p</span><span class="o">!=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;p: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;q: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">p</span><span class="p">))</span>
+            <span class="k">break</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">pollard_rho</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> 
+
+<span class="n">n</span><span class="o">=</span> <span class="c1">#题目所给        </span>
+<span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>很快就得到了分解结果：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">p</span><span class="p">:</span> <span class="mi">269650264692548566978074112284374842610174290139820885265484504337289566793938597346602155739081086557351072223620265806722570840534100033154119094965205722815997832769233104488619168771901129055476955760285445455863002454889900213302562844531316706652494637209760008084725213305051233367795241684697449224567</span>
+<span class="n">q</span><span class="p">:</span> <span class="mi">258276228412453952342761280836395825062923086530462077126283048578424505488433072066288731568478598067378323835988126921525549266401826429976089921447823957120012574328943338611748836455846904031487340120916131749573015449886849838628971796160792125197442011286309182844265325360886052171423731486172590665747</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="unctf-simple_rsa"><a href="#unctf-simple_rsa" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:unctf-simple_rsa" class="headings">UNCTF-simple_rsa</a></h2>
+<p>题目：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">flag</span><span class="o">=</span><span class="s1">&#39;XXXXXXXXXX&#39;</span>
+<span class="n">e</span><span class="o">=</span><span class="mh">0x10001</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">3464115689260819392935656139231271022088014497600959975252672820761470484618617542699739764705620767566046150296286140279466041905437740736319886548924058066340624280173573039937440574809212831672936265975209972857747738693288788052694888593629820783280181774594890101819911390468376042288685444703477639361249422054925155575158181408046447773183467474182159096249846479461475003039637685547191529769071424947165685996675043741359728960138725130116665515880652680244470002603320184043266997163009799067135481330853926800023087208636366543210276325733789567957712475079676808820490428973148590780103404729397985019089646026534758042652163974037179260930147000267787012874887703048185189387666199961350969478997330352491403611551096779887936063702892671572230523920277869824082318417366635732798078805070773662305098133013800559413976855639167085996705265872418286939474978058429877355305699191892248323534097124680592084808397263288943661630283254265898940430505371463275516870915261799702701453110383723660477322192658118815861974573497885759332587457883589126213868868281682733732394640188383458580555618181208722172011645063817887462511925363883111475043389367021569982583145912277082528397480756465818166640691294267829613428532584923122279261412957652411789780285394451850006055483598427256129336822790446219260722224551892755568723667049099823707012236618539013908897459508493477299241358343681962043777720375898238069411747593247677719659288861028038609681592049271388766040068274682329498410270047730060645409396168652996740411436504098243588534151795927613112273405281530700440843961363083171583053608594479571127638861391879160062136043924515492933057094406001740725150570943724333872057035272515676895138632004436149126542560186729495087753846670118167613304943153665660470977150177815354160112481310498255965933157902965011317272734556307544837058247794721427834401390455487872367113056168812990496943458920406382650794656884209032284257748450399719067686010156664485086500184078244358783696803659745365860507822269113477617988541658390715640119076036723560146145256418191555730429</span>
+<span class="n">m</span><span class="o">=</span><span class="n">bytes_to_long</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<span class="n">c</span><span class="o">=</span><span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="c1"># print(c)</span>
+<span class="k">assert</span> <span class="n">c</span><span class="o">==</span><span class="mi">1348180992713820685594359831085361247035354818267759694375727771380213764105201303900290589048476671838784929302557807429509301123621642066527762448168417430350203900517746161928291953862336621873868684964993481406952303460424386080800907869577832154132021624995347121475139439850224598911049824567475034545196149320206620924509546294914370633958171840525667753751028800452370972967842349036965813468093121305475860652163573748880159896028384459277781803606279654121781761535513864212749202340439422384362197321739535686506006254445152569135807838677803047115947240251817017395748631234023225248868640103807357800695487118067385969130665294711887439861169737031598274672286881054564295019370600398079829687943670066246766386800967129670975899437309257181151390273864539453238400821713398980792443187238155205199387468000884390778225928491109565539772444103430764411852162036780535068932010631521096301305200494731040799554079996593223419379540630567412342494359961515157700054387356888773321804429041668331430841954949061238002355270616266853430676140296078177898764114420743905073496118755793091902224563802923183897542996809393707165837427396760691616506592877656939455806776333105152244073459704842848097376929745632888315642056267589901527329593161439752243318158600747713335265681764274061086952626629147275106502354039293870614872849851780761537660716667003562253735923584765118319171207551032289722689929226947535724389015974764265109970513715649126340709399701638880824570967389428525179746112494690443526404899052482884526335312491500994658519105204100875596292743155076199283666094556235485722975240358390560161706163569618302627055238860096406627340558428533728688904747040262153892623865784320600845613247625784683300197845026108394831724602330903266980995146046956218083954561639114586880305451066793209385702886944430548686040360906088479432852330611586273784509957389880104225534635731572089138568407411433675077699382999593384336070450058824669351046095205147266720901917218217564113964074957585348227506587531149811564371155522575778721899999227020238022970334707476977210019</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>题目只给了 n，e，c 三个值，很显然要分解 N 得到 $p$ 和 $q$ ，其中的 N有 6048bits ，不可能直接分解了。</p>
+<p>这里的 N 很大，显然不可能只有 p，q 两个因数，所以我们猜测 $N$ 是由若干个小素数的乘积得到的。</p>
+<p>这里用到 <strong>Pollard’s ρ algorithm</strong> 来分解 N ，前面提到它的预期运行时间与被分解的合数的最小质因数大小的平方根成正比</p>
+<h3 id="解题-1"><a href="#解题-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:解题-1" class="headings">解题</a></h3>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">gmpy2</span>
+
+<span class="k">def</span> <span class="nf">mapx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">pollard_rho</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">mapx</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">mapx</span><span class="p">(</span><span class="n">mapx</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">gmpy2</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;fail&#34;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">d</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">d</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3464115689260819392935656139231271022088014497600959975252672820761470484618617542699739764705620767566046150296286140279466041905437740736319886548924058066340624280173573039937440574809212831672936265975209972857747738693288788052694888593629820783280181774594890101819911390468376042288685444703477639361249422054925155575158181408046447773183467474182159096249846479461475003039637685547191529769071424947165685996675043741359728960138725130116665515880652680244470002603320184043266997163009799067135481330853926800023087208636366543210276325733789567957712475079676808820490428973148590780103404729397985019089646026534758042652163974037179260930147000267787012874887703048185189387666199961350969478997330352491403611551096779887936063702892671572230523920277869824082318417366635732798078805070773662305098133013800559413976855639167085996705265872418286939474978058429877355305699191892248323534097124680592084808397263288943661630283254265898940430505371463275516870915261799702701453110383723660477322192658118815861974573497885759332587457883589126213868868281682733732394640188383458580555618181208722172011645063817887462511925363883111475043389367021569982583145912277082528397480756465818166640691294267829613428532584923122279261412957652411789780285394451850006055483598427256129336822790446219260722224551892755568723667049099823707012236618539013908897459508493477299241358343681962043777720375898238069411747593247677719659288861028038609681592049271388766040068274682329498410270047730060645409396168652996740411436504098243588534151795927613112273405281530700440843961363083171583053608594479571127638861391879160062136043924515492933057094406001740725150570943724333872057035272515676895138632004436149126542560186729495087753846670118167613304943153665660470977150177815354160112481310498255965933157902965011317272734556307544837058247794721427834401390455487872367113056168812990496943458920406382650794656884209032284257748450399719067686010156664485086500184078244358783696803659745365860507822269113477617988541658390715640119076036723560146145256418191555730429</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">pollard_rho</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="n">p</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>跑半个小时得到6个：<code>740160703366837</code>， bits = 50</p>
+<img src="/Crypto学习笔记/2021/密码学笔记之浅析Pollard's_rho_algorithm及其应用/image-20210818143725270.png" alt="image-20210818143725270" width="500"/>
+<p>跑了几个小时后得到的结果：</p>
+<p><img src="/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard's_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210818164139948.png" alt="image-20210818164139948"></p>
+<p>flag 大小应该不是特别大，所以 <code>740160703366837</code>的六次方，bits = 50x6 = 300bits，用作新的 Ｎ 值来计算 flag ,应该足够了。</p>
+<p><strong>exp:</strong></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">740160703366837</span>
+<span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mh">0x10001</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">1348180992713820685594359831085361247035354818267759694375727771380213764105201303900290589048476671838784929302557807429509301123621642066527762448168417430350203900517746161928291953862336621873868684964993481406952303460424386080800907869577832154132021624995347121475139439850224598911049824567475034545196149320206620924509546294914370633958171840525667753751028800452370972967842349036965813468093121305475860652163573748880159896028384459277781803606279654121781761535513864212749202340439422384362197321739535686506006254445152569135807838677803047115947240251817017395748631234023225248868640103807357800695487118067385969130665294711887439861169737031598274672286881054564295019370600398079829687943670066246766386800967129670975899437309257181151390273864539453238400821713398980792443187238155205199387468000884390778225928491109565539772444103430764411852162036780535068932010631521096301305200494731040799554079996593223419379540630567412342494359961515157700054387356888773321804429041668331430841954949061238002355270616266853430676140296078177898764114420743905073496118755793091902224563802923183897542996809393707165837427396760691616506592877656939455806776333105152244073459704842848097376929745632888315642056267589901527329593161439752243318158600747713335265681764274061086952626629147275106502354039293870614872849851780761537660716667003562253735923584765118319171207551032289722689929226947535724389015974764265109970513715649126340709399701638880824570967389428525179746112494690443526404899052482884526335312491500994658519105204100875596292743155076199283666094556235485722975240358390560161706163569618302627055238860096406627340558428533728688904747040262153892623865784320600845613247625784683300197845026108394831724602330903266980995146046956218083954561639114586880305451066793209385702886944430548686040360906088479432852330611586273784509957389880104225534635731572089138568407411433675077699382999593384336070450058824669351046095205147266720901917218217564113964074957585348227506587531149811564371155522575778721899999227020238022970334707476977210019</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p><strong>flag{G0oDJ0b_S0_SimPle_ChaMd5}</strong></p>
+</blockquote>
+<p>这里相当于我们直接把原题的 $n$ 给纂改了，</p>
+<p>但为啥这里我们可以直接改 $n$ 呢？</p>
+<p>这里再回顾一下基础知识好了</p>
+<p>以下是 $M≡C^d (mod$ $N)$ 的证明:</p>
+<p><img src="/Crypto学习笔记/2021/密码学笔记之浅析Pollard's_rho_algorithm及其应用/zmodaOUq2NSv6IP.png" alt="RSA解密验证" width="900" /></p>
+<p>求证的条件（设新的n值为小写n，原值为N ）： 首先 $m &lt; N$ ，所以 n &gt; m 即可</p>
+<p>其次，由于 n | N，所以 $ C = m^e$ $(mod$  $n)$</p>
+<p>推理如下:</p>
+<blockquote>
+<p>$N=$ $n * x$</p>
+<p>$C = m^e$ $(mod$  $N)$</p>
+<p>$m^e =$ $k*N$ $+$ $C$</p>
+<p>==&gt;    $m^e =$ $k<em>n</em>x$ $+$ $C$</p>
+<p>==&gt;   $ C = m^e$ $(mod$  $n)$</p>
+</blockquote>
+<p>所以只要新的 $n$ 满足， $m &lt; n$， $C ≡ m^e$ $(mod$ $n)$ ，并且 $gcd(e,phi(n))=1$ ，即可解出 m 的值来</p>
+<p>而一般情况下$n=p∗q$，所以基本不给你篡改 $n$ 的机会~</p>
+<h2 id="总结"><a href="#总结" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:总结" class="headings">总结</a></h2>
+<p>今天学习了</p>
+<p><strong>Further Attacks on Server-Aided RSA Cryptosystems，</strong></p>
+<p><strong>Pollard’s ρ algorithm，</strong></p>
+<p>$M≡C^d (mod$ $N)$ <strong>的证明</strong>。</p>
+<p>看完之后，感觉基本上理解了，但是更底层的逻辑还待去思考。</p>
+<p>看 V 神的blog学习感觉真好，写的很详细，通俗易懂，不懂的就问 V 神。最后，感谢 V神 的指导。</p>
+
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://cn1nja.github.io/" class="p-author h-card" target="_blank" rel="noopener">N1nja</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/posts/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90pollards_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" target="_blank" rel="noopener">https://cn1nja.github.io/posts/密码学笔记之浅析pollards_rho_algorithm及其应用/</a></li>
+            
+            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-08-18 20:01:54 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-08-18</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-08-18</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/" class="related-link">RSA常见攻击</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/" class="related-link">近世代数</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/%E6%95%B0%E8%AE%BA/" class="related-link">《数论》</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/rsa/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>RSA</a>
+                
+            
+        </div>
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" rel="next">BUUMisc通关8 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2021&nbsp;N1nja</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>

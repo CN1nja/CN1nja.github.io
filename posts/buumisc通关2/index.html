@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -350,7 +350,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -358,7 +358,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># resources.arsc</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># resources.arsc</span>
 <span class="c1"># classes.dex</span>
 <span class="c1"># AndroidManifest.xml</span>
 <span class="c1"># res目录</span>
@@ -381,7 +381,7 @@
 <p><strong>直接用截屏软件截取定位点，然后补全空缺的，用微信扫二维码拿到 base32 编码，解码得到 flag:</strong></p>
 </blockquote>
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/Snipaste_2021-07-05_20-35-30.png" alt="Snipaste_2021-07-05_20-35-30"></p>
-<pre><code>QCTF{Pretty_Sister_Who_Buys_Me_Lobster}
+<pre tabindex="0"><code>QCTF{Pretty_Sister_Who_Buys_Me_Lobster}
 </code></pre><h2 id="font-color0288d1mrctf2020pyflagfont"><a href="#font-color0288d1mrctf2020pyflagfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1mrctf2020pyflagfont" class="headings"><font color=#0288D1>【MRCTF2020】pyFlag</font></a></h2>
 <h3 id="font-colora020f0知识点zip文件python解码base编码font"><a href="#font-colora020f0知识点zip文件python解码base编码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点zip文件python解码base编码font" class="headings"><font color=#A020F0>知识点：zip文件，python解码base编码</font></a></h3>
 <h3 id="font-colora020f0题目分析font-2"><a href="#font-colora020f0题目分析font-2" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-2" class="headings"><font color=#A020F0>题目分析</font></a></h3>
@@ -390,33 +390,33 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Furan</span><span class="o">.</span><span class="n">jpg</span> 
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Furan</span><span class="o">.</span><span class="n">jpg</span> 
 <span class="p">[</span><span class="n">Secret</span> <span class="n">File</span> <span class="n">Part</span> <span class="mi">2</span><span class="p">:]</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210406506.png" alt="image-20210705210406506"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Setsuna</span><span class="o">.</span><span class="n">jpg</span> 
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Setsuna</span><span class="o">.</span><span class="n">jpg</span> 
 <span class="p">[</span><span class="n">Secret</span> <span class="n">File</span> <span class="n">Part</span> <span class="mi">1</span><span class="p">:]</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705210641030.png" alt="image-20210705210641030"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Furan</span><span class="o">.</span><span class="n">jpg</span> 
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Furan</span><span class="o">.</span><span class="n">jpg</span> 
 <span class="p">[</span><span class="n">Secret</span> <span class="n">File</span> <span class="n">Part</span> <span class="mi">2</span><span class="p">:]</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -429,25 +429,25 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># .hint.txt</span>
-<span class="err">我用各种</span><span class="n">baseXX编码把flag套娃加密了</span><span class="err">，你应该也有看出来。</span>
-<span class="err">但我只用了一些常用的</span><span class="n">base编码哦</span><span class="err">，毕竟我的智力水平你也知道</span><span class="o">...</span><span class="err">像什么</span><span class="n">base36base58听都没听过</span>
-<span class="err">提示：</span><span class="mh">0x10</span><span class="p">,</span><span class="mh">0x20</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x55</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># .hint.txt</span>
+<span class="n">我用各种baseXX编码把flag套娃加密了</span><span class="err">，</span><span class="n">你应该也有看出来</span><span class="err">。</span>
+<span class="n">但我只用了一些常用的base编码哦</span><span class="err">，</span><span class="n">毕竟我的智力水平你也知道</span><span class="o">...</span><span class="n">像什么base36base58听都没听过</span>
+<span class="n">提示</span><span class="err">：</span><span class="mh">0x10</span><span class="p">,</span><span class="mh">0x20</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x55</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># flag.txt</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># flag.txt</span>
 <span class="n">G</span><span class="o">&amp;</span><span class="n">eOhGcq</span><span class="p">(</span><span class="n">ZG</span><span class="p">(</span><span class="n">t2</span><span class="o">*</span><span class="n">H8M3dG</span><span class="o">&amp;</span><span class="n">wXiGcq</span><span class="p">(</span><span class="n">ZG</span><span class="o">&amp;</span><span class="n">wXyG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">tG</span><span class="o">&amp;</span><span class="n">eOdGcq</span><span class="o">+</span><span class="n">aG</span><span class="p">(</span><span class="n">t5oG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">qG</span><span class="o">&amp;</span><span class="n">eIeGcq</span><span class="o">+</span><span class="n">aG</span><span class="p">)</span><span class="mi">6</span><span class="n">Q</span><span class="o">&lt;</span><span class="n">G</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">rG</span><span class="o">&amp;</span><span class="n">eOdH9</span><span class="o">&lt;</span><span class="mi">5</span><span class="n">qG</span><span class="o">&amp;</span><span class="n">eLvG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">nRdH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rG</span><span class="o">%++</span><span class="n">qG</span><span class="o">%</span><span class="n">__eG</span><span class="o">&amp;</span><span class="n">eIeGc</span><span class="o">+|</span><span class="n">cG</span><span class="p">(</span><span class="n">t5oG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">eOlH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rH8C_qH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">oG</span><span class="o">&amp;</span><span class="n">eOhGc</span><span class="o">+</span><span class="n">_bG</span><span class="o">&amp;</span><span class="n">eLvH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">eLgGcz</span><span class="err">?</span><span class="n">cG</span><span class="o">&amp;</span><span class="mi">3</span><span class="o">|</span><span class="n">sH8M3cG</span><span class="o">&amp;</span><span class="n">eOtG</span><span class="o">%</span><span class="n">_</span><span class="err">?</span><span class="n">aG</span><span class="p">(</span><span class="n">t5oG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">tG</span><span class="o">&amp;</span><span class="n">wXxGcq</span><span class="o">+</span><span class="n">aH8V6sH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rG</span><span class="o">&amp;</span><span class="n">eOhH9</span><span class="o">&lt;</span><span class="mi">5</span><span class="n">qG</span><span class="p">(</span><span class="o">&lt;</span><span class="n">E</span><span class="o">-</span><span class="n">H8M3eG</span><span class="o">&amp;</span><span class="n">wXiGcq</span><span class="p">(</span><span class="n">ZG</span><span class="p">)</span><span class="mi">6</span><span class="n">Q</span><span class="o">&lt;</span><span class="n">G</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">tG</span><span class="o">&amp;</span><span class="n">eOtG</span><span class="o">%+&lt;</span><span class="n">aG</span><span class="o">&amp;</span><span class="n">wagG</span><span class="o">%</span><span class="n">__cG</span><span class="o">&amp;</span><span class="n">eIeGcq</span><span class="o">+</span><span class="n">aG</span><span class="o">&amp;</span><span class="n">M9uH8V6cG</span><span class="o">&amp;</span><span class="n">eOlH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">rG</span><span class="p">(</span><span class="o">&lt;</span><span class="n">HrG</span><span class="p">(</span><span class="n">j</span><span class="o">~</span><span class="n">qG</span><span class="o">&amp;</span><span class="n">eLcH9</span><span class="o">&lt;</span><span class="mi">8</span><span class="n">sG</span><span class="o">&amp;</span><span class="n">wUwGek2</span><span class="p">)</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -456,7 +456,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -481,7 +481,7 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">base64</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">base64</span>
 <span class="n">s85</span> <span class="o">=</span> <span class="s1">&#39;G&amp;eOhGcq(ZG(t2*H8M3dG&amp;wXiGcq(ZG&amp;wXyG(j~tG&amp;eOdGcq+aG(t5oG(j~qG&amp;eIeGcq+aG)6Q&lt;G(j~rG&amp;eOdH9&lt;5qG&amp;eLvG(j~sG&amp;nRdH9&lt;8rG%++qG%__eG&amp;eIeGc+|cG(t5oG(j~sG&amp;eOlH9&lt;8rH8C_qH9&lt;8oG&amp;eOhGc+_bG&amp;eLvH9&lt;8sG&amp;eLgGcz?cG&amp;3|sH8M3cG&amp;eOtG%_?aG(t5oG(j~tG&amp;wXxGcq+aH8V6sH9&lt;8rG&amp;eOhH9&lt;5qG(&lt;E-H8M3eG&amp;wXiGcq(ZG)6Q&lt;G(j~tG&amp;eOtG%+&lt;aG&amp;wagG%__cG&amp;eIeGcq+aG&amp;M9uH8V6cG&amp;eOlH9&lt;8rG(&lt;HrG(j~qG&amp;eLcH9&lt;8sG&amp;wUwGek2)&#39;</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b85decode</span><span class="p">(</span><span class="n">s85</span><span class="p">)</span>
 <span class="c1"># print(m)</span>
@@ -501,7 +501,7 @@
 
 <span class="n">s64</span> <span class="o">=</span> <span class="s1">&#39;TVJDVEZ7WTB1X0FyZV80X3AzckZlY3RfZGVjMGRlcn0=&#39;</span>
 <span class="n">flag</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">s64</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
 
 <span class="c1"># b&#39;MRCTF{Y0u_Are_4_p3rFect_dec0der}&#39;</span>
 </code></pre></td></tr></table></div>
@@ -509,7 +509,7 @@
 </div><p>放一手出题人给的脚本和出题代码：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -563,7 +563,7 @@
 </span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python</span>
 <span class="c1">#解题脚本</span>
 
 <span class="kn">import</span> <span class="nn">base64</span>
@@ -583,19 +583,19 @@
 
 <span class="k">def</span> <span class="nf">detect</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[0-9A-F=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[0-9A-F=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">1</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Z2-7=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Z2-7=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">2</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Za-z0-9+/=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Za-z0-9+/=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">3</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span>
@@ -603,9 +603,9 @@
     <span class="k">return</span> <span class="mi">4</span>
 
 <span class="k">def</span> <span class="nf">autoDec</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="k">if</span> <span class="sa">b</span><span class="s2">&#34;MRCTF{&#34;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
             <span class="k">break</span>
 
         <span class="n">code</span> <span class="o">=</span> <span class="n">detect</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
@@ -619,7 +619,7 @@
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -719,7 +719,7 @@
 </span><span class="lnt">98
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># 出题脚本</span>
 
 <span class="kn">import</span> <span class="nn">base64</span>
@@ -728,7 +728,7 @@
 <span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;31214&#34;</span>
 <span class="c1"># key本来非常长。。似乎太难了改的简单了点</span>
 <span class="c1"># key = &#34;14332234124133132214311231&#34;</span>
-<span class="n">flag</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;MRCTF{Y0u_Are_4_p3rFect_dec0der}&#34;</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;MRCTF</span><span class="si">{Y0u_Are_4_p3rFect_dec0der}</span><span class="s2">&#34;</span>
 
 <span class="k">def</span> <span class="nf">baseEnc</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="nb">type</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -767,7 +767,7 @@
 <span class="k">def</span> <span class="nf">finalDec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
     <span class="n">nf</span> <span class="o">=</span> <span class="n">text</span>
     <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
         <span class="n">nf</span> <span class="o">=</span> <span class="n">baseDec</span><span class="p">(</span><span class="n">nf</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -779,19 +779,19 @@
 <span class="k">def</span> <span class="nf">detect</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[0-9A-F=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[0-9A-F=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">1</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Z2-7=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Z2-7=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">2</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Za-z0-9+/=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;^[A-Za-z0-9+/=]+$&#34;</span><span class="p">,</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">3</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span>
@@ -799,14 +799,14 @@
     <span class="k">return</span> <span class="mi">4</span>
 
 <span class="k">def</span> <span class="nf">autoDec</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;dec key:&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;dec key:&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="k">if</span> <span class="sa">b</span><span class="s2">&#34;MRCTF{&#34;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">+</span><span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
             <span class="k">break</span>
         <span class="n">code</span> <span class="o">=</span> <span class="n">detect</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
         <span class="n">text</span> <span class="o">=</span> <span class="n">baseDec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">code</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">code</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">code</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
 
 
 <span class="n">fe</span> <span class="o">=</span> <span class="n">finalEnc</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span><span class="n">key</span><span class="p">)</span>
@@ -829,10 +829,10 @@
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705225118880.png" alt="image-20210705225118880"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">听到</span> <span class="n">flag</span> <span class="err">为：</span><span class="n">seccon</span><span class="p">{</span><span class="mi">9001</span><span class="n">IVR</span><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">听到</span> <span class="n">flag</span> <span class="n">为</span><span class="err">：</span><span class="n">seccon</span><span class="p">{</span><span class="mi">9001</span><span class="n">IVR</span><span class="p">}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>用 Wireshark 可以知道，改文件使用的是RIP协议，工具栏中点击电话 ==&gt; RIP ==&gt; RIP流 ==&gt;播放流 就可以听到声音</p>
@@ -850,14 +850,14 @@
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210705233249807.png" alt="image-20210705233249807"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># YnNpZGVzX2RlbGhpe0JQR19pNV9iM3R0M3JfN2g0bl9KUEd9Cg=</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># YnNpZGVzX2RlbGhpe0JQR19pNV9iM3R0M3JfN2g0bl9KUEd9Cg=</span>
 
 <span class="n">base64解码</span>
 
@@ -868,18 +868,18 @@
 <h3 id="font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font"><a href="#font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点aaencode图片属性stegosaurus隐写steghide提取jpg隐写文件font" class="headings"><font color=#A020F0>知识点：AAencode、图片属性、stegosaurus隐写、steghide提取jpg隐写文件</font></a></h3>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># AAencode：颜文字解密</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># AAencode：颜文字解密</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># stegosaurus隐写</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># stegosaurus隐写</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>stegosaurus(剑龙)：用于在 Python 字节码中嵌入 Payload（有效载荷）的隐写术工具。</strong></p>
@@ -891,10 +891,10 @@
 <p>用法：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">./</span><span class="n">stegosaurus</span> <span class="o">-</span><span class="n">x</span> <span class="n">x</span><span class="o">.</span><span class="n">pyc</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">./</span><span class="n">stegosaurus</span> <span class="o">-</span><span class="n">x</span> <span class="n">x</span><span class="o">.</span><span class="n">pyc</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -902,12 +902,12 @@
 <p>剑龙需要 Python 3.6 或更高版本。</p>
 </blockquote>
 <p>Stegosaurus 的基本用法如下：</p>
-<pre><code>$ python3 -m stegosaurus -h
+<pre tabindex="0"><code>$ python3 -m stegosaurus -h
 usage: stegosaurus.py [-h] [-p PAYLOAD] [-r] [-s] [-v] [-x] carrier
-  
+
 positional arguments:
   carrier               Carrier py, pyc or pyo file
-  
+
 optional arguments:
   -h, --help            show this help message and exit
   -p PAYLOAD, --payload PAYLOAD
@@ -921,14 +921,14 @@ optional arguments:
 </ul>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># steghide提取jpg隐写文件</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># steghide提取jpg隐写文件</span>
 
-<span class="err">针对</span><span class="n">jpg格式图片的隐写</span>
+<span class="n">针对jpg格式图片的隐写</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>安装：</strong></p>
@@ -936,7 +936,7 @@ optional arguments:
 <p><strong>用法</strong>：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -948,16 +948,16 @@ optional arguments:
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏文件</span>
-<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="p">[</span><span class="err">图片或</span><span class="n">wav文件载体</span><span class="p">]</span> <span class="o">-</span><span class="n">ef</span> <span class="p">[</span><span class="err">待隐藏文件</span><span class="p">]</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏文件</span>
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="p">[</span><span class="n">图片或wav文件载体</span><span class="p">]</span> <span class="o">-</span><span class="n">ef</span> <span class="p">[</span><span class="n">待隐藏文件</span><span class="p">]</span>
 
-<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="mf">1.j</span><span class="n">pg</span> <span class="o">-</span><span class="n">ef</span> <span class="mf">1.</span><span class="n">txt</span>
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="mf">1.</span><span class="n">jpg</span> <span class="o">-</span><span class="n">ef</span> <span class="mf">1.</span><span class="n">txt</span>
 
 <span class="c1">#查看图片中嵌入的文件信息</span>
-<span class="n">steghide</span> <span class="n">info</span> <span class="mf">1.j</span><span class="n">pg</span>
+<span class="n">steghide</span> <span class="n">info</span> <span class="mf">1.</span><span class="n">jpg</span>
 
 <span class="c1">#提取图片中隐藏的文件</span>
-<span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="mf">1.j</span><span class="n">pg</span>
+<span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="mf">1.</span><span class="n">jpg</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h3 id="font-colora020f0题目分析font-5"><a href="#font-colora020f0题目分析font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-5" class="headings"><font color=#A020F0>题目分析</font></a></h3>
@@ -968,12 +968,12 @@ optional arguments:
 <p>非预期解：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">用</span><span class="n">linux</span> <span class="err">命令</span> <span class="nb">file</span> <span class="err">查看</span> <span class="n">O_O</span> <span class="err">文件，得到：</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">用linux</span> <span class="n">命令</span> <span class="n">file</span> <span class="n">查看</span> <span class="n">O_O</span> <span class="n">文件</span><span class="err">，</span><span class="n">得到</span><span class="err">：</span>
 <span class="n">O_O</span><span class="p">:</span> <span class="n">python</span> <span class="mf">3.6</span> <span class="n">byte</span><span class="o">-</span><span class="n">compiled</span>
 <span class="n">google可以知道是</span> <span class="n">pyc文件</span>
 </code></pre></td></tr></table></div>
@@ -983,14 +983,14 @@ optional arguments:
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># kali调用stegosaurus -x 命令从载体中提取payload：</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># kali调用stegosaurus -x 命令从载体中提取payload：</span>
 
 <span class="o">./</span><span class="n">stegosaurus</span> <span class="o">-</span><span class="n">x</span> <span class="n">O_O</span><span class="o">.</span><span class="n">pyc</span>
 
@@ -1003,11 +1003,11 @@ optional arguments:
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># pwd.txt 打开后知道是颜文字加密，用在线网站解密得到：</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># pwd.txt 打开后知道是颜文字加密，用在线网站解密得到：</span>
 <span class="n">welcom3</span><span class="err">!</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -1016,12 +1016,12 @@ optional arguments:
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 在图片的属性中提示有密钥</span>
-<span class="err">@</span><span class="c1">#$%^&amp;%%$)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 在图片的属性中提示有密钥</span>
+<span class="o">@</span><span class="c1">#$%^&amp;%%$)</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -1029,10 +1029,10 @@ optional arguments:
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="n">hh</span><span class="o">.</span><span class="n">jpg</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="n">hh</span><span class="o">.</span><span class="n">jpg</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -1067,7 +1067,7 @@ optional arguments:
 <h2 id="font-color0288d1guet-ctf2019soul-sipsefont"><a href="#font-color0288d1guet-ctf2019soul-sipsefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1guet-ctf2019soul-sipsefont" class="headings"><font color=#0288D1>【GUET-CTF2019】soul sipse</font></a></h2>
 <h3 id="font-colora020f0知识点steghide提取音频隐写文件unicode编码font"><a href="#font-colora020f0知识点steghide提取音频隐写文件unicode编码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点steghide提取音频隐写文件unicode编码font" class="headings"><font color=#A020F0>知识点：steghide提取音频隐写文件、Unicode编码</font></a></h3>
 <p><strong>Unicode编码有以下四种编码方式：</strong></p>
-<pre><code>源文本： The
+<pre tabindex="0"><code>源文本： The
 
 &amp;#x [Hex]： &amp;#x0054;&amp;#x0068;&amp;#x0065;
 
@@ -1082,7 +1082,7 @@ optional arguments:
 <p><strong>用法</strong>：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1094,16 +1094,16 @@ optional arguments:
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏文件</span>
-<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="p">[</span><span class="err">图片或</span><span class="n">wav文件载体</span><span class="p">]</span> <span class="o">-</span><span class="n">ef</span> <span class="p">[</span><span class="err">待隐藏文件</span><span class="p">]</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏文件</span>
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="p">[</span><span class="n">图片或wav文件载体</span><span class="p">]</span> <span class="o">-</span><span class="n">ef</span> <span class="p">[</span><span class="n">待隐藏文件</span><span class="p">]</span>
 
-<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="mf">1.j</span><span class="n">pg</span> <span class="o">-</span><span class="n">ef</span> <span class="mf">1.</span><span class="n">txt</span>
+<span class="n">steghide</span> <span class="n">embed</span> <span class="o">-</span><span class="n">cf</span> <span class="mf">1.</span><span class="n">jpg</span> <span class="o">-</span><span class="n">ef</span> <span class="mf">1.</span><span class="n">txt</span>
 
 <span class="c1">#查看图片中嵌入的文件信息</span>
-<span class="n">steghide</span> <span class="n">info</span> <span class="mf">1.j</span><span class="n">pg</span>
+<span class="n">steghide</span> <span class="n">info</span> <span class="mf">1.</span><span class="n">jpg</span>
 
 <span class="c1">#提取图片中隐藏的文件</span>
-<span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="mf">1.j</span><span class="n">pg</span>
+<span class="n">steghide</span> <span class="n">extract</span> <span class="o">-</span><span class="n">sf</span> <span class="mf">1.</span><span class="n">jpg</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h3 id="font-colora020f0题目分析font-8"><a href="#font-colora020f0题目分析font-8" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-8" class="headings"><font color=#A020F0>题目分析</font></a></h3>
@@ -1114,10 +1114,10 @@ optional arguments:
 <p>打开后得到下面：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python">\<span class="n">u0034</span>\<span class="n">u0030</span>\<span class="n">u0037</span>\<span class="n">u0030</span>\<span class="n">u000d</span>\<span class="n">u000a</span>\<span class="n">u0031</span>\<span class="n">u0032</span>\<span class="n">u0033</span>\<span class="n">u0034</span>\<span class="n">u000d</span>\<span class="n">u000a</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">\<span class="n">u0034</span>\<span class="n">u0030</span>\<span class="n">u0037</span>\<span class="n">u0030</span>\<span class="n">u000d</span>\<span class="n">u000a</span>\<span class="n">u0031</span>\<span class="n">u0032</span>\<span class="n">u0033</span>\<span class="n">u0034</span>\<span class="n">u000d</span>\<span class="n">u000a</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>用在线工具解码<a href="http://www.mxcz.net/tools/Unicode.aspx" target="_blank" rel="noopener"><font color=#0288D1>unicode在线解码</font></a></p>
@@ -1136,11 +1136,11 @@ optional arguments:
 <p>GitHub 页面见 <a href="https://github.com/chishaxie/BlindWaterMark" target="_blank" rel="noopener"><font color=#0288D1>chishaxie/BlindWaterMark</font></a></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python3</span> <span class="n">bwm</span><span class="p">.</span><span class="n">py</span> <span class="n">encode</span> <span class="p">[</span><span class="n">原图</span><span class="p">]</span> <span class="p">[</span><span class="n">水印图片</span><span class="p">]</span> <span class="p">[</span><span class="n">加了水印的图片</span><span class="p">]</span>  <span class="c">#给图片加上水印</span>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python3</span> <span class="n">bwm</span><span class="p">.</span><span class="n">py</span> <span class="n">encode</span> <span class="p">[</span><span class="n">原图</span><span class="p">]</span> <span class="p">[</span><span class="n">水印图片</span><span class="p">]</span> <span class="p">[</span><span class="n">加了水印的图片</span><span class="p">]</span>  <span class="c">#给图片加上水印</span>
 <span class="n">python3</span> <span class="n">bwm</span><span class="p">.</span><span class="n">py</span> <span class="n">decode</span> <span class="p">[</span><span class="n">原图</span><span class="p">]</span> <span class="p">[</span><span class="n">加了水印的图片</span><span class="p">]</span> <span class="p">[</span><span class="n">水印图片</span><span class="p">]</span>  <span class="c">#分离出图片的水印</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -1150,12 +1150,12 @@ optional arguments:
 <p>GitHub 页面见 <a href="https://github.com/linyacool/blind-watermark" target="_blank" rel="noopener"><font color=#0288D1>linyacool/blind-watermark</font></a></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">encode</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">image</span> <span class="p">[</span><span class="err">原图</span><span class="p">]</span> <span class="o">--</span><span class="n">watermark</span> <span class="p">[</span><span class="err">水印图片</span><span class="p">]</span> <span class="o">--</span><span class="n">result</span> <span class="p">[</span><span class="err">加了水印的图片</span><span class="p">]</span>  <span class="c1">#给图片加上水印</span>
-<span class="n">python2</span> <span class="n">decode</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">original</span> <span class="p">[</span><span class="err">原图</span><span class="p">]</span> <span class="o">--</span><span class="n">image</span> <span class="p">[</span><span class="err">加了水印的图片</span><span class="p">]</span> <span class="o">--</span><span class="n">result</span> <span class="p">[</span><span class="err">水印图片</span><span class="p">]</span>  <span class="c1">#分离出图片的水印</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">encode</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">image</span> <span class="p">[</span><span class="n">原图</span><span class="p">]</span> <span class="o">--</span><span class="n">watermark</span> <span class="p">[</span><span class="n">水印图片</span><span class="p">]</span> <span class="o">--</span><span class="n">result</span> <span class="p">[</span><span class="n">加了水印的图片</span><span class="p">]</span>  <span class="c1">#给图片加上水印</span>
+<span class="n">python2</span> <span class="n">decode</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">original</span> <span class="p">[</span><span class="n">原图</span><span class="p">]</span> <span class="o">--</span><span class="n">image</span> <span class="p">[</span><span class="n">加了水印的图片</span><span class="p">]</span> <span class="o">--</span><span class="n">result</span> <span class="p">[</span><span class="n">水印图片</span><span class="p">]</span>  <span class="c1">#分离出图片的水印</span>
 </code></pre></td></tr></table></div>
 </div>
 </div></li>
@@ -1169,7 +1169,7 @@ optional arguments:
 <p>直接用下面的python脚本跑：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1221,8 +1221,8 @@ optional arguments:
 </span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
@@ -1231,9 +1231,9 @@ optional arguments:
 
 <span class="k">def</span> <span class="nf">build_parser</span><span class="p">():</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">()</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--original&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;ori&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--image&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--result&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;res&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--original&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;ori&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--image&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--result&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;res&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--alpha&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">ALPHA</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">parser</span>
 
@@ -1276,10 +1276,10 @@ optional arguments:
 </div><p>使用方法：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">blidwatermark</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">original</span> <span class="n">huyao</span><span class="o">.</span><span class="n">png</span> <span class="o">--</span><span class="n">image</span> <span class="n">stillhuyao</span><span class="o">.</span><span class="n">png</span> <span class="o">--</span><span class="n">result</span> <span class="n">out</span><span class="o">.</span><span class="n">png</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">blidwatermark</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">original</span> <span class="n">huyao</span><span class="o">.</span><span class="n">png</span> <span class="o">--</span><span class="n">image</span> <span class="n">stillhuyao</span><span class="o">.</span><span class="n">png</span> <span class="o">--</span><span class="n">result</span> <span class="n">out</span><span class="o">.</span><span class="n">png</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B32/image-20210712150649228.png" alt="image-20210712150649228"></p>
@@ -1287,10 +1287,10 @@ optional arguments:
 <p><strong>注意：</strong> 上面的脚本中缺失 cv2 库的话，使用下列命令安装</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pip2</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span><span class="o">==</span><span class="mf">4.2</span><span class="o">.</span><span class="mf">0.32</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">pip2</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span><span class="o">==</span><span class="mf">4.2.0.32</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -1348,6 +1348,10 @@ optional arguments:
             <ul class="related-list">
                 
                     <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B39/" class="related-link">BUUMisc通关9</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" class="related-link">BUUMisc通关8</a>
                     </li>
                 
@@ -1361,10 +1365,6 @@ optional arguments:
                 
                     <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/buumisc%E9%80%9A%E5%85%B34/" class="related-link">BUUMisc通关4</a>
                     </li>
                 
             </ul>

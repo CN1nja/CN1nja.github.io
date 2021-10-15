@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -312,7 +312,7 @@
 <p><strong>解题脚本</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -323,14 +323,14 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">scapy.all</span> <span class="kn">import</span> <span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">scapy.all</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">base64</span>
 <span class="n">packets</span> <span class="o">=</span> <span class="n">rdpcap</span><span class="p">(</span><span class="s1">&#39;out.pcapng&#39;</span><span class="p">)</span>  <span class="c1"># rdpcap()读取pcapng文件</span>
 
 <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">packets</span><span class="p">:</span>  <span class="c1"># 遍历每一个数据包</span>
     <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">haslayer</span><span class="p">(</span><span class="n">ICMP</span><span class="p">):</span>  <span class="c1"># haslayer()判断数据包的类型，此处为ICMP</span>
         <span class="k">if</span> <span class="n">packet</span><span class="p">[</span><span class="n">ICMP</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># 每一个ICMP的type值为0的包</span>
-            <span class="k">print</span> <span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">ICMP</span><span class="p">]</span><span class="o">.</span><span class="n">load</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]),</span>  <span class="c1"># 打印每个</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">ICMP</span><span class="p">]</span><span class="o">.</span><span class="n">load</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]),</span>  <span class="c1"># 打印每个</span>
 <span class="c1"># print(base64.b64decode(&#34;Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&#34;))</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -345,7 +345,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -356,14 +356,14 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">scapy.all</span> <span class="kn">import</span> <span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">scapy.all</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">base64</span>
 <span class="n">packets</span> <span class="o">=</span> <span class="n">rdpcap</span><span class="p">(</span><span class="s1">&#39;out.pcapng&#39;</span><span class="p">)</span>  <span class="c1"># rdpcap()读取pcapng文件</span>
 
 <span class="k">for</span> <span class="n">packet</span> <span class="ow">in</span> <span class="n">packets</span><span class="p">:</span>  <span class="c1"># 遍历每一个数据包</span>
     <span class="k">if</span> <span class="n">packet</span><span class="o">.</span><span class="n">haslayer</span><span class="p">(</span><span class="n">ICMP</span><span class="p">):</span>  <span class="c1"># haslayer()判断数据包的类型，此处为ICMP</span>
         <span class="k">if</span> <span class="n">packet</span><span class="p">[</span><span class="n">ICMP</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># 每一个ICMP的type值为0的包</span>
-            <span class="k">print</span> <span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">ICMP</span><span class="p">]</span><span class="o">.</span><span class="n">load</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]),</span>  <span class="c1"># 打印每个</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">ICMP</span><span class="p">]</span><span class="o">.</span><span class="n">load</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]),</span>  <span class="c1"># 打印每个</span>
 <span class="c1"># print(base64.b64decode(&#34;Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&#34;))</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -380,18 +380,18 @@
 <h3 id="font-colora020f0题目分析font-2"><a href="#font-colora020f0题目分析font-2" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-2" class="headings"><font color=#A020F0>题目分析</font></a></h3>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">m</span> <span class="o">=</span><span class="mi">2</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">m</span> <span class="o">=</span><span class="mi">2</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">19260816</span><span class="p">):</span>
 	<span class="n">m</span>  <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="mi">2</span>
 	<span class="n">m</span> <span class="o">%=</span> <span class="mi">1000000007</span>
-<span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>flag{577302567}</strong></p>
@@ -409,7 +409,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -420,18 +420,18 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 得到</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 得到</span>
 <span class="c1">#8b8b61</span>
 <span class="c1">#8b8b61</span>
 <span class="c1">#8b8b70</span>
 <span class="c1">#8b8b6a</span>
 <span class="c1">#8b8b65</span>
 <span class="c1">#8b8b73</span>
-<span class="err">发现只有后两位的值不同，将后两位值转换成字符</span>
+<span class="n">发现只有后两位的值不同</span><span class="err">，</span><span class="n">将后两位值转换成字符</span>
 <span class="mi">6161706</span><span class="n">a6573</span>
 </code></pre></td></tr></table></div>
 </div>
-</div><pre><code>#cmd
+</div><pre tabindex="0"><code>#cmd
 from libnum import*
 print(n2s(0x6161706a6573))
 #aapjes
@@ -443,7 +443,7 @@ print(n2s(0x6161706a6573))
 <p>打开图片在左上角看到有类似二维码的图片</p>
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B34/image-20210715142808211.png" alt="image-20210715142808211"></p>
 <p>将黑作为1，白作为0</p>
-<pre><code>00110001001
+<pre tabindex="0"><code>00110001001
 10010001100
 11001101000
 01101010011
@@ -473,7 +473,7 @@ print(n2s(0x6161706a6573))
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -484,13 +484,13 @@ print(n2s(0x6161706a6573))
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#python3</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#python3</span>
 <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">102</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">68</span><span class="p">]</span>
 <span class="n">m</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
     <span class="n">m</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 
 <span class="c1">#flag%7B5d45fa256372224f48746c6fb8e33b32%7D</span>
 </code></pre></td></tr></table></div>
@@ -526,15 +526,15 @@ print(n2s(0x6161706a6573))
 <blockquote>
 <p>得到前半段base64：</p>
 </blockquote>
-<pre><code>a2draGxmY290bnRpdWZwZ2hodGN3dWprY2ttb3ducGNrbXdseWd0bHBtZmtneWFhaWh1Y2RsYXRveXVjb2lnZ3JwbGt2a2Ftcmt0cXp4ZW1taXdrbGh1YWVrY2VvbHBvY2ZtdGFobWdmbWF2YWpuYmNwbWx0anRwdWZqY2FwY3RvanBqYmZmYmpid2h1YWxnZ3lqbmFtY2JmeWFjamJheGtpeGxtbXFpa3NtcHRxeW9qZXJ0ZmVrdGR4ZHh4YnRyeGNhbmd5bXNpbWh2dXdrdGV4c2dscnRwZ2FrdGJtZnVjZ3ZubXRqdWZvZWt5bXRsaW14ZGlqanB4eWl0YWJwbWt1Y2NubGtwb2V0Z2NkY3Bvc2tpenZ5eHJ0enhyYXh0bm9paHFjeGZvYWFhbHBhanlja2VrYnljZnZqb21sbGthamd5bWdmZGNycGVxa2xmc2NtZWppY3BqaWtjcHBhY3h5ZXZma3ljcHBia2R6Y2ZsbGlrcW5pdGNrYmhqb3JuZGhzb21mdHlwYWhwcW94cnlpbWhmbGNoY21rb3JldG1yb3RrYXJjanRobWZ0aWxpam55a3V0aWhienR0dW1zbmdmdGxtcmJmZmx0ZndjbmptZmF0bGZiemxva3RscHBsbWZpY29rcHBucGFjbWZ1Z21wdW5kdnRvbXdldmNqc2dhamdmZXF1dXBhaWV0eW5mamJicGpzbHZ5bmFmdG1scHBka3R0b2Z1emppanhpdGJmaXJtb3ZwemVraXJic2Zqc2d6bHVrb2x5dm9obXZnY3BrdGhzeGZ6bW1ibm1sZHp5dWljZHZrbXpiYXlidG9yY2ZvdHRkYW1jY25iYXBucmd4bGN5cGh5Zm5jZXhidmRubG9rZ295aWxwcmxvbnNodGNranR4bmFiamhsbWJwZGNtaGtqbmxnbXRnam5qYWtyaXpsbHBtbWFscHhhbXVuaW51cGtwZGlhcHNzbXZrZGp2Z2l5b2R1bXBuYXBsamtqYmNmaHRoc2tpb2twZ3R0eWhubmRzeGtxanp2dmRvc2VwcG9pZ3l0bW5uYXZjdG9wZHlpeHZiZG9zb2JtY3ViaXVhanhoeWZrdnJremdjdXlpbHB2YXdheW5xYWFwbGJrd2lpeHJjdGN0bGt4ZmpscGVhbW1qbmF1amNvdWlmbXZpa2ZpbXJvYXF0Y3RjZm1hdWJnYWdva2FyZnFmaGVtb3NydHlmb3B1a3VkY2FhaW1oZGZvZ25oa3JjZWxwY2F0Y3RweWpsYXZva2xnY2xhdGx0bXR6eWdwZWhma3poY3R6bmdtb2ZjaXpsdm54dG5sdWFqbHRvdmNqYWp1YnphdHBlaGhma25uZ2dwbHlsaXZmZWFpZHJteWp0YWNhbXhjbmtmeXN0d2ZuZmx5bmJta2NrYXJ4YWlzcGpsa3ZjdHZrbHh1bmNmcGJ4dmlyaXFleXBtdXZ1bHZsamNrY3lwcHRwdmV0b3hobWlwYmlsbmplb3drd3VjdG9rbmFmcHdvYXBmdGNsemhwaHhjY2F0dGh1bXZ3aHpvbWFmd3Fxbmxzb3lhYnV0bHpwaWF0Zm1tYWprcmR2bGN6d2pwc3Nwb2FiaWZpcGhrb2NocHRrYXRrYWZlb255YmZpdmVjbGR6b2ZhdGV0Z2FsaGFmYW1vYXlvc291bm5hZmlhdGNqdGl3b29sYWNya2N1YWRwdXRreWxweXBiZ2ZlcHdwc25jd2tjd2xsYXJ5anNjYW5id3BkcHpicHR1dG5sbm9wd3BpdGJsb3RsbHppZmtsYWF1cmpwaWFqZnB0a2ZteHBic3VjdmpzZ21jYWxhbnRyc2NrYmt1eWZnYWFrZmFjbmxkdXZxZXR5amdqbW5hZWFjbmdheGNuYW1qbWlna2tpdW1sbmR3Y2ttdWFuYW52cnJiZnp4enl1dWVob25lbWxjanp1dm9hanVmZGdqampjZ21ucHRmdXVjdWJjdGpoYW1sb2xmaG9pZnZia2themNwb3pjeXVjYnJnb2picG5haGNneXV0dGR2bXR0dndqbWhic2ptYmJhdmNkbHlob3Fqb21wY3B2aHRrb2FpcnZ0bWtmZnlhdGttcHR1dW9vb2xncG5udWVsaGZodnZpc3Vrd3lubWlhY25sbHVtaHRqZWt1YXV1cGxyeGtpZXB1anhsaWNma2NiY2htbmdsZ3BsaWhteWNybnNvbWF3dWZ1b29tdXVuaGRvb2FydWRhbW9hbW9ocW9vY2Z1cGp1aWFieHh1dnl2bm9zb3Vvb3Zha2xjZmt0eXJmYWdmYXl2cHVmdnBiZ3RhZmVraXBpY292dGZ0bnV4c2phdmpkcWt2ZnVpa2x0bWRrYmJua3BhZnhycXBmZ2N0dmFzY3VqamN1Y2h1YXpjaXVtdHRkbmF3aWhtbW9qZmJoeHZvbXRmcGJmaHR2aXdsYXVlb2dwcG1qc3BjYWxmaGNhcmtsYmlzcGh0anBhbmhsaXNwbnRza2tjbGpnZ2tjenRmaG5lY25wdGlmZnRyZG10amZla2ZpdGthc2RnbmVscHVoYmZpbXB1Y2JrcGtjbXhsZmtwaWlqdmh0amtzeWx6cm9vZmFjeGNscGpuaGJpcmN5ZGp0Y2xqZG9ibHlyeW1hdGdoaWZvam1qanNla29vbW9mY2FjdGF2ZmN5Zm11Znhoc3Rqd3VwYmpreW9nbnlyeXBseXBxbGF5eW1veHRhbnFkcHVyYnd6cGxsb2traGhtYW5kam5hdGNibGtjb3Rna2x1dHR3YmRhdHFybWF6cHJ2YXd6anhlZmhqdGRraWt1cmxsY2xjam9naG1sd3RhbWRkY2NucXVyb3Jha2N5b2JsYXJ6YWNtbnFjbWV0dHVheWF1eWl2c21ma25uYW5sdGNtaWdmcmdhYmlwdG50aG1tdXRwaWJ5bHJhdGhqY2doY2ZtbG92cGNudHFwZW96bG90ZGtlaW9jZmtjaXZ1eWx6Ympvb3hjc2FjbmdkdXZ4dG50aGphZXBhdX1rbGFocGNtdnppY2twYWFwaG9jZ2lvZ2p0dnB0Z2poZG9udW5scGFvbG5kcWJxZmRtYnBqam94Ym9tbGlreXVpcG54cXh6Y2lmb3JhaGhldXl5dHpoanV0Z2Z3dHVscmpjZnhvaWFneWpmYnBqaWFrZ3l0eGJmbnBsZnBxd3RkaXFuaXR2dmF1amRqbGlmamlvcnltdmZ4bXhnb3JpY3ljZGZob2ZiYnlnZmxhdGlyamRpZGFkcXZpa2pvY2l5ZmR6aHJvZ255eWlia2dubnZobWpsb2xhdndmaWpjZ2dma3B0a3BnY3FmYWZheXNpdHltYWN2a3FweWxoaGJ1Ymh4c2x1emN5dmxvcmlwdGxwZmxjdWljcG5mc2hpeXh2a2tiY2p5dWtvdGFsZmNpcGhjZGd4aWZ0a2xkZ29wanNtdXJ0eWp5cGhia2JmbmJ3YnNvZmlheHRsdWhwbXJmZGFrdWx1cGVhcHZyeXhtYWVwaGF5bmV4emZsbmV2am1pYndvcml0aGh4YmJ5cG1tYWJvYmZuZmNvanR0Y3Jram1naXJ2bWlzdW5mbHVodGVudHJodGVvamtjaGtwZnBhZXNnd2dscWRrdnZudWx1bnF7bG1sdGFscGhvdWZqcGlhbGNmbGZ5ZHZmd3lkb2ZraGFpeWF3bGx3Y2pvYXJxdnpqbGZmZ2xjdGNsYmxwa2JzZmxocnRqZGFvd3ByZGJjdWJmbHlveWJodmh3ZndvZWl0Z254YnpuaWZwbGx4bXN0a251aWhvYmZlZWZra2FreW5uYWNra2NkdWFtZ3N2bnBoY3RmZ3NybnJvZWh2ZW5kYmZpb21xZm14Ym1paWl1bGF2b2dma2dhY2lrYWFtcHBybGpmbXBqY3VhYXNja2l1cWlmY2liamx1dGNtcGF0b2pyanZmeGdsenBvcGpkZ2NoanVqbGtuZnd0cG5qZnBhY3JrcHRmaGNzamdyaXBjcmZjZGFsem5ob25mZGNvaG9zZmhvaGVha250aXRtamZsbmJvcGNsY3hjdWlnb3hja3JiYWxyYWVidGFhcml
+<pre tabindex="0"><code>a2draGxmY290bnRpdWZwZ2hodGN3dWprY2ttb3ducGNrbXdseWd0bHBtZmtneWFhaWh1Y2RsYXRveXVjb2lnZ3JwbGt2a2Ftcmt0cXp4ZW1taXdrbGh1YWVrY2VvbHBvY2ZtdGFobWdmbWF2YWpuYmNwbWx0anRwdWZqY2FwY3RvanBqYmZmYmpid2h1YWxnZ3lqbmFtY2JmeWFjamJheGtpeGxtbXFpa3NtcHRxeW9qZXJ0ZmVrdGR4ZHh4YnRyeGNhbmd5bXNpbWh2dXdrdGV4c2dscnRwZ2FrdGJtZnVjZ3ZubXRqdWZvZWt5bXRsaW14ZGlqanB4eWl0YWJwbWt1Y2NubGtwb2V0Z2NkY3Bvc2tpenZ5eHJ0enhyYXh0bm9paHFjeGZvYWFhbHBhanlja2VrYnljZnZqb21sbGthamd5bWdmZGNycGVxa2xmc2NtZWppY3BqaWtjcHBhY3h5ZXZma3ljcHBia2R6Y2ZsbGlrcW5pdGNrYmhqb3JuZGhzb21mdHlwYWhwcW94cnlpbWhmbGNoY21rb3JldG1yb3RrYXJjanRobWZ0aWxpam55a3V0aWhienR0dW1zbmdmdGxtcmJmZmx0ZndjbmptZmF0bGZiemxva3RscHBsbWZpY29rcHBucGFjbWZ1Z21wdW5kdnRvbXdldmNqc2dhamdmZXF1dXBhaWV0eW5mamJicGpzbHZ5bmFmdG1scHBka3R0b2Z1emppanhpdGJmaXJtb3ZwemVraXJic2Zqc2d6bHVrb2x5dm9obXZnY3BrdGhzeGZ6bW1ibm1sZHp5dWljZHZrbXpiYXlidG9yY2ZvdHRkYW1jY25iYXBucmd4bGN5cGh5Zm5jZXhidmRubG9rZ295aWxwcmxvbnNodGNranR4bmFiamhsbWJwZGNtaGtqbmxnbXRnam5qYWtyaXpsbHBtbWFscHhhbXVuaW51cGtwZGlhcHNzbXZrZGp2Z2l5b2R1bXBuYXBsamtqYmNmaHRoc2tpb2twZ3R0eWhubmRzeGtxanp2dmRvc2VwcG9pZ3l0bW5uYXZjdG9wZHlpeHZiZG9zb2JtY3ViaXVhanhoeWZrdnJremdjdXlpbHB2YXdheW5xYWFwbGJrd2lpeHJjdGN0bGt4ZmpscGVhbW1qbmF1amNvdWlmbXZpa2ZpbXJvYXF0Y3RjZm1hdWJnYWdva2FyZnFmaGVtb3NydHlmb3B1a3VkY2FhaW1oZGZvZ25oa3JjZWxwY2F0Y3RweWpsYXZva2xnY2xhdGx0bXR6eWdwZWhma3poY3R6bmdtb2ZjaXpsdm54dG5sdWFqbHRvdmNqYWp1YnphdHBlaGhma25uZ2dwbHlsaXZmZWFpZHJteWp0YWNhbXhjbmtmeXN0d2ZuZmx5bmJta2NrYXJ4YWlzcGpsa3ZjdHZrbHh1bmNmcGJ4dmlyaXFleXBtdXZ1bHZsamNrY3lwcHRwdmV0b3hobWlwYmlsbmplb3drd3VjdG9rbmFmcHdvYXBmdGNsemhwaHhjY2F0dGh1bXZ3aHpvbWFmd3Fxbmxzb3lhYnV0bHpwaWF0Zm1tYWprcmR2bGN6d2pwc3Nwb2FiaWZpcGhrb2NocHRrYXRrYWZlb255YmZpdmVjbGR6b2ZhdGV0Z2FsaGFmYW1vYXlvc291bm5hZmlhdGNqdGl3b29sYWNya2N1YWRwdXRreWxweXBiZ2ZlcHdwc25jd2tjd2xsYXJ5anNjYW5id3BkcHpicHR1dG5sbm9wd3BpdGJsb3RsbHppZmtsYWF1cmpwaWFqZnB0a2ZteHBic3VjdmpzZ21jYWxhbnRyc2NrYmt1eWZnYWFrZmFjbmxkdXZxZXR5amdqbW5hZWFjbmdheGNuYW1qbWlna2tpdW1sbmR3Y2ttdWFuYW52cnJiZnp4enl1dWVob25lbWxjanp1dm9hanVmZGdqampjZ21ucHRmdXVjdWJjdGpoYW1sb2xmaG9pZnZia2themNwb3pjeXVjYnJnb2picG5haGNneXV0dGR2bXR0dndqbWhic2ptYmJhdmNkbHlob3Fqb21wY3B2aHRrb2FpcnZ0bWtmZnlhdGttcHR1dW9vb2xncG5udWVsaGZodnZpc3Vrd3lubWlhY25sbHVtaHRqZWt1YXV1cGxyeGtpZXB1anhsaWNma2NiY2htbmdsZ3BsaWhteWNybnNvbWF3dWZ1b29tdXVuaGRvb2FydWRhbW9hbW9ocW9vY2Z1cGp1aWFieHh1dnl2bm9zb3Vvb3Zha2xjZmt0eXJmYWdmYXl2cHVmdnBiZ3RhZmVraXBpY292dGZ0bnV4c2phdmpkcWt2ZnVpa2x0bWRrYmJua3BhZnhycXBmZ2N0dmFzY3VqamN1Y2h1YXpjaXVtdHRkbmF3aWhtbW9qZmJoeHZvbXRmcGJmaHR2aXdsYXVlb2dwcG1qc3BjYWxmaGNhcmtsYmlzcGh0anBhbmhsaXNwbnRza2tjbGpnZ2tjenRmaG5lY25wdGlmZnRyZG10amZla2ZpdGthc2RnbmVscHVoYmZpbXB1Y2JrcGtjbXhsZmtwaWlqdmh0amtzeWx6cm9vZmFjeGNscGpuaGJpcmN5ZGp0Y2xqZG9ibHlyeW1hdGdoaWZvam1qanNla29vbW9mY2FjdGF2ZmN5Zm11Znhoc3Rqd3VwYmpreW9nbnlyeXBseXBxbGF5eW1veHRhbnFkcHVyYnd6cGxsb2traGhtYW5kam5hdGNibGtjb3Rna2x1dHR3YmRhdHFybWF6cHJ2YXd6anhlZmhqdGRraWt1cmxsY2xjam9naG1sd3RhbWRkY2NucXVyb3Jha2N5b2JsYXJ6YWNtbnFjbWV0dHVheWF1eWl2c21ma25uYW5sdGNtaWdmcmdhYmlwdG50aG1tdXRwaWJ5bHJhdGhqY2doY2ZtbG92cGNudHFwZW96bG90ZGtlaW9jZmtjaXZ1eWx6Ympvb3hjc2FjbmdkdXZ4dG50aGphZXBhdX1rbGFocGNtdnppY2twYWFwaG9jZ2lvZ2p0dnB0Z2poZG9udW5scGFvbG5kcWJxZmRtYnBqam94Ym9tbGlreXVpcG54cXh6Y2lmb3JhaGhldXl5dHpoanV0Z2Z3dHVscmpjZnhvaWFneWpmYnBqaWFrZ3l0eGJmbnBsZnBxd3RkaXFuaXR2dmF1amRqbGlmamlvcnltdmZ4bXhnb3JpY3ljZGZob2ZiYnlnZmxhdGlyamRpZGFkcXZpa2pvY2l5ZmR6aHJvZ255eWlia2dubnZobWpsb2xhdndmaWpjZ2dma3B0a3BnY3FmYWZheXNpdHltYWN2a3FweWxoaGJ1Ymh4c2x1emN5dmxvcmlwdGxwZmxjdWljcG5mc2hpeXh2a2tiY2p5dWtvdGFsZmNpcGhjZGd4aWZ0a2xkZ29wanNtdXJ0eWp5cGhia2JmbmJ3YnNvZmlheHRsdWhwbXJmZGFrdWx1cGVhcHZyeXhtYWVwaGF5bmV4emZsbmV2am1pYndvcml0aGh4YmJ5cG1tYWJvYmZuZmNvanR0Y3Jram1naXJ2bWlzdW5mbHVodGVudHJodGVvamtjaGtwZnBhZXNnd2dscWRrdnZudWx1bnF7bG1sdGFscGhvdWZqcGlhbGNmbGZ5ZHZmd3lkb2ZraGFpeWF3bGx3Y2pvYXJxdnpqbGZmZ2xjdGNsYmxwa2JzZmxocnRqZGFvd3ByZGJjdWJmbHlveWJodmh3ZndvZWl0Z254YnpuaWZwbGx4bXN0a251aWhvYmZlZWZra2FreW5uYWNra2NkdWFtZ3N2bnBoY3RmZ3NybnJvZWh2ZW5kYmZpb21xZm14Ym1paWl1bGF2b2dma2dhY2lrYWFtcHBybGpmbXBqY3VhYXNja2l1cWlmY2liamx1dGNtcGF0b2pyanZmeGdsenBvcGpkZ2NoanVqbGtuZnd0cG5qZnBhY3JrcHRmaGNzamdyaXBjcmZjZGFsem5ob25mZGNvaG9zZmhvaGVha250aXRtamZsbmJvcGNsY3hjdWlnb3hja3JiYWxyYWVidGFhcml
 </code></pre><blockquote>
 <p>在文件属性栏找到后半段base64</p>
 </blockquote>
-<pre><code>0ZWZtemNxaWRvZmd0ZnFnYmFkaWNubWhvdGlvbm9iZnlubGdvenRkYXZ2aW14b2JvdGlra2Z4d2lyb3JwZmNjdXpob3BoZmRjaWVrY2p5b21lamtjZ2Zmam51bmhvcGFkdGZndG1sdA==
+<pre tabindex="0"><code>0ZWZtemNxaWRvZmd0ZnFnYmFkaWNubWhvdGlvbm9iZnlubGdvenRkYXZ2aW14b2JvdGlra2Z4d2lyb3JwZmNjdXpob3BoZmRjaWVrY2p5b21lamtjZ2Zmam51bmhvcGFkdGZndG1sdA==
 </code></pre><blockquote>
 <p><strong>得到混乱的字符串:</strong></p>
 </blockquote>
-<pre><code>kgkhlfcotntiufpghhtcwujkckmownpckmwlygtlpmfkgyaaihucdlatoyucoiggrplkvkamrktqzxemmiwklhuaekceolpocfmtahmgfmavajnbcpmltjtpufjcapctojpjbffbjbwhualggyjnamcbfyacjbaxkixlmmqiksmptqyojertfektdxdxxbtrxcangymsimhvuwktexsglrtpgaktbmfucgvnmtjufoekymtlimxdijjpxyitabpmkuccnlkpoetgcdcposkizvyxrtzxraxtnoihqcxfoaaalpajyckekbycfvjomllkajgymgfdcrpeqklfscmejicpjikcppacxyevfkycppbkdzcfllikqnitckbhjorndhsomftypahpqoxryimhflchcmkoretmrotkarcjthmftilijnykutihbzttumsngftlmrbffltfwcnjmfatlfbzloktlpplmficokppnpacmfugmpundvtomwevcjsgajgfequupaietynfjbbpjslvynaftmlppdkttofuzjijxitbfirmovpzekirbsfjsgzlukolyvohmvgcpkthsxfzmmbnmldzyuicdvkmzbaybtorcfottdamccnbapnrgxlcyphyfncexbvdnlokgoyilprlonshtckjtxnabjhlmbpdcmhkjnlgmtgjnjakrizllpmmalpxamuninupkpdiapssmvkdjvgiyodumpnapljkjbcfhthskiokpgttyhnndsxkqjzvvdoseppoigytmnnavctopdyixvbdosobmcubiuajxhyfkvrkzgcuyilpvawaynqaaplbkwiixrctctlkxfjlpeammjnaujcouifmvikfimroaqtctcfmaubgagokarfqfhemosrtyfopukudcaaimhdfognhkrcelpcatctpyjlavoklgclatltmtzygpehfkzhctzngmofcizlvnxtnluajltovcjajubzatpehhfknnggplylivfeaidrmyjtacamxcnkfystwfnflynbmkckarxaispjlkvctvklxuncfpbxviriqeypmuvulvljckcypptpvetoxhmipbilnjeowkwuctoknafpwoapftclzhphxccatthumvwhzomafwqqnlsoyabutlzpiatfmmajkrdvlczwjpsspoabifiphkochptkatkafeonybfivecldzofatetgalhafamoayosounnafiatcjtiwoolacrkcuadputkylpypbgfepwpsncwkcwllaryjscanbwpdpzbptutnlnopwpitblotllzifklaaurjpiajfptkfmxpbsucvjsgmcalantrsckbkuyfgaakfacnlduvqetyjgjmnaeacngaxcnamjmigkkiumlndwckmuananvrrbfzxzyuuehonemlcjzuvoajufdgjjjcgmnptfuucubctjhamlolfhoifvbkkazcpozcyucbrgojbpnahcgyuttdvmttvwjmhbsjmbbavcdlyhoqjompcpvhtkoairvtmkffyatkmptuuooolgpnnuelhfhvvisukwynmiacnllumhtjekuauuplrxkiepujxlicfkcbchmnglgplihmycrnsomawufuoomuunhdooarudamoamohqoocfupjuiabxxuvyvnosouoovaklcfktyrfagfayvpufvpbgtafekipicovtftnuxsjavjdqkvfuikltmdkbbnkpafxrqpfgctvascujjcuchuazciumttdnawihmmojfbhxvomtfpbfhtviwlaueogppmjspcalfhcarklbisphtjpanhlispntskkcljggkcztfhnecnptifftrdmtjfekfitkasdgnelpuhbfimpucbkpkcmxlfkpiijvhtjksylzroofacxclpjnhbircydjtcljdoblyrymatghifojmjjsekoomofcactavfcyfmufxhstjwupbjkyognyryplypqlayymoxtanqdpurbwzpllokkhhmandjnatcblkcotgkluttwbdatqrmazprvawzjxefhjtdkikurllclcjoghmlwtamddccnqurorakcyoblarzacmnqcmettuayauyivsmfknnanltcmigfrgabiptnthmmutpibylrathjcghcfmlovpcntqpeozlotdkeiocfkcivuylzbjooxcsacngduvxtnthjaepau}klahpcmvzickpaaphocgiogjtvptgjhdonunlpaolndqbqfdmbpjjoxbomlikyuipnxqxzciforahheuyytzhjutgfwtulrjcfxoiagyjfbpjiakgytxbfnplfpqwtdiqnitvvaujdjlifjiorymvfxmxgoricycdfhofbbygflatirjdidadqvikjociyfdzhrognyyibkgnnvhmjlolavwfijcggfkptkpgcqfafaysitymacvkqpylhhbubhxsluzcyvloriptlpflcuicpnfshiyxvkkbcjyukotalfciphcdgxiftkldgopjsmurtyjyphbkbfnbwbsofiaxtluhpmrfdakulupeapvryxmaephaynexzflnevjmibworithhxbbypmmabobfnfcojttcrkjmgirvmisunfluhtentrhteojkchkpfpaesgwglqdkvvnulunq{lmltalphoufjpialcflfydvfwydofkhaiyawllwcjoarqvzjlffglctclblpkbsflhrtjdaowprdbcubflyoybhvhwfwoeitgnxbznifpllxmstknuihobfeefkkakynnackkcduamgsvnphctfgsrnroehvendbfiomqfmxbmiiiulavogfkgacikaampprljfmpjcuaasckiuqifcibjlutcmpatojrjvfxglzpopjdgchjujlknfwtpnjfpacrkptfhcsjgripcrfcdalznhonfdcohosfhoheakntitmjflnbopclcxcuigoxckrbalraebtaaritefmzcqidofgtfqgbadicnmhotionobfynlgoztdavvimxobotikkfxwirorpfccuzhophfdciekcjyomejkcgffjnunhopadtfgtmlt
+<pre tabindex="0"><code>kgkhlfcotntiufpghhtcwujkckmownpckmwlygtlpmfkgyaaihucdlatoyucoiggrplkvkamrktqzxemmiwklhuaekceolpocfmtahmgfmavajnbcpmltjtpufjcapctojpjbffbjbwhualggyjnamcbfyacjbaxkixlmmqiksmptqyojertfektdxdxxbtrxcangymsimhvuwktexsglrtpgaktbmfucgvnmtjufoekymtlimxdijjpxyitabpmkuccnlkpoetgcdcposkizvyxrtzxraxtnoihqcxfoaaalpajyckekbycfvjomllkajgymgfdcrpeqklfscmejicpjikcppacxyevfkycppbkdzcfllikqnitckbhjorndhsomftypahpqoxryimhflchcmkoretmrotkarcjthmftilijnykutihbzttumsngftlmrbffltfwcnjmfatlfbzloktlpplmficokppnpacmfugmpundvtomwevcjsgajgfequupaietynfjbbpjslvynaftmlppdkttofuzjijxitbfirmovpzekirbsfjsgzlukolyvohmvgcpkthsxfzmmbnmldzyuicdvkmzbaybtorcfottdamccnbapnrgxlcyphyfncexbvdnlokgoyilprlonshtckjtxnabjhlmbpdcmhkjnlgmtgjnjakrizllpmmalpxamuninupkpdiapssmvkdjvgiyodumpnapljkjbcfhthskiokpgttyhnndsxkqjzvvdoseppoigytmnnavctopdyixvbdosobmcubiuajxhyfkvrkzgcuyilpvawaynqaaplbkwiixrctctlkxfjlpeammjnaujcouifmvikfimroaqtctcfmaubgagokarfqfhemosrtyfopukudcaaimhdfognhkrcelpcatctpyjlavoklgclatltmtzygpehfkzhctzngmofcizlvnxtnluajltovcjajubzatpehhfknnggplylivfeaidrmyjtacamxcnkfystwfnflynbmkckarxaispjlkvctvklxuncfpbxviriqeypmuvulvljckcypptpvetoxhmipbilnjeowkwuctoknafpwoapftclzhphxccatthumvwhzomafwqqnlsoyabutlzpiatfmmajkrdvlczwjpsspoabifiphkochptkatkafeonybfivecldzofatetgalhafamoayosounnafiatcjtiwoolacrkcuadputkylpypbgfepwpsncwkcwllaryjscanbwpdpzbptutnlnopwpitblotllzifklaaurjpiajfptkfmxpbsucvjsgmcalantrsckbkuyfgaakfacnlduvqetyjgjmnaeacngaxcnamjmigkkiumlndwckmuananvrrbfzxzyuuehonemlcjzuvoajufdgjjjcgmnptfuucubctjhamlolfhoifvbkkazcpozcyucbrgojbpnahcgyuttdvmttvwjmhbsjmbbavcdlyhoqjompcpvhtkoairvtmkffyatkmptuuooolgpnnuelhfhvvisukwynmiacnllumhtjekuauuplrxkiepujxlicfkcbchmnglgplihmycrnsomawufuoomuunhdooarudamoamohqoocfupjuiabxxuvyvnosouoovaklcfktyrfagfayvpufvpbgtafekipicovtftnuxsjavjdqkvfuikltmdkbbnkpafxrqpfgctvascujjcuchuazciumttdnawihmmojfbhxvomtfpbfhtviwlaueogppmjspcalfhcarklbisphtjpanhlispntskkcljggkcztfhnecnptifftrdmtjfekfitkasdgnelpuhbfimpucbkpkcmxlfkpiijvhtjksylzroofacxclpjnhbircydjtcljdoblyrymatghifojmjjsekoomofcactavfcyfmufxhstjwupbjkyognyryplypqlayymoxtanqdpurbwzpllokkhhmandjnatcblkcotgkluttwbdatqrmazprvawzjxefhjtdkikurllclcjoghmlwtamddccnqurorakcyoblarzacmnqcmettuayauyivsmfknnanltcmigfrgabiptnthmmutpibylrathjcghcfmlovpcntqpeozlotdkeiocfkcivuylzbjooxcsacngduvxtnthjaepau}klahpcmvzickpaaphocgiogjtvptgjhdonunlpaolndqbqfdmbpjjoxbomlikyuipnxqxzciforahheuyytzhjutgfwtulrjcfxoiagyjfbpjiakgytxbfnplfpqwtdiqnitvvaujdjlifjiorymvfxmxgoricycdfhofbbygflatirjdidadqvikjociyfdzhrognyyibkgnnvhmjlolavwfijcggfkptkpgcqfafaysitymacvkqpylhhbubhxsluzcyvloriptlpflcuicpnfshiyxvkkbcjyukotalfciphcdgxiftkldgopjsmurtyjyphbkbfnbwbsofiaxtluhpmrfdakulupeapvryxmaephaynexzflnevjmibworithhxbbypmmabobfnfcojttcrkjmgirvmisunfluhtentrhteojkchkpfpaesgwglqdkvvnulunq{lmltalphoufjpialcflfydvfwydofkhaiyawllwcjoarqvzjlffglctclblpkbsflhrtjdaowprdbcubflyoybhvhwfwoeitgnxbznifpllxmstknuihobfeefkkakynnackkcduamgsvnphctfgsrnroehvendbfiomqfmxbmiiiulavogfkgacikaampprljfmpjcuaasckiuqifcibjlutcmpatojrjvfxglzpopjdgchjujlknfwtpnjfpacrkptfhcsjgripcrfcdalznhonfdcohosfhoheakntitmjflnbopclcxcuigoxckrbalraebtaaritefmzcqidofgtfqgbadicnmhotionobfynlgoztdavvimxobotikkfxwirorpfccuzhophfdciekcjyomejkcgffjnunhopadtfgtmlt
 </code></pre><p><a href="http://www.aihanyu.org/cncorpus/CpsTongji.aspx" target="_blank" rel="noopener"><font color=#0288D1>在线字词频统计</font></a></p>
 <p><img src="/BUUCTF/2021/BUUMisc通关4/image-20210715172901020.png" alt="image-20210715172901020" width="500" /></p>
 <p><strong>actf{plokmijnuhbygvrdxeszwq}</strong></p>
@@ -597,6 +597,10 @@ print(n2s(0x6161706a6573))
             <ul class="related-list">
                 
                     <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B39/" class="related-link">BUUMisc通关9</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" class="related-link">BUUMisc通关8</a>
                     </li>
                 
@@ -610,10 +614,6 @@ print(n2s(0x6161706a6573))
                 
                     <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/buumisc%E9%80%9A%E5%85%B33/" class="related-link">BUUMisc通关3</a>
                     </li>
                 
             </ul>

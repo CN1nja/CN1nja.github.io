@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -269,7 +269,7 @@
 <h2 id="pollards-rho-algorithm"><a href="#pollards-rho-algorithm" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:pollards-rho-algorithm" class="headings">Pollard's rho algorithm</a></h2>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -302,18 +302,18 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">getPrime</span><span class="p">,</span> <span class="n">isPrime</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">getPrime</span><span class="p">,</span> <span class="n">isPrime</span>
 <span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;BCNS{***************}&#39;</span>
 <span class="n">nbits</span> <span class="o">=</span> <span class="mi">2048</span>
 <span class="n">gbits</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">gbits</span><span class="p">))</span>
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">nbits</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-</span> <span class="n">gbits</span><span class="p">)</span>
     <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
         <span class="k">break</span>
 
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">nbits</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-</span> <span class="n">gbits</span><span class="p">)</span>
     <span class="n">q</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">q</span> <span class="ow">and</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
@@ -358,16 +358,16 @@
 <p>这里我们可以举一个简单的小例子，我们设 $n$ 为640，$g(x)=x^2$，$x$ 起始值为2，</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">b</span><span class="o">=</span><span class="mi">2</span>
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">b</span><span class="o">=</span><span class="mi">2</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">b</span> <span class="o">*=</span> <span class="mi">2</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="o">%</span><span class="mi">640</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">%</span><span class="mi">640</span><span class="p">)</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard's_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817223740667.png" alt="image-20210817223740667"></p>
@@ -376,7 +376,7 @@
 <h3 id="代码表示"><a href="#代码表示" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:代码表示" class="headings">代码表示</a></h3>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -399,7 +399,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="n">b</span>
     <span class="k">return</span> <span class="n">a</span>
@@ -409,16 +409,16 @@
     <span class="k">return</span> <span class="n">x</span>
 
 <span class="k">def</span> <span class="nf">pollard_rho</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">x1</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
         <span class="n">x2</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">mapx</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
         <span class="n">p</span><span class="o">=</span><span class="n">gcd</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">n</span><span class="p">):</span>
-            <span class="k">print</span> <span class="s2">&#34;fail&#34;</span>
+            <span class="nb">print</span> <span class="s2">&#34;fail&#34;</span>
             <span class="k">return</span>
         <span class="k">elif</span> <span class="p">(</span><span class="n">p</span><span class="o">!=</span><span class="mi">1</span><span class="p">):</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;p: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;q: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">p</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;p: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;q: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">p</span><span class="p">))</span>
             <span class="k">break</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -431,7 +431,7 @@
 <p><strong>python代码：</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -461,7 +461,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="n">b</span>
     <span class="k">return</span> <span class="n">a</span>
@@ -471,16 +471,16 @@
     <span class="k">return</span> <span class="n">x</span>
 
 <span class="k">def</span> <span class="nf">pollard_rho</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">x1</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
         <span class="n">x2</span><span class="o">=</span><span class="n">mapx</span><span class="p">(</span><span class="n">mapx</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
         <span class="n">p</span><span class="o">=</span><span class="n">gcd</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">n</span><span class="p">):</span>
-            <span class="k">print</span> <span class="s2">&#34;fail&#34;</span>
+            <span class="nb">print</span> <span class="s2">&#34;fail&#34;</span>
             <span class="k">return</span>
         <span class="k">elif</span> <span class="p">(</span><span class="n">p</span><span class="o">!=</span><span class="mi">1</span><span class="p">):</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;p: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;q: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">p</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;p: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;q: &#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="n">p</span><span class="p">))</span>
             <span class="k">break</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -494,11 +494,11 @@
 </div><p>很快就得到了分解结果：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">p</span><span class="p">:</span> <span class="mi">269650264692548566978074112284374842610174290139820885265484504337289566793938597346602155739081086557351072223620265806722570840534100033154119094965205722815997832769233104488619168771901129055476955760285445455863002454889900213302562844531316706652494637209760008084725213305051233367795241684697449224567</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">p</span><span class="p">:</span> <span class="mi">269650264692548566978074112284374842610174290139820885265484504337289566793938597346602155739081086557351072223620265806722570840534100033154119094965205722815997832769233104488619168771901129055476955760285445455863002454889900213302562844531316706652494637209760008084725213305051233367795241684697449224567</span>
 <span class="n">q</span><span class="p">:</span> <span class="mi">258276228412453952342761280836395825062923086530462077126283048578424505488433072066288731568478598067378323835988126921525549266401826429976089921447823957120012574328943338611748836455846904031487340120916131749573015449886849838628971796160792125197442011286309182844265325360886052171423731486172590665747</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -506,7 +506,7 @@
 <p>题目：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -517,7 +517,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;XXXXXXXXXX&#39;</span>
 <span class="n">e</span><span class="o">=</span><span class="mh">0x10001</span>
@@ -534,7 +534,7 @@
 <h3 id="解题-1"><a href="#解题-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:解题-1" class="headings">解题</a></h3>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -556,7 +556,7 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">gmpy2</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">gmpy2</span>
 
 <span class="k">def</span> <span class="nf">mapx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
@@ -568,13 +568,13 @@
         <span class="n">x2</span> <span class="o">=</span> <span class="n">mapx</span><span class="p">(</span><span class="n">mapx</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
         <span class="n">d</span> <span class="o">=</span> <span class="n">gmpy2</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;fail&#34;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;fail&#34;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="p">(</span><span class="n">d</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">d</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">3464115689260819392935656139231271022088014497600959975252672820761470484618617542699739764705620767566046150296286140279466041905437740736319886548924058066340624280173573039937440574809212831672936265975209972857747738693288788052694888593629820783280181774594890101819911390468376042288685444703477639361249422054925155575158181408046447773183467474182159096249846479461475003039637685547191529769071424947165685996675043741359728960138725130116665515880652680244470002603320184043266997163009799067135481330853926800023087208636366543210276325733789567957712475079676808820490428973148590780103404729397985019089646026534758042652163974037179260930147000267787012874887703048185189387666199961350969478997330352491403611551096779887936063702892671572230523920277869824082318417366635732798078805070773662305098133013800559413976855639167085996705265872418286939474978058429877355305699191892248323534097124680592084808397263288943661630283254265898940430505371463275516870915261799702701453110383723660477322192658118815861974573497885759332587457883589126213868868281682733732394640188383458580555618181208722172011645063817887462511925363883111475043389367021569982583145912277082528397480756465818166640691294267829613428532584923122279261412957652411789780285394451850006055483598427256129336822790446219260722224551892755568723667049099823707012236618539013908897459508493477299241358343681962043777720375898238069411747593247677719659288861028038609681592049271388766040068274682329498410270047730060645409396168652996740411436504098243588534151795927613112273405281530700440843961363083171583053608594479571127638861391879160062136043924515492933057094406001740725150570943724333872057035272515676895138632004436149126542560186729495087753846670118167613304943153665660470977150177815354160112481310498255965933157902965011317272734556307544837058247794721427834401390455487872367113056168812990496943458920406382650794656884209032284257748450399719067686010156664485086500184078244358783696803659745365860507822269113477617988541658390715640119076036723560146145256418191555730429</span>
 <span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">pollard_rho</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="n">p</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -586,7 +586,7 @@
 <p><strong>exp:</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -600,7 +600,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="mi">740160703366837</span>
@@ -611,7 +611,7 @@
     <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span>
     <span class="n">m</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -750,7 +750,7 @@
             
             
                 <li class="post-nav-next">
-                    <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" rel="next">BUUMisc通关8 &gt;</a>
+                    <a href="/posts/buumisc%E9%80%9A%E5%85%B39/" rel="next">BUUMisc通关9 &gt;</a>
                 </li>
             
         </ul>

@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -321,7 +321,7 @@
 <p>代码：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -334,17 +334,17 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;attachment.txt&#39;</span><span class="p">):</span>    
     <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">+=</span><span class="s1">&#39;0&#39;</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">+=</span><span class="s1">&#39;1&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>wctf2020{h3re_1s_y0ur_fl@g_s1x_s1x_s1x}</p>
@@ -369,29 +369,29 @@
 <p>由题目给的条件可以知道：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#0x22，0x44代表伤疤两种细胞，0xf0则是派大星的赘肉。</span>
-<span class="err">猜测为二进制</span><span class="mo">01</span><span class="p">,</span><span class="mh">0x22</span><span class="err">为</span><span class="mi">0</span><span class="p">,</span><span class="mh">0x44</span><span class="err">为</span><span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#0x22，0x44代表伤疤两种细胞，0xf0则是派大星的赘肉。</span>
+<span class="n">猜测为二进制01</span><span class="p">,</span><span class="mh">0x22</span><span class="n">为0</span><span class="p">,</span><span class="mh">0x44</span><span class="n">为1</span>
 
 <span class="c1">#答案为32位的一串字符串</span>
-<span class="err">说明</span><span class="n">flag为32位的字符串</span>
+<span class="n">说明flag为32位的字符串</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>使用010editor打开得到二进制数据：</p>
-<pre><code>0110110000101100000011000110110010011100101011000000110010000110101011000010110010001100000111000010110001000110001001101010110001100110101001100110110001000110011011001010011010101100010001100010110011000110101001100010110011001100000111001100110001001100
+<pre tabindex="0"><code>0110110000101100000011000110110010011100101011000000110010000110101011000010110010001100000111000010110001000110001001101010110001100110101001100110110001000110011011001010011010101100010001100010110011000110101001100010110011001100000111001100110001001100
 </code></pre><p>将二进制数据转ASCLL，这里分析一下，为什么是下面这样写：</p>
 <p>拿到二进制数据后，我们直接进行ASCII转码会得到一串乱码，将二进制数据每8位一组分割，可以发现：</p>
 <p>01101100，00101100，00001100第组数据明显不能得到正常的字符，但逆序后00110000=&gt;48，ASCII值为0。</p>
 <p>所以我们将每组的数据都进行逆序，但每组数据的位置保持不变，得到的数据提交后正确。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -410,14 +410,14 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;0110110000101100000011000110110010011100101011000000110010000110101011000010110010001100000111000010110001000110001001101010110001100110101001100110110001000110011011001010011010101100010001100010110011000110101001100010110011001100000111001100110001001100&#39;</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span><span class="mi">8</span><span class="p">):</span>
     <span class="n">x1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">8</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">x1</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0b&#39;</span><span class="o">+</span><span class="n">j</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0b&#39;</span><span class="o">+</span><span class="n">j</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="s1">&#39;&#39;&#39;
 </span><span class="s1">s1 = s1[::-1]
@@ -447,7 +447,7 @@
 <p>钥匙信号(PT226X) = 同步引导码(4bit) + 地址位(8bit) + 数据位(4bit) + 停止码(1bit)</p>
 <h3 id="font-colora020f0题目分析font-5"><a href="#font-colora020f0题目分析font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-5" class="headings"><font color=#A020F0>题目分析</font></a></h3>
 <p>使用 AudaCity 打开题目给的 .WAV 文件 ，得到一串音频文件，转化成二进制数据：</p>
-<pre><code>0  0111010010101010011000100  011101001010101001100010
+<pre tabindex="0"><code>0  0111010010101010011000100  011101001010101001100010
 </code></pre><p>通过捕获的数据分析可知前20位就是地址为 <code>01110100101010100110</code>  ,地址码后面的5位是数据位和停止位<code>00100</code></p>
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210629225829655.png" alt="image-20210629225829655"></p>
 <p><strong>flag{01110100101010100110}</strong></p>
@@ -483,54 +483,54 @@
 <p>在使用 Hashcat前，需要先在kali上 clone github上的 office2john.py 程序,使用 office2john.py 来获取文件的hash值，再利用 HashCat 破解 hash值，拿到密码。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#抓取文件的hash值,并保存为 out.txt 文件</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#抓取文件的hash值,并保存为 out.txt 文件</span>
 <span class="n">python3</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">N1nja_Misc_tools</span><span class="o">/</span><span class="n">crack_hash</span><span class="o">/</span><span class="n">office2john</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span><span class="o">.</span><span class="n">xlsx</span> <span class="o">&gt;</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630185513007.png" alt="image-20210630185513007"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#文件的hash值,保存在out.txt文件</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#文件的hash值,保存在out.txt文件</span>
 <span class="err">$</span><span class="n">office</span><span class="err">$</span><span class="o">*</span><span class="mi">2010</span><span class="o">*</span><span class="mi">100000</span><span class="o">*</span><span class="mi">128</span><span class="o">*</span><span class="mi">16</span><span class="o">*</span><span class="mi">265</span><span class="n">c4784621f00ddb85cc3a7227dade7</span><span class="o">*</span><span class="n">f0cc4179b2fcc2a2c5fa417566806249</span><span class="o">*</span><span class="n">b5ad5b66c0b84ba6e5d01f27ad8cffbdb409a4eddc4a87cd4dfbc46ad60160c9</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>准备一个好用的字典（zidian.txt）</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">john</span> <span class="o">--</span><span class="n">wordlist</span><span class="o">=</span><span class="n">zidian</span><span class="o">.</span><span class="n">txt</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">john</span> <span class="o">--</span><span class="n">wordlist</span><span class="o">=</span><span class="n">zidian</span><span class="o">.</span><span class="n">txt</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>破解成功后，使用下面命令查看爆破的密码</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">john</span> <span class="o">--</span><span class="n">show</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">john</span> <span class="o">--</span><span class="n">show</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><code>--------------------------------------------------------------------------------------</code></p>
 <p><font color=#0288D1>下面的方法是使用 Hashcat 来破解hash值</font></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#-m 破解hash类型</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#-m 破解hash类型</span>
 <span class="c1">#-a 破解模式(这里是蛮力破解)</span>
 <span class="c1">#?d?d?d?d 使用数字攻击,代表4位的数字</span>
 <span class="n">hashcat</span> <span class="o">-</span><span class="n">m</span> <span class="mi">9500</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">a</span> <span class="mi">3</span> <span class="err">?</span><span class="n">d</span><span class="err">?</span><span class="n">d</span><span class="err">?</span><span class="n">d</span><span class="err">?</span><span class="n">d</span> 
@@ -540,13 +540,13 @@
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210630193612155.png" alt="image-20210630193612155"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#我们使用</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#我们使用</span>
 <span class="n">hashcat</span> <span class="o">-</span><span class="n">m</span> <span class="mi">9500</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">a</span> <span class="mi">3</span> <span class="err">?</span><span class="n">d</span><span class="err">?</span><span class="n">d</span><span class="err">?</span><span class="n">d</span><span class="err">?</span><span class="n">d</span> <span class="o">--</span><span class="n">show</span>
 <span class="c1">#来查看密码</span>
 <span class="c1">#可以看到密码为:9919</span>
@@ -624,12 +624,12 @@
 <p>word显示隐藏文本:</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#点击word左上角的“文件”，进入后台试图，点击“更多”,点击“选项”，会打开“Word选项”对话框，在“显示”</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#点击word左上角的“文件”，进入后台试图，点击“更多”,点击“选项”，会打开“Word选项”对话框，在“显示”</span>
 <span class="c1">#里勾选“隐藏文字”，意思是显示word中的隐藏文字，确定即可。此时word里有隐藏效果的文本下面会有一条</span>
 <span class="c1">#虚线，当你打印的时候这些隐藏效果的文本是不存在的。</span>
 </code></pre></td></tr></table></div>
@@ -642,7 +642,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -651,42 +651,42 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">目前，</span><span class="n">zsteg支持检测</span><span class="err">：</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">目前</span><span class="err">，</span><span class="n">zsteg支持检测</span><span class="err">：</span>
 
 <span class="o">-</span> <span class="n">LSB</span> <span class="n">steganography</span> <span class="ow">in</span> <span class="n">PNG</span> <span class="o">&amp;</span> <span class="n">BMP</span>
 <span class="o">-</span> <span class="n">zlib</span><span class="o">-</span><span class="n">compressed</span> <span class="n">data</span>
 <span class="o">-</span> <span class="n">OpenStego</span>
-<span class="o">-</span> <span class="n">Camouflage</span> <span class="mf">1.2</span><span class="o">.</span><span class="mi">1</span>
+<span class="o">-</span> <span class="n">Camouflage</span> <span class="mf">1.2.1</span>
 <span class="o">-</span> <span class="n">LSB</span> <span class="k">with</span> <span class="n">The</span> <span class="n">Eratosthenes</span> <span class="nb">set</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>kali中安装使用命令：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"> <span class="n">gem</span> <span class="n">install</span> <span class="n">zsteg</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"> <span class="n">gem</span> <span class="n">install</span> <span class="n">zsteg</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>zsteg使用帮助命令</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">zsteg</span><span class="o">-</span><span class="n">h</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">zsteg</span><span class="o">-</span><span class="n">h</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h3 id="font-colora020f0题目分析font-8"><a href="#font-colora020f0题目分析font-8" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-8" class="headings"><font color=#A020F0>题目分析</font></a></h3>
 <p>下载文件为压缩包，伪加密。可以使用<strong>360压缩</strong>直接解压(可以无视伪加密)，或者在<strong>kali2021版中使用 binwalk</strong> 提取文件</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#binwalk 提取文件命令</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#binwalk 提取文件命令</span>
 <span class="n">binwalk</span> <span class="o">-</span><span class="n">e</span> <span class="n">xxx</span><span class="o">.</span><span class="n">zip</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -694,22 +694,22 @@
 <p>得到文件</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Anime_Intro</span><span class="o">.</span><span class="n">doc</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Anime_Intro</span><span class="o">.</span><span class="n">doc</span>
 <span class="n">flag</span><span class="o">.</span><span class="n">zip</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>打开 Anime_Intro.doc 这里，我的word开启了显示隐藏文字的，经常做杂项的应该会开启。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏的文本</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#隐藏的文本</span>
 <span class="n">Hello</span> <span class="n">everyone</span><span class="p">,</span> <span class="n">I</span> <span class="n">am</span> <span class="n">Gilbert</span><span class="o">.</span> <span class="n">Everyone</span> <span class="n">thought</span> <span class="n">that</span> <span class="n">I</span> <span class="n">was</span> <span class="n">killed</span><span class="p">,</span> <span class="n">but</span> <span class="n">actually</span> <span class="n">I</span> <span class="n">survived</span><span class="o">.</span> <span class="n">Now</span> <span class="n">that</span> <span class="n">I</span> <span class="n">have</span> <span class="n">no</span> <span class="n">cash</span> <span class="k">with</span> <span class="n">me</span> <span class="ow">and</span> <span class="n">I</span><span class="err">’</span><span class="n">m</span> <span class="n">trapped</span> <span class="ow">in</span> <span class="n">another</span> <span class="n">country</span><span class="o">.</span> <span class="n">I</span> <span class="n">can</span><span class="s1">&#39;t contact Violet now. She must be desperate to see me and I don&#39;</span><span class="n">t</span> <span class="n">want</span> <span class="n">her</span> <span class="n">to</span> <span class="n">cry</span> <span class="k">for</span> <span class="n">me</span><span class="o">.</span> <span class="n">I</span> <span class="n">need</span> <span class="n">to</span> <span class="n">pay</span> <span class="mi">300</span> <span class="k">for</span> <span class="n">the</span> <span class="n">train</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">88</span> <span class="k">for</span> <span class="n">the</span> <span class="n">meal</span><span class="o">.</span> <span class="n">Cash</span> <span class="ow">or</span> <span class="n">battlenet</span> <span class="n">point</span> <span class="n">are</span> <span class="n">both</span> <span class="n">accepted</span><span class="o">.</span> <span class="n">I</span> <span class="n">don</span><span class="s1">&#39;t play the Hearthstone, and I don&#39;</span><span class="n">t</span> <span class="n">even</span> <span class="n">know</span> <span class="n">what</span> <span class="ow">is</span> <span class="n">Rastakhan</span><span class="s1">&#39;s Rumble.</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -717,10 +717,10 @@
 <p>flag.zip中我们可以看到里面也有一份文本文件，通过题目的提示（BUU这里没写）</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">提示：</span><span class="n">The</span> <span class="n">txt</span> <span class="ow">is</span> <span class="n">GBK</span> <span class="n">encoding</span><span class="o">.</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">提示</span><span class="err">：</span><span class="n">The</span> <span class="n">txt</span> <span class="ow">is</span> <span class="n">GBK</span> <span class="n">encoding</span><span class="o">.</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>我们可以知道这里可以利用zip明文攻击，将得到的隐藏文本进行 gbk 编码后，用WINRAR压缩成 .zip 文件。</p>
@@ -752,7 +752,7 @@
 <p>使用pyhton脚本通过CRC修复图片的宽和高：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -779,7 +779,7 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="kn">import</span> <span class="nn">zlib</span>
 <span class="kn">import</span> <span class="nn">struct</span>
@@ -799,11 +799,11 @@
                 <span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">height</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
             <span class="n">crc32result</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">crc32result</span> <span class="o">==</span> <span class="n">crc32key</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="s2">&#34;宽为：&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
-                <span class="k">print</span><span class="p">(</span><span class="s2">&#34;高为：&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
-                <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;宽为：&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;高为：&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>得到：</p>
@@ -811,7 +811,7 @@
 <p>宽为：bytearray(b'\x00\x00\x00\xe3')</p>
 <p>高为：bytearray(b'\x00\x00\x01\xc5')</p>
 </blockquote>
-<pre><code>修复后图片仍然不对，用010editor查看发现 发现chunk[2]、chunk[3]缺少IDAT标识
+<pre tabindex="0"><code>修复后图片仍然不对，用010editor查看发现 发现chunk[2]、chunk[3]缺少IDAT标识
 </code></pre><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701145937704.png" alt="image-20210701145937704"></p>
 <p>在对应位置补齐标识</p>
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701150134658.png" alt="image-20210701150134658"></p>
@@ -819,12 +819,12 @@
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701150222425.png" alt="image-20210701150222425"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 用 zsteg 分析，没得到有效结果</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 用 zsteg 分析，没得到有效结果</span>
 
 <span class="c1"># 用 stegsolve 分析，拿到一张二维码，使用QR research解码</span>
 </code></pre></td></tr></table></div>
@@ -833,23 +833,23 @@
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701154141907.png" alt="image-20210701154141907"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 得到：ZmxhZ3s0X3</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 得到：ZmxhZ3s0X3</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h4 id="第二张图-2png"><a href="#第二张图-2png" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:第二张图-2png" class="headings">第二张图 2.png</a></h4>
-<pre><code>用 010editor打开，发现 PNG图片尾有 7z 文件，用 binwalk分离，但没有识别出来。
+<pre tabindex="0"><code>用 010editor打开，发现 PNG图片尾有 7z 文件，用 binwalk分离，但没有识别出来。
 </code></pre><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701181507922.png" alt="image-20210701181507922"></p>
-<pre><code>我用手动分离后新建为 7z.zip 打开发现文件损坏，打开查看16进制，
+<pre tabindex="0"><code>我用手动分离后新建为 7z.zip 打开发现文件损坏，打开查看16进制，
 发现和zip的文件头 504B0304 相似，将全部的 37 7A（7z）修改为 50 4B
 </code></pre><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701173710120.png" alt="image-20210701173710120"></p>
-<pre><code>7z.zip文件正常打开后，发现里面有 999 个 .txt 文件通审查文件的大小或者 CRC值，
+<pre tabindex="0"><code>7z.zip文件正常打开后，发现里面有 999 个 .txt 文件通审查文件的大小或者 CRC值，
 找出618.txt文件中的信息You find it: 1RVcmVfc
 
 </code></pre><h4 id="第三张图-3png"><a href="#第三张图-3png" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:第三张图-3png" class="headings">第三张图 3.png</a></h4>
-<pre><code>还是用010editor审查3.png的信息
+<pre tabindex="0"><code>还是用010editor审查3.png的信息
 
 发现chunk[0]-chunk[6]的每一个数据块的crc值都很小
 
@@ -858,35 +858,35 @@
 <p>python.exp</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x33</span><span class="p">,</span><span class="mh">0x52</span><span class="p">,</span><span class="mh">0x6C</span><span class="p">,</span><span class="mh">0x5A</span><span class="p">,</span><span class="mh">0x33</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x3D</span><span class="p">]</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x33</span><span class="p">,</span><span class="mh">0x52</span><span class="p">,</span><span class="mh">0x6C</span><span class="p">,</span><span class="mh">0x5A</span><span class="p">,</span><span class="mh">0x33</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x3D</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1">#3RlZ30=</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h4 id="第四张图-4png"><a href="#第四张图-4png" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:第四张图-4png" class="headings">第四张图 4.png</a></h4>
-<pre><code>直接在最末尾给出来了
+<pre tabindex="0"><code>直接在最末尾给出来了
 
 cExlX1BsY=
 </code></pre><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701180211561.png" alt="image-20210701180211561"></p>
-<pre><code>用 TweakPNG分析PNG图片信息，可以发现PNG中隐写了一个text文本
+<pre tabindex="0"><code>用 TweakPNG分析PNG图片信息，可以发现PNG中隐写了一个text文本
 正确的base信息应该为 cExlX1BsY
 </code></pre><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B31/image-20210701181218795.png" alt="image-20210701181218795"></p>
 <h4 id="第五张图-5png"><a href="#第五张图-5png" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:第五张图-5png" class="headings">第五张图 5.png</a></h4>
-<pre><code>Yzcllfc0lN
+<pre tabindex="0"><code>Yzcllfc0lN
 </code></pre><p><img src="/BUUCTF/2021/BUUMisc通关1/image-20210701180320506.png" alt="image-20210701180320506"  /></p>
 <p>得到的所有信息：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -898,13 +898,13 @@ cExlX1BsY=
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">ZmxhZ3s0X3</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">ZmxhZ3s0X3</span>
 <span class="mi">1</span><span class="n">RVcmVfc</span>
 <span class="mi">3</span><span class="n">RlZ30</span><span class="o">=</span>
 <span class="n">cExlX1BsY</span>
 <span class="n">Yzcllfc0lN</span>
 
-<span class="err">连接成</span><span class="n">base64解码</span><span class="err">：</span>
+<span class="n">连接成base64解码</span><span class="err">：</span>
 <span class="n">ZmxhZ3s0X3Yzcllfc0lNcExlX1BsY1RVcmVfc3RlZ30</span><span class="o">=</span>
 
 <span class="n">flag</span><span class="p">{</span><span class="mi">4</span><span class="n">_v3rY_sIMpLe_PlcTUre_steg</span><span class="p">}</span>
@@ -959,6 +959,10 @@ cExlX1BsY=
             <ul class="related-list">
                 
                     <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B39/" class="related-link">BUUMisc通关9</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" class="related-link">BUUMisc通关8</a>
                     </li>
                 
@@ -972,10 +976,6 @@ cExlX1BsY=
                 
                     <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/buumisc%E9%80%9A%E5%85%B34/" class="related-link">BUUMisc通关4</a>
                     </li>
                 
             </ul>

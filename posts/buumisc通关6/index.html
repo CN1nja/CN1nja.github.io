@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -320,10 +320,10 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;find . -type f -name &#39;*.tar.xz&#39; | wc -l&#34;</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span> find -type f -name <span class="s2">&#34;*.tar.xz&#34;</span> -exec tar xf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> -exec rm -- <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;find . -type f -name &#39;*.tar.xz&#39; | wc -l&#34;</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span> find -type f -name <span class="s2">&#34;*.tar.xz&#34;</span> -exec tar xf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> -exec rm -- <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>while [ &quot;<code>find . -type f -name '*.tar.xz' | wc -l</code>&quot; -gt 0 ]; do find -type f -name &quot;*.tar.xz&quot; -exec tar xf '{}' ; -exec rm -- '{}' ;; done;</p>
@@ -331,10 +331,10 @@
 <p>压缩包套娃，解压没有密码，可以直接解压。那么用 bash 命令直接循环解压即可</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;find . -type f -name &#39;*.tar.xz&#39; | wc -l&#34;</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span> find -type f -name <span class="s2">&#34;*.tar.xz&#34;</span> -exec tar xf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> -exec rm -- <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">while</span> <span class="o">[</span> <span class="s2">&#34;find . -type f -name &#39;*.tar.xz&#39; | wc -l&#34;</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span> find -type f -name <span class="s2">&#34;*.tar.xz&#34;</span> -exec tar xf <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> -exec rm -- <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -343,10 +343,10 @@
 <p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210717152425232.png" alt="image-20210717152425232" width="500" /></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># strings flag 查找flag字符</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># strings flag 查找flag字符</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -402,7 +402,7 @@
 <p>词频统计脚本</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -428,18 +428,18 @@
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python3</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python3</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;1.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">f_read</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">out</span><span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">f_read</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
-<span class="n">sorted_x</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1">#对可迭代的对象进行排序</span>
+<span class="n">sorted_x</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#对可迭代的对象进行排序</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sorted_x</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
 
 <span class="c1">#item()方法把字典中每对key和value组成一个元组，并把这些元组放在列表中返回。</span>
 <span class="c1">#sorted() 可以对所有可迭代的对象进行排序操作。</span>
@@ -483,11 +483,11 @@
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717172652953.png" alt="image-20210717172652953"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># &#34;YOUHAVEFOUNDME&#34;, CONGRATULATIONSONFINDINGMYSECRETNOWIWILLGIVEYOUTHEPASSWORDITISIAMTHEPASSWD</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># &#34;YOUHAVEFOUNDME&#34;, CONGRATULATIONSONFINDINGMYSECRETNOWIWILLGIVEYOUTHEPASSWORDITISIAMTHEPASSWD</span>
 <span class="c1"># CONGRATULATION SON FINDING MY SECRET NOW I WILL GIVE YOU THE PASSWORD IT IS IAMTHEPASSWD</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -501,13 +501,13 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 <p>可以知道这里是零宽字符隐写，参考：<a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B31/#font-color0288d1utctf2020zerofont" target="_blank" rel="noopener"><font color=#0288D1>【UTCTF2020】zero</font></a></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 文本中的零宽字符有</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 文本中的零宽字符有</span>
 <span class="o">&lt;</span><span class="mi">200</span><span class="n">c</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="mi">200</span><span class="n">b</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="mi">200</span><span class="n">d</span><span class="o">&gt;</span>
@@ -524,7 +524,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 <blockquote>
 <p>导出文本 out.txt 得到：</p>
 </blockquote>
-<pre><code>=wwZlZ=8W=cndwljcdcG8wdj8W8Z8dZllGjZc=8lWjnlWd8WwZ5j=l8ccWZcZGjd5ZwZ5WZ8d=Zcwjwl5Gnn=WdwcwlnWd5lGnZWlnnwdnjnw8ndnc58d5cndl=njZl=WddjwWWwZllj5c5jGwZnZ5W=cZljdwd8c=85ndGGljcl5ccwd=W=l8w=5lwWn8WnwnWlGZwdcnGGl5G=8W==cnnWZnWjZ=wWcGwZcWc8ncWW=5jnWwcZl8W=8cdwWldlnwW5ddwlnlwncWlcwGZddj5djZWc5jcWdn5jdjwnj85GWGjnjwGd=jZGj5j==jwjlw8dlwWj5Wjn5n8dwwdjZlc5lZwdWldZlnGwl85cWnjd=WcWlwj8WGdlGncnZWGGd5ZncW5d55nW5wl=Wj8jGWnWj8jwZ=ZwWZ88nWG5nn5WlWnGdWw5Zn8jdl=nGcnll8WncZjnGn=dlwn5W8wlWjlnl5ccnGWGnnnc58WnjlGnG55Zwdn5cZdjdZZ5WljG5G5wcldd=Wlc8Z=8nGj=jWd8w8Wd=w8nccc8wZdjcnGdljZnnj5ww8885=lcWW8W8j5dG8jZZwG55GjnwZ=W5Z8G5ZlGc5ZZncZ5cd8j85GW5nj=WWncn55Gj5nj5nwnW58jG8GcnjZdWcl8wj8n=cj=8l8cn5jjcjn8lldn=Gjw8=cjcdWWjGddZljdjdZnG8djnZccZldlWllw5ZZ8wj5Gn==5w8Z=j55n=ZZ5wdww8lndwd8Wlj8WGjnl=nncZ=W8ZZWZnjjlwWGZZlZc5c==d8Zl855wZn=W=w8wWjZ85cGc==5Z8ccjdw5GnZWnGjcdGGnZ5wwwWGG5d=W5ldjwGZZdZwdG5cGGnZGlGc=W5ccWZ8=cGljdGcdld=8cj8jwn=lj88ZZ5jn5lcZ=Gdw=Zl58WZZl5ccwccwG5d5w8Z5wllj5ddnn=5=w8588WwGj=l5G55dWG8cl=GcjWwlwG=lWWnZ=dZG85Gcjc5=wnw=j==Gndnddjwn5c=c5W5wwdWlG5nWZwnGw8=lcWldcwnG5Wcjj=cWlGZc8Gn58ZWjZ85ljlncZj5cc=dZWGjd=d8ncZ8www55=cw=GWZn5ZZlnWld=cWcnclWlZG5djGW=cl8=ZG8cZwwc8wl=88W5ZwZ=jwZGGlcWcWnZZ5Zj5w5ZdZclZZWnccGw==cG8W8ZWlc8wcZ555Z85ljWG5jZ=8=wllWjWjlZc5lG8cwWlnjlGlW=l5=n=lGwnjGGjGdwj85ddW5ZwZ=ddjWldj=cjljjGwndZjWWZGcdWcZW5cdldj8WZjGljlWncZ5=8jnZWjl8wjZG5Zwlcl5dd
+<pre tabindex="0"><code>=wwZlZ=8W=cndwljcdcG8wdj8W8Z8dZllGjZc=8lWjnlWd8WwZ5j=l8ccWZcZGjd5ZwZ5WZ8d=Zcwjwl5Gnn=WdwcwlnWd5lGnZWlnnwdnjnw8ndnc58d5cndl=njZl=WddjwWWwZllj5c5jGwZnZ5W=cZljdwd8c=85ndGGljcl5ccwd=W=l8w=5lwWn8WnwnWlGZwdcnGGl5G=8W==cnnWZnWjZ=wWcGwZcWc8ncWW=5jnWwcZl8W=8cdwWldlnwW5ddwlnlwncWlcwGZddj5djZWc5jcWdn5jdjwnj85GWGjnjwGd=jZGj5j==jwjlw8dlwWj5Wjn5n8dwwdjZlc5lZwdWldZlnGwl85cWnjd=WcWlwj8WGdlGncnZWGGd5ZncW5d55nW5wl=Wj8jGWnWj8jwZ=ZwWZ88nWG5nn5WlWnGdWw5Zn8jdl=nGcnll8WncZjnGn=dlwn5W8wlWjlnl5ccnGWGnnnc58WnjlGnG55Zwdn5cZdjdZZ5WljG5G5wcldd=Wlc8Z=8nGj=jWd8w8Wd=w8nccc8wZdjcnGdljZnnj5ww8885=lcWW8W8j5dG8jZZwG55GjnwZ=W5Z8G5ZlGc5ZZncZ5cd8j85GW5nj=WWncn55Gj5nj5nwnW58jG8GcnjZdWcl8wj8n=cj=8l8cn5jjcjn8lldn=Gjw8=cjcdWWjGddZljdjdZnG8djnZccZldlWllw5ZZ8wj5Gn==5w8Z=j55n=ZZ5wdww8lndwd8Wlj8WGjnl=nncZ=W8ZZWZnjjlwWGZZlZc5c==d8Zl855wZn=W=w8wWjZ85cGc==5Z8ccjdw5GnZWnGjcdGGnZ5wwwWGG5d=W5ldjwGZZdZwdG5cGGnZGlGc=W5ccWZ8=cGljdGcdld=8cj8jwn=lj88ZZ5jn5lcZ=Gdw=Zl58WZZl5ccwccwG5d5w8Z5wllj5ddnn=5=w8588WwGj=l5G55dWG8cl=GcjWwlwG=lWWnZ=dZG85Gcjc5=wnw=j==Gndnddjwn5c=c5W5wwdWlG5nWZwnGw8=lcWldcwnG5Wcjj=cWlGZc8Gn58ZWjZ85ljlncZj5cc=dZWGjd=d8ncZ8www55=cw=GWZn5ZZlnWld=cWcnclWlZG5djGW=cl8=ZG8cZwwc8wl=88W5ZwZ=jwZGGlcWcWnZZ5Zj5w5ZdZclZZWnccGw==cG8W8ZWlc8wcZ555Z85ljWG5jZ=8=wllWjWjlZc5lG8cwWlnjlGlW=l5=n=lGwnjGGjGdwj85ddW5ZwZ=ddjWldj=cjljjGwndZjWWZGcdWcZW5cdldj8WZjGljlWncZ5=8jnZWjl8wjZG5Zwlcl5dd
 </code></pre><blockquote>
 <p>词频统计</p>
 </blockquote>
@@ -534,7 +534,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 <p>得到： ZW5jcnlwdG8=</p>
 </blockquote>
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717211418408.png" alt="image-20210717211418408"></p>
-<pre><code>base64解码得到 ：encrypto
+<pre tabindex="0"><code>base64解码得到 ：encrypto
 </code></pre><p>google一下 encrypto ，知道了这是个加密软件，<a href="https://macpaw.com/encrypto" target="_blank" rel="noopener"><font color=#0288D1>下载链接</font></a>，encrypt加密文件的后缀为 crypto，将  secret  文件后缀名改为 <code>secret.crypto</code> 即可打开文件</p>
 <p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210717212505185.png" alt="image-20210717212505185" width="200" /></p>
 <blockquote>
@@ -561,7 +561,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 <p>参考文章：<a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B34/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B216%E8%BF%9B%E5%88%B6%E5%8F%B7font" target="_blank" rel="noopener"><font color=#0288D1>很好的色彩呃？</font></a></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -571,7 +571,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 通过观察图片的 RGB 16进制编码信息，发现黄色部分的16进制编码是不同的。</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 通过观察图片的 RGB 16进制编码信息，发现黄色部分的16进制编码是不同的。</span>
 <span class="c1">#ffff70</span>
 <span class="c1">#ffff40 </span>
 <span class="c1">#ffff73</span>
@@ -590,14 +590,14 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 <p>将大写连起来就是 ALPHUCK，google查一下</p>
 </blockquote>
 <p>得到这个 <a href="https://www.dcode.fr/alphuck-language" target="_blank" rel="noopener"><font color=#0288D1>Alphuck</font></a> 网站，查阅可知Alphuck 的加密方法仅包含 8 个小写字母 a c e i j o p s</p>
-<pre><code>eeeeeeeeeepaeaeeeaeeeeeeeaeeeeeeeeeeccccisaaaaeejeeeeeejiiiiiiiiiiijeeeeeejeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeePeeeeeeeejaaiiiiiiijcciiiiiiiiiijaaijiiiiiiiiiiiiiiiiiiiijeeeeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeeejaaiiiijeeeeeeejceeeeeeeeeeeeeeeeeeeeeeeeejceeeeeeeeeeeeeeeeejaeeeeeejciiiiiiiiiiiiiiiiiiijaeeeejceeeeeeeeeeeeeeeeeejajciiiiiiiiiiiiiiiiiiijaaiiiijiijeeeeeeeeeeejcciiiiiiiiiiiiiiijaaij
+<pre tabindex="0"><code>eeeeeeeeeepaeaeeeaeeeeeeeaeeeeeeeeeeccccisaaaaeejeeeeeejiiiiiiiiiiijeeeeeejeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeePeeeeeeeejaaiiiiiiijcciiiiiiiiiijaaijiiiiiiiiiiiiiiiiiiiijeeeeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeeejaaiiiijeeeeeeejceeeeeeeeeeeeeeeeeeeeeeeeejceeeeeeeeeeeeeeeeejaeeeeeejciiiiiiiiiiiiiiiiiiijaeeeejceeeeeeeeeeeeeeeeeejajciiiiiiiiiiiiiiiiiiijaaiiiijiijeeeeeeeeeeejcciiiiiiiiiiiiiiijaaij
 </code></pre><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210717221031231.png" alt="image-20210717221031231"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># flag{1t&#39;s_v3ry_De1iCi0us~!}</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># flag{1t&#39;s_v3ry_De1iCi0us~!}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-color0288d1网鼎杯-2020-青龙组虚幻2font"><a href="#font-color0288d1网鼎杯-2020-青龙组虚幻2font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1网鼎杯-2020-青龙组虚幻2font" class="headings"><font color=#0288D1>【网鼎杯 2020 青龙组】虚幻2</font></a></h2>
@@ -644,7 +644,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -674,20 +674,20 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#python3 </span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#python3 </span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="mi">36</span>	  <span class="c1">#x坐标	</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">12</span>	  <span class="c1">#y坐标	</span>
 
-<span class="nb">file</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;file.png&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;file.png&#39;</span><span class="p">)</span>
 <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;out&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
 
 <span class="n">z</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-        <span class="n">rgb</span><span class="o">=</span><span class="nb">file</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+        <span class="n">rgb</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
         <span class="k">if</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">255</span><span class="p">):</span>
             <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;1&#39;</span>
         <span class="k">elif</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
@@ -700,7 +700,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
             <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;1&#39;</span>
         <span class="k">elif</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
             <span class="n">z</span><span class="o">+=</span><span class="s1">&#39;0&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></td></tr></table></div>
 </div>
@@ -709,7 +709,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -732,19 +732,19 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="mi">36</span>	  <span class="c1">#x坐标	</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">36</span>	  <span class="c1">#y坐标	</span>
 
 <span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&#34;RGB&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>	
-<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;out&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>	
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;out&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>	
 
-<span class="n">a</span><span class="o">=</span><span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">a</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">z</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-		<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">])</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">])</span>
 		<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;1&#39;</span><span class="p">):</span>
 			<span class="n">im</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
 		<span class="k">elif</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;0&#39;</span><span class="p">):</span>
@@ -808,7 +808,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 <p><strong>将 base64 字符串逆序输出 reverse line、reverse character、from base64</strong></p>
 </blockquote>
 <p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210718164544575.png" alt="image-20210718164544575"></p>
-<pre><code>ffllaagg{{}}WWeellcc))[删除] [删除] 00mmee__GGkkCC44FF__mm11ssiiCCCCCCCCCCCC!!
+<pre tabindex="0"><code>ffllaagg{{}}WWeellcc))[删除] [删除] 00mmee__GGkkCC44FF__mm11ssiiCCCCCCCCCCCC!!
 
 flag{Welc0me_GkC4F_m1siCCCCCC!}
 </code></pre><h2 id="font-color0288d1de1ctf2019mine-sweepingfont"><a href="#font-color0288d1de1ctf2019mine-sweepingfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1de1ctf2019mine-sweepingfont" class="headings"><font color=#0288D1>【De1CTF2019】Mine Sweeping</font></a></h2>
@@ -879,17 +879,17 @@ flag{Welc0me_GkC4F_m1siCCCCCC!}
 <img src="/BUUCTF/2021/BUUMisc通关6/image-20210719135934070.png" alt="image-20210719135934070" width="500"/>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># EENSA(M0R53W2HLN3V3SE4G3!)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># EENSA(M0R53W2HLN3V3SE4G3!)</span>
 <span class="c1"># flag{M0R53_W2HLN3V3SE4G3!}</span>
 <span class="c1"># flag是错的，测试发现这在线网站解码有误，还是手动解更稳</span>
 </code></pre></td></tr></table></div>
 </div>
-</div><pre><code>.. -. ... .- -.--. -- ----- .-. ..... ...-- ..--.- .-- .---- .-.. .-.. .--.- -. ...-- ...- ...-- .-. ..--.- ....- --. ...-- -.-.-- -.--.-
+</div><pre tabindex="0"><code>.. -. ... .- -.--. -- ----- .-. ..... ...-- ..--.- .-- .---- .-.. .-.. .--.- -. ...-- ...- ...-- .-. ..--.- ....- --. ...-- -.-.-- -.--.-
 # 解码得到
 # insa m0r53 w1ll n3v3r 4g3 (
 flag{m0r53_w1ll_n3v3r_4g3 (}
@@ -913,13 +913,13 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#执行命令</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#执行命令</span>
 <span class="n">python3</span> <span class="n">deepsound2john</span><span class="o">.</span><span class="n">py</span> <span class="n">finl_flag</span><span class="o">.</span><span class="n">wav</span> <span class="o">&gt;</span> <span class="nb">hash</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">john</span> <span class="nb">hash</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">john</span> <span class="nb">hash</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">show</span>
@@ -927,7 +927,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1064,7 +1064,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 </span><span class="lnt">135
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python3</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python3</span>
 <span class="c1">#!/usr/bin/env python3</span>
 <span class="s1">&#39;&#39;&#39;
 </span><span class="s1">deepsound2john extracts password hashes from audio files containing encrypted
@@ -1127,15 +1127,15 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
   <span class="k">if</span> <span class="ow">not</span> <span class="n">is_wave</span><span class="p">(</span><span class="n">buf</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">convert_warn</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;file not in .wav format&#39;</span><span class="p">)</span>
-    <span class="n">convert_warn</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">convert_warn</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span>
   <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">SEEK_SET</span><span class="p">)</span>
 
   <span class="c1"># Scan for the marker...</span>
   <span class="n">hdrsz</span> <span class="o">=</span> <span class="mi">104</span>
-  <span class="n">hdr</span> <span class="o">=</span> <span class="bp">None</span>
+  <span class="n">hdr</span> <span class="o">=</span> <span class="kc">None</span>
 
-  <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">off</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
     <span class="n">buf</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">hdrsz</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">hdrsz</span><span class="p">:</span> <span class="k">break</span>
@@ -1147,7 +1147,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 
     <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="o">-</span><span class="n">hdrsz</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">SEEK_CUR</span><span class="p">)</span>
 
-  <span class="k">if</span> <span class="n">hdr</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">hdr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;does not appear to be a DeepSound file&#39;</span><span class="p">)</span>
     <span class="k">return</span>
 
@@ -1170,7 +1170,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
     <span class="k">return</span>
 
   <span class="n">sha1</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">6</span><span class="o">+</span><span class="mi">20</span><span class="p">]</span>
-  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">:$dynamic_1529$</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bname</span><span class="p">,</span> <span class="n">sha1</span><span class="o">.</span><span class="n">hex</span><span class="p">()))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">:$dynamic_1529$</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bname</span><span class="p">,</span> <span class="n">sha1</span><span class="o">.</span><span class="n">hex</span><span class="p">()))</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -1187,18 +1187,18 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
   <span class="k">else</span><span class="p">:</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">)</span>
 
-  <span class="n">convert_warn</span> <span class="o">=</span> <span class="bp">False</span>
+  <span class="n">convert_warn</span> <span class="o">=</span> <span class="kc">False</span>
 
   <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
     <span class="n">process_deepsound_file</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
   <span class="k">if</span> <span class="n">convert_warn</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+    <span class="nb">print</span><span class="p">(</span><span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
 </span><span class="s1">    ---------------------------------------------------------------
 </span><span class="s1">    Some files were not in .wav format. Try converting them to .wav
 </span><span class="s1">    and try again. You can use: ffmpeg -i input output.wav
 </span><span class="s1">    ---------------------------------------------------------------
-</span><span class="s1">    &#39;&#39;&#39;</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()),</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+</span><span class="s1">    &#39;&#39;&#39;</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()),</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>John是用于破解hash值的工具，kali自带：</strong></p>
@@ -1207,13 +1207,13 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># john hash.txt                                                                                         </span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># john hash.txt                                                                                         </span>
 <span class="n">Using</span> <span class="n">default</span> <span class="nb">input</span> <span class="n">encoding</span><span class="p">:</span> <span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
 <span class="n">Loaded</span> <span class="mi">1</span> <span class="n">password</span> <span class="nb">hash</span> <span class="p">(</span><span class="n">dynamic_1529</span> <span class="p">[</span><span class="n">sha1</span><span class="p">(</span><span class="err">$</span><span class="n">p</span> <span class="n">null_padded_to_len_32</span><span class="p">)</span> <span class="p">(</span><span class="n">DeepSound</span><span class="p">)</span> <span class="mi">128</span><span class="o">/</span><span class="mi">128</span> <span class="n">AVX</span> <span class="mi">4</span><span class="n">x1</span><span class="p">])</span>
 <span class="n">No</span> <span class="n">password</span> <span class="n">hashes</span> <span class="n">left</span> <span class="n">to</span> <span class="n">crack</span> <span class="p">(</span><span class="n">see</span> <span class="n">FAQ</span><span class="p">)</span>                                
@@ -1222,7 +1222,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 </div><blockquote>
 <p><strong>如果想查看上一次爆破的结果，可以使用以下命令</strong></p>
 </blockquote>
-<pre><code># john hash.txt --show
+<pre tabindex="0"><code># john hash.txt --show
 </code></pre><p><strong>如果想重新破解hash值，则需要删除 john.pot 文件中的历史值</strong></p>
 <blockquote>
 <p><strong>破解过的密码会存储在home目录下的隐藏文件.john/john.pot中</strong></p>
@@ -1272,10 +1272,10 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">zsteg</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&#34;b8,rgb,lsb,xy&#34;</span> <span class="mf">1.</span><span class="n">png</span> <span class="o">&gt;</span> <span class="n">diskimage</span><span class="o">.</span><span class="n">dat</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">zsteg</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&#34;b8,rgb,lsb,xy&#34;</span> <span class="mf">1.</span><span class="n">png</span> <span class="o">&gt;</span> <span class="n">diskimage</span><span class="o">.</span><span class="n">dat</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>testdisk恢复文件：</strong></p>
@@ -1284,10 +1284,10 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># testdisk diskimage.dat</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># testdisk diskimage.dat</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -1296,16 +1296,16 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 <p><img src="/BUUCTF/2021/BUUMisc通关6/image-20210719171548391.png" alt="image-20210719171548391" width="400" /></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 按C 复制图片，得到 flag</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 按C 复制图片，得到 flag</span>
 <span class="n">use</span> <span class="n">Right</span> <span class="n">to</span> <span class="n">change</span> <span class="n">directory</span><span class="p">,</span> <span class="n">h</span> <span class="n">to</span> <span class="n">hide</span> <span class="n">deleted</span> <span class="n">files</span>                                                   
-    <span class="n">q</span> <span class="n">to</span> <span class="n">quit</span><span class="p">,</span> <span class="p">:</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">file</span><span class="p">,</span> <span class="n">a</span> <span class="n">to</span> <span class="n">select</span> <span class="nb">all</span> <span class="n">files</span>                                       
-    <span class="n">C</span> <span class="n">to</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">files</span><span class="p">,</span> <span class="n">c</span> <span class="n">to</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">current</span> <span class="nb">file</span>  
+    <span class="n">q</span> <span class="n">to</span> <span class="n">quit</span><span class="p">,</span> <span class="p">:</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">current</span> <span class="n">file</span><span class="p">,</span> <span class="n">a</span> <span class="n">to</span> <span class="n">select</span> <span class="nb">all</span> <span class="n">files</span>                                       
+    <span class="n">C</span> <span class="n">to</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">files</span><span class="p">,</span> <span class="n">c</span> <span class="n">to</span> <span class="n">copy</span> <span class="n">the</span> <span class="n">current</span> <span class="n">file</span>  
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B36/image-20210719172120636.png" alt="image-20210719172120636"></p>
@@ -1360,6 +1360,10 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
             <ul class="related-list">
                 
                     <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B39/" class="related-link">BUUMisc通关9</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" class="related-link">BUUMisc通关8</a>
                     </li>
                 
@@ -1373,10 +1377,6 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
                 
                     <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B34/" class="related-link">BUUMisc通关4</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/buumisc%E9%80%9A%E5%85%B33/" class="related-link">BUUMisc通关3</a>
                     </li>
                 
             </ul>

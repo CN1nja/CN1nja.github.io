@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -377,7 +377,7 @@
 <p><font color=#0288D1>BUURSA：</font>     <a href="https://buuoj.cn/challenges#RSA" target="_blank" rel="noopener">https://buuoj.cn/challenges#RSA</a>
 <br></p>
 <p>公钥文件</p>
-<pre><code>-----BEGIN PUBLIC KEY-----
+<pre tabindex="0"><code>-----BEGIN PUBLIC KEY-----
 MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAMAzLFxkrkcYL2wch21CM2kQVFpY9+7+
 /AvKr1rzQczdAgMBAAE=
 -----END PUBLIC KEY-----
@@ -389,7 +389,7 @@ MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAMAzLFxkrkcYL2wch21CM2kQVFpY9+7+
 <p>分解模n，得到p,q的值。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -413,7 +413,7 @@ MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAMAzLFxkrkcYL2wch21CM2kQVFpY9+7+
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">rsa</span>            <span class="c1">#rsa模块</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">rsa</span>            <span class="c1">#rsa模块</span>
 <span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>    <span class="c1">#gmpy2模块</span>
 
 <span class="n">e</span><span class="o">=</span> <span class="mi">65537</span>
@@ -434,14 +434,14 @@ MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAMAzLFxkrkcYL2wch21CM2kQVFpY9+7+
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">MIKEWYW</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">flag.txt&#34;</span><span class="p">,</span><span class="s2">&#34;rb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1">#以二进制读模式，读取密文  </span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">rsa</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">key</span><span class="p">))</span>           <span class="c1"># f:公钥加密结果  key:私钥</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rsa</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">key</span><span class="p">))</span>           <span class="c1"># f:公钥加密结果  key:私钥</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><br>
 <h3 id="font-color0288d1例题2020西湖论剑brokensystemsfont"><a href="#font-color0288d1例题2020西湖论剑brokensystemsfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1例题2020西湖论剑brokensystemsfont" class="headings"><font color=#0288D1>例题：2020西湖论剑BrokenSystems</font></a></h3>
 <h4 id="font-color6a1b9a题目font"><a href="#font-color6a1b9a题目font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color6a1b9a题目font" class="headings"><font color=#6A1B9A>题目</font></a></h4>
 <p>BrokenSystems.py</p>
-<pre><code>from Crypto.PublicKey import RSA
+<pre tabindex="0"><code>from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 from secret import flag
 import os
@@ -459,7 +459,7 @@ f.write(msg)
 f.close()
 
 </code></pre><p>public.txt</p>
-<pre><code>-----BEGIN PUBLIC KEY-----
+<pre tabindex="0"><code>-----BEGIN PUBLIC KEY-----
 MIICITANBgkqhkiG9w0BAQEFAAOCAg4AMIICCQKCAQEAwgdFIj/1uUss2EEhZvco
 iiHyGH4aQhRTkYyrA8gCU0USM+sb3CNjdEIoqoaUqMLLyDP4Dd9AgxpokBsjC4Pz
 8P7Uty0LlCteld7ayNzABHoq+5DIHtctOtSbcvyL0NMWfd2qarUWfAWN82rxkLIW
@@ -475,7 +475,7 @@ kF25GYy9QxERvodGL0Y2njHRpGE/
 -----END PUBLIC KEY-----
 
 </code></pre><p>message.txt</p>
-<pre><code>'Ω?奟?ypG睉晜&lt; U,.
+<pre tabindex="0"><code>'Ω?奟?ypG睉晜&lt; U,.
 W?盔敲m銖?.嗘7?s来薶 
 只Z???'D?夞%莰}?~a,妄姷槢谏v}玊??#ad??$ 爝湆鄃 
 0遀; 
@@ -485,7 +485,7 @@ W?盔敲m銖?.嗘7?s来薶
 SxN岑y?
 </code></pre><h4 id="font-color6a1b9a解题思路font"><a href="#font-color6a1b9a解题思路font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color6a1b9a解题思路font" class="headings"><font color=#6A1B9A>解题思路</font></a></h4>
 <p>首先进行公钥解析得到 n，e的值：</p>
-<pre><code>n = 24493816160588971749455534346389861269947121809901305744877671102517333076424951483888863597563544011725032585417200878377314372325231470164799594965293350352923195632229495874587039720317200655351788887974047948082357232348155828924230567816817425104960545706688263839042183224681231800805037117758927837949941052360649778743187012198508745207332696876463490071925421229447425456903529626946628855874075846839745388326224970202749994059533831664092151570836853681204646481502222112116971464211748086292930029540995987019610460396057955900244074999111267618452967579699626655472948383601391620012180211885979095636919
+<pre tabindex="0"><code>n = 24493816160588971749455534346389861269947121809901305744877671102517333076424951483888863597563544011725032585417200878377314372325231470164799594965293350352923195632229495874587039720317200655351788887974047948082357232348155828924230567816817425104960545706688263839042183224681231800805037117758927837949941052360649778743187012198508745207332696876463490071925421229447425456903529626946628855874075846839745388326224970202749994059533831664092151570836853681204646481502222112116971464211748086292930029540995987019610460396057955900244074999111267618452967579699626655472948383601391620012180211885979095636919
 e = 3683191938452247871641914583009119792552938079110383367782698429399084083048335018186915282465581498846777124014232879019914546010406868697694661244001972931366227108140590201194336470785929194895915077935083045957890179080332615291089360169761324533970721460473221959270664692795701362942487885620152952927112838769014944652059440137350285198702402612151501564899791870051001152984815689187374906618917967106000628810361686645504356294175173529719443860140795170776862320812544438211122891112138748710073230404456268507750721647637959502454394140328030018450883598342764577147457231373121223878829298942493059211583
 
 </code></pre><p>我们可以看出，e的值特别大。尝试<strong>winner攻击</strong>，解得 d。(winner攻击在后面低解密指数攻击会详细介绍)</p>
@@ -503,7 +503,7 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
 <p>Python3解密脚本：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -522,7 +522,7 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">PKCS1_OAEP</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">PKCS1_OAEP</span>
 <span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">24493816160588971749455534346389861269947121809901305744877671102517333076424951483888863597563544011725032585417200878377314372325231470164799594965293350352923195632229495874587039720317200655351788887974047948082357232348155828924230567816817425104960545706688263839042183224681231800805037117758927837949941052360649778743187012198508745207332696876463490071925421229447425456903529626946628855874075846839745388326224970202749994059533831664092151570836853681204646481502222112116971464211748086292930029540995987019610460396057955900244074999111267618452967579699626655472948383601391620012180211885979095636919</span>
@@ -537,7 +537,7 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">MIKEWYW</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">message.txt&#34;</span><span class="p">,</span><span class="s2">&#34;rb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1">#以二进制读模式，读取密文  </span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">flag</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
 
 </code></pre></td></tr></table></div>
 </div>
@@ -545,9 +545,9 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
 <p><strong>代码中有看不懂的地方，如果是关于第三方库模块的，请认真学习一下上面的Crypto的官方学习源文件</strong></p>
 <h2 id="font-coloref6c00利用公约数求解font"><a href="#font-coloref6c00利用公约数求解font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-coloref6c00利用公约数求解font" class="headings"><font color=#EF6C00>利用公约数求解</font></a></h2>
 <p><font color=#6A1B9A>如果两次公钥的加密过程中使用的 n1 和 n2 具有相同的素因子，则可以利用欧几里得算法直接将 n1 和 n2 分解</font></p>
-<pre><code>p = gmpy2.gcd(n1,n2)   #gmpy2库函数gcd(),用于求最大公约数。
+<pre tabindex="0"><code>p = gmpy2.gcd(n1,n2)   #gmpy2库函数gcd(),用于求最大公约数。
 </code></pre><p>自定义函数gcd()欧几里得算法</p>
-<pre><code>def gcd(a,b):
+<pre tabindex="0"><code>def gcd(a,b):
     if a&lt;b:
         a,b = b,a
     while(b!=0):
@@ -573,7 +573,7 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
 <p>由于暂时未找到这个考点的题目，下面的这个例题用的是一个博主发的</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -605,7 +605,7 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">gmpy2</span>  
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">gmpy2</span>  
 <span class="kn">import</span> <span class="nn">random</span>  
 <span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>  
 <span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span>  
@@ -614,11 +614,11 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
     <span class="n">p</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>  
     <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  
     <span class="n">s</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>  
-	    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>  
+	    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  
 	        <span class="n">e</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">p</span><span class="o">**</span><span class="n">r</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>  
 	        <span class="k">if</span> <span class="n">gmpy2</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">p</span><span class="o">**</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  
 	            <span class="k">break</span>  
-	    <span class="n">pubkey</span> <span class="o">=</span> <span class="p">(</span><span class="nb">long</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="nb">long</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="n">r</span><span class="p">))</span>   <span class="c1">#返回e  和p^r  </span>
+	    <span class="n">pubkey</span> <span class="o">=</span> <span class="p">(</span><span class="n">long</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="n">long</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="n">r</span><span class="p">))</span>   <span class="c1">#返回e  和p^r  </span>
 	    <span class="k">return</span> <span class="n">pubkey</span>  
 	  
 <span class="k">def</span> <span class="nf">crypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">pubkey</span><span class="p">):</span>  
@@ -630,11 +630,11 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
   
 <span class="n">nbit</span> <span class="o">=</span> <span class="mi">1024</span>  
 <span class="n">pubkey</span> <span class="o">=</span> <span class="n">generate_key</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>  
-<span class="k">print</span> <span class="s1">&#39;pubkey =&#39;</span><span class="p">,</span> <span class="n">pubkey</span>                    <span class="c1">#输出e  和p^r  </span>
+<span class="nb">print</span> <span class="s1">&#39;pubkey =&#39;</span><span class="p">,</span> <span class="n">pubkey</span>                    <span class="c1">#输出e  和p^r  </span>
 <span class="n">msg</span> <span class="o">=</span> <span class="n">flag值</span>     
 <span class="n">enc</span> <span class="o">=</span> <span class="n">crypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">pubkey</span><span class="p">)</span>    
   
-<span class="k">print</span> <span class="s1">&#39;enc =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)</span> 
+<span class="nb">print</span> <span class="s1">&#39;enc =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">)</span> 
 </code></pre></td></tr></table></div>
 </div>
 </div><br>
@@ -709,14 +709,14 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 <br></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">p</span> <span class="o">=</span> <span class="mi">8637633767257008567099653486541091171320491509433615447539162437911244175885667806398411790524083553445158113502227745206205327690939504032994699902053229</span> 
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">p</span> <span class="o">=</span> <span class="mi">8637633767257008567099653486541091171320491509433615447539162437911244175885667806398411790524083553445158113502227745206205327690939504032994699902053229</span> 
 <span class="n">q</span> <span class="o">=</span> <span class="mi">12640674973996472769176047937170883420927050821480010581593137135372473880595613737337630629752577346147039284030082593490776630572584959954205336880228469</span> 
 <span class="n">dp</span> <span class="o">=</span> <span class="mi">6500795702216834621109042351193261530650043841056252930930949663358625016881832840728066026150264693076109354874099841380454881716097778307268116910582929</span> 
 <span class="n">dq</span> <span class="o">=</span> <span class="mi">783472263673553449019532580386470672380574033551303889137911760438881683674556098098256795673512201963002175438762767516968043599582527539160811120550041</span> 
@@ -726,7 +726,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 </div><h3 id="font-color0288d1解题代码font"><a href="#font-color0288d1解题代码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1解题代码font" class="headings"><font color=#0288D1>解题代码:</font></a></h3>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -745,7 +745,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
 <span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="mi">8637633767257008567099653486541091171320491509433615447539162437911244175885667806398411790524083553445158113502227745206205327690939504032994699902053229</span> 
@@ -761,7 +761,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 
 <span class="n">m</span> <span class="o">=</span> <span class="p">(((</span><span class="n">mp</span><span class="o">-</span><span class="n">mq</span><span class="p">)</span><span class="o">*</span><span class="n">I</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="n">mq</span>   <span class="c1">#求明文公式</span>
 <span class="c1">#m = m%n(可以加上，不加也没事，这里数值不大)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>              <span class="c1">#n2s()函数，用于数值转字符串</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>              <span class="c1">#n2s()函数，用于数值转字符串</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-coloref6c00dp-泄露font"><a href="#font-coloref6c00dp-泄露font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-coloref6c00dp-泄露font" class="headings"><font color=#EF6C00>dp 泄露</font></a></h2>
@@ -801,7 +801,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 <p>关键代码：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -811,7 +811,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>                   <span class="c1">#在范围(1,e)之间进行遍历</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>                   <span class="c1">#在范围(1,e)之间进行遍历</span>
     <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="o">*</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="p">(((</span><span class="n">dp</span><span class="o">*</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1">#存在p，使得n能被p整除</span>
             <span class="n">p</span><span class="o">=</span><span class="p">((</span><span class="n">dp</span><span class="o">*</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
@@ -826,14 +826,14 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 <p>题目</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">248254007851526241177721526698901802985832766176221609612258877371620580060433101538328030305219918697643619814200930679612109885533801335348445023751670478437073055544724280684733298051599167660303645183146161497485358633681492129668802402065797789905550489547645118787266601929429724133167768465309665906113</span>
 <span class="n">dp</span> <span class="o">=</span> <span class="mi">905074498052346904643025132879518330691925174573054004621877253318682675055421970943552016695528560364834446303196939207056642927148093290374440210503657</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">140423670976252696807533673586209400575664282100684119784203527124521188996403826597436883766041879067494280957410201958935737360380801845453829293997433414188838725751796261702622028587211560353362847191060306578510511380965162133472698713063592621028959167072781482562673683090590521214218071160287665180751</span>
@@ -843,7 +843,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 </div><h3 id="font-color0288d1解题脚本font"><a href="#font-color0288d1解题脚本font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1解题脚本font" class="headings"><font color=#0288D1>解题脚本：</font></a></h3>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -862,7 +862,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
 <span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
 
 <span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
@@ -878,7 +878,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
             <span class="n">phi</span><span class="o">=</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>            <span class="c1">#欧拉定理</span>
             <span class="n">d</span><span class="o">=</span><span class="n">invert</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span>         <span class="c1">#求模逆</span>
             <span class="n">m</span><span class="o">=</span><span class="nb">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>               <span class="c1">#快速求幂取模运算</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>       <span class="c1">#16进制转文本</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>       <span class="c1">#16进制转文本</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-coloref6c00roll-按行加密font"><a href="#font-coloref6c00roll-按行加密font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-coloref6c00roll-按行加密font" class="headings"><font color=#EF6C00>Roll 按行加密</font></a></h2>
@@ -890,7 +890,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 把图二中的每行数据进行解密：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -910,7 +910,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
 <span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
 
 <span class="n">n</span><span class="o">=</span><span class="mi">920139713</span>
@@ -926,7 +926,7 @@ $m≡(((m_2-m_1)*p^{-1}$ mod $q)*p+m_1)$ mod $n$
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>                <span class="c1">#读取每一行</span>
         <span class="n">m</span><span class="o">+=</span><span class="n">n2s</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">d</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>            
 
-<span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 
 </code></pre></td></tr></table></div>
 </div>
@@ -970,13 +970,13 @@ $m = c_1^{s_1}c_2^{s_2}$ mod $n$</p>
 <br>
 <h3 id="font-color0288d1例题font-5"><a href="#font-color0288d1例题font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1例题font-5" class="headings"><font color=#0288D1>例题：</font></a></h3>
 <p>BUU RSA3</p>
-<pre><code>c1=22322035275663237041646893770451933509324701913484303338076210603542612758956262869640822486470121149424485571361007421293675516338822195280313794991136048140918842471219840263536338886250492682739436410013436651161720725855484866690084788721349555662019879081501113222996123305533009325964377798892703161521852805956811219563883312896330156298621674684353919547558127920925706842808914762199011054955816534977675267395009575347820387073483928425066536361482774892370969520740304287456555508933372782327506569010772537497541764311429052216291198932092617792645253901478910801592878203564861118912045464959832566051361
+<pre tabindex="0"><code>c1=22322035275663237041646893770451933509324701913484303338076210603542612758956262869640822486470121149424485571361007421293675516338822195280313794991136048140918842471219840263536338886250492682739436410013436651161720725855484866690084788721349555662019879081501113222996123305533009325964377798892703161521852805956811219563883312896330156298621674684353919547558127920925706842808914762199011054955816534977675267395009575347820387073483928425066536361482774892370969520740304287456555508933372782327506569010772537497541764311429052216291198932092617792645253901478910801592878203564861118912045464959832566051361
 n=22708078815885011462462049064339185898712439277226831073457888403129378547350292420267016551819052430779004755846649044001024141485283286483130702616057274698473611149508798869706347501931583117632710700787228016480127677393649929530416598686027354216422565934459015161927613607902831542857977859612596282353679327773303727004407262197231586324599181983572622404590354084541788062262164510140605868122410388090174420147752408554129789760902300898046273909007852818474030770699647647363015102118956737673941354217692696044969695308506436573142565573487583507037356944848039864382339216266670673567488871508925311154801
 e1=11187289
 c2=18702010045187015556548691642394982835669262147230212731309938675226458555210425972429418449273410535387985931036711854265623905066805665751803269106880746769003478900791099590239513925449748814075904017471585572848473556490565450062664706449128415834787961947266259789785962922238701134079720414228414066193071495304612341052987455615930023536823801499269773357186087452747500840640419365011554421183037505653461286732740983702740822671148045619497667184586123657285604061875653909567822328914065337797733444640351518775487649819978262363617265797982843179630888729407238496650987720428708217115257989007867331698397
 e2=9647291
 </code></pre><h3 id="font-color0288d1解题脚本font-1"><a href="#font-color0288d1解题脚本font-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1解题脚本font-1" class="headings"><font color=#0288D1>解题脚本：</font></a></h3>
-<pre><code>from libnum import*   #python第三方库
+<pre tabindex="0"><code>from libnum import*   #python第三方库
 from gmpy2 import*    #python第三方库
 
 n = 22708078815885011462462049064339185898712439277226831073457888403129378547350292420267016551819052430779004755846649044001024141485283286483130702616057274698473611149508798869706347501931583117632710700787228016480127677393649929530416598686027354216422565934459015161927613607902831542857977859612596282353679327773303727004407262197231586324599181983572622404590354084541788062262164510140605868122410388090174420147752408554129789760902300898046273909007852818474030770699647647363015102118956737673941354217692696044969695308506436573142565573487583507037356944848039864382339216266670673567488871508925311154801
@@ -1003,7 +1003,7 @@ $C=m^e+k*n$</p>
 <h4 id="font-color6a1b9a关键代码font"><a href="#font-color6a1b9a关键代码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color6a1b9a关键代码font" class="headings"><font color=#6A1B9A>关键代码</font></a></h4>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1011,10 +1011,10 @@ $C=m^e+k*n$</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">if</span><span class="p">(</span><span class="n">iroot</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>           <span class="c1">#或者 iroot(c-i*n,3)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">iroot</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">iroot</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
         <span class="k">break</span>
     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
 </code></pre></td></tr></table></div>
@@ -1023,7 +1023,7 @@ $C=m^e+k*n$</p>
 <p>BUU Dangerous RSA</p>
 <p><a href="https://buuoj.cn/challenges#Dangerous%20RSA" target="_blank" rel="noopener">https://buuoj.cn/challenges#Dangerous%20RSA</a></p>
 <p>题目：</p>
-<pre><code>#n:  0x52d483c27cd806550fbe0e37a61af2e7cf5e0efb723dfc81174c918a27627779b21fa3c851e9e94188eaee3d5cd6f752406a43fbecb53e80836ff1e185d3ccd7782ea846c2e91a7b0808986666e0bdadbfb7bdd65670a589a4d2478e9adcafe97c6ee23614bcb2ecc23580f4d2e3cc1ecfec25c50da4bc754dde6c8bfd8d1fc16956c74d8e9196046a01dc9f3024e11461c294f29d7421140732fedacac97b8fe50999117d27943c953f18c4ff4f8c258d839764078d4b6ef6e8591e0ff5563b31a39e6374d0d41c8c46921c25e5904a817ef8e39e5c9b71225a83269693e0b7e3218fc5e5a1e8412ba16e588b3d6ac536dce39fcdfce81eec79979ea6872793L
+<pre tabindex="0"><code>#n:  0x52d483c27cd806550fbe0e37a61af2e7cf5e0efb723dfc81174c918a27627779b21fa3c851e9e94188eaee3d5cd6f752406a43fbecb53e80836ff1e185d3ccd7782ea846c2e91a7b0808986666e0bdadbfb7bdd65670a589a4d2478e9adcafe97c6ee23614bcb2ecc23580f4d2e3cc1ecfec25c50da4bc754dde6c8bfd8d1fc16956c74d8e9196046a01dc9f3024e11461c294f29d7421140732fedacac97b8fe50999117d27943c953f18c4ff4f8c258d839764078d4b6ef6e8591e0ff5563b31a39e6374d0d41c8c46921c25e5904a817ef8e39e5c9b71225a83269693e0b7e3218fc5e5a1e8412ba16e588b3d6ac536dce39fcdfce81eec79979ea6872793L
 #e:  0x3
 #c:0x10652cdfaa6b63f6d7bd1109da08181e500e5643f5b240a9024bfa84d5f2cac9310562978347bb232d63e7289283871efab83d84ff5a7b64a94a79d34cfbd4ef121723ba1f663e514f83f6f01492b4e13e1bb4296d96ea5a353d3bf2edd2f449c03c4a3e995237985a596908adc741f32365
 so,how to get the message?
@@ -1033,7 +1033,7 @@ so,how to get the message?
 <h4 id="font-color0288d1解题脚本font-2"><a href="#font-color0288d1解题脚本font-2" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1解题脚本font-2" class="headings"><font color=#0288D1>解题脚本：</font></a></h4>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1047,7 +1047,7 @@ so,how to get the message?
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>   <span class="c1">#python第三方库</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>   <span class="c1">#python第三方库</span>
 <span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>    <span class="c1">#python第三方库</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mh">0x52d483c27cd806550fbe0e37a61af2e7cf5e0efb723dfc81174c918a27627779b21fa3c851e9e94188eaee3d5cd6f752406a43fbecb53e80836ff1e185d3ccd7782ea846c2e91a7b0808986666e0bdadbfb7bdd65670a589a4d2478e9adcafe97c6ee23614bcb2ecc23580f4d2e3cc1ecfec25c50da4bc754dde6c8bfd8d1fc16956c74d8e9196046a01dc9f3024e11461c294f29d7421140732fedacac97b8fe50999117d27943c953f18c4ff4f8c258d839764078d4b6ef6e8591e0ff5563b31a39e6374d0d41c8c46921c25e5904a817ef8e39e5c9b71225a83269693e0b7e3218fc5e5a1e8412ba16e588b3d6ac536dce39fcdfce81eec79979ea6872793</span>
@@ -1056,7 +1056,7 @@ so,how to get the message?
 <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">if</span><span class="p">(</span><span class="n">iroot</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>           <span class="c1">#或者 iroot(c-i*n,3)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">iroot</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">iroot</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">n</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
         <span class="k">break</span>
     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
 </code></pre></td></tr></table></div>
@@ -1066,7 +1066,7 @@ so,how to get the message?
 <p>由于e只有2，相当于把明文m平方而已，得到的C也比n小很多。尝试直接将C开根号看能否得到明文。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1076,14 +1076,14 @@ so,how to get the message?
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>   <span class="c1">#python第三方库</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>   <span class="c1">#python第三方库</span>
 <span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>    <span class="c1">#python第三方库</span>
 
 <span class="n">c</span><span class="o">=......</span>              <span class="c1">#C的值</span>
 <span class="n">m</span><span class="o">=</span><span class="n">isqrt</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>            <span class="c1">#开平方根</span>
 <span class="c1">#m=iroot(c,2)[0]      #开C的二次方根</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h3 id="font-color0288d1e1时的小明文攻击font"><a href="#font-color0288d1e1时的小明文攻击font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1e1时的小明文攻击font" class="headings"><font color=#0288D1>e=1时的小明文攻击：</font></a></h3>
@@ -1092,7 +1092,7 @@ so,how to get the message?
 <p>所以有：m=C+n*k,爆破k</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1103,7 +1103,7 @@ so,how to get the message?
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
 
 <span class="n">n</span><span class="o">=....</span>
 <span class="n">c</span><span class="o">=....</span>
@@ -1111,7 +1111,7 @@ so,how to get the message?
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_num</span><span class="p">):</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">n</span><span class="o">*</span><span class="n">k</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>    
 </code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-coloref6c00低加密指数广播攻击font"><a href="#font-coloref6c00低加密指数广播攻击font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-coloref6c00低加密指数广播攻击font" class="headings"><font color=#EF6C00>低加密指数广播攻击</font></a></h2>
@@ -1143,7 +1143,7 @@ $m^e=X≡C_1M_1y_1+C_2M_2y_2+C_3M_3y_3$ $(mod$ $M)$
 <p>#python3，在$n_i$两两互质的情况下</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1171,7 +1171,7 @@ $m^e=X≡C_1M_1y_1+C_2M_2y_2+C_3M_3y_3$ $(mod$ $M)$
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
 <span class="n">n1</span><span class="o">=...</span>
 <span class="n">n2</span><span class="o">=...</span>
 <span class="n">n3</span><span class="o">=...</span>
@@ -1182,7 +1182,7 @@ $m^e=X≡C_1M_1y_1+C_2M_2y_2+C_3M_3y_3$ $(mod$ $M)$
 
 <span class="k">def</span> <span class="nf">CRT</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>   <span class="c1"># ni 的乘积,N=n1*n2*n3</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>   <span class="c1"># ni 的乘积,N=n1*n2*n3</span>
 
     <span class="k">for</span> <span class="n">n_i</span><span class="p">,</span> <span class="n">a_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>    <span class="c1"># zip()将对象打包成元组</span>
         <span class="n">N_i</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span> <span class="n">n_i</span>           <span class="c1">#Mi=M/ni</span>
@@ -1195,7 +1195,7 @@ $m^e=X≡C_1M_1y_1+C_2M_2y_2+C_3M_3y_3$ $(mod$ $M)$
 <span class="n">x</span> <span class="o">=</span> <span class="n">CRT</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="n">iroot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">e</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 
 </code></pre></td></tr></table></div>
 </div>
@@ -1203,7 +1203,7 @@ $m^e=X≡C_1M_1y_1+C_2M_2y_2+C_3M_3y_3$ $(mod$ $M)$
 <p>BUURSA4
 <br>
 <a href="https://buuoj.cn/challenges#RSA4" target="_blank" rel="noopener">https://buuoj.cn/challenges#RSA4</a></p>
-<pre><code>N = 331310324212000030020214312244232222400142410423413104441140203003243002104333214202031202212403400220031202142322434104143104244241214204444443323000244130122022422310201104411044030113302323014101331214303223312402430402404413033243132101010422240133122211400434023222214231402403403200012221023341333340042343122302113410210110221233241303024431330001303404020104442443120130000334110042432010203401440404010003442001223042211442001413004 
+<pre tabindex="0"><code>N = 331310324212000030020214312244232222400142410423413104441140203003243002104333214202031202212403400220031202142322434104143104244241214204444443323000244130122022422310201104411044030113302323014101331214303223312402430402404413033243132101010422240133122211400434023222214231402403403200012221023341333340042343122302113410210110221233241303024431330001303404020104442443120130000334110042432010203401440404010003442001223042211442001413004 
 c = 310020004234033304244200421414413320341301002123030311202340222410301423440312412440240244110200112141140201224032402232131204213012303204422003300004011434102141321223311243242010014140422411342304322201241112402132203101131221223004022003120002110230023341143201404311340311134230140231412201333333142402423134333211302102413111111424430032440123340034044314223400401224111323000242234420441240411021023100222003123214343030122032301042243
 
 N = 302240000040421410144422133334143140011011044322223144412002220243001141141114123223331331304421113021231204322233120121444434210041232214144413244434424302311222143224402302432102242132244032010020113224011121043232143221203424243134044314022212024343100042342002432331144300214212414033414120004344211330224020301223033334324244031204240122301242232011303211220044222411134403012132420311110302442344021122101224411230002203344140143044114 
@@ -1214,7 +1214,7 @@ c = 1001344412014113032243320412400224222433233401112421001244024140234210041033
 </code></pre><h3 id="font-color0288d1解题脚本font-3"><a href="#font-color0288d1解题脚本font-3" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1解题脚本font-3" class="headings"><font color=#0288D1>解题脚本：</font></a></h3>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1250,7 +1250,7 @@ c = 1001344412014113032243320412400224222433233401112421001244024140234210041033
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span><span class="o">*</span>
 <span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span><span class="o">*</span>
 <span class="kn">from</span> <span class="nn">libnum</span> <span class="kn">import</span><span class="o">*</span>
 
@@ -1272,7 +1272,7 @@ c = 1001344412014113032243320412400224222433233401112421001244024140234210041033
 
 <span class="k">def</span> <span class="nf">CRT</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>   <span class="c1"># ni 的乘积,N=n1*n2*n3</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>   <span class="c1"># ni 的乘积,N=n1*n2*n3</span>
 
     <span class="k">for</span> <span class="n">n_i</span><span class="p">,</span> <span class="n">a_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>    <span class="c1"># zip()将对象打包成元组</span>
         <span class="n">N_i</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span> <span class="n">n_i</span>           <span class="c1">#Mi=M/ni</span>
@@ -1282,7 +1282,7 @@ c = 1001344412014113032243320412400224222433233401112421001244024140234210041033
 <span class="n">x</span> <span class="o">=</span> <span class="n">CRT</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="n">iroot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">e</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>           <span class="c1">#开e次方根</span>
-<span class="k">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>               <span class="c1">#数值转字符串</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2s</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>               <span class="c1">#数值转字符串</span>
 
 </code></pre></td></tr></table></div>
 </div>
@@ -1308,7 +1308,7 @@ $$q &lt; p &lt; 2q$$</p>
 <a href="https://buuoj.cn/challenges#rsa2" target="_blank" rel="noopener">https://buuoj.cn/challenges#rsa2</a>
 <br></p>
 <p>题目：</p>
-<pre><code>N = 101991809777553253470276751399264740131157682329252673501792154507006158434432009141995367241962525705950046253400188884658262496534706438791515071885860897552736656899566915731297225817250639873643376310103992170646906557242832893914902053581087502512787303322747780420210884852166586717636559058152544979471
+<pre tabindex="0"><code>N = 101991809777553253470276751399264740131157682329252673501792154507006158434432009141995367241962525705950046253400188884658262496534706438791515071885860897552736656899566915731297225817250639873643376310103992170646906557242832893914902053581087502512787303322747780420210884852166586717636559058152544979471
 e = 46731919563265721307105180410302518676676135509737992912625092976849075262192092549323082367518264378630543338219025744820916471913696072050291990620486581719410354385121760761374229374847695148230596005409978383369740305816082770283909611956355972181848077519920922059268376958811713365106925235218265173085
 
 import hashlib
@@ -1322,7 +1322,7 @@ flag = &quot;flag{&quot; + hashlib.md5(hex(d)).hexdigest() + &quot;}&quot;
 <h4 id="font-color6a1b9a攻击脚本font"><a href="#font-color6a1b9a攻击脚本font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color6a1b9a攻击脚本font" class="headings"><font color=#6A1B9A>攻击脚本：</font></a></h4>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1331,13 +1331,13 @@ flag = &quot;flag{&quot; + hashlib.md5(hex(d)).hexdigest() + &quot;}&quot;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span>  <span class="nn">RSAwienerHacker</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span>  <span class="nn">RSAwienerHacker</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">101991809777553253470276751399264740131157682329252673501792154507006158434432009141995367241962525705950046253400188884658262496534706438791515071885860897552736656899566915731297225817250639873643376310103992170646906557242832893914902053581087502512787303322747780420210884852166586717636559058152544979471</span>
 <span class="n">e</span> <span class="o">=</span> <span class="mi">46731919563265721307105180410302518676676135509737992912625092976849075262192092549323082367518264378630543338219025744820916471913696072050291990620486581719410354385121760761374229374847695148230596005409978383369740305816082770283909611956355972181848077519920922059268376958811713365106925235218265173085</span>
 
 <span class="n">d</span> <span class="o">=</span>  <span class="n">RSAwienerHacker</span><span class="o">.</span><span class="n">hack_RSA</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">d</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>得到d后在python2的环境下对其进行MD5哈希即可得到flag</p>

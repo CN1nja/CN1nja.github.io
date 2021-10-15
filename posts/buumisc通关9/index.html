@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>BUUMisc通关9 | N1nja&#39;s Blog</title>
+
+    <link rel="stylesheet" href="/css/meme.min.c88088b7b0ca1272992f1fe5f9a13b2f72dcf7e54c4c31e08d3b37029a113308.css"/>
+
+    
+    
+        <script src="/js/meme.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="N1nja" /><meta name="description" content="【INSHack2019】Crunchy 知识点：Pisano周期问题（斐波拉契数列）……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="N1nja&#39;s Blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="N1nja&#39;s Blog" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B39/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-07-25T21:27:24+08:00",
+        "dateModified": "2021-10-15T22:05:26+08:00",
+        "url": "https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B39/",
+        "headline": "BUUMisc通关9",
+        "description": "【INSHack2019】Crunchy 知识点：Pisano周期问题（斐波拉契数列）……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  3384 ,
+        "image": ["https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726153610996.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011154904593.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011191447844.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014202456424.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014202623253.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014202832148.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011162521426.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011163211959.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014212710207.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014214246218.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014214554240.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211015213220749.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726161115043.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726162118791.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726173243061.png","https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726174500049.png"],
+        "author": {
+            "@type": "Person",
+            "description": "crypto player",
+            "email": "mikecninja@gmail.com",
+            "image": "https://cn1nja.github.io/icons/apple-touch-icon.png",
+            "url": "https://cn1nja.github.io/",
+            "name": "N1nja"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "N1nja's Blog",
+            "url": "https://cn1nja.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://cn1nja.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+    
+
+
+
+<meta property="og:title" content="BUUMisc通关9" />
+<meta property="og:description" content="【INSHack2019】Crunchy 知识点：Pisano周期问题（斐波拉契数列）……" />
+<meta property="og:url" content="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B39/" />
+<meta property="og:site_name" content="N1nja&#39;s Blog" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://cn1nja.github.io/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726153610996.png" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-07-25T21:27:24&#43;08:00" />
+    <meta property="article:modified_time" content="2021-10-15T22:05:26&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">N1nja&#39;s Blog</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">归档</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/links/"><span class="menu-item-name">友链</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">BUUMisc通关9</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2021-07-25T21:27:24&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.7.25</time>
+    
+    
+        
+        <time datetime="2021-10-15T22:05:26&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.10.15</time>
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/ctf%E8%AE%AD%E7%BB%83/" class="category-link p-category">CTF训练</a></span>
+            
+        
+    
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;7&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:font-color0288d1inshack2019crunchyfont" href="#font-color0288d1inshack2019crunchyfont"><font color=#0288D1>【INSHack2019】Crunchy</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点pisano周期问题斐波拉契数列font" href="#font-colora020f0知识点pisano周期问题斐波拉契数列font"><font color=#A020F0>知识点：Pisano周期问题（斐波拉契数列）</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font" href="#font-colora020f0题目分析font"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1羊城杯-2020signinfont" href="#font-color0288d1羊城杯-2020signinfont"><font color=#0288D1>【羊城杯 2020】signin</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点toy-cipherfont" href="#font-colora020f0知识点toy-cipherfont"><font color=#A020F0>知识点：toy Cipher</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-1" href="#font-colora020f0题目分析font-1"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1羊城杯-2020tcp_ipfont" href="#font-color0288d1羊城杯-2020tcp_ipfont"><font color=#0288D1>【羊城杯 2020】TCP_IP</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点tcpip隐写tshark抓包font" href="#font-colora020f0知识点tcpip隐写tshark抓包font"><font color=#A020F0>知识点：TCP/IP隐写、tshark抓包</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-2" href="#font-colora020f0题目分析font-2"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1cfi-ctf-2018kadyrovs-catfont" href="#font-color0288d1cfi-ctf-2018kadyrovs-catfont"><font color=#0288D1>【CFI-CTF 2018】Kadyrov's Cat</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点exif信息pdf查看作者font" href="#font-colora020f0知识点exif信息pdf查看作者font"><font color=#A020F0>知识点：EXIF信息、PDF查看作者</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-3" href="#font-colora020f0题目分析font-3"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1gkctf-2021003font" href="#font-color0288d1gkctf-2021003font"><font color=#0288D1>【GKCTF 2021】0.03</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点ntfs-文件隐写veracrypt磁盘挂载font" href="#font-colora020f0知识点ntfs-文件隐写veracrypt磁盘挂载font"><font color=#A020F0>知识点：NTFS 文件隐写、VeraCrypt磁盘挂载</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-4" href="#font-colora020f0题目分析font-4"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1npuctf2020happycheckinverificationfont" href="#font-color0288d1npuctf2020happycheckinverificationfont"><font color=#0288D1>【NPUCTF2020】HappyCheckInVerification</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点font" href="#font-colora020f0知识点font"><font color=#A020F0>知识点：</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-5" href="#font-colora020f0题目分析font-5"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1gwctf2019mathfont" href="#font-color0288d1gwctf2019mathfont"><font color=#0288D1>【GWCTF2019】math</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点pwntools交互recvuntil函数font" href="#font-colora020f0知识点pwntools交互recvuntil函数font"><font color=#A020F0>知识点：pwntools交互、recvuntil()函数</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-6" href="#font-colora020f0题目分析font-6"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+    <li><a id="contents:font-color0288d1羊城杯-2020逃离东南亚font" href="#font-color0288d1羊城杯-2020逃离东南亚font"><font color=#0288D1>【羊城杯 2020】逃离东南亚</font></a>
+      <ol>
+        <li><a id="contents:font-colora020f0知识点crc修复图片silenteyewav音频隐写beyond-compare-4文件对比分析font" href="#font-colora020f0知识点crc修复图片silenteyewav音频隐写beyond-compare-4文件对比分析font"><font color=#A020F0>知识点：CRC修复图片，Silenteye(wav音频隐写)、Beyond Compare 4文件对比分析</font></a></li>
+        <li><a id="contents:font-colora020f0题目分析font-7" href="#font-colora020f0题目分析font-7"><font color=#A020F0>题目分析</font></a></li>
+      </ol>
+    </li>
+  </ol>
+</nav><div class="post-body e-content">
+              <h2 id="font-color0288d1inshack2019crunchyfont"><a href="#font-color0288d1inshack2019crunchyfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1inshack2019crunchyfont" class="headings"><font color=#0288D1>【INSHack2019】Crunchy</font></a></h2>
+<h3 id="font-colora020f0知识点pisano周期问题斐波拉契数列font"><a href="#font-colora020f0知识点pisano周期问题斐波拉契数列font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点pisano周期问题斐波拉契数列font" class="headings"><font color=#A020F0>知识点：Pisano周期问题（斐波拉契数列）</font></a></h3>
+<p><a href="https://en.wikipedia.org/wiki/Pisano_period" target="_blank" rel="noopener"><font color=#0288D1>Pisano 周期</font></a></p>
+<p>公式：$u_{n+2} = b∗u_{n+1} + c∗u_n$</p>
+<p><strong>定义：</strong></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726153610996.png" alt="image-20210726153610996"></p>
+<h3 id="font-colora020f0题目分析font"><a href="#font-colora020f0题目分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>根据题目我们可以知道返回值：<code>return 6 * crunchy(n - 1) + crunchy(n - 2)</code></p>
+<p>计算斐波拉契数列，其中系数为 6，模为 100000007</p>
+<p>通过 sagemath 可以快速计算递归结果：</p>
+<p><a href="https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/binary_recurrence_sequences.html" target="_blank" rel="noopener"><font color=#0288D1>sage计算Pisano 周期问题相关模块</font></a></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1">#sage</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">17665922529512695488143524113273224470194093921285273353477875204196603230641896039854934719468650093602325707751568</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="mi">100000007</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">BinaryRecurrenceSequence</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#计算序列的周期</span>
+<span class="n">cycle</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">period</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">(</span><span class="n">g</span><span class="o">%</span><span class="n">cycle</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">)</span>
+
+<span class="c1">#output :41322239</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><strong>flag{41322239}</strong></p>
+<h2 id="font-color0288d1羊城杯-2020signinfont"><a href="#font-color0288d1羊城杯-2020signinfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1羊城杯-2020signinfont" class="headings"><font color=#0288D1>【羊城杯 2020】signin</font></a></h2>
+<h3 id="font-colora020f0知识点toy-cipherfont"><a href="#font-colora020f0知识点toy-cipherfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点toy-cipherfont" class="headings"><font color=#A020F0>知识点：toy Cipher</font></a></h3>
+<p><a href="chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=https%3A%2F%2Feprint.iacr.org%2F2020%2F301.pdf">toy Cipher.pdf</a></p>
+<h3 id="font-colora020f0题目分析font-1"><a href="#font-colora020f0题目分析font-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-1" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>题目</p>
+<p>BCEHACEIBDEIBDEHBDEHADEIACEGACFIBDFHACEGBCEHBCFIBDEGBDEGADFGBDEHBDEGBDFHBCEGACFIBCFGADEIADEIADFH</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011154904593.png" alt="image-20211011154904593"></p>
+<blockquote>
+<p>根据 Toy Cipher的加密规则，将密文每四个一组，对照加密表解密。</p>
+<p>根据题目提示，将加密表逆序，再次对照解密</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">cipherList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;M&#39;</span><span class="p">:</span><span class="s1">&#39;ACEG&#39;</span><span class="p">,</span><span class="s1">&#39;R&#39;</span><span class="p">:</span><span class="s1">&#39;ADEG&#39;</span><span class="p">,</span><span class="s1">&#39;K&#39;</span><span class="p">:</span><span class="s1">&#39;BCEG&#39;</span><span class="p">,</span><span class="s1">&#39;S&#39;</span><span class="p">:</span><span class="s1">&#39;BDEG&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="s1">&#39;ACEH&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="s1">&#39;ADEH&#39;</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">:</span><span class="s1">&#39;BCEH&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">:</span><span class="s1">&#39;BDEH&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">:</span><span class="s1">&#39;ACEI&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="s1">&#39;ADEI&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">:</span><span class="s1">&#39;BCEI&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">:</span><span class="s1">&#39;BDEI&#39;</span><span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">:</span><span class="s1">&#39;ACFG&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">:</span><span class="s1">&#39;ADFG&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">:</span><span class="s1">&#39;BCFG&#39;</span><span class="p">,</span><span class="s1">&#39;W&#39;</span><span class="p">:</span><span class="s1">&#39;BDFG&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">:</span><span class="s1">&#39;ACFH&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">:</span><span class="s1">&#39;ADFH&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">:</span><span class="s1">&#39;BCFH&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="s1">&#39;BDFH&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">:</span><span class="s1">&#39;ACFI&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">:</span><span class="s1">&#39;ADFI&#39;</span><span class="p">,</span><span class="s1">&#39;Q&#39;</span><span class="p">:</span><span class="s1">&#39;BCFI&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="s1">&#39;BDFI&#39;</span><span class="p">}</span>
+<span class="n">flag1</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+<span class="c1"># s = &#39;BCEHACEIBDEIBDEHBDEHADEIACEGACFIBDFHACEGBCEHBCFIBDEGBDEGADFGBDEHBDEGBDFHBCEGACFIBCFGADEIADEIADFH&#39;</span>
+<span class="c1"># for i in range(0,len(s),4):</span>
+<span class="c1">#     block = s[i:i+4]</span>
+<span class="c1">#     for j in cipherList:</span>
+<span class="c1">#         if block==cipherList[j]:</span>
+<span class="c1">#             flag1 += j</span>
+<span class="c1"># print(flag1)</span>
+
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&#34;LDVUUCMEXMLQSSFUSXKEOCCG&#34;</span>
+<span class="n">cipherList2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+<span class="c1"># cipherList2.reverse()</span>
+<span class="n">cipherList3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span>
+<span class="n">flag2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s2</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">cipherList2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="n">j</span><span class="p">:</span>
+            <span class="n">rank</span> <span class="o">=</span> <span class="n">cipherList2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+            <span class="n">flag2</span> <span class="o">+=</span> <span class="n">cipherList3</span><span class="p">[</span><span class="n">rank</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">flag2</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><strong>GWHT{TOYSAYGREENTEAISCOOL}</strong></p>
+<h2 id="font-color0288d1羊城杯-2020tcp_ipfont"><a href="#font-color0288d1羊城杯-2020tcp_ipfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1羊城杯-2020tcp_ipfont" class="headings"><font color=#0288D1>【羊城杯 2020】TCP_IP</font></a></h2>
+<h3 id="font-colora020f0知识点tcpip隐写tshark抓包font"><a href="#font-colora020f0知识点tcpip隐写tshark抓包font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点tcpip隐写tshark抓包font" class="headings"><font color=#A020F0>知识点：TCP/IP隐写、tshark抓包</font></a></h3>
+<p><strong>Wireshark—— Identification</strong></p>
+<p><strong><font color=#0288D1>ip.id</font></strong></p>
+<p>在网络链路中，一个数据包的发送经常会经过多个节点，那么在不同节点抓到报文后，如何确定目前查看的这个报文是否是从源端发过来，问题复现的那段报文；
+或者数据流量比较大，同时刻的报文数量很多，已经无法根据时间来确认具体的报文是哪一条时，又需要确定具体的报文情况时，就需要用到这个字段：<strong>Identification</strong>。<strong>（该字段可以理解成报文的唯一标识符，用来标记报文的唯一性，尤其是在该报文经过了各种NAT转发后，该值是不会发生改变的。）</strong>
+在wireshark中，<strong>该字段被书定义为ip.id</strong></p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011191447844.png" alt="image-20211011191447844"></p>
+<p><strong>tshark抓包</strong></p>
+<blockquote>
+<p>参数：</p>
+<p>-r  设置tshark分析的输入文件</p>
+<p>-T 设置解码结果输出的格式  -e 指定打印参数</p>
+<p>如：</p>
+<pre tabindex="0"><code>-T fields -e http.host -e http.request.uri :打印http.host和http.request.uri
+</code></pre></blockquote>
+<h3 id="font-colora020f0题目分析font-2"><a href="#font-colora020f0题目分析font-2" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-2" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>kali tshark抓包提取TCP流量中的Identification数据</p>
+<p><strong>ip.id</strong></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">tshark</span> <span class="o">-</span><span class="n">r</span> <span class="n">attachment</span><span class="o">.</span><span class="n">pcap</span> <span class="o">-</span><span class="n">T</span> <span class="n">fields</span> <span class="o">-</span><span class="n">e</span> <span class="n">ip</span><span class="o">.</span><span class="n">id</span> <span class="o">&gt;</span> <span class="n">data</span><span class="o">.</span><span class="n">txt</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>修改后的text：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="mh">0x40</span>
+<span class="mh">0x69</span>
+<span class="mh">0x48</span>
+<span class="mh">0x3c</span>
+<span class="mh">0x2c</span>
+<span class="mh">0x7b</span>
+<span class="mh">0x2a</span>
+<span class="mh">0x3b</span>
+<span class="mh">0x6f</span>
+<span class="mh">0x55</span>
+<span class="mh">0x70</span>
+<span class="mh">0x2f</span>
+<span class="mh">0x69</span>
+<span class="mh">0x6d</span>
+<span class="mh">0x22</span>
+<span class="mh">0x51</span>
+<span class="mh">0x50</span>
+<span class="mh">0x6c</span>
+<span class="mh">0x60</span>
+<span class="mh">0x79</span>
+<span class="mh">0x52</span>
+<span class="mh">0x2a</span>
+<span class="mh">0x69</span>
+<span class="mh">0x65</span>
+<span class="mh">0x7d</span>
+<span class="mh">0x4e</span>
+<span class="mh">0x4b</span>
+<span class="mh">0x3b</span>
+<span class="mh">0x2e</span>
+<span class="mh">0x44</span>
+<span class="mh">0x21</span>
+<span class="mh">0x58</span>
+<span class="mh">0x75</span>
+<span class="mh">0x29</span>
+<span class="mh">0x62</span>
+<span class="mh">0x3a</span>
+<span class="mh">0x4a</span>
+<span class="mh">0x5b</span>
+<span class="mh">0x52</span>
+<span class="mh">0x6a</span>
+<span class="mh">0x2b</span>
+<span class="mh">0x36</span>
+<span class="mh">0x4b</span>
+<span class="mh">0x4b</span>
+<span class="mh">0x4d</span>
+<span class="mh">0x37</span>
+<span class="mh">0x50</span>
+<span class="mh">0x40</span>
+<span class="mh">0x69</span>
+<span class="mh">0x48</span>
+<span class="mh">0x3c</span>
+<span class="mh">0x2c</span>
+<span class="mh">0x7b</span>
+<span class="mh">0x2a</span>
+<span class="mh">0x3b</span>
+<span class="mh">0x6f</span>
+<span class="mh">0x55</span>
+<span class="mh">0x70</span>
+<span class="mh">0x2f</span>
+<span class="mh">0x69</span>
+<span class="mh">0x6d</span>
+<span class="mh">0x22</span>
+<span class="mh">0x51</span>
+<span class="mh">0x50</span>
+<span class="mh">0x6c</span>
+<span class="mh">0x60</span>
+<span class="mh">0x79</span>
+<span class="mh">0x52</span>
+
+</code></pre></td></tr></table></div>
+</div>
+</div><p>16进制解码，去除重复的部分得到：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@iH</span><span class="o">&lt;</span><span class="p">,{</span><span class="o">*</span><span class="p">;</span><span class="n">oUp</span><span class="o">/</span><span class="n">im</span><span class="s2">&#34;QPl`yR*ie}NK;.D!Xu)b:J[Rj+6KKM7P</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>base91解码</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">flag</span><span class="p">{</span><span class="n">wMt84iS06mCbbfuOfuVXCZ8MSsAFN1GA</span><span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h2 id="font-color0288d1cfi-ctf-2018kadyrovs-catfont"><a href="#font-color0288d1cfi-ctf-2018kadyrovs-catfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1cfi-ctf-2018kadyrovs-catfont" class="headings"><font color=#0288D1>【CFI-CTF 2018】Kadyrov's Cat</font></a></h2>
+<h3 id="font-colora020f0知识点exif信息pdf查看作者font"><a href="#font-colora020f0知识点exif信息pdf查看作者font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点exif信息pdf查看作者font" class="headings"><font color=#A020F0>知识点：EXIF信息、PDF查看作者</font></a></h3>
+<p>EXIF中存储着坐标信息</p>
+<p>PDF用WPS工具打开，查看文件属性有 作者信息</p>
+<h3 id="font-colora020f0题目分析font-3"><a href="#font-colora020f0题目分析font-3" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-3" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>缺失的题目描述：
+A man from the soviet union has sent you two strange documents. Find the identity of the man as well as his location.
+Flag format is : CFI{Firstname_Lastname_of_City}</p>
+<p>打开图片得到坐标信息</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014202456424.png" alt="image-20211014202456424"></p>
+<p>用Google地球输入坐标得到：
+<img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014202623253.png" alt="image-20211014202623253"></p>
+<blockquote>
+<p>城市信息得到：Riga</p>
+</blockquote>
+<p>用WPS查看PDF的作者：</p>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014202832148.png" alt="image-20211014202832148"></p>
+<blockquote>
+<p>Kotik Kadyrov</p>
+</blockquote>
+<p><strong>flag{Kotik_Kadyrov_of_Riga}</strong></p>
+<h2 id="font-color0288d1gkctf-2021003font"><a href="#font-color0288d1gkctf-2021003font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1gkctf-2021003font" class="headings"><font color=#0288D1>【GKCTF 2021】0.03</font></a></h2>
+<h3 id="font-colora020f0知识点ntfs-文件隐写veracrypt磁盘挂载font"><a href="#font-colora020f0知识点ntfs-文件隐写veracrypt磁盘挂载font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点ntfs-文件隐写veracrypt磁盘挂载font" class="headings"><font color=#A020F0>知识点：NTFS 文件隐写、VeraCrypt磁盘挂载</font></a></h3>
+<p><a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A3%81%E7%9B%98%E6%8C%82%E8%BD%BDvmdk%E6%96%87%E4%BB%B6font" target="_blank" rel="noopener"><font color=#0288D1>磁盘挂载工具 VeraCrypt</font></a></p>
+<h3 id="font-colora020f0题目分析font-4"><a href="#font-colora020f0题目分析font-4" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-4" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>1.先用NTFS 扫描文件目录下的隐藏文件</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011162521426.png" alt="image-20211011162521426"></p>
+<blockquote>
+<p><strong>2.手机键盘密码解密,得到：</strong></p>
+<p>311：3行1列
+UBMMASJJMU</p>
+<p>311:3列1行
+EBCCAFDDCE</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211011163211959.png" alt="image-20211011163211959"></p>
+<blockquote>
+<p><strong>3.磁盘挂载</strong></p>
+<p><a href="http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A3%81%E7%9B%98%E6%8C%82%E8%BD%BDvmdk%E6%96%87%E4%BB%B6font" target="_blank" rel="noopener">磁盘挂载工具 VeraCrypt</a></p>
+</blockquote>
+<p>挂载密码 EBCCAFDDCE</p>
+<p>挂载成功拿到 flag</p>
+<p><strong>flag{85ec0e23-ebbe-4fa7-9c8c-e8b743d0d85c}</strong></p>
+<h2 id="font-color0288d1npuctf2020happycheckinverificationfont"><a href="#font-color0288d1npuctf2020happycheckinverificationfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1npuctf2020happycheckinverificationfont" class="headings"><font color=#0288D1>【NPUCTF2020】HappyCheckInVerification</font></a></h2>
+<h3 id="font-colora020f0知识点font"><a href="#font-colora020f0知识点font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点font" class="headings"><font color=#A020F0>知识点：</font></a></h3>
+<h3 id="font-colora020f0题目分析font-5"><a href="#font-colora020f0题目分析font-5" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-5" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p>用 kali 中的 binwalk -e 解压文件，得到一张残缺的二维码，手动修复一下。去掉窗口阴影</p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20211014212710207.png" alt="image-20211014212710207" width="500" /></p>
+<blockquote>
+<p>扫描得到：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">flag</span><span class="p">{</span><span class="n">this_is_not_flag</span><span class="p">}</span><span class="n">三曳所諳陀怯耶南夜缽得醯怯勝數不知喝盧瑟侄盡遠故隸怯薩不娑羯涅冥伊盧耶諳提度奢道盧冥以朋罰所即栗諳蒙集皤夷夜集諳利顛呐寫無怯依奢竟</span>
+<span class="c1">#￥#%E68BBFE4BD9BE68B89E6A0BCE79A84E5A7BFE58ABFE59CA8E69C80E5908E32333333||254333254242254338254342254231254338254345254432254238254643254236254145254239254441254437254234254232254131254236254245253244253244254343254438254330254341254336254435...sadwq#asdsadasf faf$use$dasdasdafafa_$ba##se64$</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>解与佛论禅</p>
+<p><img src="/BUUCTF/2021/BUUMisc通关9/image-20211014214246218.png" alt="image-20211014214246218" width="500" /></p>
+<p>解 base16</p>
+<p><img src="/BUUCTF/2021/BUUMisc通关9/image-20211014214554240.png" alt="image-20211014214554240" width="500" /></p>
+<p>做不会了....</p>
+<h2 id="font-color0288d1gwctf2019mathfont"><a href="#font-color0288d1gwctf2019mathfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1gwctf2019mathfont" class="headings"><font color=#0288D1>【GWCTF2019】math</font></a></h2>
+<h3 id="font-colora020f0知识点pwntools交互recvuntil函数font"><a href="#font-colora020f0知识点pwntools交互recvuntil函数font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点pwntools交互recvuntil函数font" class="headings"><font color=#A020F0>知识点：pwntools交互、recvuntil()函数</font></a></h3>
+<p>CTF常用 pwntools参数</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>                        <span class="n">发送数据</span>
+<span class="n">sendline</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">:</span>                   <span class="n">发送一行数据</span><span class="err">，</span><span class="n">相当于在末尾加</span>\<span class="n">n</span>      
+<span class="n">recv</span><span class="p">(</span><span class="n">numb</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">default</span><span class="p">)</span> <span class="p">:</span> <span class="n">给出接收字节数</span><span class="p">,</span><span class="n">timeout指定超时</span>
+<span class="n">recvuntil</span><span class="p">(</span><span class="n">delims</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="p">:</span>    <span class="n">接收到delims的pattern</span>
+<span class="err">（</span><span class="n">以下可以看作until的特例</span><span class="err">）</span>
+<span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">:</span>          <span class="n">接收到</span>\<span class="n">n</span><span class="err">，</span><span class="n">keepends指定保留</span>\<span class="n">n</span>
+<span class="n">recvall</span><span class="p">()</span> <span class="p">:</span> <span class="n">接收到EOF</span>
+<span class="n">recvrepeat</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">default</span><span class="p">)</span> <span class="p">:</span>      <span class="n">接收到EOF或timeout</span>
+<span class="n">interactive</span><span class="p">()</span> <span class="p">:</span>                    <span class="n">与shell交互</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><h3 id="font-colora020f0题目分析font-6"><a href="#font-colora020f0题目分析font-6" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-6" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<p>IDA分析获取核心源码</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">int</span> <span class="n">__cdecl</span> <span class="n">main</span><span class="p">(</span><span class="nb">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">seed</span><span class="p">;</span> <span class="o">//</span> <span class="n">ST14_4</span>
+  <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">v4</span><span class="p">;</span> <span class="o">//</span> <span class="n">ST18_4</span>
+  <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">v5</span><span class="p">;</span> <span class="o">//</span> <span class="n">ST1C_4</span>
+  <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">v6</span><span class="p">;</span> <span class="o">//</span> <span class="n">ST20_4</span>
+  <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">v7</span><span class="p">;</span> <span class="o">//</span> <span class="n">ST24_4</span>
+  <span class="n">signed</span> <span class="nb">int</span> <span class="n">v9</span><span class="p">;</span> <span class="o">//</span> <span class="p">[</span><span class="n">rsp</span><span class="o">+</span><span class="mi">10</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="n">rbp</span><span class="o">-</span><span class="mi">130</span><span class="n">h</span><span class="p">]</span>
+  <span class="n">char</span> <span class="n">buf</span><span class="p">;</span> <span class="o">//</span> <span class="p">[</span><span class="n">rsp</span><span class="o">+</span><span class="mi">30</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="n">rbp</span><span class="o">-</span><span class="mi">110</span><span class="n">h</span><span class="p">]</span>
+  <span class="n">unsigned</span> <span class="n">__int64</span> <span class="n">v11</span><span class="p">;</span> <span class="o">//</span> <span class="p">[</span><span class="n">rsp</span><span class="o">+</span><span class="mi">138</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="n">rbp</span><span class="o">-</span><span class="mi">8</span><span class="n">h</span><span class="p">]</span>
+
+  <span class="n">v11</span> <span class="o">=</span> <span class="n">__readfsqword</span><span class="p">(</span><span class="mh">0x28</span><span class="n">u</span><span class="p">);</span>
+  <span class="n">setvbuf</span><span class="p">(</span><span class="n">stdin</span><span class="p">,</span> <span class="mi">0</span><span class="n">LL</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="n">LL</span><span class="p">);</span>
+  <span class="n">setvbuf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="mi">0</span><span class="n">LL</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="n">LL</span><span class="p">);</span>
+  <span class="n">setvbuf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="mi">0</span><span class="n">LL</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="n">LL</span><span class="p">);</span>
+  <span class="n">v9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">seed</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="n">LL</span><span class="p">);</span>
+  <span class="n">srand</span><span class="p">(</span><span class="n">seed</span><span class="p">);</span>
+  <span class="n">do</span>
+  <span class="p">{</span>
+    <span class="n">alarm</span><span class="p">(</span><span class="mi">5</span><span class="n">u</span><span class="p">);</span>
+    <span class="n">v4</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="n">v5</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="n">v6</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="n">v7</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s2">&#34;Pass 150 levels and i will give you the flag~&#34;</span><span class="p">);</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s2">&#34;====================================================&#34;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&#34;Now level </span><span class="si">%d</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">unsigned</span> <span class="nb">int</span><span class="p">)</span><span class="n">v9</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&#34;Math problem: </span><span class="si">%d</span><span class="s2"> * </span><span class="si">%d</span><span class="s2"> - </span><span class="si">%d</span><span class="s2"> + </span><span class="si">%d</span><span class="s2"> = ??? &#34;</span><span class="p">,</span> <span class="n">v4</span><span class="p">,</span> <span class="n">v5</span><span class="p">,</span> <span class="n">v6</span><span class="p">,</span> <span class="n">v7</span><span class="p">);</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s2">&#34;Give me your answer:&#34;</span><span class="p">);</span>
+    <span class="n">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span> <span class="mh">0x80</span><span class="n">uLL</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="n">unsigned</span> <span class="nb">int</span><span class="p">)</span><span class="n">strtol</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span> <span class="mi">0</span><span class="n">LL</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">!=</span> <span class="n">v5</span> <span class="o">*</span> <span class="n">v4</span> <span class="o">-</span> <span class="n">v6</span> <span class="o">+</span> <span class="n">v7</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">puts</span><span class="p">(</span><span class="s2">&#34;Try again?&#34;</span><span class="p">);</span>
+      <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s2">&#34;Right! Continue~&#34;</span><span class="p">);</span>
+    <span class="o">++</span><span class="n">v9</span><span class="p">;</span>
+    <span class="n">sleep</span><span class="p">((</span><span class="n">unsigned</span> <span class="n">__int64</span><span class="p">)</span><span class="s2">&#34;Right! Continue~&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">while</span> <span class="p">(</span> <span class="n">v9</span> <span class="o">&lt;=</span> <span class="mi">149</span> <span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v9</span> <span class="o">!=</span> <span class="mi">150</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s2">&#34;Wrong!&#34;</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s2">&#34;Congratulation!&#34;</span><span class="p">);</span>
+  <span class="n">system</span><span class="p">(</span><span class="s2">&#34;/bin/sh&#34;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>由源码可知，需要进行150次 math计算，才能继续下一关</p>
+<p>从这里可以看出，计算的格式是固定的</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">printf</span><span class="p">(</span><span class="s2">&#34;Math problem: </span><span class="si">%d</span><span class="s2"> * </span><span class="si">%d</span><span class="s2"> - </span><span class="si">%d</span><span class="s2"> + </span><span class="si">%d</span><span class="s2"> = ??? &#34;</span><span class="p">,</span> <span class="n">v4</span><span class="p">,</span> <span class="n">v5</span><span class="p">,</span> <span class="n">v6</span><span class="p">,</span> <span class="n">v7</span><span class="p">);</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>exp：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">remote</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;node4.buuoj.cn&#39;</span><span class="p">,</span><span class="s1">&#39;28832&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">150</span><span class="p">):</span>
+      <span class="n">rec</span><span class="o">=</span><span class="n">remote</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;problem: &#39;</span><span class="p">)</span><span class="c1">#定位到问题</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+      <span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">remote</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="c1">#获取乘法的第一个值</span>
+      <span class="c1"># print(a)</span>
+      <span class="n">b</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">remote</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="c1">#获取乘法的第二个值</span>
+      <span class="n">c</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">remote</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="c1">#获取加法的第一个值</span>
+      <span class="n">d</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">remote</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="c1">#获取加法的第二个值</span>
+      <span class="c1"># print(a,b,c,d)</span>
+      <span class="n">remote</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="p">))</span> <span class="c1">#反弹计算结果</span>
+<span class="n">remote</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>               <span class="c1">#与远端交互，这样才能远程命令去找flag。</span>
+
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="/BUUCTF/2021/BUUMisc通关9/image-20211015213220749.png" alt="image-20211015213220749" width="500" /></p>
+<p><strong>cat flag.txt</strong>
+<strong>flag{dc2217bc-6a9d-45f5-8403-24fbabd0c087}</strong></p>
+<h2 id="font-color0288d1羊城杯-2020逃离东南亚font"><a href="#font-color0288d1羊城杯-2020逃离东南亚font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1羊城杯-2020逃离东南亚font" class="headings"><font color=#0288D1>【羊城杯 2020】逃离东南亚</font></a></h2>
+<h3 id="font-colora020f0知识点crc修复图片silenteyewav音频隐写beyond-compare-4文件对比分析font"><a href="#font-colora020f0知识点crc修复图片silenteyewav音频隐写beyond-compare-4文件对比分析font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点crc修复图片silenteyewav音频隐写beyond-compare-4文件对比分析font" class="headings"><font color=#A020F0>知识点：CRC修复图片，Silenteye(wav音频隐写)、Beyond Compare 4文件对比分析</font></a></h3>
+<h3 id="font-colora020f0题目分析font-7"><a href="#font-colora020f0题目分析font-7" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-7" class="headings"><font color=#A020F0>题目分析</font></a></h3>
+<blockquote>
+<p><strong>三份日记文件。解压第一份，其余两份加密了的</strong></p>
+</blockquote>
+<blockquote>
+<p>第一份打开，给了一份 img.png 图片，用 010editor 打开，有CRC报错，说明图片的宽高不对</p>
+</blockquote>
+<p>CRC恢复图片宽高.py</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">sys</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="kn">import</span> <span class="nn">zlib</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+ 
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;img.png&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">all_b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">crc32key</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">all_b</span><span class="p">[</span><span class="mi">29</span><span class="p">:</span><span class="mi">33</span><span class="p">]</span><span class="o">.</span><span class="n">hex</span><span class="p">(),</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">all_b</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">29</span><span class="p">])</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">4095</span>            <span class="c1">#理论上0xffffffff,但考虑到屏幕实际/cpu，0x0fff就差不多了</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>          <span class="c1">#高和宽一起爆破</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;i&#39;</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>     <span class="c1">#q为8字节，i为4字节，h为2字节</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;i&#39;</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">width</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">height</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+            <span class="n">crc32result</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">crc32result</span> <span class="o">==</span> <span class="n">crc32key</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;宽为：&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;高为：&#34;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+                <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># 宽为：bytearray(b&#39;\x00\x00\x00\xf9&#39;)</span>
+<span class="c1"># 高为：bytearray(b&#39;\x00\x00\x01,&#39;) </span>
+
+</code></pre></td></tr></table></div>
+</div>
+</div><p>得到：</p>
+<p><img src="/BUUCTF/2021/BUUMisc通关9/image-20210726161115043.png" alt="image-20210726161115043" width="200" /></p>
+<blockquote>
+<p><strong>wdnmd，成功解压第二份日记文件</strong></p>
+</blockquote>
+<p>wav文件，很容易想到silenteye隐写，直接把音频拖进silenteye，得到第三个压缩包密码</p>
+<p><img src="/BUUCTF/2021/BUUMisc通关9/image-20210726162118791.png" alt="image-20210726162118791" width="500" /></p>
+<blockquote>
+<p><strong>This1sThe3rdZIPpwd，成功解压第三份日记</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>根据日记的提示，应该是在代码中进行了文字的隐写</strong></p>
+</blockquote>
+<p><a href="http://www.ga1axy.top/index.php/archives/49/" target="_blank" rel="noopener">Ga1@xy大佬的博客</a> 中直接找到了 <a href="https://github.com/bminor/glibc/tree/3c03baca37fdcb52c3881e653ca392bba7a99c2b" target="_blank" rel="noopener">Github</a> 上的源码，这信息搜索能力tql</p>
+<blockquote>
+<p><strong>把源码下载下来，直接Beyond Compare 4一把梭，对比文件夹，调整规则，可以直接看到三个被修改的文件</strong></p>
+</blockquote>
+<img src="/BUUCTF/2021/BUUMisc通关9/image-20210726173243061.png" alt="image-20210726173243061" width="500"/>
+<blockquote>
+<p><strong>继续分析文本，在每个<code>}</code> 后面都跟了8个 <code>tab</code> 键 和空格。将其都转换为 二进制数据</strong></p>
+</blockquote>
+<p><img src="/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B39/image-20210726174500049.png" alt="image-20210726174500049"></p>
+<blockquote>
+<p><strong>把 elf 文件下的 rtld.c、malloc文件夹下的malloc.c 、arena.c 三个文件都放在同一文件夹下。脚本提取数据</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">line</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&#34;malloc.c&#34;</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span>
+<span class="n">line</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">line</span><span class="p">:</span>
+    <span class="n">line</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s1">&#39;}&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">flag</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">ans</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s1">&#39;}&#39;</span><span class="p">:</span>
+                <span class="n">flag</span><span class="o">=</span><span class="mi">1</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">i</span><span class="o">==</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">:</span>
+                    <span class="n">ans</span><span class="o">+=</span><span class="s1">&#39;1&#39;</span>
+                    <span class="c1">#print(1,sep=&#39;&#39;,end=&#39;&#39;)</span>
+                <span class="k">if</span> <span class="n">i</span><span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+                    <span class="n">ans</span><span class="o">+=</span><span class="s1">&#39;0&#39;</span>
+                    <span class="c1">#print(0,sep=&#39;&#39;,end=&#39;&#39;)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1">#print(ans,end=&#39; &#39;)</span>
+                <span class="k">break</span>
+        <span class="c1">#for i in ans:</span>
+        <span class="c1">#print(ans)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="c1">#print(ans)</span>
+            <span class="c1">#print(int(ans,2))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><blockquote>
+<p>脚本后面再补吧，网上随便找了个</p>
+</blockquote>
+<p><strong>flag{code_steganography_1s_funny!}</strong></p>
+
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://cn1nja.github.io/" class="p-author h-card" target="_blank" rel="noopener">N1nja</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/posts/buumisc%E9%80%9A%E5%85%B39/" target="_blank" rel="noopener">https://cn1nja.github.io/posts/buumisc通关9/</a></li>
+            
+            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-10-15 22:05:26 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-10-15</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-10-15</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">相关文章：<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" class="related-link">BUUMisc通关8</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B37/" class="related-link">BUUMisc通关7</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B36/" class="related-link">BUUMisc通关6</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B34/" class="related-link">BUUMisc通关4</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/buumisc%E5%88%B7%E9%A2%98/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>BUUMisc刷题</a>
+                
+            
+        </div>
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90pollards_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" rel="prev">&lt; 密码学笔记 之 浅析Pollard's rho algorithm及其应用</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" rel="next">BUUMisc通关8 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2021&nbsp;N1nja</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>

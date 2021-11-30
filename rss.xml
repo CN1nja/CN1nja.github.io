@@ -7,7 +7,7 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>N1nja&#39;s Blog</title>
+        <title>N1key&#39;s Blog</title>
         <link>https://cn1nja.github.io/</link>
         <description></description>
         <generator>Hugo 0.88.1 https://gohugo.io/</generator>
@@ -15,15 +15,15 @@
             <language>zh-CN</language>
         
         
-            <managingEditor>mikecninja@gmail.com (N1nja)</managingEditor>
+            <managingEditor>mikecninja@gmail.com (N1key)</managingEditor>
         
         
-            <webMaster>mikecninja@gmail.com (N1nja)</webMaster>
+            <webMaster>mikecninja@gmail.com (N1key)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 10 Nov 2021 08:32:47 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 30 Nov 2021 19:24:54 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://cn1nja.github.io/rss.xml" />
         
@@ -34,7 +34,7 @@
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90pollards_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
                 <pubDate>Tue, 17 Aug 2021 16:13:12 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -454,7 +454,7 @@
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B39/</guid>
                 <pubDate>Sun, 25 Jul 2021 21:27:24 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -1203,7 +1203,7 @@ EBCCAFDDCE&lt;/p&gt;
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B38/</guid>
                 <pubDate>Wed, 21 Jul 2021 16:04:34 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -2642,7 +2642,7 @@ EBCCAFDDCE&lt;/p&gt;
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B37/</guid>
                 <pubDate>Mon, 19 Jul 2021 20:31:17 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -3065,7 +3065,7 @@ EBCCAFDDCE&lt;/p&gt;
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B36/</guid>
                 <pubDate>Sat, 17 Jul 2021 12:43:28 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -4103,7 +4103,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B35/</guid>
                 <pubDate>Thu, 15 Jul 2021 21:45:17 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -4722,7 +4722,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B34/</guid>
                 <pubDate>Wed, 14 Jul 2021 21:37:56 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -5007,7 +5007,7 @@ print(n2s(0x6161706a6573))
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B33/</guid>
                 <pubDate>Tue, 13 Jul 2021 14:39:54 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -5385,7 +5385,7 @@ connscan：查看网络连接
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/base%E7%BC%96%E7%A0%81%E9%9B%86%E5%90%88/</guid>
                 <pubDate>Mon, 05 Jul 2021 21:46:34 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -5474,7 +5474,7 @@ connscan：查看网络连接
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B32/</guid>
                 <pubDate>Sat, 03 Jul 2021 12:52:13 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -6510,7 +6510,7 @@ optional arguments:
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/misc%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E5%A4%B4/</guid>
                 <pubDate>Wed, 30 Jun 2021 10:45:56 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -6792,7 +6792,7 @@ optional arguments:
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B31/</guid>
                 <pubDate>Tue, 29 Jun 2021 15:31:00 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -7432,7 +7432,7 @@ cExlX1BsY=
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/2021ciscn%E7%BA%BF%E4%B8%8B%E5%8D%8A%E5%86%B3%E8%B5%9B/</guid>
                 <pubDate>Sun, 27 Jun 2021 12:25:42 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -7476,7 +7476,7 @@ cExlX1BsY=
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buuweb%E9%80%9A%E5%85%B32/</guid>
                 <pubDate>Wed, 16 Jun 2021 19:17:39 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -8249,7 +8249,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/buuweb%E9%80%9A%E5%85%B31/</guid>
                 <pubDate>Sun, 13 Jun 2021 13:42:31 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -9739,7 +9739,7 @@ index.php&lt;/p&gt;
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/2021.6-task/</guid>
                 <pubDate>Sun, 13 Jun 2021 12:15:12 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -9783,7 +9783,7 @@ index.php&lt;/p&gt;
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/rsa%E5%B8%B8%E8%A7%81%E6%94%BB%E5%87%BB/</guid>
                 <pubDate>Sun, 07 Mar 2021 20:47:21 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -10818,7 +10818,7 @@ flag = &amp;quot;flag{&amp;quot; + hashlib.md5(hex(d)).hexdigest() + &amp;quot;}
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0/</guid>
                 <pubDate>Sun, 07 Mar 2021 15:09:30 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -11125,7 +11125,7 @@ $$4a^3+27b^2 \neq 0 mod  p$$
                 <guid isPermaLink="true">https://cn1nja.github.io/posts/%E6%95%B0%E8%AE%BA/</guid>
                 <pubDate>Thu, 25 Feb 2021 14:45:02 &#43;0800</pubDate>
                 
-                    <author>mikecninja@gmail.com (N1nja)</author>
+                    <author>mikecninja@gmail.com (N1key)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 

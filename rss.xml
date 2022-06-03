@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 03 Jun 2022 12:22:02 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 03 Jun 2022 13:47:49 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://cn1nja.github.io/rss.xml" />
         
@@ -272,7 +272,7 @@ enc = pow(flag, e, p*q)
 &lt;p&gt;$2^{p−1}≡1$  $(mod$ $p)$ 显然成立 &lt;strong&gt;主要是为了利用题目中给出的 $(p−1)∗d$&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;所以设$A=2^{p−1}−1=kp$&lt;/p&gt;
 &lt;p&gt;然后利用欧拉定理，我们直接利用上文中提到的 RSA 的解密证明中的结论&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E8%AE%BA%E5%AE%9A%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/1mkjEzZBHAdD2bW.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/1mkjEzZBHAdD2bW.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;$(2p−1)^{ed} ≡$ $(2^{p−1})$ $(mod$ $n)$&lt;/p&gt;
 &lt;p&gt;由题，$(p−1)d=s−r$&lt;/p&gt;
 &lt;p&gt;所以$A≡2^{p−1}−1 ≡ (2^{p−1})^{ed}−1≡2^{es−er}−1(mod$ $n)$&lt;/p&gt;
@@ -414,7 +414,7 @@ enc = pow(flag, e, p*q)
                 
                     <description>&lt;p&gt;转载：&lt;strong&gt;原始链接:&lt;/strong&gt;[http://jayxv.github.io/2019/11/11/密码学学习笔记之浅析Pollard&#39;s rho algorithm及其应用/](&lt;a href=&#34;https://jayxv.github.io/2019/11/11/&#34;&gt;https://jayxv.github.io/2019/11/11/&lt;/a&gt;密码学学习笔记之浅析Pollard&#39;s rho algorithm及其应用/)&lt;/p&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-&lt;p&gt;已经小半年没学密码了，其实以后更想往渗透方向走，但密码没学好还是挺遗憾的。昨天刚好收到了山石安研院 暑期CTF crypto 训练营的录取邮件。既惊讶又欣喜，当时报名参加的时候是想着投着试一下，并没有报希望进去的。填CTF学习意向方向时，本想着去跟着大佬学习下web安全，但看了下都是 java，php安全的更多，感觉不太适合，又看到了密码。想了下还是继续干老本行，学习密码方向。投简历很随意，我投了一份渗透面试时的简历，写的挺烂的。事后和 V神聊天，聊到我投了的简历，他说因为是他审的，后话.................&lt;/p&gt;
+&lt;p&gt;已经小半年没学密码了，其实以后更想往渗透方向走，但密码没学好还是挺遗憾的。昨天刚好收到了山石安研院 暑期CTF crypto 训练营的录取邮件。既惊讶又欣喜，当时报名参加的时候是想着投着试一下，并没有报希望进去的。填CTF学习意向方向时，本想着去跟着大佬学习下web安全，但看了下都是 java，php安全的更多，感觉不太适合，又看到了密码。想了下还是继续干老本行，学习密码方向。&lt;/p&gt;
 &lt;p&gt;密码学习看的V神的blog，&lt;a href=&#34;https://jayxv.github.io/2019/11/11/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard&#39;s%20rho%20algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/&#34;&gt;密码学学习笔记之浅析Pollard&#39;s rho algorithm及其应用&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;以下做的笔记也仅供学习，作为学习笔记，因为V神总结的太好了，所以很多我基本照搬过来了，有些代码和解释做了些改动。&lt;/p&gt;
 &lt;h2 id=&#34;pollards-rho-algorithm&#34;&gt;Pollard&#39;s rho algorithm&lt;/h2&gt;
@@ -493,7 +493,7 @@ enc = pow(flag, e, p*q)
 &lt;p&gt;即原文中提及的 $p$ and $q$ are both of order $N^\frac{1}{2}$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;在 Further Attacks on Server-Aided RSA Cryptosystems 的第一个攻击阶段中提到：&lt;/strong&gt; 利用 Pollard’s ρ methods ，其中用于取伪随机值的maps函数为 $g(x)=$ $x^{N−1}$ $+$ $3$ $(mod$ $N)$ , 这将在时间复杂度为 $O($ $\sqrt {p/β}$ $)$ 内分解 $N$ ，因为在 $x^{N-1}$ $(mod$ $p)$ 中，最多有 $(p-1)/β$ $+$ $1$个值。&lt;/p&gt;
 &lt;p&gt;当 $β$ 超过 150bits 时，$\sqrt {p/β}$  ~ $2^{53}$ ，N 是易受到攻击的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard&#39;s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817234127206.png&#34; alt=&#34;image-20210817234127206&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210817234127206.png&#34; alt=&#34;image-20210817234127206&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;pollards-ρ-algorithm&#34;&gt;Pollard’s ρ algorithm&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm&#34;&gt;Pollard&#39;s rho algorithm&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;波拉德的 ρ 算法是整数分解的一种算法。 它是约翰 · 波拉德在1975年发明的。 它只占用了很少的空间，并且它的预期运行时间与被分解的合数的最小质因数大小的平方根成正比&lt;/strong&gt;&lt;/p&gt;
@@ -502,8 +502,8 @@ enc = pow(flag, e, p*q)
 &lt;p&gt;我们需要一个模 $n$ 的多项式，例如：$g(x)≡$ $x^2$ $+$ $1$ $(mod$ $n)$ ，用于生成“伪随机”数列。我们选择一个起始值&lt;/p&gt;
 &lt;p&gt;例如，2，即 $x_1=g(2)，x_2=g(g(2))，x_3=g(g(g(2)))……$&lt;/p&gt;
 &lt;p&gt;这里值得注意的是，这个数列是有限的，由于生日问题，序列 $x_k$ mod $(n)$ 最终会重复，一旦一个序列由重复的值，这个序列就会循环，因为每个值依赖于它之前的值， 这种最终循环的结构产生了“ ρ 算法”的名称&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard&#39;s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/Pollard_rho_cycle.jpg&#34; alt=&#34;File:Pollard rho cycle.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/Crypto学习笔记/2021/密码学笔记之浅析Pollard&#39;s_rho_algorithm及其应用/image-20210818133956657.png&#34; alt=&#34;image-20210818133956657&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/Pollard_rho_cycle.jpg&#34; alt=&#34;Pollard_rho_cycle.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210818133956650.png&#34; alt=&#34;image-20210818133956650&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;算法&#34;&gt;算法&lt;/h3&gt;
 &lt;p&gt;该算法将要因式分解的整数作为输入 N，和 $g(x)，x$ 计算模 N 的多项式。在原始算法中， $g(x) = (x^2$ $-$  $1)$ $mod$ $n$ ,但现在更为常见的是使 $g(x) = (x^2$ $+$  $1)$ $mod$ $n$  用 ，输出的要么是 n 的重要因子，要么失败。&lt;/p&gt;
 &lt;p&gt;这里我们可以举一个简单的小例子，我们设 $n$ 为640，$g(x)=x^2$，$x$ 起始值为2，&lt;/p&gt;
@@ -521,7 +521,7 @@ enc = pow(flag, e, p*q)
     &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;640&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard&#39;s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210817223740667.png&#34; alt=&#34;image-20210817223740667&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210817223740667.png&#34; alt=&#34;image-20210817223740667&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们可以看到，128为这个取模多项式的循环节点，&lt;/p&gt;
 &lt;p&gt;回到话题，这里继续用 Floyd’s cycle-finding algorithm发现：设立两个节点，$i，j$，在每一步中，$i$ 每次移动一个节点，$j$ 每次移动两个节点，然后检查 $gcd(x_i−x_j,n)$ 是否 $≠1$，如果不等于，那么 $gcd$ 的结果便是 $p$ 。并且，这也意味着序列 $x_k$ $(mod$ $p)$ 也会重复。这是因为，如果 $x_i≡x_j(mod$ $p)$ ，那么 $x_i$ 与 $x_j$ 之间的差必然是 $p$ 的倍数。同时，这也说明，$gcd(x_i−x_j，n)$ 不等于 1 的结果无论如何最终都会到来，但是可能是 $n$ 自己，此时，代表 Pollard’s ρ algorithm 失败了，可以使用不同的起始值，再次运算。&lt;/p&gt;
 &lt;h3 id=&#34;代码表示&#34;&gt;代码表示&lt;/h3&gt;
@@ -730,9 +730,9 @@ enc = pow(flag, e, p*q)
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;跑半个小时得到6个：&lt;code&gt;740160703366837&lt;/code&gt;， bits = 50&lt;/p&gt;
-&lt;img src=&#34;https://cn1nja.github.io/Crypto学习笔记/2021/密码学笔记之浅析Pollard&#39;s_rho_algorithm及其应用/image-20210818143725270.png&#34; alt=&#34;image-20210818143725270&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210818143725270.png&#34; alt=&#34;image-20210818143725270&#34; width=&#34;500&#34;/&gt;
 &lt;p&gt;跑了几个小时后得到的结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/Crypto%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%B5%85%E6%9E%90Pollard&#39;s_rho_algorithm%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/image-20210818164139948.png&#34; alt=&#34;image-20210818164139948&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210818164139948.png&#34; alt=&#34;image-20210818164139948&#34;&gt;&lt;/p&gt;
 &lt;p&gt;flag 大小应该不是特别大，所以 &lt;code&gt;740160703366837&lt;/code&gt;的六次方，bits = 50x6 = 300bits，用作新的 Ｎ 值来计算 flag ,应该足够了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;exp:&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -772,7 +772,7 @@ enc = pow(flag, e, p*q)
 &lt;p&gt;但为啥这里我们可以直接改 $n$ 呢？&lt;/p&gt;
 &lt;p&gt;这里再回顾一下基础知识好了&lt;/p&gt;
 &lt;p&gt;以下是 $M≡C^d (mod$ $N)$ 的证明:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/Crypto学习笔记/2021/密码学笔记之浅析Pollard&#39;s_rho_algorithm及其应用/zmodaOUq2NSv6IP.png&#34; alt=&#34;RSA解密验证&#34; width=&#34;900&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/zmodaOUq2NSv6IP.png&#34; alt=&#34;RSA解密验证&#34; width=&#34;900&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;求证的条件（设新的n值为小写n，原值为N ）： 首先 $m &amp;lt; N$ ，所以 n &amp;gt; m 即可&lt;/p&gt;
 &lt;p&gt;其次，由于 n | N，所以 $ C = m^e$ $(mod$  $n)$&lt;/p&gt;
 &lt;p&gt;推理如下:&lt;/p&gt;
@@ -837,7 +837,7 @@ enc = pow(flag, e, p*q)
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Pisano_period&#34;&gt;&lt;font color=#0288D1&gt;Pisano 周期&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;公式：$u_{n+2} = b∗u_{n+1} + c∗u_n$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210726153610996.png&#34; alt=&#34;image-20210726153610996&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210726153610996.png&#34; alt=&#34;image-20210726153610996&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;根据题目我们可以知道返回值：&lt;code&gt;return 6 * crunchy(n - 1) + crunchy(n - 2)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;计算斐波拉契数列，其中系数为 6，模为 100000007&lt;/p&gt;
@@ -876,7 +876,7 @@ enc = pow(flag, e, p*q)
 &lt;p&gt;题目&lt;/p&gt;
 &lt;p&gt;BCEHACEIBDEIBDEHBDEHADEIACEGACFIBDFHACEGBCEHBCFIBDEGBDEGADFGBDEHBDEGBDFHBCEGACFIBCFGADEIADEIADFH&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211011154904593.png&#34; alt=&#34;image-20211011154904593&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211011154904593.png&#34; alt=&#34;image-20211011154904593&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;根据 Toy Cipher的加密规则，将密文每四个一组，对照加密表解密。&lt;/p&gt;
 &lt;p&gt;根据题目提示，将加密表逆序，再次对照解密&lt;/p&gt;
@@ -939,7 +939,7 @@ enc = pow(flag, e, p*q)
 &lt;p&gt;在网络链路中，一个数据包的发送经常会经过多个节点，那么在不同节点抓到报文后，如何确定目前查看的这个报文是否是从源端发过来，问题复现的那段报文；
 或者数据流量比较大，同时刻的报文数量很多，已经无法根据时间来确认具体的报文是哪一条时，又需要确定具体的报文情况时，就需要用到这个字段：&lt;strong&gt;Identification&lt;/strong&gt;。&lt;strong&gt;（该字段可以理解成报文的唯一标识符，用来标记报文的唯一性，尤其是在该报文经过了各种NAT转发后，该值是不会发生改变的。）&lt;/strong&gt;
 在wireshark中，&lt;strong&gt;该字段被书定义为ip.id&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211011191447844.png&#34; alt=&#34;image-20211011191447844&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211011191447844.png&#34; alt=&#34;image-20211011191447844&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;tshark抓包&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;参数：&lt;/p&gt;
@@ -1131,14 +1131,14 @@ enc = pow(flag, e, p*q)
 A man from the soviet union has sent you two strange documents. Find the identity of the man as well as his location.
 Flag format is : CFI{Firstname_Lastname_of_City}&lt;/p&gt;
 &lt;p&gt;打开图片得到坐标信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211014202456424.png&#34; alt=&#34;image-20211014202456424&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211014202456424.png&#34; alt=&#34;image-20211014202456424&#34;&gt;&lt;/p&gt;
 &lt;p&gt;用Google地球输入坐标得到：
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211014202623253.png&#34; alt=&#34;image-20211014202623253&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211014202623253.png&#34; alt=&#34;image-20211014202623253&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;城市信息得到：Riga&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;用WPS查看PDF的作者：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211014202832148.png&#34; alt=&#34;image-20211014202832148&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211014202832148.png&#34; alt=&#34;image-20211014202832148&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Kotik Kadyrov&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1150,7 +1150,7 @@ Flag format is : CFI{Firstname_Lastname_of_City}&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;1.先用NTFS 扫描文件目录下的隐藏文件&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211011162521426.png&#34; alt=&#34;image-20211011162521426&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211011162521426.png&#34; alt=&#34;image-20211011162521426&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;2.手机键盘密码解密,得到：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;311：3行1列
@@ -1158,7 +1158,7 @@ UBMMASJJMU&lt;/p&gt;
 &lt;p&gt;311:3列1行
 EBCCAFDDCE&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211011163211959.png&#34; alt=&#34;image-20211011163211959&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211011163211959.png&#34; alt=&#34;image-20211011163211959&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;3.磁盘挂载&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A3%81%E7%9B%98%E6%8C%82%E8%BD%BDvmdk%E6%96%87%E4%BB%B6font&#34;&gt;磁盘挂载工具 VeraCrypt&lt;/a&gt;&lt;/p&gt;
@@ -1172,7 +1172,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用 kali 中的 binwalk -e 解压文件，得到一张残缺的二维码，手动修复一下。去掉窗口阴影&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211014212710207.png&#34; alt=&#34;image-20211014212710207&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211014212710207.png&#34; alt=&#34;image-20211014212710207&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;扫描得到：&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1187,9 +1187,9 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;解与佛论禅&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211014214246218.png&#34; alt=&#34;image-20211014214246218&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211014214246218.png&#34; alt=&#34;image-20211014214246218&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;解 base16&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211014214554240.png&#34; alt=&#34;image-20211014214554240&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211014214554240.png&#34; alt=&#34;image-20211014214554240&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;做不会了....&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1gwctf2019mathfont&#34;&gt;&lt;font color=#0288D1&gt;【GWCTF2019】math&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点pwntools交互recvuntil函数font&#34;&gt;&lt;font color=#A020F0&gt;知识点：pwntools交互、recvuntil()函数&lt;/font&gt;&lt;/h3&gt;
@@ -1373,7 +1373,7 @@ EBCCAFDDCE&lt;/p&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20211015213220749.png&#34; alt=&#34;image-20211015213220749&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211015213220749.png&#34; alt=&#34;image-20211015213220749&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;cat flag.txt&lt;/strong&gt;
 &lt;strong&gt;flag{dc2217bc-6a9d-45f5-8403-24fbabd0c087}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1羊城杯-2020逃离东南亚font&#34;&gt;&lt;font color=#0288D1&gt;【羊城杯 2020】逃离东南亚&lt;/font&gt;&lt;/h2&gt;
@@ -1451,12 +1451,12 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;得到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210726161115043.png&#34; alt=&#34;image-20210726161115043&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210726161115043.png&#34; alt=&#34;image-20210726161115043&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;wdnmd，成功解压第二份日记文件&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;wav文件，很容易想到silenteye隐写，直接把音频拖进silenteye，得到第三个压缩包密码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210726162118791.png&#34; alt=&#34;image-20210726162118791&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210726162118791.png&#34; alt=&#34;image-20210726162118791&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;This1sThe3rdZIPpwd，成功解压第三份日记&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1467,11 +1467,11 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;把源码下载下来，直接Beyond Compare 4一把梭，对比文件夹，调整规则，可以直接看到三个被修改的文件&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210726173243061.png&#34; alt=&#34;image-20210726173243061&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210726173243061.png&#34; alt=&#34;image-20210726173243061&#34; width=&#34;500&#34;/&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;继续分析文本，在每个&lt;code&gt;}&lt;/code&gt; 后面都跟了8个 &lt;code&gt;tab&lt;/code&gt; 键 和空格。将其都转换为 二进制数据&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210726174500049.png&#34; alt=&#34;image-20210726174500049&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210726174500049.png&#34; alt=&#34;image-20210726174500049&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;把 elf 文件下的 rtld.c、malloc文件夹下的malloc.c 、arena.c 三个文件都放在同一文件夹下。脚本提取数据&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1637,7 +1637,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# python 2.7&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721170922765.png&#34; alt=&#34;image-20210721170922765&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721170922765.png&#34; alt=&#34;image-20210721170922765&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1646,7 +1646,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# python 3.6&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721171112614.png&#34; alt=&#34;image-20210721171112614&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721171112614.png&#34; alt=&#34;image-20210721171112614&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1657,17 +1657,17 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;span class=&#34;c1&#34;&gt;# 从 Python3.7 开始支持 hash-based pyc 文件&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721171152053.png&#34; alt=&#34;image-20210721171152053&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721171152053.png&#34; alt=&#34;image-20210721171152053&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;010editor 分析文件，发现开头的文件好像是base64编码，去解密了一下，乱码没啥用。&lt;/p&gt;
 &lt;p&gt;在后面的一段好像是 pyc 文件，&lt;code&gt;33 0D 0D 0A&lt;/code&gt; python3.6 的pyc文件头&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721171826524.png&#34; alt=&#34;image-20210721171826524&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721171826524.png&#34; alt=&#34;image-20210721171826524&#34; width=&#34;500&#34;/&gt;
 &lt;blockquote&gt;
 &lt;p&gt;从后面的这段字符串也可以看出这是 python 文件&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721172100153.png&#34; alt=&#34;image-20210721172100153&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721172100153.png&#34; alt=&#34;image-20210721172100153&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1678,7 +1678,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;span class=&#34;c1&#34;&gt;# kali file命令&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721172408277.png&#34; alt=&#34;image-20210721172408277&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721172408277.png&#34; alt=&#34;image-20210721172408277&#34;&gt;&lt;/p&gt;
 &lt;p&gt;接下来就是用 &lt;strong&gt;stegosaurus(剑龙)&lt;/strong&gt; 提取隐写文件。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;用法：&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1689,7 +1689,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;o&#34;&gt;./&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stegosaurus&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pyc&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721172741138.png&#34; alt=&#34;image-20210721172741138&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721172741138.png&#34; alt=&#34;image-20210721172741138&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;SUCTF{Z3r0_fin411y_d34d}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1xman2018排位赛ppapfont&#34;&gt;&lt;font color=#0288D1&gt;【XMAN2018排位赛】ppap&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点base64解码成图片font&#34;&gt;&lt;font color=#A020F0&gt;知识点：base64解码成图片&lt;/font&gt;&lt;/h3&gt;
@@ -1699,21 +1699,21 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;追踪TCP流，找到 flag信息。发现一大串 base64 编码，用在线网站解码&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://the-x.cn/base64&#34;&gt;&lt;font color=#0288D1&gt;在线base64解码为图片&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721204120851.png&#34; alt=&#34;image-20210721204120851&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721203046446.png&#34; alt=&#34;image-20210721203046446&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721204120851.png&#34; alt=&#34;image-20210721204120851&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721203046446.png&#34; alt=&#34;image-20210721203046446&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;发现无效字符 ~ ，在文本中找一下。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721204801551.png&#34; alt=&#34;image-20210721204801551&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721204801551.png&#34; alt=&#34;image-20210721204801551&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;重新解码base64&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721211603287.png&#34; alt=&#34;image-20210721211603287&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721212318564.png&#34; alt=&#34;image-20210721212318564&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721211603287.png&#34; alt=&#34;image-20210721211603287&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721212318564.png&#34; alt=&#34;image-20210721212318564&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;解码后发现，三段分别解码为不同的数据。中间一段为 ZIP，最后一段为 XMl,貌似没啥用。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210721212307147.png&#34; alt=&#34;image-20210721212307147&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721212307147.png&#34; alt=&#34;image-20210721212307147&#34; width=&#34;500&#34;/&gt;
 &lt;blockquote&gt;
 &lt;p&gt;得到的ZIP 文件需要密码&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1737,12 +1737,12 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;用 StegSolve 将红色去掉&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210722220103812.png&#34; alt=&#34;image-20210722220103812&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210722220103812.png&#34; alt=&#34;image-20210722220103812&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;用win10自带的画图一把梭&lt;/strong&gt;，&lt;strong&gt;人都要没了，傻逼。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210722224451361.png&#34; alt=&#34;image-20210722224451361&#34;&gt;&lt;/p&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210722205842992.png&#34; alt=&#34;image-20210722205842992&#34; width=&#34;300&#34;/&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210722224451361.png&#34; alt=&#34;image-20210722224451361&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210722205842992.png&#34; alt=&#34;image-20210722205842992&#34; width=&#34;300&#34;/&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;用手机软件，中国编码，扫描得到 flag&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1758,12 +1758,12 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;将表格全选，选择菜单栏中的， 表单格式 =&amp;gt; 突出显示单元格规则 =&amp;gt; 文本包含&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210722211842898.png&#34; alt=&#34;image-20210722211842898&#34; width=&#34;500&#34;/&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210722212008910.png&#34; alt=&#34;image-20210722212008910&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210722211842898.png&#34; alt=&#34;image-20210722211842898&#34; width=&#34;500&#34;/&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210722212008910.png&#34; alt=&#34;image-20210722212008910&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;选择规则时在表格上随便点击一下，发现有文本出现&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210722212339032.png&#34; alt=&#34;image-20210722212339032&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210722212339032.png&#34; alt=&#34;image-20210722212339032&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1810,7 +1810,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# python3 firepwd.py -d ./FireFox_Forensics&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210723122121308.png&#34; alt=&#34;image-20210723122121308&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210723122121308.png&#34; alt=&#34;image-20210723122121308&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -2022,7 +2022,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;分析流量发现两个特殊的流量&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725123947268.png&#34; alt=&#34;image-20210725123947268&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725123947268.png&#34; alt=&#34;image-20210725123947268&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://tobatu.gitee.io/blog/2020/10/06/BUUCTF-%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-9/#RCTF2019-printer&#34;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;flag{my_tsc_hc3pnikdk}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1qctf2018picturefont&#34;&gt;&lt;font color=#0288D1&gt;【QCTF2018】picture&lt;/font&gt;&lt;/h2&gt;
@@ -2088,7 +2088,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;拿到题目后，在kali里面用 命令 file 分析，发现是png 文件。添加后缀名，得到png图片。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210723133543205.png&#34; alt=&#34;image-20210723133543205&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210723133543205.png&#34; alt=&#34;image-20210723133543205&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;用binwalk、foremost分析后，发现没有提取出有效文件&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2129,7 +2129,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;关于密码，看了wp才知道是 &lt;code&gt;万物皆空，无欲无求&lt;/code&gt; 的首字母缩写 &lt;strong&gt;wwjkwywq&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210723134446592.png&#34; alt=&#34;image-20210723134446592&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210723134446592.png&#34; alt=&#34;image-20210723134446592&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;拿到一份 &lt;strong&gt;进行DES加密相关的代码&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2734,7 +2734,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# python2 des_1.py&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210723140601222.png&#34; alt=&#34;image-20210723140601222&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210723140601222.png&#34; alt=&#34;image-20210723140601222&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -2795,11 +2795,11 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;使用&lt;code&gt;sslkey&lt;/code&gt;解密包内容，&lt;code&gt;编辑&amp;gt;首选项&amp;gt;Protocols&amp;gt;TLS&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9tls%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90font&#34;&gt;&lt;font color=#0288D1&gt;参考文章&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725142621943.png&#34; alt=&#34;image-20210725142621943&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725142621943.png&#34; alt=&#34;image-20210725142621943&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;追踪HTTP流，发现在 get请求里有可疑字符 , kcahsni，逆序后不就是  inshack嘛&lt;/strong&gt;  。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725143754878.png&#34; alt=&#34;image-20210725143754878&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725143754878.png&#34; alt=&#34;image-20210725143754878&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -2810,7 +2810,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;span class=&#34;c1&#34;&gt;# 进行字符串过滤&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725144325372.png&#34; alt=&#34;image-20210725144325372&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725144325372.png&#34; alt=&#34;image-20210725144325372&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;然后&lt;strong&gt;文件 → 导出分组解析结果 → 为纯文本&lt;/strong&gt;，将这些流量包数据提取出来，再用strings命令将与&lt;code&gt;kcahsni&lt;/code&gt;有关的数据提取出来&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2827,11 +2827,11 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;对提取的文本进行分析，可知 kcahsni 后面都有一串 16进制编码。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725145655010.png&#34; alt=&#34;image-20210725145655010&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725145655010.png&#34; alt=&#34;image-20210725145655010&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;对重复的数据进行整理得到：&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725150501103.png&#34; alt=&#34;image-20210725150501103&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725150501103.png&#34; alt=&#34;image-20210725150501103&#34; width=&#34;500&#34;/&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -2957,13 +2957,13 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;修复完得到下面的图片&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725211155429.png&#34; alt=&#34;image-20210725211155429&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725211155429.png&#34; alt=&#34;image-20210725211155429&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;可以看出图片中包含一个压缩包文件，将字符提出来得到：&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;504B0304140000000800DB93C55086A39007D8000000DF01000008000000666C61672E74787475504B0E823010DD93708771DDCCB0270D5BBD0371815A9148AC6951C2ED9D271F89C62E2693D7F76BB7DE9FC80D2E6E68E782A326D2E01F81CE6D55E76972E9BA7BCCB3ACEF7B89F7B6E90EA16A6EE2439D45179ECDD1C5CCFB6B9AA489C1218C92B898779D765FCCBB58CC920B6662C5F91749931132258F32BBA7C288C5AE103133106608409DAC419F77241A3412907814AB7A922106B8DED0D25AEC8A634929025C46A33FE5A1D3167A100323B1ABEE4A7A0708413A19E17718165F5D3E73D577798E36D5144B66315AAE315078F5E51A29246AF402504B01021F00140009000800DB93C55086A39007D8000000DF010000080024000000000000002000000000000000666C61672E7478740A00200000000000010018004A0A9A64243BD601F9D8AB39243BD6012D00CA13223BD601504B050600000000010001005A000000FE00000000000000
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;用 CyberChef解压zip文件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210725211407326.png&#34; alt=&#34;image-20210725211407326&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210725211407326.png&#34; alt=&#34;image-20210725211407326&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;+++++ ++++[ -&amp;gt;+++ +++++ +&amp;lt;]&amp;gt;+ +++++ .&amp;lt;+++ [-&amp;gt;-- -&amp;lt;]&amp;gt;- .&amp;lt;+++ [-&amp;gt;-- -&amp;lt;]&amp;gt;-
 .&amp;lt;+++ +[-&amp;gt;+ +++&amp;lt;] &amp;gt;+.&amp;lt;+ ++[-&amp;gt; ---&amp;lt;] &amp;gt;---- -.&amp;lt;++ +++++ [-&amp;gt;++ +++++ &amp;lt;]&amp;gt;++
 ++.-- --.&amp;lt;+ +++[- &amp;gt;---- &amp;lt;]&amp;gt;-- ----. +++++ +++.&amp;lt; +++[- &amp;gt;---&amp;lt; ]&amp;gt;-.+ ++.++
@@ -3047,7 +3047,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;将包含 42.tar.xz 压缩文件的 tmp 文件夹直接拖入 kali 中，然后再 tmp目录下执行上面的bash命令&lt;/strong&gt;，如果是直接把 压缩文件拖入kali 执行上面的命令会发生错误，暂时没找到原因。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717152425232.png&#34; alt=&#34;image-20210717152425232&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717152425232.png&#34; alt=&#34;image-20210717152425232&#34; width=&#34;500&#34;/&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -3063,17 +3063,17 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0知识点流量分析smtpfont&#34;&gt;&lt;font color=#A020F0&gt;知识点：流量分析（SMTP）&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://baike.baidu.com/item/SMTP/175887&#34;&gt;&lt;font color=#0288D1&gt;SMTP百度百科&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;SMTP：简单邮件传输协议&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717160502903.png&#34; alt=&#34;image-20210717160502903&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717160502903.png&#34; alt=&#34;image-20210717160502903&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-1&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;打开题目给的文件下载链接，因为文件很大，看了一下 164535.pcap 这个流量包稍微特别些，就先下载看了一下&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717160647467.png&#34; alt=&#34;image-20210717160647467&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717160647467.png&#34; alt=&#34;image-20210717160647467&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;题目说 flag是黑客使用的邮箱，既然有邮件的传输，那么就要用到邮件传输协议 SMTP.&lt;/p&gt;
 &lt;p&gt;筛选 SMTP 流量包&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717161528063.png&#34; alt=&#34;image-20210717161528063&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717161528063.png&#34; alt=&#34;image-20210717161528063&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;mailto:flag%7Bxsser@live.cn&#34;&gt;flag{xsser@live.cn&lt;/a&gt;}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1mrctf2020寻找xxxfont&#34;&gt;&lt;font color=#0288D1&gt;【MRCTF2020】寻找xxx&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点拨号音隐写dtmffont&#34;&gt;&lt;font color=#A020F0&gt;知识点：拨号音隐写(dtmf)&lt;/font&gt;&lt;/h3&gt;
@@ -3089,16 +3089,16 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-2&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;用 &lt;a href=&#34;http://dialabc.com/sound/detect/&#34;&gt;&lt;font color=#0288D1&gt;在线拨号音识别网站&lt;/font&gt;&lt;/a&gt; 轻松得到电话号码： 18684221609&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717163002757.png&#34; alt=&#34;image-20210717163002757&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717163002757.png&#34; alt=&#34;image-20210717163002757&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;发送号码到 天璇merak的公众号，得到 flag&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717163143326.png&#34; alt=&#34;image-20210717163143326&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717163143326.png&#34; alt=&#34;image-20210717163143326&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;flag{Oh!!!!!_Y0u_f1nd_my_secret}&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;方法二：用本地工具dtmf2num&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717164743884.png&#34; alt=&#34;image-20210717164743884&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717164743884.png&#34; alt=&#34;image-20210717164743884&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1npuctf2020碰上彩虹吃定彩虹font&#34;&gt;&lt;font color=#0288D1&gt;【NPUCTF2020】碰上彩虹，吃定彩虹！&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点font&#34;&gt;&lt;font color=#A020F0&gt;知识点： &lt;/font&gt;&lt;/h3&gt;
 &lt;h4 id=&#34;font-colora020f0autokey爆破font&#34;&gt;&lt;font color=#A020F0&gt;Autokey爆破&lt;/font&gt;&lt;/h4&gt;
@@ -3164,7 +3164,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://www.aihanyu.org/cncorpus/CpsTongji.aspx&#34;&gt;&lt;font color=#0288D1&gt;在线词频统计网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;font-colora020f0ntfs文件隐写font&#34;&gt;&lt;font color=#A020F0&gt;NTFS文件隐写&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;工具：ntfsstreamseditor&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717210905622.png&#34; alt=&#34;image-20210717210905622&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717210905622.png&#34; alt=&#34;image-20210717210905622&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;font-colora020f0encrypto数据加密软件font&#34;&gt;&lt;font color=#A020F0&gt;Encrypto数据加密软件&lt;/font&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://macpaw.com/encrypto&#34;&gt;&lt;font color=#0288D1&gt;下载链接&lt;/font&gt;&lt;/a&gt;，encrypt加密文件的后缀为 .crypto&lt;/p&gt;
 &lt;h4 id=&#34;font-colora020f0图片rgb颜色分析font&#34;&gt;&lt;font color=#A020F0&gt;图片RGB颜色分析&lt;/font&gt;&lt;/h4&gt;
@@ -3179,7 +3179,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;p&gt;题目给了三份文件  lookatme.txt 、maybehint.txt、secret&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;用 Sublime Text 打开 lookatme.txt 文件，发现摩斯电码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717171119221.png&#34; alt=&#34;image-20210717171119221&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717171119221.png&#34; alt=&#34;image-20210717171119221&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;.- ..- - --- -.- . -.--&lt;/p&gt;
 &lt;p&gt;解码后得到：autokey&lt;/p&gt;
@@ -3187,7 +3187,7 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;p&gt;进行 autokey 爆破&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;参考&lt;a href=&#34;http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B35/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9usb%E6%B5%81%E9%87%8F%E6%8F%90%E5%8F%96%E9%94%AE%E7%9B%98%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90auto%E7%88%86%E7%A0%B4font&#34;&gt;&lt;font color=#0288D1&gt;【XMAN2018排位赛】AutoKey&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717172652953.png&#34; alt=&#34;image-20210717172652953&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717172652953.png&#34; alt=&#34;image-20210717172652953&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -3204,7 +3204,7 @@ EBCCAFDDCE&lt;/p&gt;
 something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌‍‌‍‍‍‌‌‍‌‌‌‌‌‌‍‌‌‍‍‍‍‌‌‍‌‍‌‌‍‍‌, but I can&#39;t find it!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;提示有隐写的信息：查看文件大小，发现有 656字节。显然有隐写的内容，在kali 中用 vim 查看&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717204231147.png&#34; alt=&#34;image-20210717204231147&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717204231147.png&#34; alt=&#34;image-20210717204231147&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;可以知道这里是零宽字符隐写，参考：&lt;a href=&#34;http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B31/#font-color0288d1utctf2020zerofont&#34;&gt;&lt;font color=#0288D1&gt;【UTCTF2020】zero&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -3222,12 +3222,12 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;将 maybehint.txt 文件隐写内容 用在线网站解密：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://330k.github.io/misc_tools/unicode_steganography.html&#34;&gt;&lt;font color=#0288D1&gt;http://330k.github.io/misc_tools/unicode_steganography.html&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717210004820.png&#34; alt=&#34;image-20210717210004820&#34; width=&#34;500&#34;/&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717205948586.png&#34; alt=&#34;image-20210717205948586&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717210004820.png&#34; alt=&#34;image-20210717210004820&#34; width=&#34;500&#34;/&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717205948586.png&#34; alt=&#34;image-20210717205948586&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;得到新提示 NTFS，ntfsstreamseditor 文件隐写&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717210905622.png&#34; alt=&#34;image-20210717210905622&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210717210905622.png&#34; alt=&#34;image-20210717210905622&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;导出文本 out.txt 得到：&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3236,32 +3236,32 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;p&gt;词频统计&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.aihanyu.org/cncorpus/CpsTongji.aspx&#34;&gt;&lt;font color=#0288D1&gt;在线词频统计&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717211213139.png&#34; alt=&#34;image-20210717211213139&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717211213139.png&#34; alt=&#34;image-20210717211213139&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;得到： ZW5jcnlwdG8=&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717211418408.png&#34; alt=&#34;image-20210717211418408&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717211418408.png&#34; alt=&#34;image-20210717211418408&#34;&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;base64解码得到 ：encrypto
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;google一下 encrypto ，知道了这是个加密软件，&lt;a href=&#34;https://macpaw.com/encrypto&#34;&gt;&lt;font color=#0288D1&gt;下载链接&lt;/font&gt;&lt;/a&gt;，encrypt加密文件的后缀为 crypto，将  secret  文件后缀名改为 &lt;code&gt;secret.crypto&lt;/code&gt; 即可打开文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717212505185.png&#34; alt=&#34;image-20210717212505185&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717212505185.png&#34; alt=&#34;image-20210717212505185&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;文件解密需要密码，前面 autokey 爆破得到了一份密码的&lt;/p&gt;
 &lt;p&gt;IAMTHEPASSWD&lt;/p&gt;
 &lt;p&gt;iamthepasswd&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717213006483.png&#34; alt=&#34;image-20210717213006483&#34; width=200 /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717213006483.png&#34; alt=&#34;image-20210717213006483&#34; width=200 /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;然后卡在这里解不开，根据官方的提示，&lt;strong&gt;需要把加粗的括号删掉&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在kali 中用 strings 命令查看 secret.crypto 文本&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717213303887.png&#34; alt=&#34;image-20210717213303887&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717213303887.png&#34; alt=&#34;image-20210717213303887&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用 notepad++ 打开文本，删掉 (Oh! You caught me! But...)&lt;/p&gt;
 &lt;p&gt;重新解密得到下面的png图片&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717213611405.png&#34; alt=&#34;image-20210717213611405&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717213611405.png&#34; alt=&#34;image-20210717213611405&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用 foremost 进行隐写文件的提取，得到一个 zip 文件，解压需要密码&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3288,17 +3288,17 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;span class=&#34;mi&#34;&gt;704073735764&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717214626626.png&#34; alt=&#34;image-20210717214626626&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717214626626.png&#34; alt=&#34;image-20210717214626626&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;解压密码 p@ssWd，解压得到 &lt;strong&gt;弗拉格.docx&lt;/strong&gt;，很明显这就是 flag 了&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717220012692.png&#34; alt=&#34;image-20210717220012692&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717220012692.png&#34; alt=&#34;image-20210717220012692&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;将大写连起来就是 ALPHUCK，google查一下&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;得到这个 &lt;a href=&#34;https://www.dcode.fr/alphuck-language&#34;&gt;&lt;font color=#0288D1&gt;Alphuck&lt;/font&gt;&lt;/a&gt; 网站，查阅可知Alphuck 的加密方法仅包含 8 个小写字母 a c e i j o p s&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eeeeeeeeeepaeaeeeaeeeeeeeaeeeeeeeeeeccccisaaaaeejeeeeeejiiiiiiiiiiijeeeeeejeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeePeeeeeeeejaaiiiiiiijcciiiiiiiiiijaaijiiiiiiiiiiiiiiiiiiiijeeeeeeeeeeeeeeeeeeeeeeejcceeeeeeeeeeeejaaiiiijeeeeeeejceeeeeeeeeeeeeeeeeeeeeeeeejceeeeeeeeeeeeeeeeejaeeeeeejciiiiiiiiiiiiiiiiiiijaeeeejceeeeeeeeeeeeeeeeeejajciiiiiiiiiiiiiiiiiiijaaiiiijiijeeeeeeeeeeejcciiiiiiiiiiiiiiijaaij
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717221031231.png&#34; alt=&#34;image-20210717221031231&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717221031231.png&#34; alt=&#34;image-20210717221031231&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -3316,7 +3316,7 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;blockquote&gt;
 &lt;p&gt;注意 ：&lt;strong&gt;寻像图形的特征&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718201409630.png&#34; alt=&#34;image-20210718201409630&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718201409630.png&#34; alt=&#34;image-20210718201409630&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-4&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;1、题目描述&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;1、汉信码&lt;/p&gt;
@@ -3325,14 +3325,14 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;blockquote&gt;
 &lt;p&gt;下载题目得到一份 file 文件， 010editor打开发现是 png 文件。添加 .png后缀名后打开，得到下图有点像二维码&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718202147196.png&#34; alt=&#34;image-20210718202147196&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718202147196.png&#34; alt=&#34;image-20210718202147196&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;看了其他师傅的 blog 后，才知道这是汉信码&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用 stegsolve.jar 查看图片的 RGB通道，得到下面图片：（用PPT旋转的图片）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718203758816.png&#34; alt=&#34;image-20210718203758816&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718203758816.png&#34; alt=&#34;image-20210718203758816&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这里的第一种做法是用excle，自己绘制出汉信码，按列读取。&lt;/p&gt;
 &lt;p&gt;参考:&lt;/p&gt;
@@ -3466,16 +3466,16 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;p&gt;执行上面的脚本得到，恢复的汉信码：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;打开图片可以用 VScode打开，就不会很模糊了&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718210558218.png&#34; alt=&#34;image-20210718210558218&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718210558218.png&#34; alt=&#34;image-20210718210558218&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;对比正确的汉信码，发现左下角的寻像图形不正确，PS调整后，得到的汉信码通过扫描依旧无法识别&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;这里涉及汉信码的纠错识别，将右边空白部分随便写两笔，强行误码让他自修复。得到flag&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718175428478.png&#34; alt=&#34;image-20210718175428478&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718175428478.png&#34; alt=&#34;image-20210718175428478&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;汉信码自动识别的网站已经挂掉了，识别软件在手机下载 中国编码。然后扫码识别&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718211404081.png&#34; alt=&#34;image-20210718211404081&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718211404081.png&#34; alt=&#34;image-20210718211404081&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1gkctf-2021签到font&#34;&gt;&lt;font color=#0288D1&gt;【GKCTF 2021】签到&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点流量分析http流量字符反转base64解码cyberchef工具font&#34;&gt;&lt;font color=#A020F0&gt;知识点：流量分析(HTTP流量)、字符反转+base64解码、CyberChef工具&lt;/font&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -3495,13 +3495,13 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;p&gt;下载得到 tmpshell.pcapng 文件，wireshark 打开发现 HTTP传输过 tmpshell.php 文件&lt;/p&gt;
 &lt;p&gt;导出 HTTP 对象，新建文件夹保存&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718150638711.png&#34; alt=&#34;image-20210718150638711&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718150534137.png&#34; alt=&#34;image-20210718150534137&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718150638711.png&#34; alt=&#34;image-20210718150638711&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718150534137.png&#34; alt=&#34;image-20210718150534137&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;打开导出的 tmpshell.php 文件，得到: 634768774c6d78735a57687a6347313043673d3d&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;用 &lt;a href=&#34;https://gchq.github.io/CyberChef/&#34;&gt;CyberChef在线网站&lt;/a&gt; 解密： Hex ==&amp;gt; base64&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718160116484.png&#34; alt=&#34;image-20210718160116484&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718160116484.png&#34; alt=&#34;image-20210718160116484&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;解密后发现，得到的字符是反转的，说明出题人将字符先进行反转再base64加密 ，再编码为 16 进制数。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3510,11 +3510,11 @@ something important was hidden in txt‌‍‌‌‌‌‌‌‍‌‌‌‌‌�
 &lt;p&gt;&lt;strong&gt;将 tmpshell(19).php 中的内容解码&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;from hex、from base64&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718160630977.png&#34; alt=&#34;image-20210718160630977&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718160630977.png&#34; alt=&#34;image-20210718160630977&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;将 base64 字符串逆序输出 reverse line、reverse character、from base64&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210718164544575.png&#34; alt=&#34;image-20210718164544575&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210718164544575.png&#34; alt=&#34;image-20210718164544575&#34;&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ffllaagg{{}}WWeellcc))[删除] [删除] 00mmee__GGkkCC44FF__mm11ssiiCCCCCCCCCCCC!!
 
 flag{Welc0me_GkC4F_m1siCCCCCC!}
@@ -3541,9 +3541,9 @@ flag{Welc0me_GkC4F_m1siCCCCCC!}
 &lt;p&gt;根据类名的翻译 可知 MineAt() 应该是生成地雷的逻辑程序，将返回值修改为 return false 、编译、保存代码、执行程序。&lt;/p&gt;
 &lt;p&gt;打开游戏随便点一下，直接就能得到一张二维码图片&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719123319098.png&#34; alt=&#34;image-20210719123319098&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719123920917.png&#34; alt=&#34;image-20210719123920917&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719124032484.png&#34; alt=&#34;image-20210719124032484&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719123319098.png&#34; alt=&#34;image-20210719123319098&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719123920917.png&#34; alt=&#34;image-20210719123920917&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719124032484.png&#34; alt=&#34;image-20210719124032484&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;扫描二维码得到 flag&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3558,15 +3558,15 @@ flag{Welc0me_GkC4F_m1siCCCCCC!}
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;题目给了一份 markdown 描述文件和一份 find_me 文件，用 010editor打开，发现是 jpg 图片，将文件后缀名修改为 find_me.jpg 。打开得到&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719133953526.png&#34; alt=&#34;image-20210719133953526&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719133953526.png&#34; alt=&#34;image-20210719133953526&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;用 foremost 分离得到 png图片&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719134103395.png&#34; alt=&#34;image-20210719134103395&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719134103395.png&#34; alt=&#34;image-20210719134103395&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;摩尔斯电码，左下角发现有东西，用 VScode放大查看&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719133730548.png&#34; alt=&#34;image-20210719133730548&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719133730548.png&#34; alt=&#34;image-20210719133730548&#34; width=&#34;500&#34;/&gt;
 &lt;blockquote&gt;
 &lt;p&gt;.... . .-.. .--. -- .&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;摩尔斯电码解密得到：  helpme&lt;/strong&gt;&lt;/p&gt;
@@ -3574,16 +3574,16 @@ flag{Welc0me_GkC4F_m1siCCCCCC!}
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;继续分析最初的 find_me.jpg 图片，在 png 文件尾发现还有文件&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719134655264.png&#34; alt=&#34;image-20210719134655264&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719134655264.png&#34; alt=&#34;image-20210719134655264&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;百度 OggS，可知：&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719135107831.png&#34; alt=&#34;image-20210719135107831&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719135107831.png&#34; alt=&#34;image-20210719135107831&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;将 OGG文件提取出来，保存为 1.ogg ，用Audacity 打开，还是Morse电码，用在线网站解密即可：&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://morsecode.world/international/decoder/audio-decoder-adaptive.html&#34;&gt;&lt;font color=#0288D1&gt;在线Morse解码网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719135934070.png&#34; alt=&#34;image-20210719135934070&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719135934070.png&#34; alt=&#34;image-20210719135934070&#34; width=&#34;500&#34;/&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -3936,26 +3936,26 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;p&gt;&lt;strong&gt;Linux中使用 ls -a 命令可以显示该目录下的所有文件(包括隐藏文件夹)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;使用快捷键Ctrl+H可以显示和隐藏（隐藏文件）。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719161002687.png&#34; alt=&#34;image-20210719161002687&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719161002687.png&#34; alt=&#34;image-20210719161002687&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-8&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;音频文件直接用 Audacity 打开分析，查看频谱图查看就拿到 flag 了。但只有前一半&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719143117037.png&#34; alt=&#34;image-20210719143117037&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719143117037.png&#34; alt=&#34;image-20210719143117037&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shawroot.hatenablog.com/entry/2020/03/10/INSHack2018/BUUCTF-MISC%3A%28not%29_so_deep&#34;&gt;&lt;font color=#0288D1&gt;参考Root师傅的Wp&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;接下来需要用到音频分析软件 &lt;a href=&#34;https://deepsound.soft112.com/&#34;&gt;DeepSound&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;加载 final_flag.wav 文件提示需要密码&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719151255756.png&#34; alt=&#34;image-20210719151255756&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719151255756.png&#34; alt=&#34;image-20210719151255756&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;用Root师傅的 &lt;a href=&#34;https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/run/deepsound2john.py&#34;&gt;破解脚本&lt;strong&gt;deepsound2john.py&lt;/strong&gt; &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719151655008.png&#34; alt=&#34;image-20210719151655008&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719151655008.png&#34; alt=&#34;image-20210719151655008&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;得到密码：azerty&lt;/p&gt;
 &lt;p&gt;导出得到另一半&lt;/p&gt;
 &lt;p&gt;0_1s_4lwayS_Th3_S4me}&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719155106381.png&#34; alt=&#34;image-20210719155106381&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719155106381.png&#34; alt=&#34;image-20210719155106381&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;flag{Aud1o_st3G4n0_1s_4lwayS_Th3_S4me}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1bsidessf2019diskimagefont&#34;&gt;&lt;font color=#0288D1&gt;【BSidesSF2019】diskimage&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点磁盘取证testdisk恢复文件zsteg提取数据font&#34;&gt;&lt;font color=#A020F0&gt;知识点：磁盘取证+testdisk恢复文件、zsteg提取数据、&lt;/font&gt;&lt;/h3&gt;
@@ -3968,12 +3968,12 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;拿到一张 png 图片，一张损坏的磁盘，貌似有 LSB 隐写&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719170416946.png&#34; alt=&#34;image-20210719170416946&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719170416946.png&#34; alt=&#34;image-20210719170416946&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;kali三件套走一波&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;file 1.png、binwalk 1.png 、zsteg -a 1.png&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719170723065.png&#34; alt=&#34;image-20210719170723065&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719170723065.png&#34; alt=&#34;image-20210719170723065&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;有一份 FAT 磁盘数据，DOS扇区数据，用-e命令提取&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4000,7 +4000,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;执行命令后一路回车，在出现文件时，找到一个已删除的文件 _LAG.ICO 文件&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719171548391.png&#34; alt=&#34;image-20210719171548391&#34; width=&#34;400&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719171548391.png&#34; alt=&#34;image-20210719171548391&#34; width=&#34;400&#34; /&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4015,8 +4015,8 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
     &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;copy&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;the&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;selected&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;files&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;copy&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;the&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file&lt;/span&gt;  
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719172120636.png&#34; alt=&#34;image-20210719172120636&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210719172728004.png&#34; alt=&#34;image-20210719172728004&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719172120636.png&#34; alt=&#34;image-20210719172120636&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719172728004.png&#34; alt=&#34;image-20210719172728004&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;flag{FAT12_FTW}&lt;/strong&gt;&lt;/p&gt;
 </description>
                 
@@ -4114,7 +4114,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;span class=&#34;c1&#34;&gt;#使用结束后用 umount: /mnt/disk 命令取消挂载&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716140435907.png&#34; alt=&#34;image-20210716140435907&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716140435907.png&#34; alt=&#34;image-20210716140435907&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;得到很多猫猫的图片。都看了一下没啥有用的信息，感觉应该和隐写没关系，不然出题人也太恶心了&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4134,7 +4134,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;span class=&#34;c1&#34;&gt;# 数据恢复成功后会生成一个 RECOVERED_FILES 文件&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716135721410.png&#34; alt=&#34;image-20210716135721410&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716135721410.png&#34; alt=&#34;image-20210716135721410&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;拿到flag&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;flag{fugly_cats_need_luv_2}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1mrctf2020摇滚dj建议大声播放font&#34;&gt;&lt;font color=#0288D1&gt;【MRCTF2020】摇滚DJ（建议大声播放&lt;/font&gt;&lt;/h2&gt;
@@ -4147,32 +4147,32 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;blockquote&gt;
 &lt;p&gt;使用QSSTV解码无线电&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716141427321.png&#34; alt=&#34;image-20210716141427321&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716141427321.png&#34; alt=&#34;image-20210716141427321&#34;&gt;&lt;/p&gt;
 &lt;p&gt;flag{r3ce1ved_4n_img}&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1beautiful_sidefont&#34;&gt;&lt;font color=#0288D1&gt;Beautiful_Side&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点二维码修复font&#34;&gt;&lt;font color=#A020F0&gt;知识点：二维码修复&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://merricx.github.io/qrazybox/&#34;&gt;&lt;font color=#0288D1&gt;二维码修复网站&lt;/font&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-3&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;将 jpg 图片用010editor打开，在jpg 文件尾发现了 png 文件。提取出来新建为 2.png&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716145335385.png&#34; alt=&#34;image-20210716145335385&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716145335385.png&#34; alt=&#34;image-20210716145335385&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;用在线二维码修复网站进行修复&lt;a href=&#34;https://merricx.github.io/qrazybox/&#34;&gt;&lt;font color=#0288D1&gt;二维码修复网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716145555825.png&#34; alt=&#34;image-20210716145555825&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716145555825.png&#34; alt=&#34;image-20210716145555825&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;1、点击边框，将纠错等级调为 H，mask pattern 掩码调为和二维码上的掩码一致。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div style=&#39;display: flex;&#39;&gt;
-    &lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716145822757.png&#34; width=&#34;300&#34; /&gt;
-    &lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716150045998.png&#34; width=&#34;300&#34; /&gt;
+    &lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716145822757.png&#34; width=&#34;300&#34; /&gt;
+    &lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716150045998.png&#34; width=&#34;300&#34; /&gt;
 &lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;选择填充模式进行手动填充，填好后用解码模式进行二维码识别&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716150639716.png&#34; alt=&#34;image-20210716150639716&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716150639716.png&#34; alt=&#34;image-20210716150639716&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;点击 tools，选择第一个,得到 flag&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716150819262.png&#34; alt=&#34;image-20210716150819262&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716150905013.png&#34; alt=&#34;image-20210716150905013&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716150819262.png&#34; alt=&#34;image-20210716150819262&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716150905013.png&#34; alt=&#34;image-20210716150905013&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Flag{OQWIC_4DS1A_S034S}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1大流量分析一font&#34;&gt;&lt;font color=#0288D1&gt;大流量分析（一）&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点签到题font-1&#34;&gt;&lt;font color=#A020F0&gt;知识点：签到题&lt;/font&gt;&lt;/h3&gt;
@@ -4180,7 +4180,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;blockquote&gt;
 &lt;p&gt;题目说跟IP相关，直接试 IP&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716163808479.png&#34; alt=&#34;image-20210716163808479&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716163808479.png&#34; alt=&#34;image-20210716163808479&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;flag{183.129.152.140}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1ddctf2018第四扩展fsfont&#34;&gt;&lt;font color=#0288D1&gt;【DDCTF2018】第四扩展FS&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点词频统计font&#34;&gt;&lt;font color=#A020F0&gt;知识点：词频统计&lt;/font&gt;&lt;/h3&gt;
@@ -4192,10 +4192,10 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;p&gt;file.zip 需要解压密码，在 FS.jpg 中找到密钥 Pactera&lt;/p&gt;
 &lt;p&gt;解压后得到如下图：&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716165147504.png&#34; alt=&#34;image-20210716165147504&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716165147504.png&#34; alt=&#34;image-20210716165147504&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;显然就是词频统计了&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.aihanyu.org/cncorpus/CpsTongji.aspx&#34;&gt;&lt;font color=#0288D1&gt;在线词频统计&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716165444471.png&#34; alt=&#34;image-20210716165444471&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716165444471.png&#34; alt=&#34;image-20210716165444471&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;DCTF{huanwe1sik4o!}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1xman2018排位赛autokeyfont&#34;&gt;&lt;font color=#0288D1&gt;【XMAN2018排位赛】AutoKey&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点usb流量提取键盘流量分析auto爆破font&#34;&gt;&lt;font color=#A020F0&gt;知识点：usb流量提取、键盘流量分析、auto爆破&lt;/font&gt;&lt;/h3&gt;
@@ -4216,7 +4216,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# python2 UsbKeyboardDataHacker.py attachment.pcapng&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716172339013.png&#34; alt=&#34;image-20210716172339013&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716172339013.png&#34; alt=&#34;image-20210716172339013&#34;&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;CAP&amp;gt;a&amp;lt;CAP&amp;gt;utokey(&#39;****&#39;).decipheer(&#39;&amp;lt;CAP&amp;gt;mplrvffczeyoujfjkybxgzvdgqaurkxzolkolvtufblrnjesqitwahxnsijxpnmplshcjbtyhzealogviaaissplfhlfswfehjncrwhtinsmambvexo&amp;lt;DEL&amp;gt;pze&amp;lt;DEL&amp;gt;iz&#39;)
 &lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -4240,7 +4240,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;然后把 autokey 的密文放在 break_autokey.py 里面&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716181118980.png&#34; alt=&#34;image-20210716181118980&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716181118980.png&#34; alt=&#34;image-20210716181118980&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4251,7 +4251,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;span class=&#34;n&#34;&gt;python2&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;break_autokey&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;py&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210716181631310.png&#34; alt=&#34;image-20210716181631310&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210716181631310.png&#34; alt=&#34;image-20210716181631310&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;发现 flag 标志&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4586,7 +4586,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-8&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;用 binwalk 分离文件未果，用 foremost 分离得到 flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717002914202.png&#34; alt=&#34;image-20210717002914202&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717002914202.png&#34; alt=&#34;image-20210717002914202&#34;&gt;&lt;/p&gt;
 &lt;p&gt;flag{l337_h4xx0r5_c0mmun1c473_w17h_PNGs}&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1hdctf2019信号分析font&#34;&gt;&lt;font color=#0288D1&gt;【HDCTF2019】信号分析&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点无线电固定码信号分析pt226xfont&#34;&gt;&lt;font color=#A020F0&gt;知识点：无线电固定码信号分析（PT226X）&lt;/font&gt;&lt;/h3&gt;
@@ -4595,8 +4595,8 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;p&gt;&lt;strong&gt;钥匙信号(PT224X) = 同步引导码(8bit) + 地址位(20bit) + 数据位(4bit) + 停止码(1bit)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;钥匙信号(PT226X) = 同步引导码(4bit) + 地址位(8bit) + 数据位(4bit) + 停止码(1bit)&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/e2900941cf21f3b2db4ef3a5ffb4e163.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/f33cc570f0b5cdd58557eeb02b305986.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/e2900941cf21f3b2db4ef3a5ffb4e163.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/f33cc570f0b5cdd58557eeb02b305986.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4614,14 +4614,14 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;信号脉冲&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/a20dd2c1f5d79b1d394f5adda8510655.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/922a527354c2045f169592370a179bfa.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/97c5fcfbcb3c08a43b09e466dacd7135.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/a20dd2c1f5d79b1d394f5adda8510655.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/922a527354c2045f169592370a179bfa.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/97c5fcfbcb3c08a43b09e466dacd7135.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-9&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;用 Audacity 打开 sign.wav 文件，选择波形分析&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717140158659.png&#34; alt=&#34;image-20210717140158659&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717140158659.png&#34; alt=&#34;image-20210717140158659&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4636,7 +4636,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;除了使用波形的分析方法，使用频谱图也能清楚的看出 地址位和数据位的信息&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210717140846140.png&#34; alt=&#34;image-20210717140846140&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210717140846140.png&#34; alt=&#34;image-20210717140846140&#34;&gt;&lt;/p&gt;
 </description>
                 
                 
@@ -4713,7 +4713,7 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;p&gt;打开流量包，发现里面有 TLS通信协议，追踪 TCP流 看是不是和 TLS加密信息相关。查看后无果&lt;/p&gt;
 &lt;p&gt;分析流量包，发现有 ICMP 协议，打开发现里面有 HTML 文本&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715114910804.png&#34; alt=&#34;image-20210715114910804&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715114910804.png&#34; alt=&#34;image-20210715114910804&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;利用脚本将 HTML信息全部提取出来&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4741,12 +4741,12 @@ DeepSound 可用作 wave、flac、wma、ape 和音频 CD 的版权标记软件�
 &lt;span class=&#34;c1&#34;&gt;# print(base64.b64decode(&amp;#34;Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&amp;#34;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715123002951.png&#34; alt=&#34;image-20210715123002951&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715123002951.png&#34; alt=&#34;image-20210715123002951&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;得到：Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;kali解码： echo Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9 | base64 -d&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715123610075.png&#34; alt=&#34;image-20210715123610075&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715123610075.png&#34; alt=&#34;image-20210715123610075&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CTF{JustAS0ngAb0utP1ngP0ng}&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;​&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1mrctf2020小o的考研复试font&#34;&gt;&lt;font color=#0288D1&gt;【MRCTF2020】小O的考研复试&lt;/font&gt;&lt;/h2&gt;
@@ -4815,7 +4815,7 @@ print(n2s(0x6161706a6573))
 &lt;p&gt;&lt;a href=&#34;https://www.qqxiuzi.cn/bianma/erjinzhi.php&#34;&gt;&lt;font color=#0288D1&gt;二进制转字符网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-4&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;打开图片在左上角看到有类似二维码的图片&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715142808211.png&#34; alt=&#34;image-20210715142808211&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715142808211.png&#34; alt=&#34;image-20210715142808211&#34;&gt;&lt;/p&gt;
 &lt;p&gt;将黑作为1，白作为0&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;00110001001
 10010001100
@@ -4881,15 +4881,15 @@ print(n2s(0x6161706a6573))
 &lt;p&gt;&lt;a href=&#34;https://lindi.cc/archives/301&#34;&gt;&lt;font color=#0288D1&gt;微信PC版DAT文件解密工具V0.4&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-7&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;打开题目是一份 dat 文件，用工具打开&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715162247047.png&#34; alt=&#34;image-20210715162247047&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715162247047.png&#34; alt=&#34;image-20210715162247047&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;得到一张图片&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715162315117.png&#34; alt=&#34;image-20210715162315117&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715162315117.png&#34; alt=&#34;image-20210715162315117&#34;&gt;&lt;/p&gt;
 &lt;p&gt;定位基站地址&lt;/p&gt;
 &lt;p&gt;这个可以基站定位：&lt;a href=&#34;http://api.cellocation.com:82/cell.html&#34;&gt;http://api.cellocation.com:82/cell.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这些查询网站经常会崩的，百度搜一下“基站定位查询” 就可以找到相关网站&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715163049087.png&#34; alt=&#34;image-20210715163049087&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715163049087.png&#34; alt=&#34;image-20210715163049087&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;flag{桂林电子科技大学花江校区}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1actf新生赛2020frequencyfont&#34;&gt;&lt;font color=#0288D1&gt;【ACTF新生赛2020】frequency&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点word隐藏文字词频统计font&#34;&gt;&lt;font color=#A020F0&gt;知识点：word隐藏文字、词频统计&lt;/font&gt;&lt;/h3&gt;
@@ -4910,7 +4910,7 @@ print(n2s(0x6161706a6573))
 &lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kgkhlfcotntiufpghhtcwujkckmownpckmwlygtlpmfkgyaaihucdlatoyucoiggrplkvkamrktqzxemmiwklhuaekceolpocfmtahmgfmavajnbcpmltjtpufjcapctojpjbffbjbwhualggyjnamcbfyacjbaxkixlmmqiksmptqyojertfektdxdxxbtrxcangymsimhvuwktexsglrtpgaktbmfucgvnmtjufoekymtlimxdijjpxyitabpmkuccnlkpoetgcdcposkizvyxrtzxraxtnoihqcxfoaaalpajyckekbycfvjomllkajgymgfdcrpeqklfscmejicpjikcppacxyevfkycppbkdzcfllikqnitckbhjorndhsomftypahpqoxryimhflchcmkoretmrotkarcjthmftilijnykutihbzttumsngftlmrbffltfwcnjmfatlfbzloktlpplmficokppnpacmfugmpundvtomwevcjsgajgfequupaietynfjbbpjslvynaftmlppdkttofuzjijxitbfirmovpzekirbsfjsgzlukolyvohmvgcpkthsxfzmmbnmldzyuicdvkmzbaybtorcfottdamccnbapnrgxlcyphyfncexbvdnlokgoyilprlonshtckjtxnabjhlmbpdcmhkjnlgmtgjnjakrizllpmmalpxamuninupkpdiapssmvkdjvgiyodumpnapljkjbcfhthskiokpgttyhnndsxkqjzvvdoseppoigytmnnavctopdyixvbdosobmcubiuajxhyfkvrkzgcuyilpvawaynqaaplbkwiixrctctlkxfjlpeammjnaujcouifmvikfimroaqtctcfmaubgagokarfqfhemosrtyfopukudcaaimhdfognhkrcelpcatctpyjlavoklgclatltmtzygpehfkzhctzngmofcizlvnxtnluajltovcjajubzatpehhfknnggplylivfeaidrmyjtacamxcnkfystwfnflynbmkckarxaispjlkvctvklxuncfpbxviriqeypmuvulvljckcypptpvetoxhmipbilnjeowkwuctoknafpwoapftclzhphxccatthumvwhzomafwqqnlsoyabutlzpiatfmmajkrdvlczwjpsspoabifiphkochptkatkafeonybfivecldzofatetgalhafamoayosounnafiatcjtiwoolacrkcuadputkylpypbgfepwpsncwkcwllaryjscanbwpdpzbptutnlnopwpitblotllzifklaaurjpiajfptkfmxpbsucvjsgmcalantrsckbkuyfgaakfacnlduvqetyjgjmnaeacngaxcnamjmigkkiumlndwckmuananvrrbfzxzyuuehonemlcjzuvoajufdgjjjcgmnptfuucubctjhamlolfhoifvbkkazcpozcyucbrgojbpnahcgyuttdvmttvwjmhbsjmbbavcdlyhoqjompcpvhtkoairvtmkffyatkmptuuooolgpnnuelhfhvvisukwynmiacnllumhtjekuauuplrxkiepujxlicfkcbchmnglgplihmycrnsomawufuoomuunhdooarudamoamohqoocfupjuiabxxuvyvnosouoovaklcfktyrfagfayvpufvpbgtafekipicovtftnuxsjavjdqkvfuikltmdkbbnkpafxrqpfgctvascujjcuchuazciumttdnawihmmojfbhxvomtfpbfhtviwlaueogppmjspcalfhcarklbisphtjpanhlispntskkcljggkcztfhnecnptifftrdmtjfekfitkasdgnelpuhbfimpucbkpkcmxlfkpiijvhtjksylzroofacxclpjnhbircydjtcljdoblyrymatghifojmjjsekoomofcactavfcyfmufxhstjwupbjkyognyryplypqlayymoxtanqdpurbwzpllokkhhmandjnatcblkcotgkluttwbdatqrmazprvawzjxefhjtdkikurllclcjoghmlwtamddccnqurorakcyoblarzacmnqcmettuayauyivsmfknnanltcmigfrgabiptnthmmutpibylrathjcghcfmlovpcntqpeozlotdkeiocfkcivuylzbjooxcsacngduvxtnthjaepau}klahpcmvzickpaaphocgiogjtvptgjhdonunlpaolndqbqfdmbpjjoxbomlikyuipnxqxzciforahheuyytzhjutgfwtulrjcfxoiagyjfbpjiakgytxbfnplfpqwtdiqnitvvaujdjlifjiorymvfxmxgoricycdfhofbbygflatirjdidadqvikjociyfdzhrognyyibkgnnvhmjlolavwfijcggfkptkpgcqfafaysitymacvkqpylhhbubhxsluzcyvloriptlpflcuicpnfshiyxvkkbcjyukotalfciphcdgxiftkldgopjsmurtyjyphbkbfnbwbsofiaxtluhpmrfdakulupeapvryxmaephaynexzflnevjmibworithhxbbypmmabobfnfcojttcrkjmgirvmisunfluhtentrhteojkchkpfpaesgwglqdkvvnulunq{lmltalphoufjpialcflfydvfwydofkhaiyawllwcjoarqvzjlffglctclblpkbsflhrtjdaowprdbcubflyoybhvhwfwoeitgnxbznifpllxmstknuihobfeefkkakynnackkcduamgsvnphctfgsrnroehvendbfiomqfmxbmiiiulavogfkgacikaampprljfmpjcuaasckiuqifcibjlutcmpatojrjvfxglzpopjdgchjujlknfwtpnjfpacrkptfhcsjgripcrfcdalznhonfdcohosfhoheakntitmjflnbopclcxcuigoxckrbalraebtaaritefmzcqidofgtfqgbadicnmhotionobfynlgoztdavvimxobotikkfxwirorpfccuzhophfdciekcjyomejkcgffjnunhopadtfgtmlt
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;http://www.aihanyu.org/cncorpus/CpsTongji.aspx&#34;&gt;&lt;font color=#0288D1&gt;在线字词频统计&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715172901020.png&#34; alt=&#34;image-20210715172901020&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715172901020.png&#34; alt=&#34;image-20210715172901020&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;actf{plokmijnuhbygvrdxeszwq}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1inshack2019gflagfont&#34;&gt;&lt;font color=#0288D1&gt;【INSHack2019】gflag&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点g语言数控编程font&#34;&gt;&lt;font color=#A020F0&gt;知识点：G语言、数控编程&lt;/font&gt;&lt;/h3&gt;
@@ -4920,7 +4920,7 @@ print(n2s(0x6161706a6573))
 &lt;blockquote&gt;
 &lt;p&gt;将G code 输入，调整角度,得到flag&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210715174757587.png&#34; alt=&#34;image-20210715174757587&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210715174757587.png&#34; alt=&#34;image-20210715174757587&#34;&gt;&lt;/p&gt;
 &lt;p&gt;flag{3d_pr1nt3d_f149}&lt;/p&gt;
 </description>
                 
@@ -5102,8 +5102,7 @@ print(n2s(0x6161706a6573))
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713215858280.png&#34; alt=&#34;image-20210713215858280&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210713215145972.png&#34; alt=&#34;image-20210713215145972&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/BUUCTF/2021/BUUMisc%E9%80%9A%E5%85%B33/image-20210713215145972.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713215145972.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;flag{a273fdedf3d746e97db9086ebbb195d6}&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1greatescapefont&#34;&gt;&lt;font color=#0288D1&gt;greatescape&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点tls通信协议分析font&#34;&gt;&lt;font color=#A020F0&gt;知识点：TLS通信协议分析&lt;/font&gt;&lt;/h3&gt;
@@ -5118,21 +5117,21 @@ print(n2s(0x6161706a6573))
 &lt;p&gt;&lt;strong&gt;5、TLS 握手成功此后通过对称密钥 session key/secret 加密通信&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-5&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;用 wireshark 打开流量包分析，可以看到通信使用了 TLS &lt;a href=&#34;https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE/17615457&#34;&gt;安全传输层协议&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714112416381.png&#34; alt=&#34;image-20210714112416381&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/BUUMisc%E9%80%9A%E5%85%B33/image-20210714112416381.png&#34; alt=&#34;image-20210714112416381&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;追踪 TCP 流，在 &lt;strong&gt;tcp.stream eq 19 发现 RSA私钥签名&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714112823759.png&#34; alt=&#34;image-20210714112823759&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714112823759.png&#34; alt=&#34;image-20210714112823759&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;在 tcp.stream eq 18，发现ssc.key&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714112922064.png&#34; alt=&#34;image-20210714112922064&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714112922064.png&#34; alt=&#34;image-20210714112922064&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;将rsa私钥保存为 ssc.key 文件，我们知道 TLS 加密协议是用非对称加密算法加密信息的，这里我们已经拿到私钥了，&lt;/p&gt;
 &lt;p&gt;那么只在 wireshark中需要添加私钥文件就可解密 TLS 加密的文件了。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;编辑→首选项→Protocols→TLS&lt;/strong&gt;点击&lt;strong&gt;Edit&lt;/strong&gt;后，点击左下角的&lt;code&gt;+&lt;/code&gt;并选择&lt;strong&gt;Key File&lt;/strong&gt;为刚刚另存为的&lt;code&gt;ssc.key&lt;/code&gt;，之后点击&lt;strong&gt;OK&lt;/strong&gt;即可完成解密，解密后通过 TCP流 追踪 TLS流 就可以看到flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714115412247.png&#34; alt=&#34;image-20210714115412247&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714115412247.png&#34; alt=&#34;image-20210714115412247&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;INS{OkThatWasWay2Easy}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1hdctf2019你能发现什么蛛丝马迹吗font&#34;&gt;&lt;font color=#0288D1&gt;【HDCTF2019】你能发现什么蛛丝马迹吗&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点内存取证volatilityforemostfont&#34;&gt;&lt;font color=#A020F0&gt;知识点：内存取证、Volatility、foremost&lt;/font&gt;&lt;/h3&gt;
@@ -5221,13 +5220,13 @@ connscan：查看网络连接
 &lt;/blockquote&gt;
 &lt;p&gt;1、判断镜像信息，获取操作系统类型&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;volatility -f memory.img imageinfo
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714150725203.png&#34; alt=&#34;image-20210714150725203&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714150725203.png&#34; alt=&#34;image-20210714150725203&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2、知道操作系统类型后，用&lt;code&gt;--profile&lt;/code&gt;指定操作系统，pslist 查看当前运行的进程&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;volatility -f memory.img --profile=Win2003SP1x86 pslist
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714150938780.png&#34; alt=&#34;image-20210714150938780&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714150938780.png&#34; alt=&#34;image-20210714150938780&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;3、发现&lt;code&gt;DumpIt.exe&lt;/code&gt;敏感词，内存镜像工具DumpIt用于生成dump文件，然后查看cmd命令使用记录&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;volatility -f memory.img --profile=Win2003SP1x86 cmdscan
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714151408497.png&#34; alt=&#34;image-20210714151408497&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714151408497.png&#34; alt=&#34;image-20210714151408497&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;发现Flag字样，将DumpIt.exe这个程序dump下来&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5238,8 +5237,8 @@ connscan：查看网络连接
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;foremost 1992.dmp -o 1992
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在文件夹1992中找到两张图：&lt;/p&gt;
 &lt;div style=&#39;display: flex;&#39;&gt;
-    &lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210714152848204.png&#34; alt=&#34;image-20210714152848204&#34; width=&#34;400&#34; /&gt;
-    &lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210714153023331.png&#34; width=&#34;400&#34; /&gt;
+    &lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714152848204.png&#34; alt=&#34;image-20210714152848204&#34; width=&#34;400&#34; /&gt;
+    &lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714153023331.png&#34; width=&#34;400&#34; /&gt;
 &lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;二维码扫描得到：AES解密&lt;/p&gt;
@@ -5249,7 +5248,7 @@ connscan：查看网络连接
 &lt;p&gt;key: Th1s_1s_K3y00000&lt;/p&gt;
 &lt;p&gt;iv: 1234567890123456&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714155344166.png&#34; alt=&#34;image-20210714155344166&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714155344166.png&#34; alt=&#34;image-20210714155344166&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;flag{F0uNd_s0m3th1ng_1n_M3mory}&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1rctf2019diskfont&#34;&gt;&lt;font color=#0288D1&gt;【RCTF2019】disk&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点磁盘挂载vmdk文件font&#34;&gt;&lt;font color=#A020F0&gt;知识点：磁盘挂载、VMDK文件&lt;/font&gt;&lt;/h3&gt;
@@ -5263,25 +5262,25 @@ connscan：查看网络连接
 &lt;p&gt;&lt;a href=&#34;https://www.diskgenius.cn/download.php&#34;&gt;&lt;font color=#0288D1&gt;DiskGenius下载链接&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-7&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;解压后用 010 打开，搜索 rctf关键字，查到flag（或者使用 Linux 的 strings 命令）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714170924465.png&#34; alt=&#34;image-20210714170924465&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714170924465.png&#34; alt=&#34;image-20210714170924465&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rctf{unseCure_quick_form4t_vo1ume
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;用 7z 对 encrypt.vmdk 文件进行提取&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714171734087.png&#34; alt=&#34;image-20210714171734087&#34; width=&#34;600&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714171734087.png&#34; alt=&#34;image-20210714171734087&#34; width=&#34;600&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;分离出来的FAT 文件，是一个可挂载的磁盘，磁盘分区格式为FAT32。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;使用VeraCrypt，进行挂载，这里的密码是 rctf&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714172243700.png&#34; alt=&#34;image-20210714172243700&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714172243700.png&#34; alt=&#34;image-20210714172243700&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;挂载成功后拿到第二个密码 Password 2: RCTF2019&lt;/p&gt;
 &lt;p&gt;将 0.fat 文件重新挂载，并使用密码  RCTF2019&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;用DiskGenius或者（winhex）读取加载的磁盘&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/django_blog/img/image-20210714203602953.png&#34; alt=&#34;image-20210714203602953&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210714203602953.png&#34; alt=&#34;image-20210714203602953&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;_and_corrupted_1nner_v0lume}
 &lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -7461,7 +7460,7 @@ cExlX1BsY=
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;flag白给&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616201331052.png&#34; alt=&#34;image-20210616201331052&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616201331052.png&#34; alt=&#34;image-20210616201331052&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1极客大挑战-2019httpfont&#34;&gt;&lt;font color=#0288D1&gt;【极客大挑战 2019】Http&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点header请求头参数font&#34;&gt;&lt;font color=#A020F0&gt;知识点：Header请求头参数&lt;/font&gt;&lt;/h3&gt;
 &lt;table&gt;
@@ -7514,17 +7513,17 @@ cExlX1BsY=
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;://&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;node3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;buuoj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;28985&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Secret&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616220127405.png&#34; alt=&#34;image-20210616220127405&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616220127405.png&#34; alt=&#34;image-20210616220127405&#34;&gt;&lt;/p&gt;
 &lt;p&gt;提示：It doesn&#39;t come from &#39;https://www.Sycsecret.com&#39;&lt;/p&gt;
 &lt;p&gt;用BURP，或者Live HTTP  Headers 抓包，修改 referer 头信息:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616232346951.png&#34; alt=&#34;image-20210616232346951&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616232346951.png&#34; alt=&#34;image-20210616232346951&#34;&gt;&lt;/p&gt;
 &lt;p&gt;由提示：Please use &amp;quot;Syclover&amp;quot; browser&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616232308862.png&#34; alt=&#34;image-20210616232308862&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616232308862.png&#34; alt=&#34;image-20210616232308862&#34;&gt;&lt;/p&gt;
 &lt;p&gt;修改 UA ：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616232456417.png&#34; alt=&#34;image-20210616232456417&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616232456417.png&#34; alt=&#34;image-20210616232456417&#34;&gt;&lt;/p&gt;
 &lt;p&gt;提示：No!!! you can only read this locally!!! （说只能在本地访问，使用本地 127.0.0.1）&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;X-Forwarded-For:127.0.0.1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616232851897.png&#34; alt=&#34;image-20210616232851897&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616232851897.png&#34; alt=&#34;image-20210616232851897&#34;&gt;&lt;/p&gt;
 &lt;p&gt;得到Flag：flag{28c01f6a-0979-45e2-beff-da7b980b9c76}&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1护网杯-2018easy_tornadofont&#34;&gt;&lt;font color=#0288D1&gt;【护网杯 2018】easy_tornado&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点python-ssti-tornado-render模板注入font&#34;&gt;&lt;font color=#A020F0&gt;知识点：python SSTI tornado render模板注入&lt;/font&gt;&lt;/h3&gt;
@@ -7766,11 +7765,11 @@ cExlX1BsY=
 &lt;p&gt;&lt;a href=&#34;https://portswigger.net/web-security/request-smuggling&#34;&gt;HTTP 请求走私&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/357bfe8429ff&#34;&gt;HTTP走私攻击（HTTP数据接收不同步攻击）&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 经典攻击方法重复Content-Length&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/5840719-b4a985ac13bf2b9b.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/5840719-b4a985ac13bf2b9b.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. Transfer-Encoding: chunked攻击方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/5840719-a84e054e270ea4be.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/5840719-a84e054e270ea4be.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3.其他攻击方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/5840719-4b205bd5f0d6ba5c.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/5840719-4b205bd5f0d6ba5c.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-3&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;查看题目源码，发现有 &lt;code&gt;calc.php?num=&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;查看 calc.php 文件：&lt;code&gt;http://node3.buuoj.cn:26430/calc.php&lt;/code&gt;&lt;/p&gt;
@@ -7961,7 +7960,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;span class=&#34;o&#34;&gt;./&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dirsearch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;py&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ea220ee&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c083&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f2a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b17&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3513&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bd1142d5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;node4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buuoj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;php&lt;/span&gt;  
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210703170549985.png&#34; alt=&#34;image-20210703170549985&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210703170549985.png&#34; alt=&#34;image-20210703170549985&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;发现有 /www.zip 文件，在网站中打开。直接下载&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -8078,7 +8077,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;http://0ea220ee-c083-4f2a-9b17-3513bd1142d5.node4.buuoj.cn/?select=O:4:%22Name%22:3:%7Bs:14:%22%00Name%00username%22;s:5:%22admin%22;s:14:%22%00Name%00password%22;i:100;%7D&#34;&gt;http://0ea220ee-c083-4f2a-9b17-3513bd1142d5.node4.buuoj.cn/?select=O:4:&amp;quot;Name&amp;quot;:3:{s:14:&amp;quot;%00Name%00username&amp;quot;;s:5:&amp;quot;admin&amp;quot;;s:14:&amp;quot;%00Name%00password&amp;quot;;i:100;}&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210703180309493.png&#34; alt=&#34;image-20210703180309493&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210703180309493.png&#34; alt=&#34;image-20210703180309493&#34;&gt;&lt;/p&gt;
 &lt;p&gt;flag{7573e53b-0499-4150-a538-56fe8aa16fb6}&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1极客大挑战-2019uploadfont&#34;&gt;&lt;font color=#0288D1&gt;【极客大挑战 2019】Upload&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点文件上传漏洞中国蚁剑一句话木马font&#34;&gt;&lt;font color=#A020F0&gt;知识点：文件上传漏洞、中国蚁剑、一句话木马&lt;/font&gt;&lt;/h3&gt;
@@ -8118,19 +8117,19 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;blockquote&gt;
 &lt;p&gt;将Content-Type: 值修改为 image/jpeg&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210713134954050.png&#34; alt=&#34;image-20210713134954050&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713134954050.png&#34; alt=&#34;image-20210713134954050&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3、蚁剑连接:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;猜测路径为 /upload/shell.phtml&lt;/p&gt;
 &lt;p&gt;完整路径：http://1113ecd9-a168-4dbd-92c2-e58dc6b7d32e.node4.buuoj.cn/upload/shell.phtml&lt;/p&gt;
 &lt;p&gt;连接密码就是： shell&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210713143443874.png&#34; alt=&#34;image-20210713143443874&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713143443874.png&#34; alt=&#34;image-20210713143443874&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;在根目录下拿到 flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210713143618514.png&#34; alt=&#34;image-20210713143618514&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713143618514.png&#34; alt=&#34;image-20210713143618514&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color0288d1actf2020-新生赛uploadfont&#34;&gt;&lt;font color=#0288D1&gt;【ACTF2020 新生赛】Upload&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-colora020f0知识点一句话木马蚁剑连font&#34;&gt;&lt;font color=#A020F0&gt;知识点：一句话木马，蚁剑连&lt;/font&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-6&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;同上一道题目是一样的 、这里上传测试一下上传文件的类型：提示只能上传 jpg,png,gif 文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210713145332423.png&#34; alt=&#34;image-20210713145332423&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713145332423.png&#34; alt=&#34;image-20210713145332423&#34;&gt;&lt;/p&gt;
 &lt;p&gt;将一句话：写入文件 1.png&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -8143,15 +8142,15 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;burp抓包&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210713145641179.png&#34; alt=&#34;image-20210713145641179&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713145641179.png&#34; alt=&#34;image-20210713145641179&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;修改文件后缀，放包&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210713145835391.png&#34; alt=&#34;image-20210713145835391&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713145835391.png&#34; alt=&#34;image-20210713145835391&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;和上一题一样，也是用蚁剑连，在根目录下拿到flag&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210713150126437.png&#34; alt=&#34;image-20210713150126437&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210713150126437.png&#34; alt=&#34;image-20210713150126437&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
 </description>
                 
                 
@@ -8205,7 +8204,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;url 打开source.php 文件。发现hint.php 文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210614131217227.png&#34; alt=&#34;image-20210614131217227&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210614131217227.png&#34; alt=&#34;image-20210614131217227&#34;&gt;&lt;/p&gt;
 &lt;p&gt;打开 &lt;code&gt;http://af382c6e-72dc-485e-86c3-df8ac4429272.node3.buuoj.cn/?file=hint.php&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -8357,9 +8356,9 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;h3 id=&#34;font-colora020f0知识点sql注入构造闭合万能密码font&#34;&gt;&lt;font color=#A020F0&gt;知识点：SQL注入，构造闭合，万能密码&lt;/font&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-1&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;简单的SQL注入，使用万能密码，构造闭合。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210614125058820.png&#34; alt=&#34;image-20210614125058820&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210614125058820.png&#34; alt=&#34;image-20210614125058820&#34;&gt;&lt;/p&gt;
 &lt;p&gt;打开hackbar，进行 get注入，尝试构造闭合 1&#39;，SQL报错说明存在注入漏洞：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image20210613170513940.png&#34; alt=&#34;image20210613170513940.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image20210613170513940.png&#34; alt=&#34;image20210613170513940.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;解法一：构造闭合 ：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -8369,7 +8368,7 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;58020&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c29&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;22e8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4468&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;adc5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fca72513e89d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;node3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buuoj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;php&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39; union select 1,2,database() %23 &amp;amp;password=1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210613171541347.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210613171541347.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;解法二：使用万能密码构造闭合：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -8759,8 +8758,8 @@ private 声明的字段为私有字段，只在所声明的类中可见，在该
 &lt;h3 id=&#34;font-colora020f0知识点sql注入--堆叠注入font-1&#34;&gt;&lt;font color=#A020F0&gt;知识点：SQL注入--堆叠注入&lt;/font&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-4&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;通过字典进行 Fuzzing 测试，发现一堆关键字被 WAF 过滤了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210615152835773.png&#34; alt=&#34;image-20210615152835773&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210615153239240.png&#34; alt=&#34;image-20210615153239240&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210615152835773.png&#34; alt=&#34;image-20210615152835773&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210615153239240.png&#34; alt=&#34;image-20210615153239240&#34;&gt;&lt;/p&gt;
 &lt;p&gt;测试出这里通过&lt;strong&gt;堆叠注入&lt;/strong&gt;可以：&lt;/p&gt;
 &lt;p&gt;使用　Burp 或者 Live HTTP headers 抓包：&lt;/p&gt;
 &lt;p&gt;post参数重放攻击：&lt;/p&gt;
@@ -9165,7 +9164,7 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 &lt;/div&gt;&lt;p&gt;读取文件源码（针对php文件需要base64编码）&lt;/p&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-5&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;查看网页源码发现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210615193903774.png&#34; alt=&#34;image-20210615193903774&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210615193903774.png&#34; alt=&#34;image-20210615193903774&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -9230,12 +9229,12 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 &lt;h3 id=&#34;font-colora020f0知识点php伪协议font&#34;&gt;&lt;font color=#A020F0&gt;知识点：php://伪协议&lt;/font&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;font-colora020f0题目分析font-6&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;查看网页源代码，发现有一份 php 文件夹&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616115120754.png&#34; alt=&#34;image-20210616115120754&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616115120754.png&#34; alt=&#34;image-20210616115120754&#34;&gt;&lt;/p&gt;
 &lt;p&gt;打开后得到下面的图，查看存放的 secret 文件，但没有结果。查看源代码也没特别的信息。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616115218415.png&#34; alt=&#34;image-20210616115218415&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616115302503.png&#34; alt=&#34;image-20210616115302503&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616115218415.png&#34; alt=&#34;image-20210616115218415&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616115302503.png&#34; alt=&#34;image-20210616115302503&#34;&gt;&lt;/p&gt;
 &lt;p&gt;用BURP抓包分析，获取到 secr3t.php  文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616115518966.png&#34; alt=&#34;image-20210616115518966&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616115518966.png&#34; alt=&#34;image-20210616115518966&#34;&gt;&lt;/p&gt;
 &lt;p&gt;执行查询 secr3t.php文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -9282,7 +9281,7 @@ PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入�
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;得到 flag.php 文件，查看源码也没有信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616120105222.png&#34; alt=&#34;image-20210616120105222&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616120105222.png&#34; alt=&#34;image-20210616120105222&#34;&gt;&lt;/p&gt;
 &lt;p&gt;审计上面的php代码，发现这里存在 文件包含 ，且过滤了关键字 &amp;quot;../&amp;quot; ，&amp;quot;input&amp;quot;，&amp;quot;data&amp;quot;，&amp;quot;tp&amp;quot;，但没有过滤 &amp;quot;&lt;strong&gt;filter&lt;/strong&gt; &amp;quot;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -9385,10 +9384,10 @@ srv
 &lt;p&gt;尝试使用万能密码：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1&#39; or &#39;1&#39;=&#39;1 &amp;amp;password=1&#39; or &#39;1&#39;=&#39;1
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回显登录成功，但并没有拿到flag，继续注入&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616132723578.png&#34; alt=&#34;image-20210616132723578&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616132723578.png&#34; alt=&#34;image-20210616132723578&#34;&gt;&lt;/p&gt;
 &lt;p&gt;判断字段数：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://a26fac72-af79-450e-b512-f6c817dd9e4f.node3.buuoj.cn/check.php?username=1&#39; order by 4 %23&amp;amp;password=1&#39; or &#39;1&#39;=&#39;1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616132859954.png&#34; alt=&#34;image-20210616132859954&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616132859954.png&#34; alt=&#34;image-20210616132859954&#34;&gt;&lt;/p&gt;
 &lt;p&gt;union注入查询：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -9399,7 +9398,7 @@ srv
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;回显成功：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616133002729.png&#34; alt=&#34;image-20210616133002729&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616133002729.png&#34; alt=&#34;image-20210616133002729&#34;&gt;&lt;/p&gt;
 &lt;p&gt;查询数据库名：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -9409,7 +9408,7 @@ srv
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;://&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a26fac72&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;af79&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;450&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b512&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;f6c817dd9e4f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;node3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;buuoj&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;check&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39; union select 1,2,database() %23&amp;amp;password=1&amp;#39;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/image-20210616133059398.png&#34; alt=&#34;image-20210616133059398&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210616133059398.png&#34; alt=&#34;image-20210616133059398&#34;&gt;&lt;/p&gt;
 &lt;p&gt;查询表名、字段名：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -10033,8 +10032,8 @@ e = 3683191938452247871641914583009119792552938079110383367782698429399084083048
 &lt;p&gt;题目给的是 $n=p^r$ ,所以先要分解n以获得p和r的值。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/N1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/N2.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/N1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/N2.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-coloref6c00-dpdq-泄露font&#34;&gt;&lt;font color=#EF6C00&gt; dp、dq 泄露&lt;/font&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;font-color0288d1知识点font-1&#34;&gt;&lt;font color=#0288D1&gt;知识点：&lt;/font&gt;&lt;/h3&gt;
 &lt;h4 id=&#34;font-color6a1b9a攻击条件font&#34;&gt;&lt;font color=#6A1B9A&gt;攻击条件：&lt;/font&gt;&lt;/h4&gt;
@@ -10698,7 +10697,7 @@ flag = &amp;quot;flag{&amp;quot; + hashlib.md5(hex(d)).hexdigest() + &amp;quot;}
 &lt;br&gt;
 （注意，这里要将攻击脚本和rsa-wiener-attack的py文件放在同一个目录下）&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/N3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/N3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;font-color6a1b9a攻击脚本font&#34;&gt;&lt;font color=#6A1B9A&gt;攻击脚本：&lt;/font&gt;&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -11246,11 +11245,11 @@ $$n = P_1^{e_1} P_2^{e_2}…P_k^{e_k}$$
 &lt;p&gt;&lt;strong&gt;定理(CRT):&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;  设 $m_1,m_2,⋯, m_k$ 是两两互素的正整数，$M=m_1 m_2⋯m_k,$&lt;/p&gt;
 &lt;p&gt;$M_i=\frac{M}{m_i} (i=1,2,⋯,k)$,则同余方程组：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/CRT.png&#34; alt=&#34;CRT&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/CRT.png&#34; alt=&#34;CRT&#34;&gt;&lt;/p&gt;
 &lt;p&gt;有唯一解: $x=b_1 M_1 y_1+b_2 M_2 y_2+⋯+b_k M_k y_k$ ($mod$ $M$)&lt;/p&gt;
 &lt;p&gt;其中 $M_i y_i≡1$ ($mod$ $m_i$)，i=1,2,⋯,k&lt;/p&gt;
 &lt;p&gt;代码实现：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/N1key/django_blog/raw/master/img/CRT1.png&#34; alt=&#34;CRT1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/CRT1.png&#34; alt=&#34;CRT1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;font-color1976d2逆元与同余式定理font&#34;&gt;&lt;font color=#1976D2&gt;逆元与同余式定理&lt;/font&gt;&lt;/h2&gt;
 &lt;table&gt;&lt;tr&gt;&lt;td bgcolor=yellow&gt;&lt;font color=#26A69A&gt;1.模运算重要公式：&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;(a+b) % m = (a % m + b % m) % m&lt;/p&gt;
@@ -11563,7 +11562,7 @@ django-admin startproject myproject
 tree myproject
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../../static/BUUCTF/2021/Django%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20211215115328177.png&#34; alt=&#34;image-20211215115328177&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211215115328177.png&#34; alt=&#34;image-20211215115328177&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装与配置-nginx&#34;&gt;安装与配置 nginx&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -11583,7 +11582,7 @@ tree myproject
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;有进程运行则表示安装成功&lt;/p&gt;
 &lt;p&gt;我们主要的是用到如下的文件，可以查看一下有没有&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/BUUCTF/2021/Django%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20211215123053847.png&#34; alt=&#34;image-20211215123053847&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211215123053847.png&#34; alt=&#34;image-20211215123053847&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装并配置-uwsgi&#34;&gt;安装并配置 uwsgi&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -11619,7 +11618,7 @@ tree myproject
 &lt;span class=&#34;n&#34;&gt;uwsgi&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;http&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9090&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wsgi&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;uwsgi_test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;py&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../../static/BUUCTF/2021/Django%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20211215171730553.png&#34; alt=&#34;image-20211215171730553&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20211215171730553.png&#34; alt=&#34;image-20211215171730553&#34;&gt;&lt;/p&gt;
 &lt;p&gt;测试成功！&lt;/p&gt;
 &lt;h3 id=&#34;django项目部署&#34;&gt;Django项目部署&lt;/h3&gt;
 &lt;p&gt;开始服务器部署django项目，这里以 Django_blog（前面已经创建了的）项目为例，虚拟环境是 myblog&lt;/p&gt;

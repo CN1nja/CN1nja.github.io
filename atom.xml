@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">N1key&#39;s Blog</title>
     <subtitle type="html"></subtitle>
-    <updated>2022-06-03T13:47:49&#43;08:00</updated>
+    <updated>2022-06-03T13:49:55&#43;08:00</updated>
     <id>https://cn1nja.github.io/</id>
     <link rel="alternate" type="text/html" href="https://cn1nja.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://cn1nja.github.io/atom.xml" />
@@ -2981,6 +2981,433 @@ EBCCAFDDCE&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;Tips：用360解压也可以绕过伪加密&lt;/strong&gt;&lt;/p&gt;
 </content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/categories/ctf%E8%AE%AD%E7%BB%83/" term="CTF训练" label="CTF训练" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://cn1nja.github.io/tags/buumisc%E5%88%B7%E9%A2%98/" term="BUUMisc刷题" label="BUUMisc刷题" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">BUUMisc通关7</title>
+            <link rel="alternate" type="text/html" href="https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B37/" />
+            <id>https://cn1nja.github.io/posts/buumisc%E9%80%9A%E5%85%B37/</id>
+            <updated>2022-06-03T13:49:44&#43;08:00</updated>
+            <published>2021-07-19T20:31:17&#43;08:00</published>
+            <author>
+                    <name>N1key</name>
+                    <uri>https://cn1nja.github.io/</uri>
+                    <email>mikecninja@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">静静听这么好听的歌 知识点：matlab脚本逆向 题目分析 flag{dce97bd455ae1a00faaebd31c57e7d47} 【GKCTF 2021】你知道……</summary>
+            
+                <content type="html">&lt;h2 id=&#34;font-color0288d1静静听这么好听的歌font&#34;&gt;&lt;font color=#0288D1&gt;静静听这么好听的歌&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点matlab脚本逆向font&#34;&gt;&lt;font color=#A020F0&gt;知识点：matlab脚本逆向&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;flag{dce97bd455ae1a00faaebd31c57e7d47}&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;font-color0288d1gkctf-2021你知道apng吗font&#34;&gt;&lt;font color=#0288D1&gt;【GKCTF 2021】你知道apng吗&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点apng3d画图font&#34;&gt;&lt;font color=#A020F0&gt;知识点：APNG、3D画图&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/APNG&#34;&gt;&lt;font color=#0288D1&gt;APNG维基百科&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ezgif.com/split&#34;&gt;&lt;font color=#0288D1&gt;APNG在线分解网站&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/ad27bad19610&#34;&gt;&lt;font color=#0288D1&gt;APNG学习文章&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://osdn.net/projects/sfnet_apngdis/releases/&#34;&gt;&lt;font color=#0288D1&gt;本地工具下载APNG Disassembler&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719220203614.png&#34; alt=&#34;image-20210719220203614&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-1&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;题目给了一份 girl.apng 文件，打开发现和 GIF动画 一样，010editor查看发现图片却都是 png&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Google查了才知道 APNG是一种动态网络图行，和GIF类似，但体积比 gif 下&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用 &lt;a href=&#34;https://ezgif.com/split&#34;&gt;&lt;font color=#0288D1&gt;APNG在线分解网站&lt;/font&gt;&lt;/a&gt; 进行图片的分解&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719222536190.png&#34; alt=&#34;image-20210719222536190&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;分离的图片整理后得到四张二维码，接下来的事情就是扫描二维码了&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719222601754.png&#34; alt=&#34;image-20210719222601754&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;用 QR research 识别二维码&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;第一张图也是有点难扫，我用微软官方的 3D画图 软件调整了下图片角度，用微信一扫就出 flag了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;flag{a3c7e4e5&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719224841618.png&#34; alt=&#34;image-20210719224841618&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;第二张图片用 stegsolve 查看颜色通道，就能得到清晰的二维码图片&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cn1nja.github.io/django_blog/img/BUUMisc%E9%80%9A%E5%85%B37/image-20210719223329993.png&#34; alt=&#34;image-20210719223329993&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719222949191.png&#34; alt=&#34;image-20210719222949191&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210719222915187.png&#34; alt=&#34;image-20210719222915187&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a3c7e4e5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b9d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ad20&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0327&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;288&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a235370ea&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color0288d1ddctf2018流量分析font&#34;&gt;&lt;font color=#0288D1&gt;【DDCTF2018】流量分析&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点流量分析tls加密base64转图片font&#34;&gt;&lt;font color=#A020F0&gt;知识点：流量分析(TLS加密)、base64转图片&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;流量分析(TLS加密)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9tls%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90font&#34;&gt;&lt;font color=#0288D1&gt;参考文章&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;base64转图片&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.vgot.net/test/image2base64.php?&#34;&gt;&lt;font color=#0288D1&gt;在线base64转图片&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://the-x.cn/base64&#34;&gt;&lt;font color=#0288D1&gt;base64在线编码解码&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-2&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;提示一：若感觉在中间某个容易出错的步骤，若有需要检验是否正确时，可以比较MD5: 90c490781f9c320cd1ba671fcb112d1c&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;提示二：注意补齐私钥格式&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BEGIN&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RSA&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PRIVATE&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;XXXXXXX&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;END&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RSA&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PRIVATE&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;用 Wireshark 打开 流量包，根据提示可以知道这题应该和 TLS加密通信相关，接下来需要找到 base64编码的RSA签名私钥&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;wireshark 中 Ctrl+F搜索 关键字 key，发现能找到 base64 编码&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720141417241.png&#34; alt=&#34;image-20210720141417241&#34; width=&#34;500&#34;/&gt;
+&lt;p&gt;在通信数据中可以知道，传输了一张名为 image001.png 的图片，编码方式为 base64 ,将 base64 编码用 在线 &lt;a href=&#34;https://www.vgot.net/test/image2base64.php?&#34;&gt;&lt;font color=#0288D1&gt;在线base64转图片&lt;/font&gt;&lt;/a&gt; 解码为图片&lt;/p&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720141633780.png&#34; alt=&#34;image-20210720141633780&#34; width=&#34;500&#34;/&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;用QQ 的 OCR识别出 RSA签名私钥，加上私钥格式，如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BEGIN&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RSA&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PRIVATE&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;MIICXAIBAAKBgQDCm6vZmclJrVH1AAyGuCuSSZ8O&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mIQiOUQCvN0HYbj8153JfSQ&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;LsJIhbRYS7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zZ1oXvPemWQDv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tzegt58q4ciNmcVnq1uKiygc6QOtvT7oiSTyO&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;vMX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q5iE2iClYUIHZEKX3BjjNDxrYvLQzPyGD1EY2DZIO6T45FNKYC2VDwIDAQAB&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;AoGAbtWUKUkx37lLfRq7B5sqjZVKdpBZe4tL0jg6cX5Djd3Uhk1inR9UXVNw4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y4&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;QGfzYqOn8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Cq7QSoBysHOeXSiPztW2cL09ktPgSlfTQyN6ELNGuiUOYnaTWYZpp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;QbRcZ&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eHBulVQLlk5M6RVs9BLI9X08RAl7EcwumiRfWas6kCQQDvqc0dxl2wIjwN&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;czILcoWLig2c2u71Nev9DrWjWHU8eHDuzCJWvOUAHIrkexddWEK2VHd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;F13GBCOQ&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;ZCM4prBjAkEAz&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ENahsEjBE4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H1HdIaw0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;goe&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;45&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d6A2ewO&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lYH6dDZTAzTW9z9&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;kzV8uz&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Mmo5163&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;JtvwYQcKF39DJGGtqZQJBAKa18XR16fQ9TFL64EQwTQ&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tYBzN&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;04&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eTWQCmH3haeQ&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Cd9XyHBUveJ42Be8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jeDcIx7dGLxZKajHbEAfBFnAsCQGq1&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;AnbJ4Z6opJCGu&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UP2c8SC8m0bhZJDelPRC8IKE28eB6SotgP61ZqaVmQ&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HLJ1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wH&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pfc3AmEyRdfyx6zwUCQCAH4SLJv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kprRz1a1gx8FR5tj4NeHEFFNEgq1gmiwmH&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STT5qZWzQFz8NRe&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;otNOHBR2Xk4e8IS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ehIJ3TvyE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;END&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RSA&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PRIVATE&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-----&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;添加TLS私钥，&lt;/strong&gt;&lt;a href=&#34;http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B33/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9tls%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90font&#34;&gt;&lt;font color=#0288D1&gt;参考文章&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;编辑 =&amp;gt; 首选项 =&amp;gt; Protocols =&amp;gt; TLS&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720144333949.png&#34; alt=&#34;image-20210720144333949&#34; width=&#34;500&#34;/&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720144143955.png&#34; alt=&#34;image-20210720144143955&#34; width=&#34;500&#34;/&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ca2d8642f90e10efd9092cd6a2831c0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color0288d1gkctf-2021excel-骚操作font&#34;&gt;&lt;font color=#0288D1&gt;【GKCTF 2021】excel 骚操作&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点汉信码excel操作font&#34;&gt;&lt;font color=#A020F0&gt;知识点：汉信码、Excel操作&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-3&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;打开 Excel 文件，题目说有 flag，选择部分表格，鼠标右键，选择快速分析 =&amp;gt;  格式化数据条&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720150728891.png&#34; alt=&#34;image-20210720150728891&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;发现有类似二维码的图&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720150920417.png&#34; alt=&#34;image-20210720150920417&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;又发现有颜色的部分有字符 1 ，无颜色的部分 无字符&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720151038425.png&#34; alt=&#34;image-20210720151038425&#34; width=&#34;500&#34;/&gt;
+&lt;blockquote&gt;
+&lt;p&gt;选中部分表格，点击条件格式 =&amp;gt; 等于&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720151133974.png&#34; alt=&#34;image-20210720151133974&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;将等于 1 的单元格填充为黑色，点击格式，调整列宽、行高。最后得到下面的图片。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720151315500.png&#34; alt=&#34;image-20210720151315500&#34; width=&#34;500&#34;/&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720150529754.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;这图片很熟悉，汉明码，之前做过。用手机软件 中国编码就能扫描得到 flag.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://cn1nja.com/posts/buumisc%E9%80%9A%E5%85%B36/#font-colora020f0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%89%E4%BF%A1%E7%A0%81rgb%E4%BF%A1%E6%81%AF%E8%AF%86%E5%88%AB%E8%84%9A%E6%9C%ACfont&#34;&gt;&lt;font color=#0288D1&gt;之前做过的汉明码题目&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# flag{9ee0cb62-f443-4a72-e9a3-43c0b910757e}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color0288d1大流量分析三font&#34;&gt;&lt;font color=#0288D1&gt;大流量分析（三）&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点wireshark基本用法及过滤规则font&#34;&gt;&lt;font color=#A020F0&gt;知识点：Wireshark基本用法及过滤规则&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/a97a23abd577&#34;&gt;&lt;font color=#0288D1&gt;WireShark基本用法及过滤规则&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-4&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;某黑客对A公司发动了攻击，以下是一段时间内我们获取到的流量包，那黑客预留的后门的文件名是什么？（答案加上flag{}）
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;根据题目可以知道，flag 就是黑客留的后门文件的文件名&lt;/p&gt;
+&lt;p&gt;既然上传了木马文件的，那么就用 TCP、HTTP 流分析。一般上传 php木马文件成功后，会测试 phpinfo() 能不能返回 站点的php信息&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 过滤包含字符 phpinfo() 的TCP流&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;tcp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;contains&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;phpinfo()&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;在下载的第一个流量文件中找到了，黑客上传的后门文件&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720162028564.png&#34; alt=&#34;image-20210720162028564&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;flag{admin.bak.php}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;font-color0288d1suctf2019protocolfont&#34;&gt;&lt;font color=#0288D1&gt;【SUCTF2019】protocol&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点usb流量包中隐写pngfont&#34;&gt;&lt;font color=#A020F0&gt;知识点：usb流量包中隐写png&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;官网给的wp:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720220946356.png&#34; alt=&#34;image-20210720220946356&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-5&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;说实话，没看懂这题考的啥意思，觉得考点没啥意义&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、打开流量包，从标题就知道和 USB流量相关，foremost 分析一下 usbtraffic.pcapng 文件，得到了很多png 图片&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720221331376.png&#34; alt=&#34;image-20210720221331376&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2、重新分析 usbtraffic.pcapng 流量包，搜索 png 字符信息&lt;/p&gt;
+&lt;p&gt;在长度为7845 的usb流量中发现有png 信息&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720222129746.png&#34; alt=&#34;image-20210720222129746&#34; width=&#34;500&#34;/&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将usb流量按长度排序，对Length=7845 的 png文件 进行分析,&lt;/p&gt;
+&lt;p&gt;发现传输每张图片的流量的数据部分第3个字节有一定的变化规律，&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720222320361.png&#34; alt=&#34;image-20210720222320361&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_49354488/article/details/115694025&#34;&gt;具体的参考这篇文章&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这道题这没啥好学习的点&lt;/p&gt;
+&lt;p&gt;最后就是得到这样的数据：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#正常图片的字节数据顺序，15个&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;4321098765&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;edcba&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#黑色图片的字节数据顺序，10个&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;67e41&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d02b9&lt;/span&gt;
+&lt;span class=&#34;mf&#34;&gt;1e86&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dc059b&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;293517&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dbe4&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;da894b3c2&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#得到 Flag&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;suctf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;My_usb_pr0toco1_s0_w3ak&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color0288d1ctf2019shefont&#34;&gt;&lt;font color=#0288D1&gt;【*CTF2019】She&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点rpg-makr-xp游戏制作工具font&#34;&gt;&lt;font color=#A020F0&gt;知识点：RPG Makr XP（游戏制作工具）&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;RPG Maker XP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/RPG%E8%A3%BD%E4%BD%9C%E5%A4%A7%E5%B8%AB&#34;&gt;&lt;font color=#0288D1&gt;维基百科&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720225328694.png&#34; alt=&#34;image-20210720225328694&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dl.3dmgame.com/patch/144142.html&#34;&gt;&lt;font color=#0288D1&gt;RPG Maker XP 汉化版下载&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-6&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;拿到题目给的游戏，查了一番，发现是用 RPG Maker XP 制作的一款游戏，下载&lt;a href=&#34;https://dl.3dmgame.com/patch/144142.html&#34;&gt;&lt;font color=#0288D1&gt;RPG Maker XP&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;新建一个项目，将项目中的&lt;code&gt;Game.rxproj&lt;/code&gt;文件放入She游戏文件夹中，再用工具打开这个文件，就可以对游戏进行编辑了&lt;/p&gt;
+&lt;p&gt;点击 工具 =&amp;gt; 数据库 ，把怪物的数值都修改到最小，角色的搞成最大&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210720230633329.png&#34; alt=&#34;image-20210720230633329&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;开挂后，怪鸟就被秒杀了，继续后面的游戏，进入一扇门后一直往右走，会有很多门，房间里面有箱子，但是门打不开，而且碰到里面的怪物就死了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;继续开挂，修改游戏数据，选择场景，点击蓝色方块，编辑事件。把怪物删掉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721115948735.png&#34; alt=&#34;image-20210721115948735&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;继续调试游戏，到了有门的房间后，一个个尝试打开。发现打开的箱子给出的数字为 &lt;code&gt;213697&lt;/code&gt;，打开门的顺序为 &lt;code&gt;382157&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当打开最后一扇门后，在中间会出现一扇隐藏的门，走进去和魔镜对话得知，提交的flag 应该进行 md5加密。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721120829314.png&#34; alt=&#34;image-20210721120829314&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;将&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;213697&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;382157&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;进行md5加密&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;提交flag&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;213697&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d6f3fdffbcb462607878af65d059f274&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; 
+&lt;span class=&#34;mi&#34;&gt;382157&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b406b652788122d3c88fb6915aa732b5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 尝试提交正确的答案为 flag{d6f3fdffbcb462607878af65d059f274} &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color0288d1inshack2017remote-multimedia-controllerfont&#34;&gt;&lt;font color=#0288D1&gt;【INSHack2017】remote-multimedia-controller&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点流量分析tcp签到题font&#34;&gt;&lt;font color=#A020F0&gt;知识点：流量分析(TCP)、签到题&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-7&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这题应该是个签到题，直接追踪 TCP流量分析，就能看到 flag.txt 文件 后面有 base64编码，连续解码就得到了 flag&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721122552991.png&#34; alt=&#34;image-20210721122552991&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#base64解码&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Vmxkd1NrNVhVbk5qUlZKU1ltdGFjRlJYZEhOaWJFNVhWR3RPV0dKVmJEWldiR1JyV1ZkS1ZXRXphRnBpVkVaVFYycEtVMU5IUmtobFJYQlRUVmhDTmxZeFdtdGhhelZ5WWtWYWFWSlViRmRVVlZaYVRURmFjbFpyT1ZaV2JXUTJWa1pvYTFkck1YVlVhbHBoVWxack1GUlZaRXRqVmxaMVZHMTRXRkpVUlRCWFdIQkdUbGRHY2s1VmFFOVdNWEJoV1Zkek1XSldaSFJPVm1SclZsZDRXbFJWVm5wUVVUMDk&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# INSA{TCP_s0ck3t_4n4lys1s_c4n_b3_fun!}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color0288d1watevrctf-2019unspaellabllefont&#34;&gt;&lt;font color=#0288D1&gt;【watevrCTF 2019】Unspaellablle&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点google-hacking文件对比工具beyond-comparefont&#34;&gt;&lt;font color=#A020F0&gt;知识点：google hacking、文件对比工具Beyond Compare&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;文件对比工具Beyond Compare&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721151712981.png&#34; alt=&#34;image-20210721151712981&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.beyondcomparepro.com/download&#34;&gt;&lt;font color=#0288D1&gt;下载 | Beyond Compare 中文官方网站 &lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-8&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;打开题目给的文本，个人感觉是一段对话，去google查了下。是一段电影对话&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721151928109.png&#34; alt=&#34;image-20210721151928109&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imsdb.com/transcripts/Stargate-SG1-Children-Of-The-Gods.html&#34;&gt;&lt;font color=#0288D1&gt;电影台词&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;将正版电影台词下载下来保存为文本，将两份文本用 Beyond Compare 进行文本数据的对比。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/CN1nja/Data-Structure@main/data_img/image-20210721152318519.png&#34; alt=&#34;image-20210721152318519&#34; width=&#34;500&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;得到Flag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# watevr{icantspeel_tiny.cc/2qtdez}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;font-color0288d1bsidessf2019thekeyfont&#34;&gt;&lt;font color=#0288D1&gt;【BSidesSF2019】thekey&lt;/font&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;font-colora020f0知识点usb流量分析font&#34;&gt;&lt;font color=#A020F0&gt;知识点：USB流量分析&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;王一航大佬的 USB流量攻击分析脚本:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/WangYihang/UsbKeyboardDataHacker&#34;&gt;&lt;font color=#0288D1&gt;UsbKeyboardDataHacker&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;font-colora020f0题目分析font-9&#34;&gt;&lt;font color=#A020F0&gt;题目分析&lt;/font&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;打开题目文件，发现是 USB 流量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;USB 流量分析流程走一套&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 用王一航大佬的脚本直接提取分析一波&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/WangYihang/UsbKeyboardDataHacker&#34;&gt;&lt;font color=#0288D1&gt;UsbKeyboardDataHacker&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 命令&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;python2&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UsbKeyboardDataHacker&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;py&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;attachment&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pcapng&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# viim&amp;lt;SPACE&amp;gt;flaag.ttxt&amp;lt;RET&amp;gt;iTthe&amp;lt;SPACE&amp;gt;flaag&amp;lt;SPACE&amp;gt;is&amp;lt;SPACE&amp;gt;ctf&amp;lt;ESC&amp;gt;vbUuA{[my_favoritte_editor_is_vim}&amp;lt;ESC&amp;gt;hhhhhhhhhhhhhhhhhhhau&amp;lt;ESC&amp;gt;vi{U&amp;lt;ESC&amp;gt;&amp;#34;;wq&amp;lt;RET&amp;gt;&lt;/span&gt;
+                          
+&lt;span class=&#34;c1&#34;&gt;# flag{my_favoritte_editor_is_vim}&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;#修改一下flag中的单词问题得到最后的正确结果：&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#flag{MY_FAVOURITE_EDITOR_IS_VIM}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
             
             
             
